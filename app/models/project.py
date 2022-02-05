@@ -1,4 +1,4 @@
-from .db import db
+from app.models.db import db
 
 class Project(db.Model):
     __tablename__ = 'projects'
@@ -12,3 +12,4 @@ class Project(db.Model):
 
     user = db.relationship('User', back_populates='project')
     instruction = db.relationship('Instruction', back_populates='project')
+    supply = db.relationship('Supply', back_populates='project')
