@@ -4,7 +4,7 @@ class Supply(db.Model):
     __tablename__ = 'supplies'
 
     id = db.Column(db.Integer, primary_key=True)
-    projectId = db.Column(db.Integer, db.ForeignKey('project.id'), nullable=False)
+    projectId = db.Column(db.Integer, db.ForeignKey('projects.id'), nullable=False)
     supply = db.Column(db.String(150), nullable=False)
     amount = db.Column(db.Integer)
 
