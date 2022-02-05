@@ -1,6 +1,4 @@
 from app.models.db import db
-# from app.models.user import User
-# from app.models.project import Project
 
 class Commnet(db.Model):
     __tablename__ = 'comments'
