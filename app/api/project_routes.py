@@ -1,6 +1,6 @@
 from dis import Instruction
 from flask import Blueprint
-from app.models import Project, Instruction, Supply, Commnet
+from app.models import Project, Instruction, Supply, Comment, User
 
 project_routes = Blueprint('projects', __name__)
 
@@ -13,10 +13,16 @@ def projects():
 
 @project_routes.route('/<int:id>')
 def project(id):
-    project = Project.query.get(id)
-    instructions = Instruction.query.filter(Instruction.projectId == id)
-    supplies = Su
-    return project.to_dict()
+    project = Project.query.get(id).to_dict()
+    # project = project.to_dict()
+    instructions = Instruction.query.filter(Instruction.projectId == id).all()
+    supplies = Supply.query.filter(Supply.projectId == id).all()
+    owner = User.query.filter(User.id == project.userId).first()
+    return {'project': {
+        'title': project.title,
+        'owner': owner.to_dict(),
+
+    }}
 
 
 @project_routes.route('/:category')
