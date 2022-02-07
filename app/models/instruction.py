@@ -11,3 +11,15 @@ class Instruction(db.Model):
     viedoUrl = db.Column(db.Text)
 
     project = db.relationship('Project', back_populates='instruction')
+
+
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'projectId': self.projectId,
+            'stepOrder': self.stepOrder,
+            'instructions': self.instructions,
+            'photoUrl': self.photoUrl,
+            'videoUrl': self.viedoUrl
+        }
