@@ -1,7 +1,8 @@
+from dis import Instruction
 from flask import Blueprint
-from app.models import Project
+from app.models import Project, Instruction, Supply, Commnet
 
-project_routes = Blueprint('project', __name__)
+project_routes = Blueprint('projects', __name__)
 
 
 @project_routes.route('/')
@@ -13,6 +14,8 @@ def projects():
 @project_routes.route('/<int:id>')
 def project(id):
     project = Project.query.get(id)
+    instructions = Instruction.query.filter(Instruction.projectId == id)
+    supplies = Su
     return project.to_dict()
 
 

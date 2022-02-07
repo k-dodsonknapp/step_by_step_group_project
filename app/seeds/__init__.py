@@ -1,4 +1,6 @@
 from flask.cli import AppGroup
+
+from app.seeds.projects import seed_project, undo_project_seeders
 from .users import seed_users, undo_users
 
 # Creates a seed group to hold our commands
@@ -11,6 +13,8 @@ seed_commands = AppGroup('seed')
 def seed():
     seed_users()
     # Add other seed functions here
+    seed_project()
+
 
 
 # Creates the `flask seed undo` command
@@ -18,3 +22,4 @@ def seed():
 def undo():
     undo_users()
     # Add other undo functions here
+    undo_project_seeders()
