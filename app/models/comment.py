@@ -1,6 +1,6 @@
 from app.models.db import db
 
-class Commnet(db.Model):
+class Comment(db.Model):
     __tablename__ = 'comments'
 
     id = db.Column(db.Integer, primary_key=True)
