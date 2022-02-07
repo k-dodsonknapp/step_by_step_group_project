@@ -1,7 +1,9 @@
 from flask.cli import AppGroup
-from app.seeds.instruction_seeds import instruction_seed, undo_instructions
+from app.seeds.instruction_seeder import seed_instructions, undo_instructions
+from app.seeds.supply_seeder import seed_supplies, undo_supplies
+from app.seeds.comment_seeder import seed_comments, undo_comments
 
-from app.seeds.projects import seed_project, undo_project_seeders
+from app.seeds.projects_seeder import seed_project, undo_project
 from .users import seed_users, undo_users
 
 # Creates a seed group to hold our commands
@@ -15,7 +17,9 @@ def seed():
     seed_users()
     # Add other seed functions here
     seed_project()
-    instruction_seed()
+    seed_instructions()
+    seed_supplies()
+    seed_comments()
 
 
 
@@ -24,5 +28,7 @@ def seed():
 def undo():
     undo_users()
     # Add other undo functions here
-    undo_project_seeders()
+    undo_project()
     undo_instructions()
+    undo_supplies()
+    undo_comments()
