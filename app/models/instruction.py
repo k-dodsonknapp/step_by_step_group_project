@@ -8,7 +8,7 @@ class Instruction(db.Model):
     stepOrder = db.Column(db.Integer, nullable=False)
     instructions = db.Column(db.Text, nullable=False)
     photoUrl = db.Column(db.Text)
-    viedoUrl = db.Column(db.Text)
+    videoUrl = db.Column(db.Text)
 
     project = db.relationship('Project', back_populates='instruction')
 
@@ -21,5 +21,5 @@ class Instruction(db.Model):
             'stepOrder': self.stepOrder,
             'instructions': self.instructions,
             'photoUrl': self.photoUrl,
-            'videoUrl': self.viedoUrl
+            'videoUrl': self.videoUrl
         }
