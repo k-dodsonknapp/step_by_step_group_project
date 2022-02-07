@@ -1,6 +1,6 @@
 from app.models.db import db
 
-class Commnet(db.Model):
+class Comment(db.Model):
     __tablename__ = 'comments'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -9,4 +9,4 @@ class Commnet(db.Model):
     comment = db.Column(db.Text, nullable=False)
 
     user = db.relationship('User', back_populates='comment')
-    project = db.relationship('Project', back_populates='commnet')
+    project = db.relationship('Project', back_populates='comment')
