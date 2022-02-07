@@ -13,4 +13,15 @@ class Project(db.Model):
     user = db.relationship('User', back_populates='project')
     instruction = db.relationship('Instruction', back_populates='project')
     supply = db.relationship('Supply', back_populates='project')
-    comment = db.relationship('Comment', back_populates='project')
+    comment = db.relationship('Coment', back_populates='project')
+
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'userId': self.userId,
+            'title': self.title,
+            'titleImage': self.titleImage,
+            'overview': self.overview,
+            'categoryId': self.categoryId
+        }

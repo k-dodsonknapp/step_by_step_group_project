@@ -9,4 +9,13 @@ class Comment(db.Model):
     comment = db.Column(db.Text, nullable=False)
 
     user = db.relationship('User', back_populates='comment')
-    project = db.relationship('Project', back_populates='comment')
+    project = db.relationship('Project', back_populates='commnet')
+
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'userId': self.userId,
+            'projectId': self.projectId,
+            'comment': self.comment
+        }
