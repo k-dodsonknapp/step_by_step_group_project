@@ -14,7 +14,7 @@ def seed_project():
     db.session.add(bird_house)
     db.session.commit()
 
-def undo_project_seeders():
+def undo_project():
     db.session.execute('TRUNCATE projects RESTART IDENTITY CASCADE;')
     db.session.commit()
 
