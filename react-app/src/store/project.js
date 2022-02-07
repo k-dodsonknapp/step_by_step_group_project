@@ -3,7 +3,14 @@ const ADD_PROJECTS = "/projects/new";
 const UPDATE_PROJECTS = "/projects/update";
 const DELETE_PROJECTS = "/projects/delete";
 
-const getProjects = (project) => ({
+const GET_PROJECT = "/projects/:id";
+
+const getProjects = (projects) => ({
+  type: GET_PROJECTS,
+  payload: projects,
+});
+
+const getProject = (project) => ({
   type: GET_PROJECTS,
   payload: project,
 });
@@ -30,10 +37,26 @@ export const getAllProjects = () => async (dispatch) => {
     if (data.errors) {
       return;
     }
+    console.log(data)
     dispatch(getProjects(data));
     return data;
   }
 };
+
+export const getOneProject = (projectId) => async (dispatch) => {
+  console.log('projectId:', projectId)
+  const response = await fetch(`/api/projects/${projectId}`);
+  if (response.ok) {
+    const data = await response.json();
+    console.log(data)
+    if (data.errors) {
+      return;
+    }
+    dispatch(getProject(data));
+    return data;
+  }
+};
+
 export const addOneProject = (data) => async (dispatch) => {
   const response = await fetch("/api/projects/new", {
     method: "POST",
