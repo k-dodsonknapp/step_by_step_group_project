@@ -9,3 +9,12 @@ class Supply(db.Model):
     amount = db.Column(db.Integer)
 
     project = db.relationship('Project', back_populates='supply')
+
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'projectId': self.projectId,
+            'supply': self.supply,
+            'amount': self.amount,
+        }
