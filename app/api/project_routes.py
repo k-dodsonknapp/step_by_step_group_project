@@ -15,13 +15,18 @@ def projects():
 def project(id):
     project = Project.query.get(id).to_dict()
     # project = project.to_dict()
-    instructions = Instruction.query.filter(Instruction.projectId == id).all()
-    supplies = Supply.query.filter(Supply.projectId == id).all()
     owner = User.query.filter(User.id == project.userId).first()
+    supplies = Supply.query.filter(Supply.projectId == id).all()
+    instructions = Instruction.query.filter(Instruction.projectId == id).all()
+    comments = Comment.query.filter(Comment.projectId == id).all()
+
     return {'project': {
         'title': project.title,
         'owner': owner.to_dict(),
-
+        'overview': project.overview,
+        'supplies': [supply.to_dict() for supply in supplies],
+        'instructions': [instruction.to_dict() for instruction in instructions],
+        'comments': [comment.to_dict() for comment in comments]
     }}
 
 
