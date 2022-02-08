@@ -1,6 +1,7 @@
 from dis import Instruction
-from flask import Blueprint
+from flask import Blueprint, request
 from app.models import Project, Instruction, Supply, Comment, User
+from app.forms.project_form import ProjectForm
 
 project_routes = Blueprint('projects', __name__)
 
@@ -28,6 +29,18 @@ def project(id):
         'comments': [comment.to_dict() for comment in comments]
     }}
 
+
+@project_routes.route('/new', methods=['POST'])
+def create_project():
+    projectForm = ProjectForm()
+
+    # print(projectForm['title'])
+    projectForm['csrf_token'].data = request.cookies['csrf_token']
+    if projectForm.validate_on_submit():
+        print(projectForm.data['title'])
+        return {'message': 'validated'}
+
+    return {'message': 'Not validated'}
 
 @project_routes.route('/<category>')
 def projects_by_category(category):
