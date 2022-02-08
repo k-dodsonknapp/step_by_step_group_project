@@ -3,7 +3,7 @@ const ADD_PROJECTS = "/projects/new";
 const UPDATE_PROJECTS = "/projects/update";
 const DELETE_PROJECTS = "/projects/delete";
 
-const GET_PROJECT = "/projects/:id";
+// const GET_PROJECT = "/projects/:id";
 
 const getProjects = (projects) => ({
   type: GET_PROJECTS,
