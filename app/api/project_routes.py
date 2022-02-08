@@ -1,6 +1,7 @@
 from dis import Instruction
 from flask import Blueprint, request
-from app.models import Project, Instruction, Supply, Comment, User
+from sqlalchemy import insert
+from app.models import db, Project, Instruction, Supply, Comment, User
 from app.forms.project_form import ProjectForm
 
 project_routes = Blueprint('projects', __name__)
@@ -30,17 +31,65 @@ def project(id):
     }}
 
 
+@project_routes.route('/<int:id>', methods=['DELETE'])
+def delete_project(id):
+
+    projectInstructions = Instruction.query.filter(Instruction.projectId == id).all()
+    for instruction in projectInstructions:
+        db.session.delete(instruction)
+
+    projectSupplies = Supply.query.filter(Supply.projectId == id).all()
+    for supply in projectSupplies:
+        db.session.delete(supply)
+
+    projectComments = Comment.query.filter(Comment.projectId == id).all()
+    for comment in projectComments:
+        db.session.delete(comment)
+
+    project = Project.query.get(id)
+    print(project)
+    db.session.delete(project)
+    db.session.commit()
+
+    return {'message': 'success'}
+
+
 @project_routes.route('/new', methods=['POST'])
 def create_project():
-    projectForm = ProjectForm()
+    data = request.json
+    instructions = data['instructions']
+    supplies = data['supplies']
 
-    # print(projectForm['title'])
-    projectForm['csrf_token'].data = request.cookies['csrf_token']
-    if projectForm.validate_on_submit():
-        print(projectForm.data['title'])
-        return {'message': 'validated'}
+    project = Project(userId=data['userId'],
+                      title=data['title'],
+                      titleImage=data['titleImage'],
+                      overview=data['overview'],
+                      category=data['category'])
 
-    return {'message': 'Not validated'}
+    db.session.add(project)
+    db.session.commit()
+
+    projectId = Project.query.order_by(Project.id.desc()).first().id
+
+    for instruction in instructions:
+        row = Instruction(projectId=projectId,
+                          stepOrder=instruction['stepOrder'],
+                          stepTitle=instruction['stepTitle'],
+                          instructions=instruction['instructions'],
+                          photoUrl=instruction['photoUrl'],
+                          videoUrl=instruction['photoUrl'])
+        db.session.add(row)
+        db.session.commit()
+
+    for supply in supplies:
+        row = Supply(projectId=projectId,
+                     supply=supply['supply'],
+                     amount=supply['amount'])
+        db.session.add(row)
+        db.session.commit()
+
+    return {'message': 'success'}
+
 
 @project_routes.route('/<category>')
 def projects_by_category(category):
