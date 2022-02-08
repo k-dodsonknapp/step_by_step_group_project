@@ -91,6 +91,25 @@ def seed_comments():
                 """,
     )
 
+    dragonfly1=Comment(
+        userId=1,
+        projectId=7,
+        comment="""
+                    This is fun!
+                    Do you have a link to the Tinkercad design for those who want to download or customize one?
+                """,
+    )
+
+    dragonfly2=Comment(
+        userId=2,
+        projectId=7,
+        comment="""
+                    This is a great little project, nice work!
+
+                    That last photo would make an excellent cover image, if you're inclined to edit. That would help this get some more clicks I think! : )
+                """,
+    )
+
     db.session.add(bird_house_comment1)
     db.session.add(bird_house_comment2)
     db.session.add(casino_clock_comment1)
@@ -103,6 +122,8 @@ def seed_comments():
     db.session.add(slowmo_bird_comment1)
     db.session.add(slowmo_bird_comment2)
     db.session.add(slowmo_bird_comment3)
+    db.session.add(dragonfly1)
+    db.session.add(dragonfly2)
 
 
     db.session.commit()

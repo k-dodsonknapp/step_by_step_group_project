@@ -284,7 +284,7 @@ def seed_instructions():
     one_board_mug9=Instruction(
         projectId=3,
         stepOrder=9,
-        stepTitle="Add Finish",
+        stepTitle="Allow Any Finishes to Cure",
         instructions="""
                         Allow the cure per instructions on product used.
                     """,
@@ -294,7 +294,7 @@ def seed_instructions():
     one_board_mug10=Instruction(
         projectId=3,
         stepOrder=10,
-        stepTitle="Add Finish",
+        stepTitle="Use Remaining Pieces of Wood",
         instructions="""
                         Just so we have no waste, you can use the inner circles you cut out and make a smaller mug. A shot glass or juice glass. Follow the same steps!! Then enjoy!!!
                     """,
@@ -469,7 +469,47 @@ def seed_instructions():
         photoUrl="https://content.instructables.com/ORIG/F1R/96CG/KY2ZEWJP/F1R96CGKY2ZEWJP.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=f6448db5cc082560d4f9f2019b4dc9c5",
     )
 
+    dragonfly1=Instruction(
+        projectId=7,
+        stepOrder=1,
+        stepTitle="Sketch and Inspiration",
+        instructions="""
+                        I sketched up the general idea of the bamboo dragonfly, which is exactly like the actual insect--dragonfly. I needed to model a pole for hands to hold, spin, and model a long blade as the propeller in flight. To look like a funny dragonfly, I would add a tiny head with tentacles on the top of the blade. The whole thing with all the parts assembled will be a very fantastic toy for kids.
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/FLY/5AIN/KSN80T48/FLY5AINKSN80T48.jpg?auto=webp&frame=1&width=860&height=1024&fit=bounds&md=bd0bbda6f38e6d64bb1c0ba4b3dc2e3d",
+    )
 
+    dragonfly2=Instruction(
+        projectId=7,
+        stepOrder=2,
+        stepTitle="Model With Tinkercad and 3D Print",
+        instructions="""
+                      I used a knife to ground the blade's edges to be round and glued the tiny head to the center of the blade, which looks straight and perfect. Then I use a metal color spray to paint the whole product blue. After that, I needed to paint details of the dragonfly's eyes, stripes of its body, and the pattern of the wings with Acrylic paint. Now a vivid dragonfly comes, and it will fly in the air pushed by my hands.
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/FI6/SOT1/KSN80TL9/FI6SOT1KSN80TL9.jpg?auto=webp&frame=1&width=525&height=1024&fit=bounds&md=0f94cc925b4c772cae91e777494d5583",
+    )
+
+    dragonfly3=Instruction(
+        projectId=7,
+        stepOrder=3,
+        stepTitle="Assemble, Polish and Paint",
+        instructions="""
+                       I modeled the bamboo dragonfly by Autodesk Tinkercad, then export the model file with the dragonfly.STL. I opened Creality Slicer to import the Dragonfly.STL and exported to the 3D printer with file Dragonfly.gcode. So the bamboo dragonfly becomes an actual product.
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/FI6/SOT1/KSN80TL9/FI6SOT1KSN80TL9.jpg?auto=webp&frame=1&width=525&height=1024&fit=bounds&md=0f94cc925b4c772cae91e777494d5583",
+    )
+
+
+    dragonfly4=Instruction(
+        projectId=7,
+        stepOrder=4,
+        stepTitle="Let the Drangonfly Fly High in the Air",
+        instructions="""
+                       It's time to let it fly! Please watch my video.
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/FD5/S83I/KSN80UDF/FD5S83IKSN80UDF.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=09be231e428443e47937f1e5cabcf7fe",
+        videoUrl="https://www.youtube.com/watch?v=pjgGGpcfTYQ"
+    )
 
 
     db.session.add(bird_project1)
@@ -505,6 +545,10 @@ def seed_instructions():
     db.session.add(james_webb4)
     db.session.add(slowmo_bird1)
     db.session.add(slowmo_bird2)
+    db.session.add(dragonfly1)
+    db.session.add(dragonfly2)
+    db.session.add(dragonfly3)
+    db.session.add(dragonfly4)
     
 
     db.session.commit()

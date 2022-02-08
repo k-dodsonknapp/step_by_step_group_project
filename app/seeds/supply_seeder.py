@@ -188,6 +188,32 @@ def seed_supplies():
         supply="Shutter remote (optional)"
     )
 
+    dragonfly1=Supply(
+        projectId=7,
+        supply="Autodesk Tinkercad"
+    )
+
+    dragonfly2=Supply(
+        projectId=7,
+        supply="3D printer"
+    )
+
+    dragonfly3=Supply(
+        projectId=7,
+        supply="Metalcast brand color coat spay"
+    )
+
+    dragonfly4=Supply(
+        projectId=7,
+        supply="Knife"
+    )
+
+    dragonfly5=Supply(
+        projectId=7,
+        supply="Acrylic paint (blue, white, black)"
+    )
+
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -225,6 +251,11 @@ def seed_supplies():
     db.session.add(slowmo_bird5)
     db.session.add(slowmo_bird6)
     db.session.add(slowmo_bird7)
+    db.session.add(dragonfly1)
+    db.session.add(dragonfly2)
+    db.session.add(dragonfly3)
+    db.session.add(dragonfly4)
+    db.session.add(dragonfly5)
     
     db.session.commit()
 

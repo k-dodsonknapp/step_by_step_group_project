@@ -33,7 +33,7 @@ def seed_project():
         category="Workshop"
     )
 
-    one_board_mug= Project(
+    skillet_burger= Project(
         userId=1, 
         title="Onion Skillet Bacon Cheeseburgers", 
         titleImage="https://content.instructables.com/ORIG/FSA/PGFW/KYK4NWBL/FSAPGFWKYK4NWBL.jpg?auto=webp&frame=1&width=700&height=1024&fit=bounds&md=e5c78e47e1d1406d50a53dc73e21b425", 
@@ -88,10 +88,24 @@ def seed_project():
         category="Outside"
     )
 
+    dragonfly= Project(
+        userId=1, 
+        title="3D Printed Dragonfly With Tinkercad", 
+        titleImage="https://content.instructables.com/ORIG/F4R/GOS2/KSN80SUN/F4RGOS2KSN80SUN.jpg?auto=webp&frame=1&width=874&height=1024&fit=bounds&md=346c7b528b8144375851419c41c9e424", 
+        overview="""
+                    Do you hear about bamboo dragonflies? I played it in my childhood, which kids' hands can make with a stick and long blade fixed on the top of the shaft. Kids can spin the pole with their hands to let it fly high in the air, which looks like a dragonfly. It is a fascinating toy to play with among kids' outdoor activities. This time I made it with Autodesk Tinkercad and the 3D printer.
+                """,
+        category="Teachers"
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
+    db.session.add(skillet_burger)
     db.session.add(james_webb_clock)
+    db.session.add(slowmo_birds)
+    db.session.add(dragonfly)
+
     db.session.commit()
 
 def undo_project():
