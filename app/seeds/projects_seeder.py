@@ -25,16 +25,17 @@ def seed_project():
         category="Circuits"
     )
 
-    # bird_house= Project(
-    #     userId=1, 
-    #     title="How to build a bird house.", 
-    #     titleImage="idk", 
-    #     overview="This is how to construct a bird house!",
-    #     category="Crafts"
-    # )
+    one_board_mug= Project(
+        userId=3, 
+        title="One Board Mug", 
+        titleImage="https://content.instructables.com/ORIG/FST/TDM1/KZBA18KY/FSTTDM1KZBA18KY.jpg?auto=webp&frame=1&width=612&height=1024&fit=bounds&md=eb345ed6f0c79b14398aa15b45a9edb5", 
+        overview="Create a fun and unique drinking vessel from one board of pine.",
+        category="Workshop"
+    )
 
     db.session.add(bird_house)
     db.session.add(casino_clock)
+    db.session.add(one_board_mug)
     db.session.commit()
 
 def undo_project():
