@@ -44,7 +44,7 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute path='/' exact={true} >
-          <h1>Home</h1>
+          <ProjectExplore/>
         </ProtectedRoute>
 
         <ProtectedRoute path='/users/:userId' exact={true} >
