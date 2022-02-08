@@ -37,6 +37,18 @@ def seed_comments():
         comment="Thanks! This is so cool."
     )
 
+    one_board_mug_comment2= Comment(
+        userId=2,
+        projectId=4,
+        comment="looks delicious! frying the burgers on onions seems like a great trick too! thanks for sharing :) good luck with your book!"
+    )
+
+    one_board_mug_comment2= Comment(
+        userId=1,
+        projectId=4,
+        comment="looks delicious! thanks for sharing!"
+    )
+
     db.session.add(bird_house_comment1)
     db.session.add(bird_house_comment2)
     db.session.add(casino_clock_comment1)

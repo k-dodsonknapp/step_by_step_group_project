@@ -185,7 +185,7 @@ def seed_instructions():
     )    
 
     one_board_mug1=Instruction(
-        projectId=2,
+        projectId=3,
         stepOrder=1,
         stepTitle="Measure the Circles",
         instructions="""
@@ -200,7 +200,7 @@ def seed_instructions():
     )
     
     one_board_mug2=Instruction(
-        projectId=2,
+        projectId=3,
         stepOrder=2,
         stepTitle="Cut Out",
         instructions="""
@@ -210,7 +210,7 @@ def seed_instructions():
     )
 
     one_board_mug3=Instruction(
-        projectId=2,
+        projectId=3,
         stepOrder=3,
         stepTitle="Glue Together",
         instructions="""
@@ -222,7 +222,7 @@ def seed_instructions():
     )
 
     one_board_mug4=Instruction(
-        projectId=2,
+        projectId=3,
         stepOrder=4,
         stepTitle="Begin to Sand",
         instructions="""
@@ -231,7 +231,7 @@ def seed_instructions():
     )
 
     one_board_mug5=Instruction(
-        projectId=2,
+        projectId=3,
         stepOrder=5,
         stepTitle="Add Bottom",
         instructions="""
@@ -240,7 +240,7 @@ def seed_instructions():
     )
 
     one_board_mug6=Instruction(
-        projectId=2,
+        projectId=3,
         stepOrder=6,
         stepTitle="Handle",
         instructions="""
@@ -254,7 +254,7 @@ def seed_instructions():
     )
 
     one_board_mug7=Instruction(
-        projectId=2,
+        projectId=3,
         stepOrder=7,
         stepTitle="Finish Handle",
         instructions="""
@@ -266,7 +266,7 @@ def seed_instructions():
     )
 
     one_board_mug8=Instruction(
-        projectId=2,
+        projectId=3,
         stepOrder=8,
         stepTitle="Add Finish",
         instructions="""
@@ -282,7 +282,7 @@ def seed_instructions():
     )
 
     one_board_mug9=Instruction(
-        projectId=2,
+        projectId=3,
         stepOrder=9,
         stepTitle="Add Finish",
         instructions="""
@@ -292,13 +292,67 @@ def seed_instructions():
     )
 
     one_board_mug10=Instruction(
-        projectId=2,
+        projectId=3,
         stepOrder=10,
         stepTitle="Add Finish",
         instructions="""
                         Just so we have no waste, you can use the inner circles you cut out and make a smaller mug. A shot glass or juice glass. Follow the same steps!! Then enjoy!!!
                     """,
         photoUrl="https://content.instructables.com/ORIG/FM1/8EYX/KZBA1FVG/FM18EYXKZBA1FVG.jpg?auto=webp&frame=1&width=628&height=1024&fit=bounds&md=2b3645e2db53a0024796989cee81dc7f",
+    )
+
+    skillet_burger1=Instruction(
+        projectId=4,
+        stepOrder=1,
+        stepTitle="Fry Up the Bacon",
+        instructions="""
+                        In a large saute pan over medium-high heat, add bacon. Cook until crispy and remove to a paper towel covered plate. Reserve bacon grease.
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/FG7/M0DL/KYK4NWC1/FG7M0DLKYK4NWC1.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=727e24ebd9fc48457c55b2e452da9220",
+    )
+
+    skillet_burger2=Instruction(
+        projectId=4,
+        stepOrder=2,
+        stepTitle="Get the Onions Going",
+        instructions="""
+                        Add sliced onions to bacon grease and cook for 3 minutes stirring occasionally.
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/FG7/M0DL/KYK4NWC1/FG7M0DLKYK4NWC1.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=727e24ebd9fc48457c55b2e452da9220",
+    )
+
+    skillet_burger3=Instruction(
+        projectId=4,
+        stepOrder=3,
+        stepTitle="Make the Patties",
+        instructions="""
+                        Add patty ingredients to a mixing bowl and combine. Form into 6 patties. Add to saute pan with onions. Reduce heat to medium. Cover pan and cook for 8 minutes.
+
+                        Flip each burger and recover for 8 minutes more.
+
+                        Remove lid and lay a slice of cheese on each burger. Let sit for a minute then remove burgers. Remove onions from heat.
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/FYD/WV95/KYK4NWBZ/FYDWV95KYK4NWBZ.jpg?auto=webp&frame=1&width=800&height=1024&fit=bounds&md=f8d508e203d652b1b506abc1d36d999b",
+    )
+
+    skillet_burger4=Instruction(
+        projectId=4,
+        stepOrder=4,
+        stepTitle="Make the Sauce",
+        instructions="""
+                        Combine sauce ingredients in a small bowl and set aside.
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/FHE/ACCO/KYK4NWBT/FHEACCOKYK4NWBT.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=2c457488b792655c263a91f32ad45dc8",
+    )
+
+    skillet_burger5=Instruction(
+        projectId=4,
+        stepOrder=5,
+        stepTitle="Build the Burger",
+        instructions="""
+                        Build the burger: smear bun with sauce. Add pickles and bacon. Top with a cheeseburger and cooked onions. Add top bun and enjoy!
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/FEA/B667/KYK4NWBY/FEAB667KYK4NWBY.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=c184318d11bd6c0378b95837fbd25fb4",
     )
 
     db.session.add(bird_project1)
@@ -323,6 +377,11 @@ def seed_instructions():
     db.session.add(one_board_mug8)
     db.session.add(one_board_mug9)
     db.session.add(one_board_mug10)
+    db.session.add(skillet_burger1)
+    db.session.add(skillet_burger2)
+    db.session.add(skillet_burger3)
+    db.session.add(skillet_burger4)
+    db.session.add(skillet_burger5)
     
 
     db.session.commit()

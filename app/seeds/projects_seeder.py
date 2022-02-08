@@ -33,6 +33,39 @@ def seed_project():
         category="Workshop"
     )
 
+    one_board_mug= Project(
+        userId=1, 
+        title="Onion Skillet Bacon Cheeseburgers", 
+        titleImage="https://content.instructables.com/ORIG/FSA/PGFW/KYK4NWBL/FSAPGFWKYK4NWBL.jpg?auto=webp&frame=1&width=700&height=1024&fit=bounds&md=e5c78e47e1d1406d50a53dc73e21b425", 
+        overview="""
+                    Looking for a delicious stacked-up burger? Then you came to the right place! A bacon cheeseburger with onions cooked in bacon grease!
+                    
+                    Makes 6 Burgers Prep Time 10 minutes Cook time 30 minutes
+
+                    Ingredients
+
+                    3 Yellow Onions, cut into slices
+                    6 Brioche Buns
+                    6 Slices Sharp Cheddar
+                    8 Slices Thick-Cut Bacon, cut in half
+                    1 cup Bread and Butter Pickles
+                    For the Patty:
+
+                    1 lb Ground Beef
+                    1 lb Ground Pork
+                    1 bag Garlic Pepper Crispy Onions, crushed
+                    1 tsp Salt
+                    1 tsp Red Pepper Flakes
+                    1 tsp Parsley
+                    For the Sauce:
+
+                    1/2 cup Mayo
+                    1/2 cup BBQ Sauce
+                    1/4 cup Pickle Juice
+                """,
+        category="Cooking"
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)

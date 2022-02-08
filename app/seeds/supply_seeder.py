@@ -72,7 +72,36 @@ def seed_supplies():
         projectId=3,
         supply="Dowel pins (if you want to add extra support for the handle)"
     )
-    
+
+    skillet_burger1=Supply(
+        projectId=4,
+        supply="Large Saute Pan or Cast Iron Skillet with lid"
+    )
+
+    skillet_burger2=Supply(
+        projectId=4,
+        supply="Cutting Board"
+    )
+
+    skillet_burger3=Supply(
+        projectId=4,
+        supply="Knife"
+    )
+
+    skillet_burger4=Supply(
+        projectId=4,
+        supply="Paper Towels"
+    )
+
+    skillet_burger5=Supply(
+        projectId=4,
+        supply="Plate"
+    )
+
+    skillet_burger6=Supply(
+        projectId=4,
+        supply="Tongs"
+    )
 
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
@@ -88,6 +117,12 @@ def seed_supplies():
     db.session.add(one_board_mug3)
     db.session.add(one_board_mug4)
     db.session.add(one_board_mug5)
+    db.session.add(skillet_burger1)
+    db.session.add(skillet_burger2)
+    db.session.add(skillet_burger3)
+    db.session.add(skillet_burger4)
+    db.session.add(skillet_burger5)
+    db.session.add(skillet_burger6)
     
     db.session.commit()
 
