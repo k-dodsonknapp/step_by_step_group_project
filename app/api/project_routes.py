@@ -1,6 +1,6 @@
 from dis import Instruction
 from flask import Blueprint, request
-from sqlalchemy import insert
+from sqlalchemy import insert, update
 from app.models import db, Project, Instruction, Supply, Comment, User
 from app.forms.project_form import ProjectForm
 
@@ -31,6 +31,35 @@ def project(id):
     }}
 
 
+@project_routes.route('/<int:id>', methods=['PUT'])
+def update_project(id):
+    data = request.json
+    instructions = data['instructions']
+    supplies = data['supplies']
+    print(data)
+    project = Project.query.get(id)
+    project.title = data['title']
+    project.titleImage = data['titleImage']
+    project.overview = data['overview']
+    project.category = data['category']
+
+    for instruction in instructions:
+        row = Instruction.query.filter(Instruction.projectId == id, Instruction.stepOrder == instruction['stepOrder']).first()
+        row.stepTitle = instruction['stepTitle']
+
+    projectSupplies = Supply.query.filter(Supply.projectId == id).all()
+    for supply in projectSupplies:
+        db.session.delete(supply)
+
+    for supply in supplies:
+        row = Supply(projectId=id,
+                    supply=supply['supply'],
+                    amount=supply['amount'])
+        db.session.add(row)
+    db.session.commit()
+
+    return {'message': 'success'}
+
 @project_routes.route('/<int:id>', methods=['DELETE'])
 def delete_project(id):
 
@@ -47,7 +76,6 @@ def delete_project(id):
         db.session.delete(comment)
 
     project = Project.query.get(id)
-    print(project)
     db.session.delete(project)
     db.session.commit()
 
