@@ -427,6 +427,51 @@ def seed_instructions():
         photoUrl="https://content.instructables.com/ORIG/F2D/W1UN/KYVK737V/F2DW1UNKYVK737V.jpg?auto=webp&frame=1&width=924&height=1024&fit=bounds&md=cf297c9c91d3ecf32bee622b0f5bff2f",
     )
 
+    slowmo_bird1=Instruction(
+        projectId=6,
+        stepOrder=1,
+        stepTitle="The Set-up",
+        instructions="""
+                        This project involves carefully planning of the arrangement of objects in space. First, you need a bird feeder. You may already have one, but make sure it is placed in an optimal location, typically near a large window of your dwelling. Place a perch 8 to 10 feet away from the feeder, opposite the direction of the house and somewhat off to the side. This plan takes advantage of the fact that birds like to land near a feeder and check it out before flying to it and consuming the seed. Photograph the bird when it flies from the perch to the feeder.
+
+                        The type of feeder doesn't matter much. I use only sunflower seed in my feeder, as most birds really don't care for the other seeds in mixed bird feed. I also use a suet feeder, which is a great way to attract woodpeckers.
+
+                        It's best to use a natural stick, such as one that's fallen from a tree. You can jam it into the ground or use a support like an umbrella stand to hold it up. The top of it should be about the same height as the bird feeder. By using a natural stick rather than a human-made object, you can get natural-looking photos of a perching bird if you want them. You may need to move it around to find the spot that the birds prefer. It's also better if there are not competing objects that can be used as perches nearby. Finally, try to use a location that will result in photographs with a pleasing background.
+
+                        Inside the house, place your camera on a tripod as close to the window as is practical. Ideally, the sun should be behind the camera, which may affect which window you choose to use for this project. If the sun is directly behind the bird, you will get only silhouettes of birds, which are not very gratifying. The window should be thoroughly cleaned inside and out. Make sure there are no reflections in the area of the window through which you are shooting. If the end of the lens is very close to the window, there should not be any reflections in the images. Adjust room lighting if necessary. Even double-paned windows should have little noticeable effect on image quality.
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/F1V/1SRU/KY8P62DF/F1V1SRUKY8P62DF.jpg?auto=webp&frame=1&width=790&fit=bounds&md=074ac899fc620af930e3b9d8c36e2332",
+    )
+
+    slowmo_bird2=Instruction(
+        projectId=6,
+        stepOrder=2,
+        stepTitle="The Photography",
+        instructions="""
+                        Equipment
+
+                        The camera must have some degree of manual controls. Almost any DSLR will do, and many superzoom point-and-shoot cameras will also work (my equipment is detailed in a photo above). The length of the lens required depends on how far the feeder is from the window. If the feeder is far away, a longer, presumably more expensive lens will be needed. The tripod doesn't need to be fancy, as long as it holds the camera firmly.
+
+                        Settings
+
+                        The camera should have Av mode, or Aperture Priority. Set the camera on this mode and adjust the aperture to F/8, or about two stops above the lowest F-stop. This setting will provide adequate depth of field and minimal aberrations. Set ISO to the lowest natural level of your camera. For example, my Canon 7D can be set as low as ISO 100, but its true minimum is 160. You should shoot on a sunny day, otherwise higher ISO will be needed and the images will become more grainy. White balance should be set on automatic or full sun. These settings work in your favor in that the camera will automatically choose the highest shutter speed that can produce a properly exposed image, resulting in freezing the motion of the bird's wings. If you have the equipment and know-how, you could set up a remote flash and probably get more consistent results, but that's beyond the scope of this Instructable.
+
+                        Place an object halfway between the perch and the feeder and prefocus your camera on it using manual focus. Leave the camera on manual focus and try not to bump it. Set the lens at a zoom level that is reasonably wide. If you zoom it too tightly, you'll cut off bits of the birds in every frame. It's better to have the entire bird in the frame and crop it later.
+
+                        Shooting
+
+                        If you have one, connect a remote shutter to the camera to minimize camera shake. Set your camera on burst mode if available, and wait for a bird to land on the perch. Now place your finger on the shutter button (or remote button). As soon as the bird moves to fly, hold down the button to take a rapid series of photos (a burst). Let off the button when the bird reaches the feeder. At some point during the bird's flight, it should be in focus and in frame for at least one image. Delete the rest. It will likely require some experimentation and adjustment to get the best results. Some photographers prefer not to use burst mode, instead using their own natural skill and timing to capture a single ideal image of such a natural moment. This strategy takes considerable skill. Birds are fast!
+
+                        Post-processing
+
+                        It almost goes without saying that you should crop the photo and make some global lighting adjustments to make the best image you can. You may capture birds in some interesting positions. I provide a couple of examples here.
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/F1R/96CG/KY2ZEWJP/F1R96CGKY2ZEWJP.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=f6448db5cc082560d4f9f2019b4dc9c5",
+    )
+
+
+
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -458,6 +503,8 @@ def seed_instructions():
     db.session.add(james_webb2)
     db.session.add(james_webb3)
     db.session.add(james_webb4)
+    db.session.add(slowmo_bird1)
+    db.session.add(slowmo_bird2)
     
 
     db.session.commit()

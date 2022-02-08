@@ -153,8 +153,41 @@ def seed_supplies():
         supply="Power Drill"
     )
 
-    
-    
+    slowmo_bird1=Supply(
+        projectId=6,
+        supply="Materials"
+    )
+
+    slowmo_bird2=Supply(
+        projectId=6,
+        supply="Bird feeder"
+    )
+
+    slowmo_bird3=Supply(
+        projectId=6,
+        supply="Bird seed"
+    )
+
+    slowmo_bird4=Supply(
+        projectId=6,
+        supply="A long stick"
+    )
+
+    slowmo_bird5=Supply(
+        projectId=6,
+        supply="Camera"
+    )
+
+    slowmo_bird6=Supply(
+        projectId=6,
+        supply="Tripod"
+    )
+
+    slowmo_bird7=Supply(
+        projectId=6,
+        supply="Shutter remote (optional)"
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -185,7 +218,13 @@ def seed_supplies():
     db.session.add(james_webb8)
     db.session.add(james_webb9)
     db.session.add(james_webb10)
-    # db.session.add()
+    db.session.add(slowmo_bird1)
+    db.session.add(slowmo_bird2)
+    db.session.add(slowmo_bird3)
+    db.session.add(slowmo_bird4)
+    db.session.add(slowmo_bird5)
+    db.session.add(slowmo_bird6)
+    db.session.add(slowmo_bird7)
     
     db.session.commit()
 

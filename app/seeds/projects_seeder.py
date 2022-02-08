@@ -78,6 +78,16 @@ def seed_project():
         category="Living"
     )
 
+    slowmo_birds= Project(
+        userId=3, 
+        title="How to Photograph Birds in Flight the Easy Way", 
+        titleImage="https://content.instructables.com/ORIG/FHX/FUC6/KY2ZEWJO/FHXFUC6KY2ZEWJO.jpg?auto=webp&frame=1&width=933&fit=bounds&md=d9800a2e705e47bde451618173fe795d", 
+        overview="""
+                    With a simple set-up, you can produce excellent photographs of birds in flight--from the comfort of your house! Birds are attractive targets for wildlife photographers. They are aesthetically pleasing, ubiquitous, and charismatic. But once one has mastered the "bird on a stick" photo, a photographer may feel challenged to produce more interesting photos. Bird in flight (BIF) photos are dramatic, but much harder to get. Some degree of chance is usually required, and a long time in the field. The method demonstrated here is relatively simple and allows one to take BIF images in the dead of winter, when birds are most drawn to feeders. Meanwhile, the photographer is warm and cozy.
+                """,
+        category="Outside"
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)

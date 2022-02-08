@@ -67,6 +67,30 @@ def seed_comments():
         comment="Such a cute and clever project!"
     )
 
+    slowmo_bird_comment1=Comment(
+        userId=1,
+        projectId=6,
+        comment="Love the pics! Unfortunately, when I had the bird feeder on my south deck, whose door is opposite my computer desk, and had gone through the trouble of also putting in a solar-powered water fountain so the birds had somewhere to drink, the (&&##(@*&& expletive deleted) racoons got into it and caused a lot of damage. :( No more birdie pics and/or videos :(("
+    )
+
+    slowmo_bird_comment2=Comment(
+        userId=2,
+        projectId=6,
+        comment="""
+                    Well thought out project and instruct-able, thank you for posting.
+                    Did you try a video or two?
+                    I may try this setup using my trail cameras as I don't have a camera like yours.
+                """,
+    )
+
+    slowmo_bird_comment3=Comment(
+        userId=3,
+        projectId=6,
+        comment="""
+                    Fantastic work. I can not wait to try it out and see the results, thank you very much.
+                """,
+    )
+
     db.session.add(bird_house_comment1)
     db.session.add(bird_house_comment2)
     db.session.add(casino_clock_comment1)
@@ -76,6 +100,9 @@ def seed_comments():
     db.session.add(james_webb_comment1)
     db.session.add(james_webb_comment2)
     db.session.add(james_webb_comment3)
+    db.session.add(slowmo_bird_comment1)
+    db.session.add(slowmo_bird_comment2)
+    db.session.add(slowmo_bird_comment3)
 
 
     db.session.commit()
