@@ -103,6 +103,58 @@ def seed_supplies():
         supply="Tongs"
     )
 
+    james_webb1=Supply(
+        projectId=5,
+        supply="1220mmx610mmx10mm (HxWxD) MDF"
+    )    
+    
+    james_webb2=Supply(
+        projectId=5,
+        supply="Golden Hexagon Stickers"
+    )
+
+    james_webb3=Supply(
+        projectId=5,
+        supply="Matte Black Spraypaint"
+    )
+
+    james_webb4=Supply(
+        projectId=5,
+        supply="Clock Mechanism and Large Hands"
+    )
+
+    james_webb5=Supply(
+        projectId=5,
+        supply="Nail, Picture Hook or Hanging Strips"
+    )
+
+    james_webb6=Supply(
+        projectId=5,
+        supply="Matte Black Spraypaint"
+    )
+
+    james_webb7=Supply(
+        projectId=5,
+        supply="Ruler"
+    )
+
+    james_webb8=Supply(
+        projectId=5,
+        supply="Pencil"
+    )
+
+    james_webb9=Supply(
+        projectId=5,
+        supply="Jigsaw"
+    )
+
+    james_webb10=Supply(
+        projectId=5,
+        supply="Power Drill"
+    )
+
+    
+    
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -123,6 +175,17 @@ def seed_supplies():
     db.session.add(skillet_burger4)
     db.session.add(skillet_burger5)
     db.session.add(skillet_burger6)
+    db.session.add(james_webb1)
+    db.session.add(james_webb2)
+    db.session.add(james_webb3)
+    db.session.add(james_webb4)
+    db.session.add(james_webb5)
+    db.session.add(james_webb6)
+    db.session.add(james_webb7)
+    db.session.add(james_webb8)
+    db.session.add(james_webb9)
+    db.session.add(james_webb10)
+    # db.session.add()
     
     db.session.commit()
 

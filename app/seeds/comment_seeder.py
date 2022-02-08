@@ -49,12 +49,33 @@ def seed_comments():
         comment="looks delicious! thanks for sharing!"
     )
 
+    james_webb_comment1=Comment(
+        userId=2,
+        projectId=5,
+        comment="Amazing Job!"
+    )
+
+    james_webb_comment2=Comment(
+        userId=3,
+        projectId=5,
+        comment="Very nice. And ten billion dollars cheaper than the original. Thanks for sharing your work :-)"
+    )
+
+    james_webb_comment3=Comment(
+        userId=3,
+        projectId=5,
+        comment="Such a cute and clever project!"
+    )
+
     db.session.add(bird_house_comment1)
     db.session.add(bird_house_comment2)
     db.session.add(casino_clock_comment1)
     db.session.add(casino_clock_comment2)
     db.session.add(one_board_mug_comment1)
     db.session.add(one_board_mug_comment2)
+    db.session.add(james_webb_comment1)
+    db.session.add(james_webb_comment2)
+    db.session.add(james_webb_comment3)
 
 
     db.session.commit()

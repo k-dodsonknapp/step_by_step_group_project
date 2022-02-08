@@ -66,9 +66,22 @@ def seed_project():
         category="Cooking"
     )
 
+    james_webb_clock= Project(
+        userId=2, 
+        title="James Webb Space TeleClock", 
+        titleImage="https://content.instructables.com/ORIG/FY7/2PZZ/KYVK6ZDO/FY72PZZKYVK6ZDO.jpg?auto=webp&frame=1&width=597&height=1024&fit=bounds&md=77bcb2dcb44a2791d61936b6c3c87b86", 
+        overview="""
+                    Inspired by the launch of the James Webb Telescope on 24/12/2021, I was driven to make something to commemorate this incredible achievement, hence the James Webb Space Teleclock. The aim was to make a decorative item for the home that resembled the mirror portion of the telescope which in my opinion is not only an engineering marvel but a gorgeous one at that. Making it into a clock was just to make it functional as well :)
+
+                    If you are interested in the 25 years of engineering that went into building the James Webb Telescope I would recommend watching this episode of Real Engineering
+                """,
+        category="Living"
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
+    db.session.add(james_webb_clock)
     db.session.commit()
 
 def undo_project():

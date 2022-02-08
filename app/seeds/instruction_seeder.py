@@ -355,6 +355,78 @@ def seed_instructions():
         photoUrl="https://content.instructables.com/ORIG/FEA/B667/KYK4NWBY/FEAB667KYK4NWBY.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=c184318d11bd6c0378b95837fbd25fb4",
     )
 
+    james_webb1=Instruction(
+        projectId=5,
+        stepOrder=1,
+        stepTitle="Layout and Outline the Golden Hexagons",
+        instructions="""
+                        The first step is to lay the golden hexagon stickers out in the pattern shown in the image to resemble the telescope's mirror. Do not stick the hexagons to the wood, simply lay them on there.
+
+                        Using the pencil you then need to draw an outline around the stickers.
+
+                        Once this outline is done you then need to draw another outline 2cm larger than the one you just did. I did this by using the ruler to make a small mark 2cm out from each flat edge and then draw a straight line parallel to the previous outline
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/FOA/PHZ3/KYK4QAOS/FOAPHZ3KYK4QAOS.jpg?auto=webp&frame=1&width=719&fit=bounds&md=b8dde0a898fad98e8dae2b7df4785fec",
+    )
+
+    james_webb2=Instruction(
+        projectId=5,
+        stepOrder=2,
+        stepTitle="Cut, Sand and Paint the MDF",
+        instructions="""
+                        First, cut around the outer line you have drawn on the wood with the pencil using a Jigsaw (other tools may be better but a Jigsaw is what I had to hand). Then drill a hole in the center circle that was drawn for the clock and use the jigsaw to cut the circle out. When cutting the hole make sure you stay on the inside of the line so the clock fits snug into the hole without any glue. You should end up with the shape shown in the picture.
+
+                        Once the MDF has been cut, take the sandpaper (i used P120 but that may not be the optimal grit size) and sand all the edges of the MDF and the middle. As you are sanding the middle circle, make sure the clock fits tightly in the hole as you go, that way you will get a good fit won't need any glue when fitting the clock.
+
+                        Once all the edges have been sanded, brush off any unwanted sawdust and place it in the paint area.
+
+                        The paint area doesn't need to be indoors however protection from weather may be necessary as the paint takes an hour or so to dry properly. I painted mine on bin bags placed on the lawn as it was a sunny winter's day when I painted it.
+
+                        Make sure you keep the spray can at least 25cm away from the MDF when spraying to prevent drips from forming.
+
+                        Also, remember to spray the edges of the MDF as these will be visible when it is hanging on the wall. There is no need to do the backside of the MDF unless you want to.
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/FZ3/67BZ/KYVK6ZK4/FZ367BZKYVK6ZK4.jpg?auto=webp&frame=1&width=746&height=1024&fit=bounds&md=f328dbec2577deea8d055990585adfdc",
+    )
+
+    james_webb3=Instruction(
+        projectId=5,
+        stepOrder=3,
+        stepTitle="Stick the Hexagons on the MDF and Fit the Clock",
+        instructions="""
+                        Sticking the Hexagons Down
+                        Sticking the hexagon panels on the MDF is as simple as peeling the sticky side cover off and applying to the painted side of the MDF.
+
+                        To get the alignment right (as all the hexagons will be slightly different in size) i suggest arranging the hexagons where they are going to be stuck down before sticking them, that way you can make sure they align correctly before committing. This can be cumbersome as the panels slide easily on the wood but it is worth spending the time on.
+
+                        Once they are all aligned, work your way from bottom to top or top to bottom sticking one panel down at a time.
+
+                        The panels can be removed once stuck down and won't peel the paint off (at least in my experience) but you will need a knife to get them off.
+
+                        Once all panels have been stuck down, peel the protective film off the shiny side to reveal the golden majesty :)
+
+                        Fitting the Clock
+                        If you have cut and sanded the hole to a snug size you should just be able to push the clock enclosure into the hole without any glue. If the hole is too big then you may need some sort of glue to hold it in place.
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/FNC/JKOF/KYVK71DG/FNCJKOFKYVK71DG.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=83de509cec2e66f4e86e07ae4a6fd110",
+    )
+
+    james_webb4=Instruction(
+        projectId=5,
+        stepOrder=4,
+        stepTitle="Mounting",
+        instructions="""
+                        If you bought the suggested clock, the clock mechanism itself has a hook for hanging the clock. Providing that you made the clock fit tightly into the hole, you can use the hook with a nail or a standard picture hook.
+
+                        The other option is to use hanging strips. It is important to use the velcro(esk) ones to make the clock sit slightly off the wall as the MDF might bend slightly and therefore fail to stick (see suggested hanging methods in the Supplies section.
+
+                        THAT'S IT!!
+
+                        Hope you enjoy your new James Webb Space TeleClock
+                    """,
+        photoUrl="https://content.instructables.com/ORIG/F2D/W1UN/KYVK737V/F2DW1UNKYVK737V.jpg?auto=webp&frame=1&width=924&height=1024&fit=bounds&md=cf297c9c91d3ecf32bee622b0f5bff2f",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -382,6 +454,10 @@ def seed_instructions():
     db.session.add(skillet_burger3)
     db.session.add(skillet_burger4)
     db.session.add(skillet_burger5)
+    db.session.add(james_webb1)
+    db.session.add(james_webb2)
+    db.session.add(james_webb3)
+    db.session.add(james_webb4)
     
 
     db.session.commit()
