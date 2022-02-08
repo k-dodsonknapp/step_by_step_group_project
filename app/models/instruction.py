@@ -6,6 +6,7 @@ class Instruction(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     projectId = db.Column(db.Integer, db.ForeignKey('projects.id'), nullable=False)
     stepOrder = db.Column(db.Integer, nullable=False)
+    stepTitle = db.Column(db.String(100))
     instructions = db.Column(db.Text, nullable=False)
     photoUrl = db.Column(db.Text)
     videoUrl = db.Column(db.Text)
