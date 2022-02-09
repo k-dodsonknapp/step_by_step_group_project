@@ -1,0 +1,17 @@
+footer {
+    background-color: #555555;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+}
+
+
+.categories-list {
+    color: #ffffff;
+}
+
+.categories-list > li {
+    list-style-type: none;
+    color: #bbbbbb;
+}
