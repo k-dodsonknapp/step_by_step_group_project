@@ -97,6 +97,18 @@ export const deleteOneProject = (projectId) => async (dispatch) => {
   }
 };
 
+export const searchResults = (search) => async (dispatch) => {
+  const response = await fetch(`/api/search/${search}`);
+  console.log(response.json)
+  if (response.ok) {
+    const data = await response.json();
+    if (data.errors) {
+      return;
+    }
+    return data;
+  }
+};
+
 const initialState = {};
 
 export default function projectReducer (state = initialState, action) {
