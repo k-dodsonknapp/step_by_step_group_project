@@ -36,7 +36,7 @@ def update_project(id):
     data = request.json
     instructions = data['instructions']
     supplies = data['supplies']
-    
+
     project = Project.query.get(id)
     project.title = data['title']
     project.titleImage = data['titleImage']
@@ -105,7 +105,7 @@ def create_project():
                           stepTitle=instruction['stepTitle'],
                           instructions=instruction['instructions'],
                           photoUrl=instruction['photoUrl'],
-                          videoUrl=instruction['photoUrl'])
+                          videoUrl=instruction['videoUrl'])
         db.session.add(row)
         db.session.commit()
 

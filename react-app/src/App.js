@@ -12,6 +12,7 @@ import ProjectExplore from './components/ProjectExplore';
 import ProjectDetails from './components/ProjectDetails'
 import CreateProject from './components/CreateProject'
 import SearchResults from './components/SearchResults';
+import Footer from './components/Footer';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -64,6 +65,7 @@ function App() {
         </ProtectedRoute>
 
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
