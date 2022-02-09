@@ -30,7 +30,15 @@ const CreateProject = () => {
     // }, [title, overview, category])
 
     const handleProjectSubmit = async (e) => {
-        addAnotherStep(e)
+        e.preventDefault()
+        const newInstruction = { stepOrder,
+            stepTitle,
+            'instructions': stepInstructions,
+            photoUrl,
+            videoUrl }
+        setInstructions([...instructions, newInstruction])
+        console.log(stepOrder, stepTitle, stepInstructions)
+        console.log('isntructions:', instructions)
         const project = { userId, title, titleImage, overview, category, supplies, instructions }
         console.log(project)
     }
@@ -47,7 +55,7 @@ const CreateProject = () => {
         setSupplies([...supplies, newSupply])
         setSupply('')
         setAmount(0)
-        console.log(supplies)
+        // console.log(supplies)
     }
 
     const moveOnToInstructions = (e) => {
