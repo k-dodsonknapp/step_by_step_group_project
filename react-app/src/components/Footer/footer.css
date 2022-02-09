@@ -6,12 +6,52 @@ footer {
     height: 200px;
 }
 
-
-.categories-list {
-    color: #ffffff;
+#footer-top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    margin: 20px 50px 0px 50px;
+    height: 130px;
 }
 
-.categories-list > li {
+#categories-list {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 100px;
+}
+
+#footer-left {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 80px;
+    text-align: left;
+    padding: 10px 0px;
+}
+
+#find-us {
+    color: #ffffff;
+    font-size: 22px;
+    text-align: center;
+}
+
+#footer-right {
+    display: flex;
+    padding-top: 10px;
+}
+
+li {
     list-style-type: none;
     color: #bbbbbb;
+    font-size: 17px;
+    text-align: left;
+    margin: 0px 20px;
+    padding: 2px;
+}
+
+#footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
