@@ -8,7 +8,8 @@ const ProjectDetails = () => {
     const dispatch = useDispatch()
     const { projectId } = useParams();
     const project = useSelector(state => state.projects[projectId])
-    console.log('project:', project)
+    console.log(project)
+
     useEffect(() => {
         dispatch(getOneProject(projectId))
     }, [])
@@ -18,12 +19,11 @@ const ProjectDetails = () => {
             {project &&
                 <>
                     <h1>Hello from Project by id page</h1>
-                    <div>{project.title}</div>
+                    <div class='title'>{project.title}</div>
                     <div>{project.owner.username}</div>
                     <ul>
                         {project.instructions.map((instruction) => (
-                            // console.log('------',instruction.instructions)
-                            <li>{instruction.instructions}</li>
+                            <li key={instruction.id}>{instruction.instructions}</li>
                         ))}
                     </ul>
                 </>
