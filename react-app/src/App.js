@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { authenticate } from './store/session';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar';
+import Navigation from './components/Navigation';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
@@ -31,7 +31,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      <Navigation />
       <Switch>
         <Route path='/login' exact={true}>
           <LoginForm />

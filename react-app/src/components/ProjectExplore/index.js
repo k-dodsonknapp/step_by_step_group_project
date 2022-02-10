@@ -23,14 +23,10 @@ const ProjectExplore = () => {
         usersData();
     }, [])
 
-
-
-
     useEffect(() => {
         dispatch(getAllProjects())
     }, [dispatch])
 
-    // console.log(users)
     const username = (id) => {
         const name = users.map(user => {
             if (id === user.id) {
@@ -44,17 +40,31 @@ const ProjectExplore = () => {
     return (
         // {}
         <div className="explorePage">
-            <h1>Hello Project Explore page</h1>
+            <div>
+                <h1>Hello Project Explore page</h1>
+            </div>
             <ul>
                 {projects?.map(project => (
                     <div className="allProjectsMap" key={project.id}>
                         <li className="eachProject">
-                            <p>{project?.title}</p>
-                            <div>
-                                <p>by <NavLink to={`/users`}>{username(project.userId)}</NavLink> in {project?.category}</p>
-                            </div>
-                            <div>
+                            <div className="projectImage">
                                 <img src={`${project.titleImage}`} />
+                            </div>
+                            <div className="info-container">
+                                <div className="title-by">
+                                    <div>
+
+                                    <p>{project?.title} by <NavLink to={`/users/${username(project.userId)}`}>
+                                        {username(project.userId)}
+                                        </NavLink>  in <NavLink to={`/category/${project.category}`}>
+                                            {project?.category}
+                                        </NavLink>
+                                    </p>
+                                    </div>
+                                    <div className="likes-views">
+                                        <p>❤ 5  👁 105</p> 
+                                    </div>
+                                </div>
                             </div>
                         </li>
                     </div>
