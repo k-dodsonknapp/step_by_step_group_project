@@ -75,7 +75,13 @@ const ProjectDetails = () => {
                             <button id='leave-comment-btn' onClick={(e) => setShowCommentForm(true)}>Leave a comment</button>
                         }
                         {project.comments.map((comment) => (
-                            <li className='comments' key={comment.id}>{comment.comment}</li>
+                            <>
+                                <li className='comments' key={comment.id}>{comment.comment}</li>
+                                <div>
+                                    <button>Edit</button>
+                                    <button>Delete</button>
+                                </div>
+                            </>
                         ))}
                     </ul>
                 </div>
