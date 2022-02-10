@@ -21,19 +21,61 @@
     width: 100%;
 }
 
-#overview-container {
+#project-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 #overview-title {
     font-size: 25px;
     font-weight: 700;
+    margin-top: 20px;
 }
 
 #project-overview {
     width: 700px;
     font-size: 18px;
     font-weight: 500;
+    line-height: 25px;
+}
+
+#supplies-title {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 0px;
+    margin-top: 20px;
+}
+
+.supply-list {
+    width: 700px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.instruction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.instruction-image {
+    margin: 20px;
+}
+
+.instruction-title {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 0px;
+    margin-top: 20px;
+}
+
+.instructions {
+    list-style: none;
+    width: 700px;
     line-height: 25px;
 }
