@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import "./nav.css"
 import { useSelector } from 'react-redux';
@@ -9,6 +9,7 @@ import SearchResults from '../SearchResults';
 const Navigation = () => {
   // const session = useSelector(state => session.user)
   const [showMenu, setShowMenu] = useState(false)
+  const [seeCategory, setSeeCategory] = useState(false)
 
   const openMenu = () => {
     if (showMenu) return;
@@ -26,6 +27,11 @@ const Navigation = () => {
 
     return () => document.removeEventListener("click", closeMenu)
   }, [showMenu])
+
+  // const whichCategory(() => {
+  //   const { category } = useParams();
+
+  // })
 
   return (
     <div className='navbar'>
@@ -80,23 +86,28 @@ const Navigation = () => {
                 <img src='https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg' style={{}}></img>
               </button>
             </div>
+          </div>
+          <div className="lower-nav">
+            <div className='left-lower'>
+              <div className='step-by-step-logo'>
+                <NavLink to='/'>
+                  <img src="https://www.instructables.com/assets/img/instructables-logo-v2.png" />
+                  <p>step by step</p>
+                </NavLink>
+              </div>
+              <div>
+                <button>Projects</button>
+                <button>Contests</button>
+              </div>
             </div>
-            <div className="lower-nav">
-                <div>
-                    <NavLink to='/'>
-                        <img src="https://logodix.com/logo/1584736.png" />
-                    </NavLink>
-                </div>
-                <div>
-                    <button>Projects</button>
-                    <button>Contests</button>
-                </div>
-                <div>
-                  <NavLink to="/Publish">Publish</NavLink>
-                </div>
-                {/* <div>
-                  <SearchResults/>
-                </div> */}
+            <div className='right-lower'>
+              <div>
+                <NavLink to="/Publish">PUBLISH</NavLink>
+              </div>
+              <div className='search-field'>
+                <SearchResults />
+              </div>
+            </div>
           </div>
         </ul>
       </nav>

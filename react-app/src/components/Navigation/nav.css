@@ -132,11 +132,13 @@ li > a {
 
 .lower-nav {
     display: flex;
+    justify-content: space-between;
     margin: 0px;
     margin-top: 100px;
     padding-top: 35px;
     padding-left: 20px;
     z-index: 500;
+    background-color: #eee;
 }
 
 .lower-nav img{
@@ -147,3 +149,34 @@ li > a {
 
     /* height: 33px
 } */
+
+.step-by-step-logo p {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: bolder;
+}
+
+.left-lower,
+.right-lower {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-lower {
+    /* padding: 10px; */
+    margin: 0 30px;
+
+}
+
+.right-lower a {
+    margin: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #555;
+}
+
+.right-lower a:hover {
+    text-decoration: underline;
+}
+
