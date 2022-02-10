@@ -38,10 +38,8 @@ const CreateProject = () => {
                                 videoUrl }
         const project = { userId, title, titleImage, overview, category, supplies,
                         'instructions': [...instructions, newInstruction] }
-        console.log('project:', project)
         const data = await dispatch(addOneProject(project))
         const projectId = data.projectId
-        console.log('projectId:', projectId)
         history.push(`/projects/${projectId}`)
     }
 

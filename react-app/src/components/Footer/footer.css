@@ -41,7 +41,7 @@ footer {
     padding-top: 10px;
 }
 
-li {
+#footer-left > li, #footer-right li, #footer-bottom li {
     list-style-type: none;
     color: #bbbbbb;
     font-size: 17px;
