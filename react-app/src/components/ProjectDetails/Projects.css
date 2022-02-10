@@ -96,5 +96,8 @@
     line-height: 25px;
     border-top: 1px solid gray;
     padding: 10px 0px;
-    /* border-bottom: 1px solid gray; */
+}
+
+#leave-comment-btn {
+    margin-left: 400px;
 }

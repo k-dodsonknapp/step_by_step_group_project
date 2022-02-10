@@ -16,7 +16,7 @@ def create_comment():
     db.session.add(comment)
     db.session.commit()
 
-    return {'message': 'success'}
+    return {'comment': comment.to_dict()}
 
 
 @comment_routes.route('/<int:id>', methods=['DELETE'])
