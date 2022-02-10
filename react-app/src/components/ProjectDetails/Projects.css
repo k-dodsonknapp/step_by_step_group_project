@@ -1,0 +1,39 @@
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 50px 0px 20px 0px;
+    text-align: center;
+}
+
+.username-category {
+    font-weight: 700;
+    padding: 0px 5px;
+}
+
+#project-details {
+    text-align: center;
+    margin: 20px;
+}
+
+.project-image-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#overview-container {
+    display: flex;
+    justify-content: center;
+}
+
+#overview-title {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#project-overview {
+    width: 700px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+}
