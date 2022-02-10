@@ -7,11 +7,11 @@ import './Projects.css'
 
 const ProjectDetails = () => {
     const dispatch = useDispatch()
-    // const history = useHistory()
     const { projectId } = useParams();
     const project = useSelector(state => state.projects[projectId])
     const user = useSelector(state => state.session.user)
     const commentState = useSelector(state => state.comments)
+    console.log(user.id)
 
     const [showCommentForm, setShowCommentForm] = useState(false)
     const [comment, setComment] = useState('')
@@ -77,10 +77,12 @@ const ProjectDetails = () => {
                         {project.comments.map((comment) => (
                             <>
                                 <li className='comments' key={comment.id}>{comment.comment}</li>
-                                <div>
-                                    <button>Edit</button>
-                                    <button>Delete</button>
-                                </div>
+                                {user.id == comment.userId &&
+                                    <div className="comment-btn-container">
+                                        <button>Edit</button>
+                                        <button>Delete</button>
+                                    </div>
+                                }
                             </>
                         ))}
                     </ul>
