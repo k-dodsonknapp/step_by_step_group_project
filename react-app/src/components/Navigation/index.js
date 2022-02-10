@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import "./nav.css"
 import { useSelector } from 'react-redux';
+import SearchResults from '../SearchResults';
 
 const Navigation = () => {
   // const session = useSelector(state => session.user)
@@ -79,6 +80,23 @@ const Navigation = () => {
                 <img src='https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg' style={{}}></img>
               </button>
             </div>
+            </div>
+            <div className="lower-nav">
+                <div>
+                    <NavLink to='/'>
+                        <img src="https://logodix.com/logo/1584736.png" />
+                    </NavLink>
+                </div>
+                <div>
+                    <button>Projects</button>
+                    <button>Contests</button>
+                </div>
+                <div>
+                  <NavLink to="/Publish">Publish</NavLink>
+                </div>
+                {/* <div>
+                  <SearchResults/>
+                </div> */}
           </div>
         </ul>
       </nav>
@@ -109,32 +127,6 @@ const Navigation = () => {
           </div>
         </ul>
       )}
-      {/* <div className='nav-links'>
-              <li>
-                <NavLink to='/login' exact={true} id="something" activeClassName='another' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
-                  Login
-                  </NavLink>
-                  </li>
-                </div> */}
-      {/* <div className='nav-links'>
-        <li>
-          <NavLink to='/sign-up' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
-            Sign Up
-          </NavLink>
-        </li>
-      </div>
-      <div className='nav-links'>
-        <li>
-          <NavLink to='/users' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
-            Users
-          </NavLink>
-        </li>
-      </div> */}
-      {/* <div className='nav-links'>
-        <li>
-          <LogoutButton />
-        </li>
-      </div> */}
     </div>
   );
 }
