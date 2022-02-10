@@ -55,6 +55,13 @@ const ProjectDetails = () => {
                             </div>
                         ))}
                     </ul>
+                    <ul id='comments-title'>Comments:
+                        {project.comments.map((comment) => (
+                            <>
+                                <li className='comments' key={comment.id}>{comment.comment}</li>
+                            </>
+                        ))}
+                    </ul>
                 </div>
             }
         </>

@@ -79,3 +79,22 @@
     width: 700px;
     line-height: 25px;
 }
+
+#comments-title {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 0px;
+    margin: 20px;
+    line-height: 40px;
+}
+
+.comments {
+    list-style: none;
+    width: 700px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    border-top: 1px solid gray;
+    padding: 10px 0px;
+    /* border-bottom: 1px solid gray; */
+}
