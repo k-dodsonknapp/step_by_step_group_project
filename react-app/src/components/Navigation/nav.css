@@ -122,5 +122,26 @@ li > a {
     height: fit-content;
     border-radius: 50%;
     width: 33px;
-    height: 33px
+    height: 33px;
+    text-align: center;
 }
+
+.profile-following-div a {
+    text-align: center;
+}
+
+.lower-nav {
+    display: flex;
+    margin: 0px;
+    margin-top: 100px;
+    padding-top: 35px;
+    padding-left: 20px;
+    z-index: 500;
+}
+
+.lower-nav img{
+    height: 75px;
+    margin: 0;
+}
+
+
