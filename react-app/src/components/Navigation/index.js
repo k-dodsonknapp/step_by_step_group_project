@@ -72,9 +72,12 @@ const Navigation = () => {
                   Teachers
                 </NavLink>
               </li>
-              <div className=''>
-                <button id='profile-quickmenu' onClick={openMenu}>profile</button>
-              </div>
+            </div>
+            <div className='profile-following-div'>
+              <NavLink to="/Following">Following</NavLink>
+              <button id='profile-quickmenu' onClick={openMenu}>
+                <img src='https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg' style={{}}></img>
+              </button>
             </div>
           </div>
         </ul>
