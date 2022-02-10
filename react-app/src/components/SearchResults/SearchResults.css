@@ -1,0 +1,14 @@
+.searchbar {
+    /* display: flex; */
+    /* flex-direction: flex-end; */
+    /* position: relative; */
+    /* border: 5px solid green; */
+    /* margin: 50px; */
+}
+
+.search {
+    /* display: flex; */
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
