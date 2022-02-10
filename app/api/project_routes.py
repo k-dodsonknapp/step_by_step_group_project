@@ -116,7 +116,7 @@ def create_project():
         db.session.add(row)
         db.session.commit()
 
-    return {'message': 'success'}
+    return { 'projectId': projectId }
 
 
 @project_routes.route('/<category>')

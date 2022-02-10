@@ -8,9 +8,9 @@ const ProjectDetails = () => {
     const dispatch = useDispatch()
     const { projectId } = useParams();
 
-    useEffect(() => {
-        dispatch(getOneProject(projectId))
-    }, [dispatch, projectId])
+    // useEffect(() => {
+    //     dispatch(getOneProject(projectId))
+    // }, [dispatch, projectId])
 
     return (
         <h1>Hello from Project by id page</h1>

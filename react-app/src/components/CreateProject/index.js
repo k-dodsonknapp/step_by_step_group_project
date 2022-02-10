@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addOneProject } from "../../store/project";
+import { Redirect, useHistory  } from "react-router-dom";
 
 const CreateProject = () => {
     const userId = useSelector(state => state.session.user['id'])
+    const dispatch = useDispatch()
+    const history = useHistory()
+
     const [title, setTitle] = useState('')
     const [titleImage, setTitleImage] = useState('')
     const [overview, setOverview] = useState('')
@@ -23,24 +28,21 @@ const CreateProject = () => {
     const [showSupplyForm, setShowSupplyForm] = useState(false)
     const [showInstructionForm, setShowInstructionForm] = useState(false)
 
-    // useEffect(() => {
-    //     console.log(category)
-    //     console.log(title)
-    //     console.log(overview)
-    // }, [title, overview, category])
-
     const handleProjectSubmit = async (e) => {
         e.preventDefault()
+        addAnotherStep(e)
         const newInstruction = { stepOrder,
-            stepTitle,
-            'instructions': stepInstructions,
-            photoUrl,
-            videoUrl }
-        setInstructions([...instructions, newInstruction])
-        console.log(stepOrder, stepTitle, stepInstructions)
-        console.log('isntructions:', instructions)
-        const project = { userId, title, titleImage, overview, category, supplies, instructions }
-        console.log(project)
+                                stepTitle,
+                                'instructions': stepInstructions,
+                                photoUrl,
+                                videoUrl }
+        const project = { userId, title, titleImage, overview, category, supplies,
+                        'instructions': [...instructions, newInstruction] }
+        console.log('project:', project)
+        const data = await dispatch(addOneProject(project))
+        const projectId = data.projectId
+        console.log('projectId:', projectId)
+        history.push(`/projects/${projectId}`)
     }
 
     const moveOntoSupplies = (e) => {
@@ -55,7 +57,6 @@ const CreateProject = () => {
         setSupplies([...supplies, newSupply])
         setSupply('')
         setAmount(0)
-        // console.log(supplies)
     }
 
     const moveOnToInstructions = (e) => {
