@@ -37,7 +37,7 @@ export const getAllComments = (projectId) => async (dispatch) => {
 };
 
 export const addOneComment = (comment) => async (dispatch) => {
-  const response = await fetch(`/api/projects/${comment.projectId}/comments`, {
+  const response = await fetch(`/api/comments/new`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -46,8 +46,9 @@ export const addOneComment = (comment) => async (dispatch) => {
   });
   if (response.ok) {
     const data = await response.json();
-    dispatch(addComment(data));
-    return data;
+    console.log('data:', data)
+    dispatch(addComment(data.comment));
+    return data.comment;
   }
 };
 
@@ -86,16 +87,19 @@ export default function commentReducer(state = initialState, action) {
         (comment) => (newState[comment.id] = comment)
       );
       return newState;
+
     case ADD_COMMENT:
       newState = {
         ...state,
-        [action.payload.id]: action.payload,
       };
+      newState[action.payload.id] = action.payload
       return newState;
+
     case UPDATE_COMMENT:
       state[action.payload.comment.id] = action.payload.comment;
       newState = { ...state };
       return newState;
+
     case DELETE_COMMENT:
       newState = { ...state };
       delete newState[action.payload];

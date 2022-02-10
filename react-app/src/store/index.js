@@ -3,10 +3,12 @@ import thunk from 'redux-thunk';
 import session from './session'
 import projectReducer from './project';
 import reducer from './session';
+import commentReducer from './comments';
 
 const rootReducer = combineReducers({
   session: reducer,
-  projects: projectReducer 
+  projects: projectReducer,
+  comments: commentReducer
 });
 
 

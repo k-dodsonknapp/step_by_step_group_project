@@ -1,27 +1,40 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
 import { getOneProject } from "../../store/project";
+import { addOneComment } from "../../store/comments";
 import './Projects.css'
 
 const ProjectDetails = () => {
     const dispatch = useDispatch()
+    const history = useHistory()
     const { projectId } = useParams();
     const project = useSelector(state => state.projects[projectId])
-    const user = useSelector(state => state.session)
-    console.log(project)
-    console.log(user)
+    const user = useSelector(state => state.session.user)
+    const commentState = useSelector(state => state.comments)
+
+    const [showCommentForm, setShowCommentForm] = useState(false)
+    const [comment, setComment] = useState('')
 
     useEffect(() => {
         dispatch(getOneProject(projectId))
     }, [dispatch, projectId])
 
+    const handleComment = (e) => {
+        e.preventDefault()
+
+        const newComment = { 'userId': user.id, projectId, comment }
+        dispatch(addOneComment(newComment))
+    }
+
+    useEffect(() => {
+        console.log(commentState)
+    }, [commentState])
+
     return (
         <>
             {project &&
                 <div id='project-container'>
-                    {/* <h1>Hello from Project by id page</h1> */}
                     <div className='title'>{project.title}</div>
                     <div id='project-details'>By
                         <span className='username-category'>{project.owner.username}</span>
@@ -59,15 +72,24 @@ const ProjectDetails = () => {
                     </ul>
                     <ul id='comments-title'>Comments:
                         {user &&
-                            <button id='leave-comment-btn'>Leave a comment</button>
+                            <button id='leave-comment-btn' onClick={(e) => setShowCommentForm(true)}>Leave a comment</button>
                         }
                         {project.comments.map((comment) => (
-                            <>
-                                <li className='comments' key={comment.id}>{comment.comment}</li>
-                            </>
+                            <li className='comments' key={comment.id}>{comment.comment}</li>
                         ))}
                     </ul>
                 </div>
+            }
+            {showCommentForm &&
+                <form onSubmit={handleComment}>
+                    <label>Leave a comment here:</label>
+                    <textarea
+                        type='text'
+                        onChange={(e) => setComment(e.target.value)}
+                        value={comment}
+                    ></textarea>
+                    <button type='submit'>Submit Comment</button>
+                </form>
             }
 
         </>
