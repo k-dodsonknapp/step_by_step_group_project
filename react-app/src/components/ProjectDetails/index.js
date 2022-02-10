@@ -9,7 +9,9 @@ const ProjectDetails = () => {
     const dispatch = useDispatch()
     const { projectId } = useParams();
     const project = useSelector(state => state.projects[projectId])
+    const user = useSelector(state => state.session)
     console.log(project)
+    console.log(user)
 
     useEffect(() => {
         dispatch(getOneProject(projectId))
@@ -42,7 +44,7 @@ const ProjectDetails = () => {
                     <ul>
                         {project.instructions.map((instruction) => (
                             <div className="instruction-container">
-                                <step className='instruction-title'>Step {instruction.stepOrder}:</step>
+                                <div className='instruction-title'>Step {instruction.stepOrder}:</div>
                                 <div className='project-image-container'>
                                     <img
                                         className="instruction-image"
@@ -56,6 +58,9 @@ const ProjectDetails = () => {
                         ))}
                     </ul>
                     <ul id='comments-title'>Comments:
+                        {user &&
+                            <button id='leave-comment-btn'>Leave a comment</button>
+                        }
                         {project.comments.map((comment) => (
                             <>
                                 <li className='comments' key={comment.id}>{comment.comment}</li>
@@ -64,6 +69,7 @@ const ProjectDetails = () => {
                     </ul>
                 </div>
             }
+
         </>
     )
 }
