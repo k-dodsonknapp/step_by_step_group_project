@@ -33,86 +33,109 @@ const Navigation = () => {
           <div className='nav-container'>
             <div className='category-links'>
               {/* <li id="home-icon"> */}
-                <NavLink to='/' exact={true} id="home-icon" activeClassName='active' style={{textDecoration:'none', color: "#CCCCCC"}}>
-                  🏠
-                </NavLink>
+              <NavLink to='/' exact={true} id="home-icon" activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+                🏠
+              </NavLink>
               {/* </li> */}
               <li>
-                <NavLink to='/Circuits' exact={true} activeClassName='active' style={{textDecoration:'none', color: "#CCCCCC"}}>
+                <NavLink to='/Circuits' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Circuits
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/Workshop' exact={true} activeClassName='something' style={{textDecoration:'none', color: "#CCCCCC"}}>
+                <NavLink to='/Workshop' exact={true} activeClassName='something' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Workshop
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/Craft' exact={true} activeClassName='active' style={{textDecoration:'none', color: "#CCCCCC"}}>
+                <NavLink to='/Craft' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Craft
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/Cooking' exact={true} activeClassName='active' style={{textDecoration:'none', color: "#CCCCCC"}}>
+                <NavLink to='/Cooking' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Cooking
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/Living' exact={true} activeClassName='active' style={{textDecoration:'none', color: "#CCCCCC"}}>
+                <NavLink to='/Living' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Living
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/Outside' exact={true} activeClassName='active' style={{textDecoration:'none', color: "#CCCCCC"}}>
+                <NavLink to='/Outside' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Outside
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/Teachers' exact={true} activeClassName='active' style={{textDecoration:'none', color: "#CCCCCC"}}>
+                <NavLink to='/Teachers' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Teachers
                 </NavLink>
               </li>
-              <button id='profile-quickmenu' onClick={openMenu}>profile</button>
             </div>
-            {showMenu && (
-              <ul className='profile-options'>
-                <div className='dropdown-div'>
-                  <li>Hello</li>
-                  <li>Another hello</li>
-                </div>
-              </ul>
-            )}
-
-            <div className='nav-links'>
-              <li>
-                <NavLink to='/login' exact={true} id="something" activeClassName='another' style={{textDecoration:'none', color: "#CCCCCC"}}>
-                  Login
-                </NavLink>
-              </li>
+            <div className='profile-following-div'>
+              <NavLink to="/Following">Following</NavLink>
+              <button id='profile-quickmenu' onClick={openMenu}>
+                <img src='https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg' style={{}}></img>
+              </button>
             </div>
-            <div className='nav-links'>
-              <li>
-                <NavLink to='/sign-up' exact={true} activeClassName='active' style={{textDecoration:'none', color: "#CCCCCC"}}>
-                  Sign Up
-                </NavLink>
-              </li>
-            </div>
-            <div className='nav-links'>
-              <li>
-                <NavLink to='/users' exact={true} activeClassName='active' style={{textDecoration:'none', color: "#CCCCCC"}}>
-                  Users
-                </NavLink>
-              </li>
-            </div>
+          </div>
+        </ul>
+      </nav>
+      {showMenu && (
+        <ul className='profile-options'>
+          <div className='dropdown-div'>
+            <li>
+              <NavLink to='/login' exact={true} id="something" activeClassName='another' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+                Login
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/sign-up' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+                Sign Up
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/users' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+                Users
+              </NavLink>
+            </li>
             <div className='nav-links'>
               <li>
                 <LogoutButton />
               </li>
             </div>
+            <li>Another hello</li>
           </div>
         </ul>
-      </nav>
-   </div>
+      )}
+      {/* <div className='nav-links'>
+              <li>
+                <NavLink to='/login' exact={true} id="something" activeClassName='another' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+                  Login
+                  </NavLink>
+                  </li>
+                </div> */}
+      {/* <div className='nav-links'>
+        <li>
+          <NavLink to='/sign-up' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+            Sign Up
+          </NavLink>
+        </li>
+      </div>
+      <div className='nav-links'>
+        <li>
+          <NavLink to='/users' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+            Users
+          </NavLink>
+        </li>
+      </div> */}
+      {/* <div className='nav-links'>
+        <li>
+          <LogoutButton />
+        </li>
+      </div> */}
+    </div>
   );
 }
 
