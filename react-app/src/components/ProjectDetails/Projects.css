@@ -1,0 +1,100 @@
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 50px 0px 20px 0px;
+    text-align: center;
+}
+
+.username-category {
+    font-weight: 700;
+    padding: 0px 5px;
+}
+
+#project-details {
+    text-align: center;
+    margin: 20px;
+}
+
+.project-image-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#overview-title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+#project-overview {
+    width: 700px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+#supplies-title {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 0px;
+    margin-top: 20px;
+}
+
+.supply-list {
+    width: 700px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.instruction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.instruction-image {
+    margin: 20px;
+}
+
+.instruction-title {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 0px;
+    margin-top: 20px;
+}
+
+.instructions {
+    list-style: none;
+    width: 700px;
+    line-height: 25px;
+}
+
+#comments-title {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 0px;
+    margin: 20px;
+    line-height: 40px;
+}
+
+.comments {
+    list-style: none;
+    width: 700px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    border-top: 1px solid gray;
+    padding: 10px 0px;
+    /* border-bottom: 1px solid gray; */
+}

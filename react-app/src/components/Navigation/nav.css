@@ -5,7 +5,7 @@
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     height: 40px;
     /* justify-content: space-around; */
-} 
+}
 
 body {
     margin: 0;
@@ -111,7 +111,7 @@ li > a {
 
 #profile-quickmenu {
     border-radius: 50%;
-    padding: 0;   
+    padding: 0;
     width: 33px;
     height: 33px;
     margin-right: 30px;

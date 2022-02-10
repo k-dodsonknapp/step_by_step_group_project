@@ -24,6 +24,8 @@ def project(id):
     return {'project': {
         'projectId': id,
         'title': project['title'],
+        'titleImage': project['titleImage'],
+        'category': project['category'],
         'owner': owner.to_dict(),
         'overview': project['overview'],
         'supplies': [supply.to_dict() for supply in supplies],
