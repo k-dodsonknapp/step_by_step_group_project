@@ -1,4 +1,5 @@
 const GET_PROJECTS = "/projects/";
+const GET_PROJECT = "/projects/:projectId"
 const ADD_PROJECTS = "/projects/new";
 const UPDATE_PROJECTS = "/projects/update";
 const DELETE_PROJECTS = "/projects/delete";
@@ -11,7 +12,7 @@ const getProjects = (projects) => ({
 });
 
 const getProject = (project) => ({
-  type: GET_PROJECTS,
+  type: GET_PROJECT,
   payload: project,
 });
 
@@ -44,11 +45,9 @@ export const getAllProjects = () => async (dispatch) => {
 };
 
 export const getOneProject = (projectId) => async (dispatch) => {
-  console.log('projectId:', projectId)
   const response = await fetch(`/api/projects/${projectId}`);
   if (response.ok) {
     const data = await response.json();
-    console.log(data)
     if (data.errors) {
       return;
     }
@@ -106,6 +105,10 @@ export default function projectReducer (state = initialState, action) {
       newState = { ...state };
       action.payload.projects.map((project) => newState[project.id] = project);
       return newState;
+
+    case GET_PROJECT:
+      newState = { ...state, [action.payload.project.projectId]: action.payload.project}
+      return newState
 
     case ADD_PROJECTS:
       newState = {

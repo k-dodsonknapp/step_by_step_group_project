@@ -22,6 +22,7 @@ def project(id):
     comments = Comment.query.filter(Comment.projectId == id).all()
 
     return {'project': {
+        'projectId': id,
         'title': project['title'],
         'owner': owner.to_dict(),
         'overview': project['overview'],
