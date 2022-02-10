@@ -7,7 +7,7 @@ import './Projects.css'
 
 const ProjectDetails = () => {
     const dispatch = useDispatch()
-    const history = useHistory()
+    // const history = useHistory()
     const { projectId } = useParams();
     const project = useSelector(state => state.projects[projectId])
     const user = useSelector(state => state.session.user)
@@ -91,7 +91,6 @@ const ProjectDetails = () => {
                     <button type='submit'>Submit Comment</button>
                 </form>
             }
-
         </>
     )
 }
