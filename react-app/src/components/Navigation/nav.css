@@ -5,11 +5,18 @@
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     height: 40px;
     /* justify-content: space-around; */
-}
+} 
 
 body {
     margin: 0;
     padding: 0;
+}
+
+.navbar > nav {
+    /* position: absolute; */
+    background-color: #555;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    height: 40px;
 }
 
 .navbar ul{
@@ -29,13 +36,14 @@ body {
 }
 
 .nav-container{
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: space-between;
     background-color: #555;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     height: 40px;
     text-decoration: none;
+    width: 100%;
 }
 
 .category-links li > a{
@@ -78,4 +86,41 @@ li > a {
 .active:hover {
     text-decoration: underline;
     color: #CCCCCC;
+}
+
+.profile-options {
+    background-color: #fff;
+    float: right;
+    position: absolute;
+    z-index: 1;
+    /* top: 100%; */
+    left: 83%;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+}
+
+.profile-following-div {
+    display: flex;
+}
+
+.dropdown-div {
+    height: 300px;
+    width: 250px;
+}
+
+#profile-quickmenu {
+    border-radius: 50%;
+    padding: 0;   
+    width: 33px;
+    height: 33px;
+    margin-right: 30px;
+}
+
+.profile-following-div img {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50%;
+    width: 33px;
+    height: 33px
 }
