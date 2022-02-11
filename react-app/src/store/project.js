@@ -1,5 +1,5 @@
 const GET_PROJECTS = "/projects/";
-const GET_PROJECT = "/projects/:projectId"
+const GET_PROJECT = "/projects/:projectId";
 const ADD_PROJECTS = "/projects/new";
 const UPDATE_PROJECTS = "/projects/update";
 const DELETE_PROJECTS = "/projects/delete";
@@ -38,7 +38,7 @@ export const getAllProjects = () => async (dispatch) => {
     if (data.errors) {
       return;
     }
-    console.log(data)
+    console.log(data);
     dispatch(getProjects(data));
     return data;
   }
@@ -96,19 +96,36 @@ export const deleteOneProject = (projectId) => async (dispatch) => {
   }
 };
 
+export const searchResults = (search) => async (dispatch) => {
+  const response = await fetch(`/api/search/${search}`);
+  console.log(response.json);
+  if (response.ok) {
+    const data = await response.json();
+    if (data.errors) {
+      return;
+    }
+    return data;
+  }
+};
+
 const initialState = {};
 
-export default function projectReducer (state = initialState, action) {
+export default function projectReducer(state = initialState, action) {
   let newState;
   switch (action.type) {
     case GET_PROJECTS:
       newState = { ...state };
-      action.payload.projects.map((project) => newState[project.id] = project);
+      action.payload.projects.map(
+        (project) => (newState[project.id] = project)
+      );
       return newState;
 
     case GET_PROJECT:
-      newState = { ...state, [action.payload.project.projectId]: action.payload.project}
-      return newState
+      newState = {
+        ...state,
+        [action.payload.project.projectId]: action.payload.project,
+      };
+      return newState;
 
     case ADD_PROJECTS:
       newState = {
