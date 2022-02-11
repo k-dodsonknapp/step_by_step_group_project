@@ -14,6 +14,7 @@ const ProjectDetails = () => {
     console.log(user.id)
 
     const [showCommentForm, setShowCommentForm] = useState(false)
+    const [showCommentEditForm, setShowCommentEditForm] = useState(false)
     const [comment, setComment] = useState('')
 
     useEffect(() => {
@@ -76,7 +77,7 @@ const ProjectDetails = () => {
                         }
                         {project.comments.map((comment) => (
                             <>
-                                {}
+                                {!showCommentEditForm}
                                 <li className='comments' key={comment.id}>{comment.comment}</li>
                                 {user.id == comment.userId &&
                                     <div className="comment-btn-container">
