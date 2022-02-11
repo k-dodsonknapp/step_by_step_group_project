@@ -44,6 +44,16 @@ const CreateProject = () => {
         history.push(`/projects/${projectId}`)
     }
 
+    const projectErrors = () => {
+        const errors = []
+        if (title.length < 6) {
+            errors.push('Please provide a longer title')
+        }
+        if (titleImage.endsWith()) {
+            'Please use .png, .jpg, or .jpeg file type'
+        }
+    }
+
     const moveOntoSupplies = (e) => {
         e.preventDefault()
         setShowProjectForm(false)
@@ -89,6 +99,7 @@ const CreateProject = () => {
                     type='text'
                     name='title'
                     value={title}
+                    required="required"
                     onChange={(e) => setTitle(e.target.value)}
                 ></input>
                 <label>Image:</label>
@@ -115,7 +126,7 @@ const CreateProject = () => {
                     <option value='Outside'>Outside</option>
                     <option value='Teachers'>Teachers</option>
                 </select>
-                <button onClick={moveOntoSupplies}>Move on to Supplies</button>
+                <button type='submit'onClick={moveOntoSupplies}>Move on to Supplies</button>
             </form>
             )}
             {showSupplyForm && (
