@@ -9,6 +9,7 @@ const CreateProject = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
+    const [errors, setErrors] = useState([])
     const [title, setTitle] = useState('')
     const [titleImage, setTitleImage] = useState('')
     const [overview, setOverview] = useState('')
@@ -45,13 +46,16 @@ const CreateProject = () => {
     }
 
     const projectErrors = () => {
-        const errors = []
         if (title.length < 6) {
-            errors.push('Please provide a longer title')
+            setErrors([...errors, 'Please provide a longer title'])
         }
-        if (titleImage.endsWith()) {
-            'Please use .png, .jpg, or .jpeg file type'
+        if (!(titleImage.includes('.png') || titleImage.includes('.jpg') || titleImage.includes('.jpeg'))) {
+            setErrors([...errors, 'Please use .png, .jpg, or .jpeg file type'])
         }
+        if (overview.length < 20) {
+            setErrors([...errors, 'Please provide a longer overview'])
+        }
+        return errors
     }
 
     const moveOntoSupplies = (e) => {
