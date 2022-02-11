@@ -9,6 +9,7 @@ const CreateProject = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
+    const [showErrors, setShowErrors] = useState(false)
     const [errors, setErrors] = useState([])
     const [title, setTitle] = useState('')
     const [titleImage, setTitleImage] = useState('')
@@ -45,23 +46,35 @@ const CreateProject = () => {
         history.push(`/projects/${projectId}`)
     }
 
-    const projectErrors = () => {
+    useEffect(() => {
+        const inFuncErrors = []
         if (title.length < 6) {
-            setErrors([...errors, 'Please provide a longer title'])
+            console.log('in title')
+            // setErrors([...errors, 'Please provide a longer title'])
+            inFuncErrors.push('Please provide a longer title')
         }
         if (!(titleImage.includes('.png') || titleImage.includes('.jpg') || titleImage.includes('.jpeg'))) {
-            setErrors([...errors, 'Please use .png, .jpg, or .jpeg file type'])
+            console.log('in image')
+            // setErrors([...errors, 'Please use .png, .jpg, or .jpeg file type'])
+            inFuncErrors.push('Please use .png, .jpg, or .jpeg file type')
         }
         if (overview.length < 20) {
-            setErrors([...errors, 'Please provide a longer overview'])
+            console.log('in overview')
+            // setErrors([...errors, 'Please provide a longer overview'])
+            inFuncErrors.push('Please provide a longer overview')
         }
-        return errors
-    }
+        setErrors(inFuncErrors)
+    }, [title, titleImage, overview])
 
     const moveOntoSupplies = (e) => {
         e.preventDefault()
-        setShowProjectForm(false)
-        setShowSupplyForm(true)
+        if (errors.length === 0) {
+            setShowProjectForm(false)
+            setShowSupplyForm(true)
+        } else {
+            console.log(errors)
+            setShowErrors(true)
+        }
     }
 
     const addMoreSupplies = (e) => {
@@ -187,6 +200,16 @@ const CreateProject = () => {
                 <button type='submit'>Submit your Project</button>
             </form>
             )}
+            {showErrors &&
+            <>
+                <h1>THESE ARE ERRORS</h1>
+                <ul>
+                    {errors.map(error => (
+                        <li>{error}</li>
+                    ))}
+                </ul>
+            </>
+            }
         </div>
     )
 }
