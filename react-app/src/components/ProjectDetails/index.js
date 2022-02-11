@@ -76,10 +76,11 @@ const ProjectDetails = () => {
                         }
                         {project.comments.map((comment) => (
                             <>
+                                {}
                                 <li className='comments' key={comment.id}>{comment.comment}</li>
                                 {user.id == comment.userId &&
                                     <div className="comment-btn-container">
-                                        <button>Edit</button>
+                                        {/* <button onClick={}>Edit</button> */}
                                         <button>Delete</button>
                                     </div>
                                 }
