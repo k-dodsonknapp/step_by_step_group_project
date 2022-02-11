@@ -13,6 +13,7 @@ import ProjectDetails from './components/ProjectDetails'
 import CreateProject from './components/CreateProject'
 import SearchResults from './components/SearchResults';
 import Footer from './components/Footer';
+import SearchRes from './components/searchResultsPage';
 import EditProject from './components/EditProject';
 
 function App() {
@@ -57,9 +58,9 @@ function App() {
           <ProjectDetails />
         </Route>
 
-        <ProtectedRoute path='/howto/:searchkeyword' exact={true} >
-          <SearchResults />
-        </ProtectedRoute>
+        <Route path='/howto/:searchkeyword' exact={true} >
+          <SearchRes/>
+        </Route>
 
         <ProtectedRoute path='/projects/:projectId/edit' exact={true} >
           <EditProject />
