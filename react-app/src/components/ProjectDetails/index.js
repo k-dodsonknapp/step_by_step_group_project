@@ -78,17 +78,27 @@ const ProjectDetails = () => {
                             </div>
                         ))}
                     </ul>
+                    {showCommentForm &&
+                        <form onSubmit={handleComment}>
+                            <label>Leave a comment here:</label>
+                            <textarea
+                                type='text'
+                                onChange={(e) => setComment(e.target.value)}
+                                value={comment}
+                            ></textarea>
+                            <button type='submit'>Submit Comment</button>
+                        </form>
+                    }
                     <ul id='comments-title'>Comments:
                         {user &&
                             <button id='leave-comment-btn' onClick={(e) => setShowCommentForm(true)}>Leave a comment</button>
                         }
                         {project.comments.map((comment) => (
                             <>
-                                {!showCommentEditForm}
                                 <li className='comments' key={comment.id}>{comment.comment}</li>
                                 {user.id == comment.userId &&
                                     <div className="comment-btn-container">
-                                        {/* <button onClick={}>Edit</button> */}
+                                        <button onClick={(e) => setShowCommentEditForm(true)}>Edit</button>
                                         <button>Delete</button>
                                     </div>
                                 }
@@ -96,17 +106,6 @@ const ProjectDetails = () => {
                         ))}
                     </ul>
                 </div>
-            }
-            {showCommentForm &&
-                <form onSubmit={handleComment}>
-                    <label>Leave a comment here:</label>
-                    <textarea
-                        type='text'
-                        onChange={(e) => setComment(e.target.value)}
-                        value={comment}
-                    ></textarea>
-                    <button type='submit'>Submit Comment</button>
-                </form>
             }
         </>
     )
