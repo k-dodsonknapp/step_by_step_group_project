@@ -10,7 +10,16 @@ project_routes = Blueprint('projects', __name__)
 @project_routes.route('/')
 def projects():
     projects = Project.query.all()
-    return {'projects': [project.to_dict() for project in projects]}
+    list = [project.to_dict() for project in projects]
+    # print("------LIST", list)
+    for project in list:
+        id = project["userId"]
+        # print("-------",id)
+        username = User.query.get(id).to_dict()["username"]
+        project["username"] = username
+
+    print("-------", list)
+    return {"projects": list}
 
 
 @project_routes.route('/<int:id>')

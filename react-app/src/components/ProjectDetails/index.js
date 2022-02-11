@@ -40,9 +40,16 @@ const ProjectDetails = () => {
                     <div id='project-details'>By
                         <span className='username-category'>{project.owner.username}</span>
                         in<span className='username-category'>{project.category}</span>
+                        {user &&
+                            <div>
+                                <button>
+                                    Edit
+                                </button>
+                            </div>
+                        }
                     </div>
                     <div className="project-image-container">
-                        <img className='project-images'src={project.titleImage} alt='Completed project'></img>
+                        <img className='project-images' src={project.titleImage} alt='Completed project'></img>
                     </div>
                     <div id='overview-title'>Project Overview:
                         <p id='project-overview'>{project.overview}</p>
@@ -50,7 +57,7 @@ const ProjectDetails = () => {
                     <ul id='supplies-title'>Supplies Needed:
                         {project.supplies.map((supply) => (
                             <>
-                                <li className='supply-list'key={supply.id}>{supply.supply}</li>
+                                <li className='supply-list' key={supply.id}>{supply.supply}</li>
                             </>
                         ))}
 
@@ -67,7 +74,7 @@ const ProjectDetails = () => {
                                         alt={`Step ${instruction.stepOrder}`}>
                                     </img>
                                 </div>
-                                <li className='instructions'key={instruction.id}>{instruction.instructions}</li>
+                                <li className='instructions' key={instruction.id}>{instruction.instructions}</li>
                             </div>
                         ))}
                     </ul>
