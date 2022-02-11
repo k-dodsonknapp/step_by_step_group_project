@@ -49,18 +49,12 @@ const CreateProject = () => {
     useEffect(() => {
         const inFuncErrors = []
         if (title.length < 6) {
-            console.log('in title')
-            // setErrors([...errors, 'Please provide a longer title'])
             inFuncErrors.push('Please provide a longer title')
         }
         if (!(titleImage.includes('.png') || titleImage.includes('.jpg') || titleImage.includes('.jpeg'))) {
-            console.log('in image')
-            // setErrors([...errors, 'Please use .png, .jpg, or .jpeg file type'])
             inFuncErrors.push('Please use .png, .jpg, or .jpeg file type')
         }
         if (overview.length < 20) {
-            console.log('in overview')
-            // setErrors([...errors, 'Please provide a longer overview'])
             inFuncErrors.push('Please provide a longer overview')
         }
         setErrors(inFuncErrors)
