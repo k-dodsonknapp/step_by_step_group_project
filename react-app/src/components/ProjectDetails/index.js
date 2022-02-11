@@ -28,6 +28,12 @@ const ProjectDetails = () => {
         dispatch(addOneComment(newComment))
     }
 
+    const handleDelete = (e) => {
+        e.preverntDefault()
+
+
+    }
+
     useEffect(() => {
         console.log(commentState)
     }, [commentState])
@@ -99,7 +105,7 @@ const ProjectDetails = () => {
                                 {user.id == comment.userId &&
                                     <div className="comment-btn-container">
                                         <button onClick={(e) => setShowCommentEditForm(true)}>Edit</button>
-                                        <button>Delete</button>
+                                        <button onClick={handleDelete}>Delete</button>
                                     </div>
                                 }
                             </>

@@ -22,7 +22,7 @@ const ProjectExplore = () => {
             </div>
             <ul>
                 {projects?.map(project => (
-                    <div className="allProjectsMap" key={project.id}>
+                    <a className="allProjectsMap" key={project.id} href={`/projects/${project.id}`}>
                         <li className="eachProject">
                             <div className="projectImage">
                                 <img src={`${project.titleImage}`} />
@@ -43,7 +43,7 @@ const ProjectExplore = () => {
                                 </div>
                             </div>
                         </li>
-                    </div>
+                    </a>
                 ))}
             </ul>
         </div >
