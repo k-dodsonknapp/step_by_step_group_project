@@ -13,6 +13,7 @@ import ProjectDetails from './components/ProjectDetails'
 import CreateProject from './components/CreateProject'
 import SearchResults from './components/SearchResults';
 import Footer from './components/Footer';
+import SearchRes from './components/searchResultsPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -57,7 +58,7 @@ function App() {
         </Route>
 
         <Route path='/howto/:searchkeyword' exact={true} >
-          <SearchResults/>
+          <SearchRes/>
         </Route>
 
         <ProtectedRoute path='/create' exact={true} >
