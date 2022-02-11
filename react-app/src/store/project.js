@@ -37,7 +37,7 @@ const searchResult = (results) => ({
 });
 
 export const getAllProjects = () => async (dispatch) => {
-  const response = await fetch("/api/projects");
+  const response = await fetch("/api/projects/");
   if (response.ok) {
     const data = await response.json();
     if (data.errors) {

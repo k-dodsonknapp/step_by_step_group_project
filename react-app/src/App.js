@@ -14,13 +14,14 @@ import CreateProject from './components/CreateProject'
 import SearchResults from './components/SearchResults';
 import Footer from './components/Footer';
 import SearchRes from './components/searchResultsPage';
+import EditProject from './components/EditProject';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
@@ -37,16 +38,16 @@ function App() {
         <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
-         <Route path='/sign-up' exact={true}>
+        <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
 
         <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
+          <UsersList />
         </ProtectedRoute>
 
         <Route path='/' exact={true} >
-          <ProjectExplore/>
+          <ProjectExplore />
         </Route>
 
         <ProtectedRoute path='/users/:userId' exact={true} >
@@ -54,15 +55,19 @@ function App() {
         </ProtectedRoute>
 
         <Route path='/projects/:projectId' exact={true} >
-          <ProjectDetails/>
+          <ProjectDetails />
         </Route>
 
         <Route path='/howto/:searchkeyword' exact={true} >
           <SearchRes/>
         </Route>
 
+        <ProtectedRoute path='/projects/:projectId/edit' exact={true} >
+          <EditProject />
+        </ProtectedRoute>
+
         <ProtectedRoute path='/create' exact={true} >
-          <CreateProject/>
+          <CreateProject />
         </ProtectedRoute>
 
       </Switch>
