@@ -101,15 +101,11 @@ export const deleteOneProject = (projectId) => async (dispatch) => {
   }
 };
 
-export const searchResults = (search) => async (dispatch) => {
+export const search = (search) => async (dispatch) => {
   const response = await fetch(`/api/search/${search}`);
-  console.log(response.json);
   if (response.ok) {
     const data = await response.json();
-    if (data.errors) {
-      return;
-    }
-    console.log("-------", data);
+    // console.log("-------", data);
     dispatch(searchResult(data));
     return data;
   }
@@ -118,7 +114,6 @@ export const searchResults = (search) => async (dispatch) => {
 const initialState = {};
 
 export default function projectReducer(state = initialState, action) {
-  console.log('11111111', action)
   let newState;
   switch (action.type) {
     case GET_PROJECTS:
@@ -154,6 +149,9 @@ export default function projectReducer(state = initialState, action) {
 
     case SEARCH_RESULTS:
       newState = {};
+      action.payload.projects.map(
+        (project) => (newState[project.id] = project)
+      );
       return newState;
 
     default:

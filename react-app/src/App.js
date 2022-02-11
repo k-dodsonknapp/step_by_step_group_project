@@ -56,9 +56,9 @@ function App() {
           <ProjectDetails/>
         </Route>
 
-        <ProtectedRoute path='/howto/:searchkeyword' exact={true} >
+        <Route path='/howto/:searchkeyword' exact={true} >
           <SearchResults/>
-        </ProtectedRoute>
+        </Route>
 
         <ProtectedRoute path='/create' exact={true} >
           <CreateProject/>

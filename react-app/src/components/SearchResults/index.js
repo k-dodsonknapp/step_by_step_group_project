@@ -2,30 +2,33 @@
 import "./SearchResults.css";
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-// import { NavLink } from "react-router-dom";
-import searchResults from "../../store/project";
+import { NavLink, useHistory } from "react-router-dom";
+import { search } from "../../store/project";
 import { useDispatch } from "react-redux";
+
 
 const SearchResults = () => {
   const [searchKeyWord, setSearchKeyWord] = useState("");
   const [projects, setProjects] = useState();
   const dispatch = useDispatch();
+  const history = useHistory()
 
-  useEffect(() => {
-    if (searchKeyWord) {
-      async function fetchData() {
-        const response = await fetch(`/api/search/${searchKeyWord}`);
-        const responseData = await response.json();
-        setProjects(responseData.projects);
-      }
-      fetchData();
-    }
-  }, [searchKeyWord]);
+  // useEffect(() => {
+  //   if (searchKeyWord) {
+  //     async function fetchData() {
+  //       const response = await fetch(`/api/search/${searchKeyWord}`);
+  //       const responseData = await response.json();
+  //       setProjects(responseData.projects);
+  //     }
+  //     fetchData();
+  //   }
+  // }, [searchKeyWord]);
 
   const clickToSearch = (e) => {
     e.preventDefault();
     console.log("inside click to search");
-    dispatch(searchResults(searchKeyWord));
+    dispatch(search(searchKeyWord));
+    history.push(`/howto/${searchKeyWord}`)
   };
 
   // click on cancel search button to clear search results
