@@ -12,7 +12,7 @@ const ProjectExplore = () => {
     // const session = useSelector(state => session.user)
     const [users, setUsers] = useState([])
 
-    console.log("USERS", users)
+    // console.log("USERS", users)
 
     useEffect(() => {
         async function usersData() {
@@ -35,7 +35,7 @@ const ProjectExplore = () => {
         })
         return name
     }
-    console.log("USERNAME", username(1))
+    // console.log("USERNAME", username(1))
 
     return (
         // {}

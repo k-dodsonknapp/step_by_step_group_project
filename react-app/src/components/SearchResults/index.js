@@ -7,7 +7,6 @@ import searchResults from "../../store/project";
 import { useDispatch } from "react-redux";
 
 const SearchResults = () => {
-
   const [searchKeyWord, setSearchKeyWord] = useState("");
   const [projects, setProjects] = useState();
   const dispatch = useDispatch();
@@ -24,26 +23,23 @@ const SearchResults = () => {
   }, [searchKeyWord]);
 
   const clickToSearch = (e) => {
-    e.preventdefault();
+    e.preventDefault();
     console.log("inside click to search");
     dispatch(searchResults(searchKeyWord));
   };
 
   // click on cancel search button to clear search results
 
-  const clearClickToSearch = async (e) => {
-    setSearchKeyWord("");
-  };
   let searchBlock;
 
   if (projects) {
     //console.log(projects)
     searchBlock = projects.map((project, i) => {
-    //   return (
-    //     <a key={`link${i}`} href={`/projects/${project.id}`}>
-    //       <div key={`liked'_${project.id}`}></div>
-    //     </a>
-    //   );
+      return (
+        <a key={`link${i}`} href={`/projects/${project.id}`}>
+          <div key={`liked'_${project.id}`}></div>
+        </a>
+      );
     });
   }
 
@@ -65,12 +61,11 @@ const SearchResults = () => {
         <div>
           <h1> Search results for: </h1>
           <h2>{searchKeyWord}</h2>
-          <button onClick={clearClickToSearch}>Clear results</button>
           <ul>{searchBlock}</ul>
         </div>
       ) : null}
+      <h1>Hello from Search Results page</h1>
     </nav>
-    // <h1>Hello from Search Results page</h1>
     // <div className="searchbar">
     //   <div className="search">
     //     <input

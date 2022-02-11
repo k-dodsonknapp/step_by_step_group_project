@@ -3,7 +3,7 @@ const GET_PROJECT = "/projects/:projectId";
 const ADD_PROJECTS = "/projects/new";
 const UPDATE_PROJECTS = "/projects/update";
 const DELETE_PROJECTS = "/projects/delete";
-
+const SEARCH_RESULTS = "/howto/search";
 // const GET_PROJECT = "/projects/:id";
 
 const getProjects = (projects) => ({
@@ -31,6 +31,11 @@ const deleteProjects = (projectId) => ({
   payload: projectId,
 });
 
+const searchResult = (results) => ({
+  type: SEARCH_RESULTS,
+  payload: results,
+});
+
 export const getAllProjects = () => async (dispatch) => {
   const response = await fetch("/api/projects");
   if (response.ok) {
@@ -38,7 +43,7 @@ export const getAllProjects = () => async (dispatch) => {
     if (data.errors) {
       return;
     }
-    console.log(data);
+    // console.log(data);
     dispatch(getProjects(data));
     return data;
   }
@@ -104,6 +109,8 @@ export const searchResults = (search) => async (dispatch) => {
     if (data.errors) {
       return;
     }
+    console.log("-------", data);
+    dispatch(searchResult(data));
     return data;
   }
 };
@@ -111,6 +118,7 @@ export const searchResults = (search) => async (dispatch) => {
 const initialState = {};
 
 export default function projectReducer(state = initialState, action) {
+  console.log('11111111', action)
   let newState;
   switch (action.type) {
     case GET_PROJECTS:
@@ -142,6 +150,10 @@ export default function projectReducer(state = initialState, action) {
     case DELETE_PROJECTS:
       newState = { ...state };
       delete newState[action.payload];
+      return newState;
+
+    case SEARCH_RESULTS:
+      newState = {};
       return newState;
 
     default:
