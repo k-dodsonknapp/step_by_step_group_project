@@ -102,7 +102,7 @@ const Navigation = () => {
             </div>
             <div className='right-lower'>
               <div>
-                <NavLink to="/Publish">PUBLISH</NavLink>
+                <NavLink to="/create">PUBLISH</NavLink>
               </div>
               <div className='search-field'>
                 <SearchResults />

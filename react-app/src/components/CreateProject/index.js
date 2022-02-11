@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addOneProject } from "../../store/project";
 import { Redirect, useHistory  } from "react-router-dom";
+import "./createProject.css"
 
 const CreateProject = () => {
     const userId = useSelector(state => state.session.user['id'])
@@ -79,7 +80,7 @@ const CreateProject = () => {
     }
 
     return (
-        <>
+        <div className="create-page">
             <h1>Hello from Create project page</h1>
             {showProjectForm && (
             <form>
@@ -171,7 +172,7 @@ const CreateProject = () => {
                 <button type='submit'>Submit your Project</button>
             </form>
             )}
-        </>
+        </div>
     )
 }
 
