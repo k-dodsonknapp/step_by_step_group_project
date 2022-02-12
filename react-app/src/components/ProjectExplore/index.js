@@ -12,9 +12,26 @@ const ProjectExplore = () => {
     // const [users, setUsers] = useState([])
 
     useEffect(() => {
+        async function usersData() {
+            const res = await fetch('/api/users/');
+            const resData = await res.json();
+            setUsers(resData.users);
+        }
+        usersData();
+    }, [])
+
+    useEffect(() => {
         dispatch(getAllProjects())
     }, [dispatch])
 
+    const username = (id) => {
+        const name = users.map(user => {
+            if (id === user.id) {
+                return user.username
+            }
+        })
+        return name
+    }
     return (
         <div className="explorePage">
             <div className="slideshow-container">
