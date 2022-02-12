@@ -98,6 +98,14 @@
     padding: 10px 0px;
 }
 
+.comment-btn-container {
+    text-align: right;
+}
+
+.comment-btn-container > button {
+    margin: 7px;
+}
+
 #leave-comment-btn {
-    margin-left: 400px;
+    margin-left: 420px;
 }

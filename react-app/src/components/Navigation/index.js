@@ -81,7 +81,6 @@ const Navigation = () => {
               </li>
             </div>
             <div className='profile-following-div'>
-              <NavLink to="/Following">Following</NavLink>
               <button id='profile-quickmenu' onClick={openMenu}>
                 <img src='https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg' style={{}}></img>
               </button>
@@ -115,17 +114,17 @@ const Navigation = () => {
         <ul className='profile-options'>
           <div className='dropdown-div'>
             <li>
-              <NavLink to='/login' exact={true} id="something" activeClassName='another' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+              <NavLink to='/login' exact={true} id="something" activeClassName='another' style={{ textDecoration: 'none', color: "black" }}>
                 Login
               </NavLink>
             </li>
             <li>
-              <NavLink to='/sign-up' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+              <NavLink to='/sign-up' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "black" }}>
                 Sign Up
               </NavLink>
             </li>
             <li>
-              <NavLink to='/users' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+              <NavLink to='/users' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "black" }}>
                 Users
               </NavLink>
             </li>
@@ -134,7 +133,6 @@ const Navigation = () => {
                 <LogoutButton />
               </li>
             </div>
-            <li>Another hello</li>
           </div>
         </ul>
       )}
