@@ -17,8 +17,14 @@ const ProjectDetails = () => {
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
   const [comment, setComment] = useState("");
   const [newComment, setNewComment] = useState("");
-  // console.log(project.comments[0].comment)
-  console.log();
+
+  let reversedComments = []
+  if (project) {
+    project.comments.map(comment => {
+      reversedComments.unshift(comment)
+    })
+    console.log('comments',reversedComments)
+  }
   useEffect(() => {
     dispatch(getOneProject(projectId));
   }, [dispatch, projectId]);
@@ -28,6 +34,10 @@ const ProjectDetails = () => {
 
     const newComment = { userId: user.id, projectId, comment };
     dispatch(addOneComment(newComment));
+    setShowCommentForm(false)
+
+    // let ele =
+
   };
 
   const handleEdit = (e) => {
@@ -103,27 +113,30 @@ const ProjectDetails = () => {
             ))}
           </ul>
           {showCommentForm && (
-            <form onSubmit={handleComment}>
-              <label>Leave a comment here:</label>
+            <form className="comment-form" onSubmit={handleComment}>
+              <label className="comments-title">Leave a comment here:</label>
               <textarea
+                className="comment-box"
+                rows='5'
+                cols='80'
                 type="text"
                 onChange={(e) => setComment(e.target.value)}
                 value={comment}
               ></textarea>
-              <button type="submit">Submit Comment</button>
+              <button className="submit-comment" type="submit">Submit Comment</button>
             </form>
           )}
-          <ul id="comments-title">
+          <ul className="comments-title">
             Comments:
             {user && (
               <button
                 id="leave-comment-btn"
                 onClick={(e) => setShowCommentForm(true)}
               >
-                Leave a comment
+                Post a comment
               </button>
             )}
-            {project.comments.map((comment) => (
+            {reversedComments.map((comment) => (
               <>
                 <li className="comments" key={comment.id}>
                   {comment.comment}
