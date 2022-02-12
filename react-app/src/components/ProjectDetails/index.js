@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { getOneProject } from "../../store/project";
-import { addOneComment } from "../../store/comments";
+import { addOneComment, updateOneComment } from "../../store/comments";
 import "./Projects.css";
 
 const ProjectDetails = () => {
@@ -11,12 +11,14 @@ const ProjectDetails = () => {
   const project = useSelector((state) => state.projects[projectId]);
   const user = useSelector((state) => state.session.user);
   const commentState = useSelector((state) => state.comments);
-  console.log(user.id);
+  console.log(user);
 
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
   const [comment, setComment] = useState("");
-
+  const [newComment, setNewComment] = useState("");
+  // console.log(project.comments[0].comment)
+  console.log();
   useEffect(() => {
     dispatch(getOneProject(projectId));
   }, [dispatch, projectId]);
@@ -28,9 +30,17 @@ const ProjectDetails = () => {
     dispatch(addOneComment(newComment));
   };
 
-  const handleDelete = (e) => {
+  const handleEdit = (e) => {
     e.preventDefault();
+
+    const newComment = { userId: user.id, projectId, comment };
+    dispatch(updateOneComment(newComment));
   };
+
+  // const deleteComment = async (id) => {
+  //   await dispatch(spotStore.thunk_deleteSpot({ id }));
+  //   history.push("/spots");
+  // };
 
   useEffect(() => {
     console.log(commentState);
@@ -120,10 +130,8 @@ const ProjectDetails = () => {
                 </li>
                 {user.id == comment.userId && (
                   <div className="comment-btn-container">
-                    <button onClick={(e) => setShowCommentEditForm(true)}>
-                      Edit
-                    </button>
-                    <button onClick={handleDelete}>Delete</button>
+                    <button onClick={handleEdit}>Edit</button>
+                    <button onClick={handleEdit}>Delete</button>
                   </div>
                 )}
               </>
