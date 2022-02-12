@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addOneProject } from "../../store/project";
@@ -9,15 +10,21 @@ const CreateProject = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
+    const [showErrors, setShowErrors] = useState(false)
+    const [errors, setErrors] = useState([])
     const [title, setTitle] = useState('')
     const [titleImage, setTitleImage] = useState('')
     const [overview, setOverview] = useState('')
     const [category, setCategory] = useState('')
 
+    const [showSupplyErrors, setShowSupplyErrors] = useState(false)
+    const [supplyErrors, setSupplyErrors] = useState([])
     const [supplies, setSupplies] = useState([])
     const [supply, setSupply] = useState('')
     const [amount, setAmount] = useState(0)
 
+    const [showInstructionErrors, setShowInstructionErrors] = useState(false)
+    const [instructionErrors, setInstructionErrors] = useState([])
     const [instructions, setInstructions] = useState([])
     const [stepOrder, setStepOrder] = useState(1)
     const [stepTitle, setStepTitle] = useState('')
@@ -28,55 +35,115 @@ const CreateProject = () => {
     const [showProjectForm, setShowProjectForm] = useState(true)
     const [showSupplyForm, setShowSupplyForm] = useState(false)
     const [showInstructionForm, setShowInstructionForm] = useState(false)
+    const [showEmptyFields, setShowEmptyFields] = useState(false)
 
     const handleProjectSubmit = async (e) => {
         e.preventDefault()
         addAnotherStep(e)
-        const newInstruction = { stepOrder,
-                                stepTitle,
-                                'instructions': stepInstructions,
-                                photoUrl,
-                                videoUrl }
-        const project = { userId, title, titleImage, overview, category, supplies,
-                        'instructions': [...instructions, newInstruction] }
-        const data = await dispatch(addOneProject(project))
-        const projectId = data.projectId
-        history.push(`/projects/${projectId}`)
+        if (instructionErrors.length ===0) {
+            const newInstruction = { stepOrder,
+                                    stepTitle,
+                                    'instructions': stepInstructions,
+                                    photoUrl,
+                                    videoUrl }
+            const project = { userId, title, titleImage, overview, category, supplies,
+                            'instructions': [...instructions, newInstruction] }
+            const data = await dispatch(addOneProject(project))
+            const projectId = data.projectId
+            history.push(`/projects/${projectId}`)
+        } else {
+            setShowInstructionErrors(true)
+        }
     }
+
+    useEffect(() => {
+        const inFuncErrors = []
+        if (title.length < 6 || title == '') {
+            inFuncErrors.push('Please provide a longer title')
+        }
+        if (!(titleImage.includes('.png') || titleImage.includes('.jpg') || titleImage.includes('.jpeg')) || titleImage == '') {
+            inFuncErrors.push('Please use .png, .jpg, or .jpeg file type')
+        }
+        if (overview.length < 20 || overview == '') {
+            inFuncErrors.push('Please provide a longer overview')
+        }
+        setErrors(inFuncErrors)
+    }, [title, titleImage, overview, showErrors])
+
+    useEffect(() => {
+        const inFuncErrors = []
+        if (supply.length < 3) {
+            inFuncErrors.push('Please provide a longer supply name')
+        }
+        setSupplyErrors(inFuncErrors)
+    }, [supply, showSupplyErrors])
+
+    useEffect(() => {
+        const inFuncErrors = []
+        if (stepInstructions.length < 10) {
+            inFuncErrors.push('Please provide more instructions')
+        }
+        if (stepTitle.length < 5) {
+            inFuncErrors.push('Please provide a longer title')
+        }
+        if (!(photoUrl.includes('.png') || photoUrl.includes('.jpg') || photoUrl.includes('.jpeg'))) {
+            inFuncErrors.push('Please use .png, .jpg, or .jpeg file type')
+        }
+        setInstructionErrors(inFuncErrors)
+    }, [stepTitle, stepInstructions, photoUrl, showInstructionErrors])
 
     const moveOntoSupplies = (e) => {
         e.preventDefault()
-        setShowProjectForm(false)
-        setShowSupplyForm(true)
+        console.log(errors)
+        if (errors.length > 0 || title == '' || titleImage == '' || overview == '') {
+            setShowErrors(true)
+        } else {
+            setShowProjectForm(false)
+            setShowSupplyForm(true)
+            setShowErrors(false)
+        }
     }
 
     const addMoreSupplies = (e) => {
         e.preventDefault()
-        const newSupply = { supply, amount }
-        setSupplies([...supplies, newSupply])
-        setSupply('')
-        setAmount(0)
+        if (supplyErrors.length === 0) {
+            const newSupply = { supply, amount }
+            setSupplies([...supplies, newSupply])
+            setSupply('')
+            setAmount(0)
+            setShowSupplyErrors(false)
+        } else {
+            setShowSupplyErrors(true)
+        }
     }
 
     const moveOnToInstructions = (e) => {
         addMoreSupplies(e)
-        setShowSupplyForm(false)
-        setShowInstructionForm(true)
+        if (supplyErrors.length === 0) {
+            setShowSupplyForm(false)
+            setShowInstructionForm(true)
+        }
     }
 
     const addAnotherStep = (e) => {
         e.preventDefault()
-        const newInstruction = { stepOrder,
-                                stepTitle,
-                                'instructions': stepInstructions,
-                                photoUrl,
-                                videoUrl }
-        setInstructions([...instructions, newInstruction])
-        setStepOrder(stepOrder + 1)
-        setStepTitle('')
-        setStepInstructions('')
-        setPhotoUrl('')
-        setVideoUrl('')
+        if (instructionErrors.length ===0) {
+
+            const newInstruction = { stepOrder,
+                                    stepTitle,
+                                    'instructions': stepInstructions,
+                                    photoUrl,
+                                    videoUrl }
+            setInstructions([...instructions, newInstruction])
+            setStepOrder(stepOrder + 1)
+            setStepTitle('')
+            setStepInstructions('')
+            setPhotoUrl('')
+            setVideoUrl('')
+            setShowInstructionErrors(false)
+        } else {
+            setShowInstructionErrors(true)
+        }
     }
 
     return (
@@ -89,6 +156,7 @@ const CreateProject = () => {
                     type='text'
                     name='title'
                     value={title}
+                    required="required"
                     onChange={(e) => setTitle(e.target.value)}
                 ></input>
                 <label>Image:</label>
@@ -115,7 +183,7 @@ const CreateProject = () => {
                     <option value='Outside'>Outside</option>
                     <option value='Teachers'>Teachers</option>
                 </select>
-                <button onClick={moveOntoSupplies}>Move on to Supplies</button>
+                <button type='submit'onClick={moveOntoSupplies}>Move on to Supplies</button>
             </form>
             )}
             {showSupplyForm && (
@@ -125,6 +193,7 @@ const CreateProject = () => {
                     type='text'
                     name='supply'
                     value={supply}
+                    required
                     onChange={(e) => setSupply(e.target.value)}
                 ></input>
                 <label>Amount:</label>
@@ -134,7 +203,7 @@ const CreateProject = () => {
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
                 ></input>
-                <button onClick={addMoreSupplies}>Add more Supplies</button>
+                <button type='submit'onClick={addMoreSupplies}>Add more Supplies</button>
                 <button onClick={moveOnToInstructions}>Move on to Instructions</button>
             </form>
             )}
@@ -172,6 +241,33 @@ const CreateProject = () => {
                 <button type='submit'>Submit your Project</button>
             </form>
             )}
+            {showErrors &&
+                <>
+                    <ul>
+                        {errors.map(error => (
+                            <li>{error}</li>
+                        ))}
+                    </ul>
+                </>
+            }
+            {showSupplyErrors &&
+                <>
+                    <ul>
+                        {supplyErrors.map(error => (
+                            <li>{error}</li>
+                        ))}
+                    </ul>
+                </>
+            }
+            {showInstructionErrors &&
+                <>
+                    <ul>
+                        {instructionErrors.map(error => (
+                            <li>{error}</li>
+                        ))}
+                    </ul>
+                </>
+            }
         </div>
     )
 }
