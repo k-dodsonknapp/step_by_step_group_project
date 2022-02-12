@@ -103,7 +103,7 @@ const Navigation = () => {
               <div>
                 <NavLink to="/create">PUBLISH</NavLink>
               </div>
-              <div className='search-field'>
+              <div>
                 <SearchResults />
               </div>
             </div>

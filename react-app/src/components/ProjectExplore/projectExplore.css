@@ -2,10 +2,11 @@
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
+    margin-bottom: 250px;
 }
 
 .allProjectsMap {
-    
+
     float: left;
     width: 306px;
     height: 306px;

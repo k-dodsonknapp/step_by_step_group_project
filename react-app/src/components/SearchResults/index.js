@@ -14,8 +14,8 @@ const SearchResults = () => {
 
   const clickToSearch = (e) => {
     e.preventDefault();
-    console.log("inside click to search");
     dispatch(search(searchKeyWord));
+    setSearchKeyWord('')
     history.push(`/howto/${searchKeyWord}`);
     // return <Redirect to={`/howto/${searchKeyWord}`} />;
   };
@@ -24,43 +24,31 @@ const SearchResults = () => {
 
   let searchBlock;
 
-  if (projects) {
-    //console.log(projects)
-    searchBlock = projects.map((project, i) => {
-      return (
-        <a key={`link${i}`} href={`/projects/${project.id}`}>
-          <div key={`liked'_${project.id}`}></div>
-        </a>
-      );
-    });
-  }
+  // if (projects) {
+  //   //console.log(projects)
+  //   searchBlock = projects.map((project, i) => {
+  //     return (
+  //       <a key={`link${i}`} href={`/projects/${project.id}`}>
+  //         <div key={`liked'_${project.id}`}></div>
+  //       </a>
+  //     );
+  //   });
+  // }
 
   return (
     <div>
-      <nav>
-        <div>
-          <form title="Search Form" onSubmit={clickToSearch}>
-            <input
-              type="text"
-              placeholder="Let's Make..."
-              onChange={(e) => {
-                setSearchKeyWord(e.target.value);
-              }}
-            />
-            <button type="submit">Search Button</button>
-          </form>
-        </div>
-        {searchKeyWord ? (
-          <div>
-            {/* <h1> Search results for: </h1> */}
-            {/* <h2>{searchKeyWord}</h2> */}
-            <ul>{searchBlock}</ul>
-          </div>
-        ) : null}
-        {/* <h1>Hello from Search Results page</h1> */}
-      </nav>
-
-      <ul>{searchBlock}</ul>
+      <form title="Search Form" onSubmit={clickToSearch}>
+        <input
+          className="search-field"
+          type="text"
+          placeholder="Let's Make..."
+          value={searchKeyWord}
+          onChange={(e) => {
+            setSearchKeyWord(e.target.value);
+          }}
+        />
+        <button className='search-btn'type="submit">Search Button</button>
+      </form>
     </div>
   );
 };

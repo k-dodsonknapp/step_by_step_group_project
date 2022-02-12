@@ -4,7 +4,8 @@ import { useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
 import { search } from "../../store/project";
 import { useDispatch } from "react-redux";
-// import SearchResults from "./searchResults/index.js";
+import './SearchResultsPage.css'
+import SearchResults from "../SearchResults";
 
 const SearchRes = () => {
   const [searchKeyWord, setSearchKeyWord] = useState("");
@@ -14,55 +15,25 @@ const SearchRes = () => {
 
   console.log(projects);
 
-  //   const clickToSearch = (e) => {
-  //     e.preventDefault();
-  //     console.log("inside click to search");
-  //     dispatch(search(searchKeyWord));
-  //     history.push(`/howto/${searchKeyWord}`);
-  //   };
-
-  //   let searchBlock;
-
-  //   if (projects) {
-  //     //console.log(projects)
-  //     searchBlock = projects.map((project, i) => {
-  //       return (
-  //         <a key={`link${i}`} href={`/projects/${project.id}`}>
-  //           <div key={`liked'_${project.id}`}></div>
-  //         </a>
-  //       );
-  //     });
-  //   }
-
   return (
-    //   <div>
-    //     <form title="Search Form" onSubmit={clickToSearch}>
-    //       <input
-    //         type="text"
-    //         placeholder="Let's Make..."
-    //         onChange={(e) => {
-    //           setSearchKeyWord(e.target.value);
-    //         }}
-    //       />
-    //       <button type="submit">Search Button</button>
-    //     </form>
-    //   </div>
-    //   {searchKeyWord ? (
-    //     <div>
-    //        {/* <h1> Search results for: </h1>  */}
-    //        {/* <h2>{searchKeyWord}</h2>  */}
-    //       <ul>{searchBlock}</ul>
-    //     </div>
-    //   ) : null}
-    <>
-      <h1>Hello from Search Results page</h1>
-      {projects && 
-      <> 
-      {projects.map(project => (
-          <div>{project.title}</div>
-      ))}
-      </>}
-    </>
+    <div id='search-page'>
+      <SearchResults />
+      { projects &&
+        <ul id='search-results-container'>
+          {projects.map(project => (
+            <a className='search-link'href={`/projects/${project.id}`}>
+              <li key={project.id}className="searh-list-component">
+                <img className="search-img" src={`${project.titleImage}`}></img>
+                <div className="search-text">
+                  <div className="search-title">{project.title}</div>
+                  <p className="search-overview">{project.overview}</p>
+                </div>
+              </li>
+            </a>
+          ))}
+        </ul>
+      }
+    </div>
   );
 };
 
