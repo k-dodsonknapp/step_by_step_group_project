@@ -1,14 +1,16 @@
-.searchbar {
-    /* display: flex; */
-    /* flex-direction: flex-end; */
-    /* position: relative; */
-    /* border: 5px solid green; */
-    /* margin: 50px; */
+.search-field {
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(173, 173, 173);
+    margin-right: 5px;
 }
 
-.search {
-    /* display: flex; */
-    margin: 20px;
-    display: flex;
-    flex-direction: row;
+.search-btn {
+    background-color: #faac18;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #faac18;
+    color: white;
+    font-size: 16px;
 }
