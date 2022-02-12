@@ -134,7 +134,6 @@ const Navigation = () => {
                 <LogoutButton />
               </li>
             </div>
-            <li>Another hello</li>
           </div>
         </ul>
       )}
