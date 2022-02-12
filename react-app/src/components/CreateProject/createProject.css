@@ -1,5 +1,7 @@
 .create-page {
     display: flex;
+    flex-direction: column;
+    margin-top: 100px;
     height: 100%;
     height: 85vh;
 }
