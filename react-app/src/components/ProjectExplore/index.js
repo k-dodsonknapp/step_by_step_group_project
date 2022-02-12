@@ -12,9 +12,26 @@ const ProjectExplore = () => {
     const [users, setUsers] = useState([])
 
     useEffect(() => {
+        async function usersData() {
+            const res = await fetch('/api/users/');
+            const resData = await res.json();
+            setUsers(resData.users);
+        }
+        usersData();
+    }, [])
+
+    useEffect(() => {
         dispatch(getAllProjects())
     }, [dispatch])
 
+    const username = (id) => {
+        const name = users.map(user => {
+            if (id === user.id) {
+                return user.username
+            }
+        })
+        return name
+    }
     return (
         <div className="explorePage">
             <div className="slideshow-container">
@@ -22,7 +39,7 @@ const ProjectExplore = () => {
             </div>
             <ul>
                 {projects?.map(project => (
-                    <a className="allProjectsMap" key={project.id} href={`/projects/${project.id}`}>
+                    <div className="allProjectsMap" key={project.id}>
                         <li className="eachProject">
                             <div className="projectImage">
                                 <img src={`${project.titleImage}`} />
@@ -43,7 +60,7 @@ const ProjectExplore = () => {
                                 </div>
                             </div>
                         </li>
-                    </a>
+                    </div>
                 ))}
             </ul>
         </div >
