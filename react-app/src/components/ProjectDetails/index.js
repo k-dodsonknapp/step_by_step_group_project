@@ -7,14 +7,20 @@ import './Projects.css'
 
 const ProjectDetails = () => {
     const dispatch = useDispatch()
-    // const history = useHistory()
+    const history = useHistory()
     const { projectId } = useParams();
     const project = useSelector(state => state.projects[projectId])
     const user = useSelector(state => state.session.user)
+    const session = useSelector(state => state.session)
     const commentState = useSelector(state => state.comments)
 
     const [showCommentForm, setShowCommentForm] = useState(false)
     const [comment, setComment] = useState('')
+
+    // if(project) {
+    //     console.log("session______",session.user.id)
+    //     console.log("project__________)",project.owner.id)
+    // }
 
     useEffect(() => {
         dispatch(getOneProject(projectId))
@@ -25,6 +31,11 @@ const ProjectDetails = () => {
 
         const newComment = { 'userId': user.id, projectId, comment }
         dispatch(addOneComment(newComment))
+    }
+
+    const handleEdit = (e) => {
+        e.preventDefault();
+        history.push(`/projects/${projectId}/edit`)
     }
 
     useEffect(() => {
@@ -39,9 +50,9 @@ const ProjectDetails = () => {
                     <div id='project-details'>By
                         <span className='username-category'>{project.owner.username}</span>
                         in<span className='username-category'>{project.category}</span>
-                        {user &&
+                        {session.user.id === project.owner.id &&
                             <div>
-                                <button>
+                                <button onClick={handleEdit}>
                                     Edit
                                 </button>
                             </div>

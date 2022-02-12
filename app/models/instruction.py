@@ -19,6 +19,7 @@ class Instruction(db.Model):
         return {
             'id': self.id,
             'projectId': self.projectId,
+            'stepTitle': self.stepTitle,
             'stepOrder': self.stepOrder,
             'instructions': self.instructions,
             'photoUrl': self.photoUrl,

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom"
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProjects } from "../../store/project";
 import './projectExplore.css'
@@ -9,7 +9,7 @@ import './projectExplore.css'
 const ProjectExplore = () => {
     const dispatch = useDispatch()
     const projects = useSelector(state => Object.values(state.projects))
-    const [users, setUsers] = useState([])
+    // const [users, setUsers] = useState([])
 
     useEffect(() => {
         dispatch(getAllProjects())
@@ -18,15 +18,17 @@ const ProjectExplore = () => {
     return (
         <div className="explorePage">
             <div className="slideshow-container">
-                <img src="https://media.istockphoto.com/photos/colorful-background-of-pastel-powder-explosionrainbow-color-dust-on-picture-id1180542165?k=20&m=1180542165&s=612x612&w=0&h=43hlhk8qdGYP4V-u3AAxD3kPDRIzHjMNWpr-VdBQ2Js="></img>
+                <img src="https://media.istockphoto.com/photos/colorful-background-of-pastel-powder-explosionrainbow-color-dust-on-picture-id1180542165?k=20&m=1180542165&s=612x612&w=0&h=43hlhk8qdGYP4V-u3AAxD3kPDRIzHjMNWpr-VdBQ2Js=" alt=""></img>
             </div>
             <ul>
                 {projects?.map(project => (
                     <div className="allProjectsMap" key={project.id}>
                         <li className="eachProject">
-                            <div className="projectImage">
-                                <img src={`${project.titleImage}`} />
-                            </div>
+                            <a href={`/projects/${project.id}`}>
+                                <div className="projectImage">
+                                    <img src={`${project.titleImage}`} alt=""/>
+                                </div>
+                            </a>
                             <div className="info-container">
                                 <div className="title-by">
                                     <div>

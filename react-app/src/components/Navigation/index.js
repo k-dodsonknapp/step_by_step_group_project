@@ -1,15 +1,15 @@
 
 import React, { useEffect, useState } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import "./nav.css"
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import SearchResults from '../SearchResults';
 
 const Navigation = () => {
   // const session = useSelector(state => session.user)
   const [showMenu, setShowMenu] = useState(false)
-  const [seeCategory, setSeeCategory] = useState(false)
+  // const [seeCategory, setSeeCategory] = useState(false)
 
   const openMenu = () => {
     if (showMenu) return;
@@ -83,7 +83,7 @@ const Navigation = () => {
             <div className='profile-following-div'>
               <NavLink to="/Following">Following</NavLink>
               <button id='profile-quickmenu' onClick={openMenu}>
-                <img src='https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg' style={{}}></img>
+                <img src='https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg' alt=''></img>
               </button>
             </div>
           </div>
@@ -91,7 +91,7 @@ const Navigation = () => {
             <div className='left-lower'>
               <div className='step-by-step-logo'>
                 <NavLink to='/'>
-                  <img src="https://www.instructables.com/assets/img/instructables-logo-v2.png" />
+                  <img src="https://www.instructables.com/assets/img/instructables-logo-v2.png"  alt=''/>
                   <p>step by step</p>
                 </NavLink>
               </div>
