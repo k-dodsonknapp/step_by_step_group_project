@@ -6,7 +6,7 @@ comment_routes = Blueprint('comments', __name__)
 
 @comment_routes.route('/<int:projectId>', methods=['GET'])
 def get_project_comments(projectId):
-    all_comments= Comment.query.filter(Comment.projectId == projectId)
+    all_comments= Comment.query.filter(Comment.projectId == project.id)
     return {'all_comments':[comment.to_dict() for comment in all_comments]}
 
 

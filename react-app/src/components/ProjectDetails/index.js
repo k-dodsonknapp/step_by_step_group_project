@@ -2,34 +2,41 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { getOneProject } from "../../store/project";
-import { addOneComment, updateOneComment,getAllComments, deleteOneComment } from "../../store/comments";
+import {
+  addOneComment,
+  updateOneComment,
+  getAllComments,
+  deleteOneComment,
+} from "../../store/comments";
 import "./Projects.css";
 
-const ProjectDetails = ({id}) => {
+const ProjectDetails = ({ id }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { projectId } = useParams();
+  const { commentId } = useParams();
+  console.log("cId", commentId);
   const project = useSelector((state) => state.projects[projectId]);
   const user = useSelector((state) => state.session.user);
-  const session = useSelector(state => state.session);
+  const session = useSelector((state) => state.session);
   const commentState = useSelector((state) => state.comments);
 
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
   const [comment, setComment] = useState("");
   const [newComment, setNewComment] = useState("");
+  const [handledComment, setHandledComment] = useState({});
 
-  
-  const handleClick = async(e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    dispatch(getAllComments(projectId))
+    dispatch(getAllComments(projectId));
   };
 
-  let reversedComments = []
+  let reversedComments = [];
   if (project) {
-    project.comments.map(comment => {
-      reversedComments.unshift(comment)
-    })
+    project.comments.map((comment) => {
+      reversedComments.unshift(comment);
+    });
     // console.log('comments', reversedComments[id])
   }
   useEffect(() => {
@@ -41,25 +48,32 @@ const ProjectDetails = ({id}) => {
     e.preventDefault();
     const newComment = { userId: user.id, projectId, comment };
     dispatch(addOneComment(newComment));
-    setShowCommentForm(false)
+    setShowCommentForm(false);
+    // history.push(`/projects/${projectId}`);
   };
 
-   const handleDelete = async (e) => {
-     e.preventDefault();
+  const handleDelete = async (e, id) => {
+    // e.preventDefault();
     //  console.log(project.comments.shift(id))
-     const res = await fetch(`/api/comments/${project.comments.unshift(id)}`, {
-       method: "DELETE"
-  })
+    console.log('this is e', e)
+    let comments = project.comments;
+    for (let i = 0; i > comments.length; i++) {
+      let commentObj = comments[i];
+      // if (commentObj.id === id) {
+      const res = await dispatch(deleteOneComment(commentObj.id));
+      // }
+      // }
+    }
+  };
 
- }
-  
+  if (project) {
+    console.log("--------", project);
+  }
 
   const handleEditProjectButton = (e) => {
     e.preventDefault();
-    history.push(`/projects/${projectId}/edit`)
-  }
-
-  
+    history.push(`/projects/${projectId}/edit`);
+  };
 
   useEffect(() => {
     console.log(commentState);
@@ -122,17 +136,23 @@ const ProjectDetails = ({id}) => {
             ))}
           </ul>
           {showCommentForm && (
-            <form className="comment-form"  onSubmit={handleComment}>
+            <form className="comment-form" onSubmit={handleComment}>
               <label className="comments-title">Leave a comment here:</label>
               <textarea
                 className="comment-box"
-                rows='5'
-                cols='80'
+                rows="5"
+                cols="80"
                 type="text"
                 onChange={(e) => setComment(e.target.value)}
                 value={comment}
               />
-                <button className="submit-comment" onClick={handleComment} type='submit'>Submit Comment</button>
+              <button
+                className="submit-comment"
+                onClick={handleComment}
+                type="submit"
+              >
+                Submit Comment
+              </button>
             </form>
           )}
           <ul className="comments-title">
