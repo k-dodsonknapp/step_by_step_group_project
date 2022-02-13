@@ -7,11 +7,12 @@ import "./Projects.css";
 
 const ProjectDetails = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const { projectId } = useParams();
   const project = useSelector((state) => state.projects[projectId]);
   const user = useSelector((state) => state.session.user);
+  const session = useSelector(state => state.session);
   const commentState = useSelector((state) => state.comments);
-  console.log(user);
 
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
@@ -23,7 +24,7 @@ const ProjectDetails = () => {
     project.comments.map(comment => {
       reversedComments.unshift(comment)
     })
-    console.log('comments',reversedComments)
+    console.log('comments', reversedComments)
   }
   useEffect(() => {
     dispatch(getOneProject(projectId));
@@ -31,21 +32,21 @@ const ProjectDetails = () => {
 
   const handleComment = (e) => {
     e.preventDefault();
-
     const newComment = { userId: user.id, projectId, comment };
     dispatch(addOneComment(newComment));
     setShowCommentForm(false)
-
-    // let ele =
-
   };
 
   const handleEdit = (e) => {
     e.preventDefault();
-
     const newComment = { userId: user.id, projectId, comment };
     dispatch(updateOneComment(newComment));
   };
+
+  const handleEditProjectButton = (e) => {
+    e.preventDefault();
+    history.push(`/projects/${projectId}/edit`)
+  }
 
   // const deleteComment = async (id) => {
   //   await dispatch(spotStore.thunk_deleteSpot({ id }));
@@ -65,9 +66,9 @@ const ProjectDetails = () => {
             By
             <span className="username-category">{project.owner.username}</span>
             in<span className="username-category">{project.category}</span>
-            {user && (
+            {session.user.id === project.owner.id && (
               <div>
-                <button>Edit</button>
+                <button onClick={handleEditProjectButton}>Edit</button>
               </div>
             )}
           </div>
