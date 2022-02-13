@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { getOneProject } from "../../store/project";
-import { addOneComment, updateOneComment } from "../../store/comments";
+import { addOneComment, updateOneComment,getAllComments, deleteOneComment } from "../../store/comments";
 import "./Projects.css";
 
-const ProjectDetails = () => {
+const ProjectDetails = ({id}) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { projectId } = useParams();
@@ -19,39 +19,47 @@ const ProjectDetails = () => {
   const [comment, setComment] = useState("");
   const [newComment, setNewComment] = useState("");
 
+  
+  const handleClick = async(e) => {
+    e.preventDefault();
+    dispatch(getAllComments(projectId))
+  };
+
   let reversedComments = []
   if (project) {
     project.comments.map(comment => {
       reversedComments.unshift(comment)
     })
-    console.log('comments', reversedComments)
+    // console.log('comments', reversedComments[id])
   }
   useEffect(() => {
+    dispatch(getAllComments(id));
     dispatch(getOneProject(projectId));
   }, [dispatch, projectId]);
 
-  const handleComment = (e) => {
+  const handleComment = async (e) => {
     e.preventDefault();
     const newComment = { userId: user.id, projectId, comment };
     dispatch(addOneComment(newComment));
     setShowCommentForm(false)
   };
 
-  const handleEdit = (e) => {
-    e.preventDefault();
-    const newComment = { userId: user.id, projectId, comment };
-    dispatch(updateOneComment(newComment));
-  };
+   const handleDelete = async (e) => {
+     e.preventDefault();
+    //  console.log(project.comments.shift(id))
+     const res = await fetch(`/api/comments/${project.comments.unshift(id)}`, {
+       method: "DELETE"
+  })
+
+ }
+  
 
   const handleEditProjectButton = (e) => {
     e.preventDefault();
     history.push(`/projects/${projectId}/edit`)
   }
 
-  // const deleteComment = async (id) => {
-  //   await dispatch(spotStore.thunk_deleteSpot({ id }));
-  //   history.push("/spots");
-  // };
+  
 
   useEffect(() => {
     console.log(commentState);
@@ -114,7 +122,7 @@ const ProjectDetails = () => {
             ))}
           </ul>
           {showCommentForm && (
-            <form className="comment-form" onSubmit={handleComment}>
+            <form className="comment-form"  onSubmit={handleComment}>
               <label className="comments-title">Leave a comment here:</label>
               <textarea
                 className="comment-box"
@@ -123,8 +131,8 @@ const ProjectDetails = () => {
                 type="text"
                 onChange={(e) => setComment(e.target.value)}
                 value={comment}
-              ></textarea>
-              <button className="submit-comment" type="submit">Submit Comment</button>
+              />
+                <button className="submit-comment" onClick={handleComment} type='submit'>Submit Comment</button>
             </form>
           )}
           <ul className="comments-title">
@@ -144,8 +152,8 @@ const ProjectDetails = () => {
                 </li>
                 {user.id == comment.userId && (
                   <div className="comment-btn-container">
-                    <button onClick={handleEdit}>Edit</button>
-                    <button onClick={handleEdit}>Delete</button>
+                    <button onClick={handleDelete}>Edit</button>
+                    <button onClick={handleDelete}>Delete</button>
                   </div>
                 )}
               </>

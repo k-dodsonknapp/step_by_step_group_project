@@ -1,7 +1,7 @@
-const GET_COMMENTS = "/comments/";
-const ADD_COMMENT = "/comments/new";
+const GET_COMMENTS = "/comments/GET_COMMENTS";
+const ADD_COMMENT = "/comments/ADD_COMMENT";
 const UPDATE_COMMENT = "/comments/update";
-const DELETE_COMMENT = "/comments/delete";
+const DELETE_COMMENT = 'comments/DELETE_COMMENT';
 
 const getComments = (comments) => ({
   type: GET_COMMENTS,
@@ -24,19 +24,18 @@ const deleteComment = (comment) => ({
 });
 
 export const getAllComments = (projectId) => async (dispatch) => {
-  const response = await fetch(`/api/projects/${projectId}/comments`);
+  const response = await fetch(`/api/comments/projects/${projectId}/comments`);
   if (response.ok) {
     const data = await response.json();
-    if (data.errors) {
-      return;
-    }
+   
+      dispatch(getComments(data));
+      return data;
 
-    dispatch(getComments(data));
-    return data;
+  
   }
 };
 
-export const addOneComment = (comment) => async (dispatch) => {
+export const addOneComment = (comment) => async(dispatch) => {
   const response = await fetch(`/api/comments/new`, {
     method: "POST",
     headers: {
@@ -44,11 +43,12 @@ export const addOneComment = (comment) => async (dispatch) => {
     },
     body: JSON.stringify(comment),
   });
+  const data = await response.json();
   if (response.ok) {
-    const data = await response.json();
+  
     console.log('data:', data)
-    dispatch(addComment(data.comment));
-    return data.comment;
+    dispatch(addComment(data));
+    return data;
   }
 };
 
@@ -71,28 +71,31 @@ export const deleteOneComment = (id) => async (dispatch) => {
     method: "DELETE",
   });
   if (res.ok) {
-    dispatch(deleteComment(id));
+    const comment = await res.json();
+    dispatch(deleteComment(comment.id));
     return "Successfully deleted.";
   }
 };
 
 const initialState = {};
 
-export default function commentReducer(state = initialState, action) {
+const commentReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
     case GET_COMMENTS:
-      newState = {};
-      action.payload.comments.map(
-        (comment) => (newState[comment.id] = comment)
-      );
+      newState = {
+        ...state,
+        ...state.comments = {
+            ...action.payload
+        }
+      }
       return newState;
-
     case ADD_COMMENT:
       newState = {
         ...state,
+        [action.payload.id]: action.payload
       };
-      newState[action.payload.id] = action.payload
+     
       return newState;
 
     case UPDATE_COMMENT:
@@ -108,3 +111,5 @@ export default function commentReducer(state = initialState, action) {
       return state;
   }
 }
+
+export default commentReducer;
