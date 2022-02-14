@@ -46,6 +46,7 @@ def project(id):
 @project_routes.route('/<int:id>', methods=['PUT'])
 def update_project(id):
     data = request.json
+    print("HELLO")
     instructions = data['instructions']
     supplies = data['supplies']
 
@@ -55,9 +56,23 @@ def update_project(id):
     project.overview = data['overview']
     project.category = data['category']
 
+    projectInstructions = Instruction.query.filter(Instruction.projectId == id).all()
+    for instruction in projectInstructions:
+        db.session.delete(instruction)
+
     for instruction in instructions:
-        row = Instruction.query.filter(Instruction.projectId == id, Instruction.stepOrder == instruction['stepOrder']).first()
-        row.stepTitle = instruction['stepTitle']
+        # row = Instruction.query.filter(Instruction.projectId == id, Instruction.stepOrder == instruction['stepOrder']).first()
+        # row.stepTitle = instruction['stepTitle']
+        # row.stepOrder = instruction['stepOrder']
+        row = Instruction(
+            projectId=id,
+            stepOrder=instruction["stepOrder"],
+            stepTitle=instruction["stepTitle"],
+            instructions=instruction["instructions"],
+            photoUrl=instruction["photoUrl"],
+            videoUrl=instruction["videoUrl"],
+        )
+        db.session.add(row)
 
     projectSupplies = Supply.query.filter(Supply.projectId == id).all()
     for supply in projectSupplies:

@@ -7,31 +7,13 @@ import './projectExplore.css'
 
 
 const ProjectExplore = () => {
-    const dispatch = useDispatch()
-    const projects = useSelector(state => Object.values(state.projects))
-    const [users, setUsers] = useState([])
+    const dispatch = useDispatch();
+    const projects = useSelector(state => Object.values(state.projects));
 
     useEffect(() => {
-        async function usersData() {
-            const res = await fetch('/api/users/');
-            const resData = await res.json();
-            setUsers(resData.users);
-        }
-        usersData();
-    }, [])
+        dispatch(getAllProjects());
+    }, [dispatch]);
 
-    useEffect(() => {
-        dispatch(getAllProjects())
-    }, [dispatch])
-
-    const username = (id) => {
-        const name = users.map(user => {
-            if (id === user.id) {
-                return user.username
-            }
-        })
-        return name
-    }
     return (
         <div className="explorePage">
             <div className="slideshow-container">
