@@ -77,6 +77,7 @@ export const addOneProject = (data) => async (dispatch) => {
 };
 
 export const updateOnePost = (data) => async (dispatch) => {
+  // console.log("FRONT END", data)
   const response = await fetch(`/api/projects/${data.id}`, {
     method: "PUT",
     headers: {
@@ -84,10 +85,12 @@ export const updateOnePost = (data) => async (dispatch) => {
     },
     body: JSON.stringify(data),
   });
+  // console.log("RESPONSE",response)
   if (response.ok) {
-    const data = await response.json();
-    dispatch(updateProjects(data));
-    return data;
+    const project = await response.json();
+    console.log("--------", project)
+    dispatch(updateProjects(project));
+    return project;
   }
 };
 

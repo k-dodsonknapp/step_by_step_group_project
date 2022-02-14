@@ -7,7 +7,7 @@ class Instruction(db.Model):
     projectId = db.Column(db.Integer, db.ForeignKey('projects.id'), nullable=False)
     stepOrder = db.Column(db.Integer, nullable=False)
     stepTitle = db.Column(db.String(100))
-    instructions = db.Column(db.Text, nullable=False)
+    instructions = db.Column(db.Text)
     photoUrl = db.Column(db.Text)
     videoUrl = db.Column(db.Text)
 
@@ -19,6 +19,7 @@ class Instruction(db.Model):
         return {
             'id': self.id,
             'projectId': self.projectId,
+            'stepTitle': self.stepTitle,
             'stepOrder': self.stepOrder,
             'instructions': self.instructions,
             'photoUrl': self.photoUrl,

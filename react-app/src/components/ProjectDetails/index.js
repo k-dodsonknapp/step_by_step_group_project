@@ -10,6 +10,7 @@ const ProjectDetails = () => {
   const history = useHistory();
   const { projectId } = useParams();
   const project = useSelector((state) => state.projects[projectId]);
+  // console.log("PROJECTSsssssssssss", project)
   const user = useSelector((state) => state.session.user);
   const session = useSelector(state => state.session);
   const commentState = useSelector((state) => state.comments);
