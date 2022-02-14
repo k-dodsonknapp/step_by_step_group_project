@@ -125,7 +125,7 @@ of your Heroku app in the url and tag name:
    docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
    ```
    
-##Tech Stack
+## Tech Stack
 
 Client: JavaScript, NodeJS, React, Redux
 Server: PostgreSQL, Python, Flask, SQLAlchemy
