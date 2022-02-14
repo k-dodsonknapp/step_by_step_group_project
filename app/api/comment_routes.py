@@ -1,5 +1,7 @@
+from crypt import methods
 from flask import Blueprint, request
 from app.models import db, Comment
+from app.models.project import Project
 
 
 comment_routes = Blueprint('comments', __name__)

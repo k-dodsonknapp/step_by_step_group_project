@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { deleteOneProject, getOneProject } from "../../store/project";
-import { addOneComment, updateOneComment } from "../../store/comments";
+import { addOneComment, deleteOneComment, getAllComments, updateOneComment } from "../../store/comments";
 import "./Projects.css";
 
 const ProjectDetails = () => {
@@ -10,15 +10,17 @@ const ProjectDetails = () => {
   const history = useHistory();
   const { projectId } = useParams();
   const project = useSelector((state) => state.projects[projectId]);
+  
   // console.log("PROJECTSsssssssssss", project)
   const user = useSelector((state) => state.session.user);
   const session = useSelector(state => state.session);
   const commentState = useSelector((state) => state.comments);
+  console.log("--------", commentState)
 
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
   const [comment, setComment] = useState("");
-  const [newComment, setNewComment] = useState("");
+  const [newComment, setNewComment] = useState([]);
 
   let reversedComments = []
   if (project) {
@@ -27,16 +29,27 @@ const ProjectDetails = () => {
     })
     console.log('comments', reversedComments)
   }
+
   useEffect(() => {
     dispatch(getOneProject(projectId));
-  }, [dispatch, projectId]);
+  }, [dispatch, projectId, getOneProject]);
+  
 
-  const handleComment = (e) => {
+
+  const handleComment = async(e) => {
     e.preventDefault();
+    // console.log(await dispatch(getAllComments(projectId)))
     const newComment = { userId: user.id, projectId, comment };
-    dispatch(addOneComment(newComment));
+    await dispatch(addOneComment(newComment));
+    await dispatch(getOneProject(projectId))
     setShowCommentForm(false)
+    // history.push(`/projects/${projectId}`)
   };
+
+  useEffect(() => {
+    addOneComment(newComment)
+
+  }, [dispatch,newComment])
 
   const handleEdit = (e) => {
     e.preventDefault();
@@ -56,10 +69,13 @@ const ProjectDetails = () => {
       history.push('/')
     }
   }
-  // const deleteComment = async (id) => {
-  //   await dispatch(spotStore.thunk_deleteSpot({ id }));
-  //   history.push("/spots");
-  // };
+
+  const handleDeleteComment = async (e) => {
+    console.log(e)
+    e.preventDefault();
+    const commentDelete = await dispatch(deleteOneComment(e.target.id))
+    dispatch(getOneProject(projectId))
+  }
 
   useEffect(() => {
     console.log(commentState);
@@ -133,7 +149,7 @@ const ProjectDetails = () => {
                 onChange={(e) => setComment(e.target.value)}
                 value={comment}
               ></textarea>
-              <button className="submit-comment" type="submit">Submit Comment</button>
+              <button onClick={handleComment} className="submit-comment" type="submit">Submit Comment</button>
             </form>
           )}
           <ul className="comments-title">
@@ -154,7 +170,7 @@ const ProjectDetails = () => {
                 {user.id == comment.userId && (
                   <div className="comment-btn-container">
                     <button onClick={handleEdit}>Edit</button>
-                    <button onClick={handleEdit}>Delete</button>
+                    <button id={comment.id} onClick={handleDeleteComment}>Delete</button>
                   </div>
                 )}
               </>
