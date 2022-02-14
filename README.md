@@ -2,6 +2,8 @@
 
 This is a clone of the website instructables.
 
+Live site: https://step-by-step-app.herokuapp.com/
+
 ## Getting started
 
 1. Clone this repository (only this branch)
