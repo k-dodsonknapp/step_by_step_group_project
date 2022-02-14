@@ -63,6 +63,7 @@ export const updateOneComment = ({commentId, comment}) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(updateComment(data));
+    console.log(data)
     return data;
   }
 };
@@ -96,7 +97,7 @@ export default function commentReducer(state = initialState, action) {
       return newState;
 
     case UPDATE_COMMENT:
-      state[action.payload.comment.id] = action.payload.comment;
+      state[action.payload.commentId] = action.payload.comment;
       newState = { ...state };
       return newState;
 

@@ -3,58 +3,75 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { deleteOneProject, getOneProject } from "../../store/project";
 import { addOneComment, deleteOneComment, getAllComments, updateOneComment } from "../../store/comments";
+import EditCommentForm from "../EditComments";
 import "./Projects.css";
 
 const ProjectDetails = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { projectId } = useParams();
-  const project = useSelector((state) => state.projects[projectId]);
-  
+  const project = useSelector((state) => state.projects[+projectId]);
+  // console.log("!!!!COMMENTS!!!!!!!", project)
+
   // console.log("PROJECTSsssssssssss", project)
   const user = useSelector((state) => state.session.user);
   const session = useSelector(state => state.session);
   const commentState = useSelector((state) => state.comments);
-  console.log("--------", commentState)
+  // console.log("--------", commentState)
 
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
-  const [comment, setComment] = useState("");
-  const [newComment, setNewComment] = useState([]);
+  const [comment, setComment] = useState('');
+  // console.log("IDKDKDKDKD", comment)
+  const [newComment, setNewComment] = useState(0);
+
+
+
+
+
+
+
+
+
+
+
+
 
   let reversedComments = []
   if (project) {
     project.comments.map(comment => {
       reversedComments.unshift(comment)
     })
-    console.log('comments', reversedComments)
+    // console.log('comments', reversedComments)
   }
 
   useEffect(() => {
-    dispatch(getOneProject(projectId));
+    dispatch(getOneProject(+projectId));
   }, [dispatch, projectId, getOneProject]);
-  
 
-
-  const handleComment = async(e) => {
+  const handleComment = async (e) => {
     e.preventDefault();
-    // console.log(await dispatch(getAllComments(projectId)))
     const newComment = { userId: user.id, projectId, comment };
     await dispatch(addOneComment(newComment));
     await dispatch(getOneProject(projectId))
     setShowCommentForm(false)
-    // history.push(`/projects/${projectId}`)
   };
 
   useEffect(() => {
     addOneComment(newComment)
 
-  }, [dispatch,newComment])
+  }, [dispatch, newComment])
 
-  const handleEdit = (e) => {
-    e.preventDefault();
-    const newComment = { userId: user.id, projectId, comment };
-    dispatch(updateOneComment(newComment));
+  const handleEdit = async (e) => {
+    // e.preventDefault();
+    // // const newComment = { userId: user.id, projectId, comment };
+    // // dispatch(updateOneComment(newComment));
+    // await dispatch()
+    // return (
+    //   <div>
+    //     <EditCommentForm />
+    //   </div>
+    // )
   };
 
   const handleEditProjectButton = (e) => {
@@ -77,9 +94,26 @@ const ProjectDetails = () => {
     dispatch(getOneProject(projectId))
   }
 
-  useEffect(() => {
-    console.log(commentState);
-  }, [commentState]);
+  const handleShowEditForm = async (e) => {
+    e.preventDefault();
+    const id = e.target.value
+    setComment(project.comments.id)
+    // console.log(id)
+    setShowCommentEditForm(true);
+  }
+
+  // const handleEditComment = async (e) => {
+  //   // console.log("eeeeeeeeeeeee", e.target, e.target.value)
+  //   e.preventDefault();
+  //   console.log("COOKMMMMMMENT",comment)
+
+  //   // await dispatch(updateOneComment(e.target.id, newComment))
+  //   // dispatch(getOneProject(projectId))
+  // }
+
+  // useEffect(() => {
+  //   console.log(commentState);
+  // }, [commentState]);
 
   return (
     <>
@@ -163,17 +197,26 @@ const ProjectDetails = () => {
               </button>
             )}
             {reversedComments.map((comment) => (
-              <>
+              <div>
                 <li className="comments" key={comment.id}>
                   {comment.comment}
                 </li>
+
+
+
+
                 {user.id == comment.userId && (
                   <div className="comment-btn-container">
-                    <button onClick={handleEdit}>Edit</button>
+                    <button onClick={handleShowEditForm}>Edit</button>
                     <button id={comment.id} onClick={handleDeleteComment}>Delete</button>
                   </div>
                 )}
-              </>
+                {showCommentEditForm && (
+                  <div>
+                    <EditCommentForm commentId={comment.id} projectId={projectId}/>
+                  </div>
+                )}
+              </div>
             ))}
           </ul>
         </div>

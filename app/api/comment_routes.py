@@ -34,9 +34,12 @@ def delete_comment(id):
 @comment_routes.route('/<int:id>', methods=['PUT'])
 def edit_comment(id):
     data = request.json
+    print(data)
 
     comment = Comment.query.get(id)
     comment.comment = data['comment']
+    # db.session.add(comment)
     db.session.commit()
+    print(comment)
 
-    return {'message': 'success'}
+    return comment.to_dict()
