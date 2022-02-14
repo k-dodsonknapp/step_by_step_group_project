@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { updateOnePost } from "../../store/project"
+import { getOneProject, updateOnePost } from "../../store/project"
 import "./editProject.css"
 
 function EditProject() {
@@ -55,6 +55,11 @@ function EditProject() {
     const [editProjectForm, setEditProjectForm] = useState(true);
     const [editSupplyForm, setEditSupplyForm] = useState(false);
     const [editInstructionsForm, setEditInstructionsForm] = useState(false);
+    const [editMoreInstructionsBtn, setEditMoreInstructionsBtn] = useState(true)
+
+    useEffect(() => {
+        dispatch(getOneProject(projectId))
+    }, [dispatch, setTitle])
 
     const handleEditProjectSubmit = async (e) => {
         // console.log("HELLO")
@@ -67,11 +72,10 @@ function EditProject() {
             "overview": overview,
             "category": category,
             "instructions": [...newInstructions],
-            "supplies":[...newSupplies]
+            "supplies": [...newSupplies]
         }
-        // console.log("EDITED PROJECT", editedProject)
         const data = await dispatch(updateOnePost(editedProject))
-        // const projectId = data.projectId
+        await dispatch(getOneProject(projectId))
         history.push(`/projects/${projectId}`)
 
     }
@@ -81,13 +85,6 @@ function EditProject() {
             setEditInstructionsForm(true);
         }
     }, [newSupplies, supplies]);
-
-    // useEffect(() => {
-    //     if (newInstructions.length === instructions.length){
-    //         handleEditProjectSubmit();
-    //     }
-    // }, [newInstructions, instructions])
-
 
     const editSupplies = (e) => {
         e.preventDefault();
@@ -154,6 +151,11 @@ function EditProject() {
     //     setVideoUrl(instructions[0].videoUrl)
     // }
 
+    const newFunc = () => {
+        if (newInstructions.length === instructions.length) {
+            setEditInstructionsForm(false)
+        }
+    }
 
     return (
         <div className="editPage">
@@ -179,9 +181,9 @@ function EditProject() {
                                     onChange={e => setTitleImage(e.target.value)}
                                 />
                             </div>
-                            <div className="label-input">
+                            <div id="overview" className="label-input">
                                 <label>Overview</label>
-                                <input
+                                <textarea
                                     type="text"
                                     name="overview"
                                     value={overview}
@@ -200,7 +202,7 @@ function EditProject() {
                                 </select>
                             </div>
                             <div className="btn-div">
-                                <button onClick={editSupplies}>Edit Supplies</button>
+                                <button className="submit-comment" onClick={editSupplies}>Edit Supplies</button>
                             </div>
                         </div>
                     </form>
@@ -229,9 +231,13 @@ function EditProject() {
                                 />
                             </div>
                             <div className="btn-div">
-                                <button onClick={editMoreSupplies}>Edit next supply</button>
-                                <button onClick={editInstructions}>Edit Instructions</button>
+                                <button className="submit-comment" onClick={editMoreSupplies}>Edit next supply</button>
                             </div>
+                            {newSupplies.length === supplies.length && (
+                                <div className="btn-div">
+                                    <button className="submit-comment" onClick={editInstructions}>Edit Instructions</button>
+                                </div>
+                            )}
                         </div>
                     </form>
                 )}
@@ -277,10 +283,12 @@ function EditProject() {
                                     onChange={e => setVideoUrl(e.target.value)}
                                 />
                             </div>
-                            <button onClick={editMoreInstructions}>Edit next step instructions</button>
-                            {newInstructions.length === instructions.length && (
-                                <button onClick={handleEditProjectSubmit}>Submit Edit</button>
+                            {newInstructions.length < instructions.length && (
+                                <button className="submit-comment" onClick={editMoreInstructions}>Edit next step instructions</button>
                             )}
+                                {newInstructions.length === instructions.length && (
+                                    <button className="submit-comment" onClick={handleEditProjectSubmit}>Submit Edit</button>
+                                )}
                         </div>
                     </form>
                 )}

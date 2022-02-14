@@ -104,9 +104,21 @@ li > a {
     display: flex;
 }
 
+.dropdown-btns {
+    width: 75%;
+    /* border: 2px solid gray; */
+    border-radius: 6px;
+    margin-top: 20px;
+    /* margin-left: 33px; */
+    background-color: #ffac13;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
 .dropdown-div {
     height: 300px;
-    width: 250px;
+    width: 200px;
 }
 
 #profile-quickmenu {

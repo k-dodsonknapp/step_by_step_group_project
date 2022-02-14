@@ -24,17 +24,8 @@ const ProjectDetails = () => {
   const [comment, setComment] = useState('');
   // console.log("IDKDKDKDKD", comment)
   const [newComment, setNewComment] = useState(0);
-
-
-
-
-
-
-
-
-
-
-
+  const [commentId, setCommentId] = useState(0)
+  console.log("--------", commentId)
 
 
   let reversedComments = []
@@ -96,12 +87,23 @@ const ProjectDetails = () => {
 
   const handleShowEditForm = async (e) => {
     e.preventDefault();
-    const id = e.target.value
+    const id = e.target.id
+    setCommentId(id)
+    // console.log(+commentId === +id)
     setComment(project.comments.id)
     // console.log(id)
     setShowCommentEditForm(true);
   }
 
+  const cancel = (e) => {
+    e.preventDefault();
+    setShowCommentEditForm(false)
+  }
+
+  useEffect(() => {
+    dispatch(getOneProject(projectId))
+
+  }, [dispatch])
   // const handleEditComment = async (e) => {
   //   // console.log("eeeeeeeeeeeee", e.target, e.target.value)
   //   e.preventDefault();
@@ -125,9 +127,9 @@ const ProjectDetails = () => {
             <span className="username-category">{project.owner.username}</span>
             in<span className="username-category">{project.category}</span>
             {session.user.id === project.owner.id && (
-              <div>
-                <button onClick={handleEditProjectButton}>Edit</button>
-                <button onClick={handleDelete}>Delete</button>
+              <div className="btn-div">
+                <button className="submit-comment" onClick={handleEditProjectButton}>Edit</button>
+                <button className="submit-comment" onClick={handleDelete}>Delete</button>
               </div>
             )}
           </div>
@@ -148,6 +150,7 @@ const ProjectDetails = () => {
               <>
                 <li className="supply-list" key={supply.id}>
                   {supply.supply}
+                  
                 </li>
               </>
             ))}
@@ -156,7 +159,7 @@ const ProjectDetails = () => {
             {project.instructions.map((instruction) => (
               <div className="instruction-container">
                 <div className="instruction-title">
-                  Step {instruction.stepOrder}:
+                  Step {instruction.stepOrder} {instruction.stepTitle}:
                 </div>
                 <div className="project-image-container">
                   <img
@@ -201,19 +204,20 @@ const ProjectDetails = () => {
                 <li className="comments" key={comment.id}>
                   {comment.comment}
                 </li>
+                {+comment.id === +commentId && (
+                  // {showCommentEditForm && (
 
-
-
+                  <div>
+                    <EditCommentForm commentId={comment.id} projectId={projectId} />
+                    {/* <button className="submit-comment" onClick={cancel}>Cancel</button> */}
+                  </div>
+                  // )}
+                )}
 
                 {user.id == comment.userId && (
                   <div className="comment-btn-container">
-                    <button onClick={handleShowEditForm}>Edit</button>
-                    <button id={comment.id} onClick={handleDeleteComment}>Delete</button>
-                  </div>
-                )}
-                {showCommentEditForm && (
-                  <div>
-                    <EditCommentForm commentId={comment.id} projectId={projectId}/>
+                    <button  className="submit-comment" id={comment.id} onClick={handleShowEditForm}>Edit</button>
+                    <button  className="submit-comment" id={comment.id} onClick={handleDeleteComment}>Delete</button>
                   </div>
                 )}
               </div>

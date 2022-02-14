@@ -21,6 +21,11 @@
     width: 100%;
 }
 
+#amount {
+    display: flex;
+    justify-content: space-around;
+}
+
 #project-container {
     display: flex;
     flex-direction: column;

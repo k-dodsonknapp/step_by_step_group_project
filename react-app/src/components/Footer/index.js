@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer>
             <div id='footer-top'>
-                <div id='categories-list'>Categories
+                {/* <div id='categories-list'>Categories
                     <ul id='footer-left'>
                         <li>Circuits</li>
                         <li>Workshop</li>
@@ -14,19 +14,30 @@ const Footer = () => {
                         <li>Outside</li>
                         <li>Teachers</li>
                     </ul>
-                </div>
-                <div id='find-us'>Find Us
+                </div> */}
+                <div id='find-us'>
                     <div id='footer-right'>
+                    <div>
+                        <h5>Developed by:</h5>
+                    </div>
                         <ul>Chris Young
-                            <li>GitHub</li>
+                            <a href='https://github.com/Noslepr'>
+                                <li>GitHub</li>
+                            </a>
                             <li>LinkedIn</li>
                         </ul>
                         <ul>Kenneth Dodson-Knapp
-                            <li>GitHub</li>
-                            <li>LinkedIn</li>
+                            <a href='https://github.com/k-dodsonknapp'>
+                                <li>GitHub</li>
+                            </a>
+                            <a href='https://www.linkedin.com/in/kenneth-dodson-knapp-97029022a/'>
+                                <li>LinkedIn</li>
+                            </a>
                         </ul>
                         <ul>Anthony Adams
-                            <li>GitHub</li>
+                            <a href='https://github.com/awadams198'>
+                                <li>GitHub</li>
+                            </a>
                             <li>LinkedIn</li>
                         </ul>
                     </div>

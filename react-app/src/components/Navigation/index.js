@@ -45,37 +45,37 @@ const Navigation = () => {
               </NavLink>
               {/* </li> */}
               <li>
-                <NavLink to='/Circuits' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+                <NavLink to='/projects/1' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Circuits
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/Workshop' exact={true} activeClassName='something' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+                <NavLink to='/projects/2' exact={true} activeClassName='something' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Workshop
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/Craft' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+                <NavLink to='/projects/3' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Craft
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/Cooking' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+                <NavLink to='/projects/4' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Cooking
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/Living' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+                <NavLink to='/projects/5' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Living
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/Outside' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+                <NavLink to='/projects/6' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Outside
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/Teachers' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+                <NavLink to='/projects/7' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Teachers
                 </NavLink>
               </li>
@@ -94,10 +94,10 @@ const Navigation = () => {
                   <p>step by step</p>
                 </NavLink>
               </div>
-              <div>
+              {/* <div>
                 <button>Projects</button>
                 <button>Contests</button>
-              </div>
+              </div> */}
             </div>
             <div className='right-lower'>
               <div>
@@ -113,22 +113,28 @@ const Navigation = () => {
       {showMenu && (
         <ul className='profile-options'>
           <div className='dropdown-div'>
-            <li>
-              <NavLink to='/login' exact={true} id="something" activeClassName='another' style={{ textDecoration: 'none', color: "black" }}>
-                Login
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='/sign-up' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "black" }}>
-                Sign Up
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='/users' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "black" }}>
-                Users
-              </NavLink>
-            </li>
-            <div className='nav-links'>
+            <NavLink to='/login' exact={true} id="something" activeClassName='another' style={{ textDecoration: 'none', color: "black" }}>
+              <div className='dropdown-btns'>
+                <li>
+                  Login
+                </li>
+              </div>
+            </NavLink>
+            <NavLink to='/sign-up' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "black" }}>
+              <div className='dropdown-btns'>
+                <li>
+                  Sign Up
+                </li>
+              </div>
+            </NavLink>
+            {/* <NavLink to='/users' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "black" }}>
+              <div className='dropdown-btns'>
+                <li>
+                  Users
+                </li>
+              </div>
+            </NavLink> */}
+            <div className='dropdown-btns'>
               <li>
                 <LogoutButton />
               </li>
