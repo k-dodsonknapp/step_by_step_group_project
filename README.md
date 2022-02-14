@@ -6,7 +6,7 @@ Live site: https://step-by-step-app.herokuapp.com/
 
 ## Getting started
 
-To view and use this application, you can either navigate to the live hosted site and login as a new or demo user, or download the project locally:
+To view and use this application, you can either navigate to the live site(https://step-by-step-app.herokuapp.com/) and login as a new or demo user, or download the project locally:
 
 1. Clone this repository (only this branch)
 
