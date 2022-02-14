@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
-import { getOneProject } from "../../store/project";
+import { deleteOneProject, getOneProject } from "../../store/project";
 import { addOneComment, updateOneComment } from "../../store/comments";
 import "./Projects.css";
 
@@ -49,6 +49,13 @@ const ProjectDetails = () => {
     history.push(`/projects/${projectId}/edit`)
   }
 
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    const projectDelete = await dispatch(deleteOneProject(projectId))
+    if (projectDelete) {
+      history.push('/')
+    }
+  }
   // const deleteComment = async (id) => {
   //   await dispatch(spotStore.thunk_deleteSpot({ id }));
   //   history.push("/spots");
@@ -70,6 +77,7 @@ const ProjectDetails = () => {
             {session.user.id === project.owner.id && (
               <div>
                 <button onClick={handleEditProjectButton}>Edit</button>
+                <button onClick={handleDelete}>Delete</button>
               </div>
             )}
           </div>
