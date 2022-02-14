@@ -8,7 +8,7 @@ Live site: https://step-by-step-app.herokuapp.com/
 
 To view and use this application, you can either navigate to the live site(https://step-by-step-app.herokuapp.com/) and login as a new or demo user, or download the project locally:
 
-1. Clone this repository (only this branch)
+1. Clone this repository https://github.com/Noslepr/Python-group-project.git
 
    ```bash
    git clone https://github.com/appacademy-starters/python-project-starter.git
