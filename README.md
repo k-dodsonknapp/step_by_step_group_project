@@ -1,6 +1,6 @@
-# Flask React Project
+# Step by step
 
-This is the starter for the Flask React project.
+This is a clone of the website instructables.
 
 ## Getting started
 
