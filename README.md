@@ -128,4 +128,5 @@ of your Heroku app in the url and tag name:
 ## Tech Stack
 
 Client: JavaScript, NodeJS, React, Redux
+
 Server: PostgreSQL, Python, Flask, SQLAlchemy
