@@ -30,7 +30,6 @@ function EditProject() {
     const [titleImage, setTitleImage] = useState(project.titleImage);
     const [category, setCategory] = useState(project.category);
     const [overview, setOverview] = useState(project.overview);
-//This si s a neoalsdfk jasilkdf 
     //project supplies
     const [supplies, setSupplies] = useState(project.supplies);
     const [fixedSupplies, setFixedSupplies] = useState([...supplies])
