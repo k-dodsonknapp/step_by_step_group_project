@@ -18,7 +18,7 @@ def projects():
         username = User.query.get(id).to_dict()["username"]
         project["username"] = username
 
-    print("-------", list)
+    # print("-------", list)
     return {"projects": list}
 
 
