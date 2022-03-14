@@ -11,7 +11,6 @@ import User from './components/User';
 import ProjectExplore from './components/ProjectExplore';
 import ProjectDetails from './components/ProjectDetails'
 import CreateProject from './components/CreateProject'
-import SearchResults from './components/SearchResults';
 import Footer from './components/Footer';
 import SearchRes from './components/searchResultsPage';
 import EditProject from './components/EditProject';

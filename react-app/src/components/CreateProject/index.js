@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addOneProject } from "../../store/project";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./createProject.css"
 
 const CreateProject = () => {
@@ -35,7 +35,7 @@ const CreateProject = () => {
     const [showProjectForm, setShowProjectForm] = useState(true)
     const [showSupplyForm, setShowSupplyForm] = useState(false)
     const [showInstructionForm, setShowInstructionForm] = useState(false)
-    const [showEmptyFields, setShowEmptyFields] = useState(false)
+    // const [showEmptyFields, setShowEmptyFields] = useState(false)
 
     const handleProjectSubmit = async (e) => {
         e.preventDefault()
@@ -62,7 +62,7 @@ const CreateProject = () => {
 
     useEffect(() => {
         const inFuncErrors = []
-        if (title.length < 6 || title == '') {
+        if (title.length < 6 || title === '') {
             inFuncErrors.push('Please provide a longer title')
         }
         if (!(titleImage.includes('.png') || titleImage.includes('.jpg') || titleImage.includes('.jpeg')) || titleImage == '') {
