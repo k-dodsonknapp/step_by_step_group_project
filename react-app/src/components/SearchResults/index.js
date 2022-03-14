@@ -1,8 +1,8 @@
 // import React from "react";
 import "./SearchResults.css";
-import React, { useState, useEffect, useLayoutEffect } from "react";
-import { useSelector } from "react-redux";
-import { NavLink, useHistory, Redirect } from "react-router-dom";
+import React, { useState } from "react";
+// import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { search } from "../../store/project";
 import { useDispatch } from "react-redux";
 
@@ -10,7 +10,7 @@ const SearchResults = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [searchKeyWord, setSearchKeyWord] = useState("");
-  const [projects, setProjects] = useState();
+  // const [projects, setProjects] = useState();
   const [errors, setErrors] = useState([]);
 
   const errSearch = () => {
