@@ -65,10 +65,10 @@ const CreateProject = () => {
         if (title.length < 6 || title === '') {
             inFuncErrors.push('Please provide a longer title')
         }
-        if (!(titleImage.includes('.png') || titleImage.includes('.jpg') || titleImage.includes('.jpeg')) || titleImage == '') {
+        if (!(titleImage.includes('.png') || titleImage.includes('.jpg') || titleImage.includes('.jpeg')) || titleImage === '') {
             inFuncErrors.push('Please use .png, .jpg, or .jpeg file type')
         }
-        if (overview.length < 20 || overview == '') {
+        if (overview.length < 20 || overview === '') {
             inFuncErrors.push('Please provide a longer overview')
         }
         setErrors(inFuncErrors)
@@ -99,7 +99,7 @@ const CreateProject = () => {
     const moveOntoSupplies = (e) => {
         e.preventDefault()
         console.log(errors)
-        if (errors.length > 0 || title == '' || titleImage == '' || overview == '') {
+        if (errors.length > 0 || title === '' || titleImage === '' || overview === '') {
             setShowErrors(true)
         } else {
             setShowProjectForm(false)
