@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import { getOneProject } from "../../store/project";
-import { updateOneComment, deleteOneComment } from "../../store/comments";
+import { updateOneComment } from "../../store/comments";
 
 const EditCommentForm = ({ commentId, projectId }) => {
   const dispatch = useDispatch();

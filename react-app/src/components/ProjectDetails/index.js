@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { deleteOneProject, getOneProject } from "../../store/project";
-import { addOneComment, deleteOneComment, getAllComments, updateOneComment } from "../../store/comments";
+import { addOneComment, deleteOneComment } from "../../store/comments";
 import EditCommentForm from "../EditComments";
 import "./Projects.css";
 
@@ -11,34 +11,37 @@ const ProjectDetails = () => {
   const history = useHistory();
   const { projectId } = useParams();
   const project = useSelector((state) => state.projects[+projectId]);
-  // console.log("!!!!COMMENTS!!!!!!!", project)
 
-  // console.log("PROJECTSsssssssssss", project)
   const user = useSelector((state) => state.session.user);
   const session = useSelector(state => state.session);
-  const commentState = useSelector((state) => state.comments);
-  // console.log("--------", commentState)
+  // const commentState = useSelector((state) => state.comments);
+
 
   const [showCommentForm, setShowCommentForm] = useState(false);
-  const [showCommentEditForm, setShowCommentEditForm] = useState(false);
+  const [setShowCommentEditForm] = useState(false);
   const [comment, setComment] = useState('');
   // console.log("IDKDKDKDKD", comment)
-  const [newComment, setNewComment] = useState(0);
-  const [commentId, setCommentId] = useState(0)
-  console.log("--------", commentId)
-
-
+  const [newComment ] = useState(0);
+  const [commentId, setCommentId] = useState(0);
+  
   let reversedComments = []
   if (project) {
     project.comments.map(comment => {
-      reversedComments.unshift(comment)
+      return reversedComments.unshift(comment)
     })
-    // console.log('comments', reversedComments)
   }
 
   useEffect(() => {
+    addOneComment(newComment)
+  }, [dispatch, newComment])
+
+  useEffect(() => {
+    dispatch(getOneProject(projectId))
+  }, [dispatch, projectId])
+  
+  useEffect(() => {
     dispatch(getOneProject(+projectId));
-  }, [dispatch, projectId, getOneProject]);
+  }, [dispatch, projectId]);
 
   const handleComment = async (e) => {
     e.preventDefault();
@@ -48,22 +51,6 @@ const ProjectDetails = () => {
     setShowCommentForm(false)
   };
 
-  useEffect(() => {
-    addOneComment(newComment)
-
-  }, [dispatch, newComment])
-
-  const handleEdit = async (e) => {
-    // e.preventDefault();
-    // // const newComment = { userId: user.id, projectId, comment };
-    // // dispatch(updateOneComment(newComment));
-    // await dispatch()
-    // return (
-    //   <div>
-    //     <EditCommentForm />
-    //   </div>
-    // )
-  };
 
   const handleEditProjectButton = (e) => {
     e.preventDefault();
@@ -81,7 +68,7 @@ const ProjectDetails = () => {
   const handleDeleteComment = async (e) => {
     console.log(e)
     e.preventDefault();
-    const commentDelete = await dispatch(deleteOneComment(e.target.id))
+    await dispatch(deleteOneComment(e.target.id))
     dispatch(getOneProject(projectId))
   }
 
@@ -95,15 +82,11 @@ const ProjectDetails = () => {
     setShowCommentEditForm(true);
   }
 
-  const cancel = (e) => {
-    e.preventDefault();
-    setShowCommentEditForm(false)
-  }
+  // const cancel = (e) => {
+  //   e.preventDefault();
+  //   setShowCommentEditForm(false)
+  // }
 
-  useEffect(() => {
-    dispatch(getOneProject(projectId))
-
-  }, [dispatch])
   // const handleEditComment = async (e) => {
   //   // console.log("eeeeeeeeeeeee", e.target, e.target.value)
   //   e.preventDefault();
@@ -214,7 +197,7 @@ const ProjectDetails = () => {
                   // )}
                 )}
 
-                {user.id == comment.userId && (
+                {user.id === comment.userId && (
                   <div className="comment-btn-container">
                     <button  className="submit-comment" id={comment.id} onClick={handleShowEditForm}>Edit</button>
                     <button  className="submit-comment" id={comment.id} onClick={handleDeleteComment}>Delete</button>

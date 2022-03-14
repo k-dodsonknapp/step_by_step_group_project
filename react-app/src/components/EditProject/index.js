@@ -12,7 +12,7 @@ function EditProject() {
     const project = useSelector(state => state.projects[projectId])
     const dispatch = useDispatch();
     const history = useHistory();
-    const owner = useSelector(state => state.user)
+    // const owner = useSelector(state => state.user)
     // console.log(owner)
 
     // if (project) {
@@ -31,7 +31,7 @@ function EditProject() {
     const [category, setCategory] = useState(project.category);
     const [overview, setOverview] = useState(project.overview);
     //project supplies
-    const [supplies, setSupplies] = useState(project.supplies);
+    const [supplies] = useState(project.supplies);
     const [fixedSupplies, setFixedSupplies] = useState([...supplies])
     const [supply, setSupply] = useState(supplies[0].supply);
     const [amount, setAmount] = useState(supplies[0].amount);
@@ -39,10 +39,10 @@ function EditProject() {
 
 
     // project instructions
-    const [instructions, setInstructions] = useState(project.instructions);
+    const [instructions] = useState(project.instructions);
     // console.log("instructions", instructions)
     const [fixedInstructions, setFixedInstructions] = useState([...instructions])
-    const [fixedInstructionsId, setFixedInstructionsId] = useState(fixedInstructions[0].id)
+    // const [fixedInstructionsId, setFixedInstructionsId] = useState(fixedInstructions[0].id)
     // console.log("fixed", fixedInstructions)
     const [newInstructions, setNewInstructions] = useState([])
     const [stepOrder, setStepOrder] = useState(instructions[0].stepOrder);
@@ -55,11 +55,11 @@ function EditProject() {
     const [editProjectForm, setEditProjectForm] = useState(true);
     const [editSupplyForm, setEditSupplyForm] = useState(false);
     const [editInstructionsForm, setEditInstructionsForm] = useState(false);
-    const [editMoreInstructionsBtn, setEditMoreInstructionsBtn] = useState(true)
+    // const [editMoreInstructionsBtn, setEditMoreInstructionsBtn] = useState(true)
 
     useEffect(() => {
         dispatch(getOneProject(projectId))
-    }, [dispatch, setTitle])
+    }, [dispatch, setTitle, projectId])
 
     const handleEditProjectSubmit = async (e) => {
         // console.log("HELLO")
@@ -74,7 +74,7 @@ function EditProject() {
             "instructions": [...newInstructions],
             "supplies": [...newSupplies]
         }
-        const data = await dispatch(updateOnePost(editedProject))
+        await dispatch(updateOnePost(editedProject))
         await dispatch(getOneProject(projectId))
         history.push(`/projects/${projectId}`)
 
@@ -151,11 +151,11 @@ function EditProject() {
     //     setVideoUrl(instructions[0].videoUrl)
     // }
 
-    const newFunc = () => {
-        if (newInstructions.length === instructions.length) {
-            setEditInstructionsForm(false)
-        }
-    }
+    // const newFunc = () => {
+    //     if (newInstructions.length === instructions.length) {
+    //         setEditInstructionsForm(false)
+    //     }
+    // }
 
     return (
         <div className="editPage">
@@ -286,9 +286,9 @@ function EditProject() {
                             {newInstructions.length < instructions.length && (
                                 <button className="submit-comment" onClick={editMoreInstructions}>Edit next step instructions</button>
                             )}
-                                {newInstructions.length === instructions.length && (
-                                    <button className="submit-comment" onClick={handleEditProjectSubmit}>Submit Edit</button>
-                                )}
+                            {newInstructions.length === instructions.length && (
+                                <button className="submit-comment" onClick={handleEditProjectSubmit}>Submit Edit</button>
+                            )}
                         </div>
                     </form>
                 )}
