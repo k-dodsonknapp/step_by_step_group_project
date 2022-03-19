@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { deleteOneProject, getOneProject } from "../../store/project";
-import { addOneComment, deleteOneComment } from "../../store/comments";
+import { addOneComment, deleteOneComment, updateOneComment } from "../../store/comments";
 import EditCommentForm from "../EditComments";
 import "./Projects.css";
 
@@ -18,12 +18,14 @@ const ProjectDetails = () => {
 
 
   const [showCommentForm, setShowCommentForm] = useState(false);
-  const [setShowCommentEditForm] = useState(false);
+  const [showCommentEditForm, setShowCommentEditForm] = useState(false);
   const [comment, setComment] = useState('');
   // console.log("IDKDKDKDKD", comment)
-  const [newComment ] = useState(0);
+  const [newComment] = useState(0);
   const [commentId, setCommentId] = useState(0);
-  
+  const [body, setBody] = useState(comment?.comment);
+  const [editClicked, setEditClicked] = useState(true)
+
   let reversedComments = []
   if (project) {
     project.comments.map(comment => {
@@ -38,14 +40,14 @@ const ProjectDetails = () => {
   useEffect(() => {
     dispatch(getOneProject(projectId))
   }, [dispatch, projectId])
-  
+
   useEffect(() => {
     dispatch(getOneProject(+projectId));
   }, [dispatch, projectId]);
 
   const handleComment = async (e) => {
     e.preventDefault();
-    const newComment = { userId: user.id, projectId, comment };
+    const newComment = { userId: user?.id, projectId, comment };
     await dispatch(addOneComment(newComment));
     await dispatch(getOneProject(projectId))
     setShowCommentForm(false)
@@ -90,11 +92,22 @@ const ProjectDetails = () => {
   // const handleEditComment = async (e) => {
   //   // console.log("eeeeeeeeeeeee", e.target, e.target.value)
   //   e.preventDefault();
-  //   console.log("COOKMMMMMMENT",comment)
+  //   // console.log("COOKMMMMMMENT",comment)
 
   //   // await dispatch(updateOneComment(e.target.id, newComment))
   //   // dispatch(getOneProject(projectId))
   // }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const payload = {
+      "comment": body,
+      commentId
+    };
+    await dispatch(updateOneComment(payload));
+    setEditClicked(false)
+    // setIdPath(data.id)
+  }
 
   // useEffect(() => {
   //   console.log(commentState);
@@ -104,12 +117,12 @@ const ProjectDetails = () => {
     <>
       {project && (
         <div id="project-container">
-          <div className="title">{project.title}</div>
+          <div className="title">{project?.title}</div>
           <div id="project-details">
             By
-            <span className="username-category">{project.owner.username}</span>
-            in<span className="username-category">{project.category}</span>
-            {session.user.id === project.owner.id && (
+            <span className="username-category">{project?.owner?.username}</span>
+            in<span className="username-category">{project?.category}</span>
+            {session?.user?.id === project?.owner?.id && (
               <div className="btn-div">
                 <button className="submit-comment" onClick={handleEditProjectButton}>Edit</button>
                 <button className="submit-comment" onClick={handleDelete}>Delete</button>
@@ -119,93 +132,106 @@ const ProjectDetails = () => {
           <div className="project-image-container">
             <img
               className="project-images"
-              src={project.titleImage}
+              src={project?.titleImage}
               alt="Completed project"
             ></img>
           </div>
           <div id="overview-title">
             Project Overview:
-            <p id="project-overview">{project.overview}</p>
+            <p id="project-overview">{project?.overview}</p>
           </div>
           <ul id="supplies-title">
             Supplies Needed:
-            {project.supplies.map((supply) => (
-              <>
-                <li className="supply-list" key={supply.id}>
-                  {supply.supply}
-                  
+            {project?.supplies?.map((supply) => (
+              <div key={supply?.id}>
+                <li className="supply-list" >
+                  {supply?.supply}
+
                 </li>
-              </>
+              </div>
             ))}
           </ul>
           <ul>
-            {project.instructions.map((instruction) => (
-              <div className="instruction-container">
+            {project?.instructions?.map((instruction) => (
+              <div className="instruction-container" key={instruction?.id}>
                 <div className="instruction-title">
-                  Step {instruction.stepOrder} {instruction.stepTitle}:
+                  Step {instruction?.stepOrder} {instruction?.stepTitle}:
                 </div>
                 <div className="project-image-container">
                   <img
                     className="instruction-image"
-                    key={instruction.id}
-                    src={instruction.photoUrl}
-                    alt={`Step ${instruction.stepOrder}`}
+                    key={instruction?.id}
+                    src={instruction?.photoUrl}
+                    alt={`Step ${instruction?.stepOrder}`}
                   ></img>
                 </div>
-                <li className="instructions" key={instruction.id}>
-                  {instruction.instructions}
+                <li className="instructions" key={instruction?.id}>
+                  {instruction?.instructions}
                 </li>
               </div>
             ))}
           </ul>
           {showCommentForm && (
-            <form className="comment-form" onSubmit={handleComment}>
-              <label className="comments-title">Leave a comment here:</label>
-              <textarea
-                className="comment-box"
-                rows='5'
-                cols='80'
-                type="text"
-                onChange={(e) => setComment(e.target.value)}
-                value={comment}
-              ></textarea>
-              <button onClick={handleComment} className="submit-comment" type="submit">Submit Comment</button>
-            </form>
+            // <form className="comment-form" onSubmit={handleComment}>
+            // <label className="comments-title">Leave a comment here:</label>
+            // <textarea
+            //   className="comment-box"
+            //   rows='5'
+            //   cols='80'
+            //   type="text"
+            //   value={comment}
+            //   onChange={(e) => setComment(e.target.value)}
+            // ></textarea>
+            <button onClick={handleComment} className="submit-comment" type="submit">Submit Comment</button>
+            // </form>
           )}
-          <ul className="comments-title">
-            Comments:
-            {user && (
+          {/* <ul className="comments-title"> */}
+          <h2 className="num-comments">{reversedComments.length} Comments</h2>
+          {reversedComments?.map((comment) => (
+            <div key={comment?.id}>
+              <div className="comments" >
+                <div className="user">
+                  <div className="user-container">
+                    <div className="userImg"></div>
+                    <div className="username">
+                      {comment.username}
+                    </div>
+                  </div>
+                  {user?.id === comment?.userId && (
+                    <div className="comment-btn-container">
+                      <button className="submit-comment" id={comment.id} onClick={handleDeleteComment}>Delete</button>
+                      <button className="submit-comment" id={comment.id} onClick={handleShowEditForm}>Edit</button>
+                    </div>
+                  )}
+                </div>
+                <div className="comment">
+                  {comment?.comment}
+                </div>
+              </div>
+              {+comment?.id === +commentId && (
+                <div>
+                  {showCommentEditForm && (
+                    <EditCommentForm commentId={comment.id} projectId={projectId} />
+                  )}
+                </div>
+              )}
+
+              <div >
+
+              </div>
+            </div>
+          ))}
+          {user && (
+            <div className="post-comment">
               <button
                 id="leave-comment-btn"
                 onClick={(e) => setShowCommentForm(true)}
               >
-                Post a comment
+                Post Comment
               </button>
-            )}
-            {reversedComments.map((comment) => (
-              <div>
-                <li className="comments" key={comment.id}>
-                  {comment.comment}
-                </li>
-                {+comment.id === +commentId && (
-                  // {showCommentEditForm && (
-
-                  <div>
-                    <EditCommentForm commentId={comment.id} projectId={projectId} />
-                    {/* <button className="submit-comment" onClick={cancel}>Cancel</button> */}
-                  </div>
-                  // )}
-                )}
-
-                {user.id === comment.userId && (
-                  <div className="comment-btn-container">
-                    <button  className="submit-comment" id={comment.id} onClick={handleShowEditForm}>Edit</button>
-                    <button  className="submit-comment" id={comment.id} onClick={handleDeleteComment}>Delete</button>
-                  </div>
-                )}
-              </div>
-            ))}
-          </ul>
+            </div>
+          )}
+          {/* </ul> */}
         </div>
       )}
     </>

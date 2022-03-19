@@ -99,8 +99,14 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 25px;
-    border-top: 1px solid gray;
+    border-top: 1px solid rgba(163, 162, 162, 0.534);
     padding: 10px 0px;
+}
+
+.comment {
+    margin: 10px 40px 15px 40px;
+    font-weight: 200;
+    font-size: 16px;
 }
 
 .comment-form {
@@ -114,17 +120,33 @@
     margin: 5px;
 }
 
+.userImg {
+    height: 45px;
+    width: 45px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
 .submit-comment {
-    padding: 9px 11px;
+    display: flex;
+    /* padding: 9px 11px; */
+    background-color: transparent;
     border-radius: 5px;
     border: none;
-    height: 40px;
-    background-color: #faac18;
-    color: white;
-    font-size: 16px;
+    float: right;
+    /* height: 40px; */
+    /* background-color: #faac18; */
+    /* color: white; */
+    font-size: 13px;
+    margin: 0 auto;
+    padding: 0 auto;
 }
 
 .comment-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    float: right;
     text-align: right;
 }
 
@@ -133,8 +155,11 @@
 }
 
 #leave-comment-btn {
-    margin-left: 420px;
-    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* margin-left: 420px; */
+    /* margin-bottom: 5px; */
     padding: 9px 11px;
     border-radius: 5px;
     border: none;
@@ -142,4 +167,56 @@
     background-color: #faac18;
     color: white;
     font-size: 16px;
+    margin: 35px auto 0 ;
+
+    /* margin-top: 50px; */
+}
+
+.post-comment{
+    height: 135px;
+    width: 700px;
+}
+
+.post-comment::before {
+    display: block;
+    margin: 0 auto;
+    content: "";
+    padding-top: 30px;
+    border-bottom: 1px solid rgba(163, 162, 162, 0.534);
+    width: 700px;
+}  
+
+.post-comment::after {
+    display: block;
+    margin: 0 auto;
+    content: "";
+    padding-top: 30px;
+    border-bottom: 1px solid rgba(163, 162, 162, 0.534);
+    width: 16%;
+}   
+
+.user-container {
+    display: flex;
+    align-items: center;
+}
+
+.num-comments {
+    margin: 23px;
+}
+.username {
+    display: flex;
+    justify-content: flex-start;
+    float: left;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 40px 15px 40px;
+    font-weight: 200;
+}
+
+.submit-comment:hover {
+    text-decoration: underline;
 }
