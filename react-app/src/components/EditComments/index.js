@@ -48,7 +48,8 @@ const EditCommentForm = ({ commentId, projectId }) => {
               <input type="text" value={body} onChange={e => setBody(e.target.value)} required />
               {/* <textarea value={body} onChange={updateBody} required /> */}
               <div className="btn-container">
-                <button className="submit-comment" type="submit">Edit Comment</button>
+              <button className="cancel-edit" type="submit">Cancel</button>
+                <button className="submit-comment" type="submit">Save</button>
               </div>
             </div>
           </div>

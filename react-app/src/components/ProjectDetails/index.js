@@ -201,8 +201,8 @@ const ProjectDetails = () => {
                   </div>
                   {user?.id === comment?.userId && (
                     <div className="comment-btn-container">
-                      <button className="submit-comment" id={comment.id} onClick={handleDeleteComment}>Delete</button>
-                      <button className="submit-comment" id={comment.id} onClick={handleShowEditForm}>Edit</button>
+                      <button className="submit-commentt" id={comment.id} onClick={handleDeleteComment}>Delete</button>
+                      <button className="submit-commentt" id={comment.id} onClick={handleShowEditForm}>Edit</button>
                     </div>
                   )}
                 </div>
