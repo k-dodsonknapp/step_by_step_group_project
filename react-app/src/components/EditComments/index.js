@@ -16,6 +16,7 @@ const EditCommentForm = ({ commentId, projectId }) => {
   const [idPath, setIdPath] = useState("")
   const [body, setBody] = useState(comment?.comment);
   const [editClicked, setEditClicked] = useState(true)
+  const [editForm, setEditForm] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,18 +37,28 @@ const EditCommentForm = ({ commentId, projectId }) => {
   // if (sessionUser) {
   return (
     <>{editClicked && (
+      <div className="comment-">
 
-      <form className="comment-form" onSubmit={handleSubmit}>
+        <form className="comment-form" onSubmit={handleSubmit}>
+          <div className="edit-container">
+            <div className="prf-image">
 
-        <input type="text" value={body} onChange={e => setBody(e.target.value)} required />
-        {/* <textarea value={body} onChange={updateBody} required /> */}
-        <button className="submit-comment" type="submit">Edit Comment</button>
+            </div>
+            <div className="edit-comment">
+              <input type="text" value={body} onChange={e => setBody(e.target.value)} required />
+              {/* <textarea value={body} onChange={updateBody} required /> */}
+              <div className="btn-container">
+                <button className="submit-comment" type="submit">Edit Comment</button>
+              </div>
+            </div>
+          </div>
 
 
-        {/* <button className="options" id="del-button" onClick={handleSubmit}> */}
-        {/* Delete */}
-        {/* </button> */}
-      </form>
+          {/* <button className="options" id="del-button" onClick={handleSubmit}> */}
+          {/* Delete */}
+          {/* </button> */}
+        </form>
+      </div>
     )}
     </>
   );

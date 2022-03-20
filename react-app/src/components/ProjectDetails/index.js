@@ -25,6 +25,7 @@ const ProjectDetails = () => {
   const [commentId, setCommentId] = useState(0);
   const [body, setBody] = useState(comment?.comment);
   const [editClicked, setEditClicked] = useState(true)
+  const [showComment, setShowComment] = useState(true)
 
   let reversedComments = []
   if (project) {
@@ -76,6 +77,7 @@ const ProjectDetails = () => {
 
   const handleShowEditForm = async (e) => {
     e.preventDefault();
+    setShowComment(false)
     const id = e.target.id
     setCommentId(id)
     // console.log(+commentId === +id)
@@ -204,9 +206,11 @@ const ProjectDetails = () => {
                     </div>
                   )}
                 </div>
-                <div className="comment">
-                  {comment?.comment}
-                </div>
+                {showComment && (
+                  <div className="comment">
+                    {comment?.comment}
+                  </div>
+                )}
               </div>
               {+comment?.id === +commentId && (
                 <div>
