@@ -30,7 +30,6 @@ export const getAllComments = (projectId) => async (dispatch) => {
     if (data.errors) {
       return;
     }
-
     dispatch(getComments(data));
     return data;
   }
@@ -63,7 +62,6 @@ export const updateOneComment = ({commentId, comment}) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(updateComment(data));
-    console.log(data)
     return data;
   }
 };
@@ -84,10 +82,9 @@ export default function commentReducer(state = initialState, action) {
   switch (action.type) {
     case GET_COMMENTS:
       newState = {};
-      action.payload.comments.map(
-        (comment) => (newState[comment.id] = comment)
+      action.payload.comments.map(comment => 
+        (newState[comment.id] = comment)
       );
-      console.log(newState)
       return newState;
 
     case ADD_COMMENT:
@@ -98,8 +95,15 @@ export default function commentReducer(state = initialState, action) {
       return newState;
 
     case UPDATE_COMMENT:
-      state[action.payload.commentId] = action.payload.comment;
       newState = { ...state };
+      let newArr = Object.values(newState);
+      newArr.forEach(comment => {
+        if (comment.id === action.comment.id) {
+          newState[action.comment.id] = action.comment
+        }
+      })
+      // console.log("KKKKKKK", newState)
+      // state[action.payload.commentId] = action.payload.comment;
       return newState;
 
     case DELETE_COMMENT:

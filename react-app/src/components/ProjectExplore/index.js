@@ -46,8 +46,8 @@ const ProjectExplore = () => {
                     <h2>{explore}</h2>
                 </div>
                 {projects?.map(project => (
-                    <div className="allProjectsMap" key={project.id}>
-                        <li className="eachProject">
+                    <div key={project.id} className="allProjectsMap" >
+                        <li key={project.id} className="eachProject">
                             <a href={`/projects/${project.id}`}>
                                 <div className="projectImage">
                                     <img src={`${project.titleImage}`} alt="" />

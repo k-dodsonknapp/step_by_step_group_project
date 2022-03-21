@@ -5,11 +5,15 @@ import LogoutButton from '../auth/LogoutButton';
 import "./nav.css"
 // import { useSelector } from 'react-redux';
 import SearchResults from '../SearchResults';
+import { useSelector } from 'react-redux';
 
 const Navigation = () => {
   // const session = useSelector(state => session.user)
   const [showMenu, setShowMenu] = useState(false)
   // const [seeCategory, setSeeCategory] = useState(false)
+  const user = useSelector(state => state.session.user)
+  const session = useSelector(state => state.session);
+
 
   const openMenu = () => {
     if (showMenu) return;
@@ -75,7 +79,7 @@ const Navigation = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/projects/7' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+                <NavLink to='api/projects/7' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Teachers
                 </NavLink>
               </li>
@@ -90,7 +94,7 @@ const Navigation = () => {
             <div className='left-lower'>
               <div className='step-by-step-logo'>
                 <NavLink to='/'>
-                  <img src="https://www.instructables.com/assets/img/instructables-logo-v2.png" alt=''/>
+                  <img src="https://www.instructables.com/assets/img/instructables-logo-v2.png" alt='' />
                   <p>step by step</p>
                 </NavLink>
               </div>
@@ -99,14 +103,16 @@ const Navigation = () => {
                 <button>Contests</button>
               </div> */}
             </div>
-            <div className='right-lower'>
-              <div>
-                <NavLink to="/create">PUBLISH</NavLink>
+            {!session && (
+              <div className='right-lower'>
+                <div>
+                  <NavLink to="/create">PUBLISH</NavLink>
+                </div>
+                <div>
+                  <SearchResults />
+                </div>
               </div>
-              <div>
-                <SearchResults />
-              </div>
-            </div>
+            )}
           </div>
         </ul>
       </nav>

@@ -44,60 +44,62 @@ const SignUpForm = () => {
   }
 
   return (
-  <div className="loginPage">
-    <div className="loginformContainer" style={{ width: '450px', paddingTop: '5%' }}>
-    <form onSubmit={onSignUp}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
+    <div className="loginPage">
+      <div className="loginformContainer" style={{ paddingTop: '5%' }}>
+        <form onSubmit={onSignUp}>
+          <div>
+            {errors.map((error, ind) => (
+              <div key={ind}>{error}</div>
+            ))}
+          </div>
+          <div>
+            <label>User Name</label>
+            <input
+              type='text'
+              name='username'
+              className="signupInput"
+              onChange={updateUsername}
+              value={username}
+            ></input>
+          </div>
+          <div>
+            <label>Email</label>
+            <input
+              type='text'
+              name='email'
+              className="signupInput"
+              onChange={updateEmail}
+              value={email}
+            ></input>
+          </div>
+          <div>
+            <label>Password</label>
+            <input
+              type='password'
+              name='password'
+              className="signupInput"
+              onChange={updatePassword}
+              value={password}
+            ></input>
+          </div>
+          <div>
+            <label>Repeat Password</label>
+            <input
+              type='password'
+              name='repeat_password'
+              className="signupInput"
+              onChange={updateRepeatPassword}
+              value={repeatPassword}
+              required={true}
+            ></input>
+          </div>
+          <div className='signupBtns'>
+            <button className='loginButton' type='submit'>Sign Up</button>
+            <DemoButton />
+          </div>
+        </form>
       </div>
-      <div>
-        <label>User Name</label>
-        <input
-          type='text'
-          name='username'
-          className="signupInput"
-          onChange={updateUsername}
-          value={username}
-        ></input>
-      </div>
-      <div>
-        <label>Email</label>
-        <input
-          type='text'
-          name='email'
-          className="signupInput"
-          onChange={updateEmail}
-          value={email}
-        ></input>
-      </div>
-      <div>
-        <label>Password</label>
-        <input
-          type='password'
-          name='password'
-          className="signupInput"
-          onChange={updatePassword}
-          value={password}
-        ></input>
-      </div>
-      <div>
-        <label>Repeat Password</label>
-        <input
-          type='password'
-          name='repeat_password'
-          className="signupInput"
-          onChange={updateRepeatPassword}
-          value={repeatPassword}
-          required={true}
-        ></input>
-      </div>
-      <button className='loginButton' type='submit'>Sign Up</button>
-      <DemoButton />
-    </form>
-  </div>
-  </div>
+    </div>
   );
 };
 

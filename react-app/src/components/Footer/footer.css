@@ -11,7 +11,7 @@ footer {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid white;
-    margin: 20px 50px 0px 50px;
+    margin: 0px 50px 0px 50px;
     height: 80px;
 }
 

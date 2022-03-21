@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addOneProject } from "../../store/project";
 import { useHistory } from "react-router-dom";
 import "./createProject.css"
+import UploadPicture from "../UploadPicture";
 
 const CreateProject = () => {
     const userId = useSelector(state => state.session.user['id'])
@@ -14,6 +15,7 @@ const CreateProject = () => {
     const [errors, setErrors] = useState([])
     const [title, setTitle] = useState('')
     const [titleImage, setTitleImage] = useState('')
+    console.log("DDDDDDD", titleImage)
     const [overview, setOverview] = useState('')
     const [category, setCategory] = useState('')
 
@@ -49,8 +51,16 @@ const CreateProject = () => {
                 videoUrl
             }
             const project = {
-                userId, title, titleImage, overview, category, supplies,
-                'instructions': [...instructions, newInstruction]
+                userId, 
+                title, 
+                titleImage, 
+                overview, 
+                category,
+                supplies,
+                'instructions': [
+                    ...instructions, 
+                    newInstruction
+                ],
             }
             const data = await dispatch(addOneProject(project))
             const projectId = data.projectId
@@ -65,9 +75,9 @@ const CreateProject = () => {
         if (title.length < 6 || title === '') {
             inFuncErrors.push('Please provide a longer title')
         }
-        if (!(titleImage.includes('.png') || titleImage.includes('.jpg') || titleImage.includes('.jpeg')) || titleImage === '') {
-            inFuncErrors.push('Please use .png, .jpg, or .jpeg file type')
-        }
+        // if (!(titleImage.includes('.png') || titleImage.includes('.jpg') || titleImage.includes('.jpeg')) || titleImage === '') {
+        //     inFuncErrors.push('Please use .png, .jpg, or .jpeg file type')
+        // }
         if (overview.length < 20 || overview === '') {
             inFuncErrors.push('Please provide a longer overview')
         }
@@ -90,16 +100,16 @@ const CreateProject = () => {
         if (stepTitle.length < 5) {
             inFuncErrors.push('Please provide a longer title')
         }
-        if (!(photoUrl.includes('.png') || photoUrl.includes('.jpg') || photoUrl.includes('.jpeg'))) {
-            inFuncErrors.push('Please use .png, .jpg, or .jpeg file type')
-        }
+        // if (!(photoUrl.includes('.png') || photoUrl.includes('.jpg') || photoUrl.includes('.jpeg'))) {
+        //     inFuncErrors.push('Please use .png, .jpg, or .jpeg file type')
+        // }
         setInstructionErrors(inFuncErrors)
     }, [stepTitle, stepInstructions, photoUrl, showInstructionErrors])
 
     const moveOntoSupplies = (e) => {
         e.preventDefault()
         console.log(errors)
-        if (errors.length > 0 || title === '' || titleImage === '' || overview === '') {
+        if (errors.length > 0 || title === '' || overview === '') {
             setShowErrors(true)
         } else {
             setShowProjectForm(false)
@@ -169,13 +179,14 @@ const CreateProject = () => {
                                 ></input>
                             </div>
                             <div className="label-input">
-                                <label>Image:</label>
+                                {/* <label>Image:</label>
                                 <input
                                     type='text'
                                     name='titleImage'
                                     value={titleImage}
                                     onChange={(e) => setTitleImage(e.target.value)}
-                                ></input>
+                                ></input> */}
+                                <UploadPicture setImagee={setTitleImage}/>
                             </div>
                             <div className="label-input">
                                 <label>Overview:</label>
@@ -256,13 +267,14 @@ const CreateProject = () => {
                                 ></textarea>
                             </div>
                             <div className="label-input">
-                                <label>Step {stepOrder} Photo:</label>
+                                {/* <label>Step {stepOrder} Photo:</label>
                                 <input
                                     type='text'
                                     name='photoUrl'
                                     value={photoUrl}
                                     onChange={(e) => setPhotoUrl(e.target.value)}
-                                ></input>
+                                ></input> */}
+                                <UploadPicture/>
                             </div>
                             <div className="label-input">
                                 <label>Step {stepOrder} Video</label>
