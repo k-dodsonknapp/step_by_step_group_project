@@ -87,6 +87,7 @@ export default function commentReducer(state = initialState, action) {
       action.payload.comments.map(
         (comment) => (newState[comment.id] = comment)
       );
+      console.log(newState)
       return newState;
 
     case ADD_COMMENT:

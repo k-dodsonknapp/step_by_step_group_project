@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { deleteOneProject, getOneProject } from "../../store/project";
 import { addOneComment, deleteOneComment, updateOneComment } from "../../store/comments";
-import EditCommentForm from "../EditComments";
+// import EditCommentForm from "../EditComments";
 import "./Projects.css";
 
 const ProjectDetails = () => {
@@ -11,29 +11,39 @@ const ProjectDetails = () => {
   const history = useHistory();
   const { projectId } = useParams();
   const project = useSelector((state) => state.projects[+projectId]);
-
+  console.log("PPPPPPPPPP",)
+  
   const user = useSelector((state) => state.session.user);
   const session = useSelector(state => state.session);
   // const commentState = useSelector((state) => state.comments);
-
-
+  
+  
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
   const [comment, setComment] = useState('');
   // console.log("IDKDKDKDKD", comment)
   const [newComment] = useState(0);
   const [commentId, setCommentId] = useState(0);
-  const [body, setBody] = useState(comment?.comment);
+  console.log("TTTTTTT", commentId)
   const [editClicked, setEditClicked] = useState(true)
   const [showComment, setShowComment] = useState(true)
   const [showPostCommentBtn, setShowPostCommentBtn] = useState(true)
-
+  // const editComment = useSelector((state) => state.comments);
+  const [body, setBody] = useState(comment?.comment);
+  const [editBody, setEditBody] = useState(project?.comments[commentId]?.comment);
+  console.log("((((()((((((", project?.comments[commentId]?.comment)
+  
   let reversedComments = []
   if (project) {
     project.comments.map(comment => {
       return reversedComments.unshift(comment)
     })
   }
+
+  useEffect(() => {
+    dispatch(updateOneComment(commentId));
+  }, [dispatch, commentId]);
+
 
   useEffect(() => {
     addOneComment(newComment)
@@ -47,9 +57,23 @@ const ProjectDetails = () => {
     dispatch(getOneProject(+projectId));
   }, [dispatch, projectId]);
 
+  const saveEditComment = async (e) => {
+    e.preventDefault();
+    const payload = {
+      "comment": editBody,
+      commentId
+    };
+    const data = await dispatch(updateOneComment(payload));
+    // setIdPath(data.id)
+  }
+
   const handleComment = async (e) => {
     e.preventDefault();
-    const newComment = { userId: user?.id, projectId, comment };
+    const newComment = { 
+      userId: user?.id, 
+      projectId, 
+      comment 
+    };
     await dispatch(addOneComment(newComment));
     await dispatch(getOneProject(projectId))
     setShowCommentForm(false)
@@ -86,16 +110,23 @@ const ProjectDetails = () => {
   const handleShowEditForm = async (e) => {
     e.preventDefault();
     setShowComment(false)
-    const id = e.target.id
+    const id = +e.target.id
+    console.log("LLLLLLLL", id)
+    setEditBody(project?.comments[+id]?.comment)
     setCommentId(id)
     // console.log(+commentId === +id)
     setComment(project.comments.id)
     // console.log(id)
     if (showCommentEditForm === false) {
       setShowCommentEditForm(true);
+      setShowComment(false)
     } else {
       setShowCommentEditForm(false)
       setShowComment(true)
+    }
+    if (showCommentForm === true) {
+      setShowCommentForm(false)
+      setShowPostCommentBtn(true)
     }
   }
 
@@ -107,6 +138,10 @@ const ProjectDetails = () => {
       setShowCommentForm(false)
     }
     setShowPostCommentBtn(false)
+    if (showCommentEditForm === true) {
+      setShowCommentEditForm(false)
+    }
+    
   }
 
   // const cancel = (e) => {
@@ -142,6 +177,7 @@ const ProjectDetails = () => {
       setShowCommentForm(true);
     }
     setShowPostCommentBtn(true)
+
   }
 
   // useEffect(() => {
@@ -234,8 +270,8 @@ const ProjectDetails = () => {
                   </div>
                   {user?.id === comment?.userId && (
                     <div className="comment-btn-container">
-                      <button className="submit-commentt" id={comment.id} onClick={handleDeleteComment}>Delete</button>
-                      <button className="submit-commentt" id={comment.id} onClick={handleShowEditForm}>Edit</button>
+                      <button className="submit-commentt" id={comment?.id} onClick={handleDeleteComment}>Delete</button>
+                      <button className="submit-commentt" id={comment?.id} onClick={handleShowEditForm}>Edit</button>
                     </div>
                   )}
                 </div>
@@ -257,11 +293,18 @@ const ProjectDetails = () => {
 
                           </div>
                           <div className="edit-comment">
-                            <input className="edit-input" type="text" value={body} onChange={e => setBody(e.target.value)} required />
+                            <textarea 
+                            className="edit-input" 
+                            type="text" 
+                            value={editBody} 
+                            onChange={e => 
+                            setEditBody(e.target.value)} 
+                            required 
+                            />
                             {/* <textarea value={body} onChange={updateBody} required /> */}
                             <div className="btn-container">
                               <button onClick={cancel} className="cancel-edit" type="submit">Cancel</button>
-                              <button className="submit-comment" type="submit">Save</button>
+                              <button onClick={saveEditComment} className="submit-comment" type="submit">Save</button>
                             </div>
                           </div>
                         </div>
@@ -301,7 +344,7 @@ const ProjectDetails = () => {
 
                   </div>
                   <div className="edit-comment">
-                    <input className="edit-input" type="text" value={body} onChange={e => setBody(e.target.value)} required />
+                    <input placeholder="Please Leave a Comment" className="edit-input" type="text" value={body} onChange={e => setBody(e.target.value)} required />
                     {/* <textarea value={body} onChange={updateBody} required /> */}
                     <div className="btn-container">
                       <button onClick={cancelNewComment} className="cancel-edit" type="submit">Cancel</button>

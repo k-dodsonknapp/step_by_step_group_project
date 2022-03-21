@@ -118,6 +118,7 @@
     display: flex;
     justify-content: center;
     width: 700px;
+
 }
 
 .edit-comment {
@@ -126,9 +127,12 @@
     justify-content:center;
     align-items: center;
     width: 100%;
+    text-overflow: clip;   
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
-.comment-form input {
+.comment-form textarea {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,6 +140,10 @@
     height: 100px;
     border-radius: 6px;
     border: 1px solid #dddddd;
+    /* text-indent: 10px; */
+    overflow-y: hidden;
+    resize: none;
+    /* padding-bottom: 50px; */
 } 
 
 .comment-box {
@@ -167,6 +175,7 @@
     padding: 0 auto;
     cursor: pointer;
 }
+
 .edit-container {
     display: flex;
     justify-content: center;
