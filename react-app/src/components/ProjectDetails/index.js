@@ -54,6 +54,13 @@ const ProjectDetails = () => {
     setShowCommentForm(false)
   };
 
+  const cancel = (e) => {
+    e.preventDefault();
+    setEditClicked(false)
+    setShowComment(true)
+    setShowCommentEditForm(false);
+
+  }
 
   const handleEditProjectButton = (e) => {
     e.preventDefault();
@@ -215,7 +222,30 @@ const ProjectDetails = () => {
               {+comment?.id === +commentId && (
                 <div>
                   {showCommentEditForm && (
-                    <EditCommentForm commentId={comment.id} projectId={projectId} />
+                    // <EditCommentForm commentId={comment.id} projectId={projectId} />
+                    <div className="comment-">
+
+                      <form className="comment-form" onSubmit={handleSubmit}>
+                        <div className="edit-container">
+                          <div className="prf-image">
+
+                          </div>
+                          <div className="edit-comment">
+                            <input className="edit-input" type="text" value={body} onChange={e => setBody(e.target.value)} required />
+                            {/* <textarea value={body} onChange={updateBody} required /> */}
+                            <div className="btn-container">
+                              <button onClick={cancel} className="cancel-edit" type="submit">Cancel</button>
+                              <button className="submit-comment" type="submit">Save</button>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        {/* <button className="options" id="del-button" onClick={handleSubmit}> */}
+                        {/* Delete */}
+                        {/* </button> */}
+                      </form>
+                    </div>
                   )}
                 </div>
               )}

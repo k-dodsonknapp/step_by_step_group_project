@@ -29,10 +29,16 @@ const EditCommentForm = ({ commentId, projectId }) => {
     setIdPath(data.id)
   }
 
+  const cancel = (e) => {
+    setEditClicked(false)
+  }
+
   useEffect(() => {
     dispatch(getOneProject(projectId))
     dispatch(updateOneComment(commentId))
   }, [dispatch, idPath, body, commentId, projectId])
+
+
 
   // if (sessionUser) {
   return (
@@ -48,7 +54,7 @@ const EditCommentForm = ({ commentId, projectId }) => {
               <input className="edit-input" type="text" value={body} onChange={e => setBody(e.target.value)} required />
               {/* <textarea value={body} onChange={updateBody} required /> */}
               <div className="btn-container">
-              <button onClick={} className="cancel-edit" type="submit">Cancel</button>
+              <button onClick={cancel} className="cancel-edit" type="submit">Cancel</button>
                 <button className="submit-comment" type="submit">Save</button>
               </div>
             </div>
