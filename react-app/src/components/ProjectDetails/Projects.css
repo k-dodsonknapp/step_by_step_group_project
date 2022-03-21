@@ -212,7 +212,8 @@
     cursor: pointer;
 }
 
-.submit-comment:hover {
+.submit-comment:hover,
+#leave-comment-btn:hover {
     background-color: #eca218;
 }
 

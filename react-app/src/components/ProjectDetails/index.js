@@ -26,6 +26,7 @@ const ProjectDetails = () => {
   const [body, setBody] = useState(comment?.comment);
   const [editClicked, setEditClicked] = useState(true)
   const [showComment, setShowComment] = useState(true)
+  const [showPostCommentBtn, setShowPostCommentBtn] = useState(true)
 
   let reversedComments = []
   if (project) {
@@ -90,7 +91,22 @@ const ProjectDetails = () => {
     // console.log(+commentId === +id)
     setComment(project.comments.id)
     // console.log(id)
-    setShowCommentEditForm(true);
+    if (showCommentEditForm === false) {
+      setShowCommentEditForm(true);
+    } else {
+      setShowCommentEditForm(false)
+      setShowComment(true)
+    }
+  }
+
+  const postComment = (e) => {
+    e.preventDefault()
+    if (showCommentForm === false) {
+      setShowCommentForm(true)
+    }else{
+      setShowCommentForm(false)
+    }
+    setShowPostCommentBtn(false)
   }
 
   // const cancel = (e) => {
@@ -116,6 +132,16 @@ const ProjectDetails = () => {
     await dispatch(updateOneComment(payload));
     setEditClicked(false)
     // setIdPath(data.id)
+  }
+
+  const cancelNewComment = (e) => {
+    e.preventDefault();
+    if (showCommentForm === true) {
+      setShowCommentForm(false);
+    }else {
+      setShowCommentForm(true);
+    }
+    setShowPostCommentBtn(true)
   }
 
   // useEffect(() => {
@@ -255,14 +281,40 @@ const ProjectDetails = () => {
               </div>
             </div>
           ))}
-          {user && (
+          {user && showPostCommentBtn && (
             <div className="post-comment">
               <button
                 id="leave-comment-btn"
-                onClick={(e) => setShowCommentForm(true)}
+                onClick={postComment}
               >
                 Post Comment
               </button>
+            </div>
+          )}
+
+          {showCommentForm && (
+            <div className="comment-">
+
+              <form className="comment-form" onSubmit={handleSubmit}>
+                <div className="edit-container">
+                  <div className="prf-image">
+
+                  </div>
+                  <div className="edit-comment">
+                    <input className="edit-input" type="text" value={body} onChange={e => setBody(e.target.value)} required />
+                    {/* <textarea value={body} onChange={updateBody} required /> */}
+                    <div className="btn-container">
+                      <button onClick={cancelNewComment} className="cancel-edit" type="submit">Cancel</button>
+                      <button className="submit-comment" type="submit">Save</button>
+                    </div>
+                  </div>
+                </div>
+
+
+                {/* <button className="options" id="del-button" onClick={handleSubmit}> */}
+                {/* Delete */}
+                {/* </button> */}
+              </form>
             </div>
           )}
           {/* </ul> */}
