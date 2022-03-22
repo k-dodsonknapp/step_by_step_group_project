@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 // import "../CreatePost/createPost.css"
 
 
-const UploadPicture = ({ setTitleImage }) => {
+const UploadPicture = ({ setTitleImagee }) => {
     const history = useHistory(); // so that we can redirect after the image upload is successful
     const [image, setImage] = useState(null);
     const [imageLoading, setImageLoading] = useState(false);
@@ -13,8 +13,8 @@ const UploadPicture = ({ setTitleImage }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("image", image);
         console.log("TTTTTTTT", formData)
+        formData.append("image", image);
 
         // aws uploads can be a bit slow—displaying
         // some sort of loading message is a good idea
@@ -26,9 +26,9 @@ const UploadPicture = ({ setTitleImage }) => {
         });
         if (res.ok) {
             const data = await res.json();
-            console.log("PPPPPPPPPPPP". data)
+            console.log("PPPPPPPPPPPP", data);
             setImageLoading(false);
-            setTitleImage(data.url)
+            setTitleImagee(data.url);
             // history.push("/images");
         }
         else {

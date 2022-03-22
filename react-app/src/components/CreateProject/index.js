@@ -186,7 +186,7 @@ const CreateProject = () => {
                                     value={titleImage}
                                     onChange={(e) => setTitleImage(e.target.value)}
                                 ></input> */}
-                                <UploadPicture setImagee={setTitleImage}/>
+                                <UploadPicture setTitleImagee={setTitleImage}/>
                             </div>
                             <div className="label-input">
                                 <label>Overview:</label>

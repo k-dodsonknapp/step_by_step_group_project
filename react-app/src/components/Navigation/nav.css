@@ -90,14 +90,15 @@ li > a {
 
 .profile-options {
     background-color: #fff;
-    float: right;
+    /* float: left; */
     position: absolute;
     z-index: 1;
     /* top: 100%; */
-    left: 83%;
+    left: 78%;
     border: 1px solid rgba(0,0,0,.2);
     border-radius: 6px;
     box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+    height: 225px;
 }
 
 .profile-following-div {
