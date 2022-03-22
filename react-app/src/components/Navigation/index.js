@@ -13,6 +13,7 @@ const Navigation = () => {
   // const [seeCategory, setSeeCategory] = useState(false)
   const user = useSelector(state => state.session.user)
   const session = useSelector(state => state.session);
+  console.log("JJJJJJJJ", session)
 
 
   const openMenu = () => {
@@ -103,16 +104,16 @@ const Navigation = () => {
                 <button>Contests</button>
               </div> */}
             </div>
-            {!session && (
-              <div className='right-lower'>
+            <div className='right-lower'>
+              {session.user && (
                 <div>
                   <NavLink to="/create">PUBLISH</NavLink>
                 </div>
-                <div>
-                  <SearchResults />
-                </div>
+              )}
+              <div>
+                <SearchResults />
               </div>
-            )}
+            </div>
           </div>
         </ul>
       </nav>

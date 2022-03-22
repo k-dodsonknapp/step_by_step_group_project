@@ -136,6 +136,7 @@ li > a {
     width: 33px;
     height: 33px;
     text-align: center;
+    cursor: pointer;
 }
 
 .profile-following-div a {
@@ -182,7 +183,7 @@ li > a {
 }
 
 .right-lower a {
-    margin: 20px;
+    margin: 10px;
     font-size: 14px;
     text-decoration: none;
     color: #555;

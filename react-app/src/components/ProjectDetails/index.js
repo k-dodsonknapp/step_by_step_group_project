@@ -81,7 +81,7 @@ const ProjectDetails = () => {
       comment: body,
       username: user?.username,
     };
-    console.log("",newComment)
+    console.log("", newComment)
     await dispatch(addOneComment(newComment));
     await dispatch(getOneProject(projectId));
     setBody('')
@@ -125,7 +125,7 @@ const ProjectDetails = () => {
     setShowComment(false)
     const id = +e?.target?.id
     const comments = project.comments
-    let comms = {} 
+    let comms = {}
     comments.map(comment => {
       comms[comment.id] = comment
     })
@@ -307,11 +307,15 @@ const ProjectDetails = () => {
             </div>
           )}
           {!user && (
-            <div className="login-sign-up">
-              <h3>Want to leave a comment?</h3>
-              <button onClick={handleLogin} className="submit-comment">Login Here!</button>
-              <h3>Haven't signed up?</h3>
-              <button onClick={handleSignUp} className="submit-comment">Sign up Here!</button>
+            <div className="not-logged-in">
+              <div className="login-sign-up">
+                <p>Want to leave a comment?</p>
+                <button onClick={handleLogin} className="projectDetailsLogin">Login Here!</button>
+              </div>
+              <div className="login-sign-up">
+                <p>Haven't signed up?</p>
+                <button onClick={handleSignUp} className="projectDetailsLogin">Sign Up Here!</button>
+              </div>
             </div>
           )}
           {showCommentForm && (
@@ -324,10 +328,10 @@ const ProjectDetails = () => {
                   <div className="edit-comment">
                     <textarea
                       placeholder="Please Leave a Comment"
-                      className="edit-input" 
+                      className="edit-input"
                       type="text"
                       value={body}
-                      onChange={e => 
+                      onChange={e =>
                         setBody(e?.target?.value)
                       }
                       required />
