@@ -25,13 +25,13 @@
     resize: none;
 }
 
-.label-input {
+/* .label-input { */
     /* border: 2px solid red; */
-    margin: 30px; 
-    padding: 20px;
-    display: flex;
-    justify-content: space-around;
-}
+    /* margin: 30px;  */
+    /* padding: 20px; */
+    /* display: flex; */
+    /* justify-content: space-around; */
+/* } */
 
 .label-input label {
     display: flex;

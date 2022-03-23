@@ -28,6 +28,7 @@ const CreateProject = () => {
     const [showInstructionErrors, setShowInstructionErrors] = useState(false)
     const [instructionErrors, setInstructionErrors] = useState([])
     const [instructions, setInstructions] = useState([])
+    console.log(instructions, "YYYYYYYYYYYYYYYY")
     const [stepOrder, setStepOrder] = useState(1)
     const [stepTitle, setStepTitle] = useState('')
     const [stepInstructions, setStepInstructions] = useState('')
@@ -37,6 +38,7 @@ const CreateProject = () => {
     const [showProjectForm, setShowProjectForm] = useState(true)
     const [showSupplyForm, setShowSupplyForm] = useState(false)
     const [showInstructionForm, setShowInstructionForm] = useState(false)
+    const [imagePreview, setImagePreview] = useState('https://www.elmhurst.edu/wp-content/uploads/2018/12/5-skills-project-management-degree-elmhurst-college-infographic-thumb.jpg')
     // const [showEmptyFields, setShowEmptyFields] = useState(false)
 
     const handleProjectSubmit = async (e) => {
@@ -51,14 +53,14 @@ const CreateProject = () => {
                 videoUrl
             }
             const project = {
-                userId, 
-                title, 
-                titleImage, 
-                overview, 
+                userId,
+                title,
+                titleImage,
+                overview,
                 category,
                 supplies,
                 'instructions': [
-                    ...instructions, 
+                    ...instructions,
                     newInstruction
                 ],
             }
@@ -157,6 +159,11 @@ const CreateProject = () => {
             setPhotoUrl('')
             setVideoUrl('')
             setShowInstructionErrors(false)
+            // const newStep = document.createElement("div");
+            // const parentNode = document.getElementsByClassName("label-input-container")
+            // return (
+                
+            // )
         } else {
             setShowInstructionErrors(true)
         }
@@ -166,17 +173,46 @@ const CreateProject = () => {
         <div className="create-page">
             <div className="edit-project-form">
                 {showProjectForm && (
-                    <form>
+                    <form className="create-form">
                         <div className="label-input-container">
-                            <div className="label-input">
-                                <label>Title:</label>
-                                <input
-                                    type='text'
-                                    name='title'
-                                    value={title}
-                                    required="required"
-                                    onChange={(e) => setTitle(e.target.value)}
-                                ></input>
+                            <div className="title-img-cat">
+                                <div className="titleImage-preview">
+                                    <img src={imagePreview} style={{ width: '310px', height: '245px', opacity: "0.4" }}></img>
+                                </div>
+                                <div className="title-category">
+                                    <div className="project-title-input">
+                                        <h3>Layout the Basics</h3>
+                                        <label>Project Title</label>
+                                        <input
+                                            placeholder="Title?!  We need a title!"
+                                            type='text'
+                                            name='title'
+                                            value={title}
+                                            required="required"
+                                            onChange={(e) => setTitle(e.target.value)}
+                                            maxLength={150}
+                                        ></input>
+                                        <div className="char-count">{title.length}/150</div>
+                                    </div>
+                                    <div className="category-input">
+                                        <label>Category</label>
+                                        {/* <div className="dropdown-cat"> */}
+                                        <select name='category' onChange={(e) => setCategory(e.target.value)}>
+                                            <option style={{ display: "none", color: "gray" }}>Select your option</option>
+                                            <option value='Circuits'>Circuits</option>
+                                            <option value='Workshop'>Workshop</option>
+                                            <option value='Craft'>Craft</option>
+                                            <option value='Cooking'>Cooking</option>
+                                            <option value='Living'>Living</option>
+                                            <option value='Outside'>Outside</option>
+                                            <option value='Teachers'>Teachers</option>
+                                        </select>
+                                        {/* </div> */}
+                                    </div>
+                                    <div>
+                                        {/* <UploadPicture setTitleImagee={setTitleImage}/> */}
+                                    </div>
+                                </div>
                             </div>
                             <div className="label-input">
                                 {/* <label>Image:</label>
@@ -186,39 +222,95 @@ const CreateProject = () => {
                                     value={titleImage}
                                     onChange={(e) => setTitleImage(e.target.value)}
                                 ></input> */}
-                                <UploadPicture setTitleImagee={setTitleImage}/>
                             </div>
-                            <div className="label-input">
-                                <label>Overview:</label>
-                                <textarea
+                            <div className="title-img-cat">
+                                {/* <div className="titleImage-preview">
+                                    <img src={imagePreview} style={{ width: '310px', height: '245px', opacity: "0.4" }}></img>
+                                </div> */}
+                                <div className="overview-input">
+                                    <label>Overview</label>
+                                    <input
+                                        placeholder="Tell us a bit about the project!"
+                                        type='text'
+                                        name='overview'
+                                        value={overview}
+                                        onChange={(e) => setOverview(e.target.value)}
+                                    ></input>
+                                </div>
+                                <div>
+                                    {/* <UploadPicture setTitleImagee={setTitleImage}/> */}
+                                </div>
+                            </div>
+                            <div className="title-img-cat">
+                                <div className="supply-input">
+                                    <label>Supply:</label>
+                                    <input
+                                        placeholder="List all supplies needed for this project"
+                                        type='text'
+                                        name='supply'
+                                        value={supply}
+                                        required
+                                        onChange={(e) => setSupply(e.target.value)}
+                                    ></input>
+                                </div>
+                            </div>
+                            {/* <button className="submit-comment" type='submit' onClick={moveOntoSupplies}>Move on to Supplies</button> */}
+                            <div className="title-img-catt">
+                            {instructions.map(instruction => {
+                                <div key={instruction.id}>
+                                    <p>{instruction.stepOrder}</p>
+                                </div>
+                            })}
+                                <div className="step-title">
+                                    <label>Step {stepOrder}:</label>
+                                    <input
+                                        placeholder="ENTER STEP TITLE"
+                                        type='text'
+                                        name='stepTitle'
+                                        value={stepTitle}
+                                        onChange={(e) => setStepTitle(e.target.value)}
+                                    ></input>
+                                </div>
+                                <div className="step-input">
+                                    <label>Step {stepOrder} Instructions:</label>
+                                    <input
+                                        type='text'
+                                        name='stepInstructions'
+                                        value={stepInstructions}
+                                        onChange={(e) => setStepInstructions(e.target.value)}
+                                    ></input>
+                                </div>
+                                <div className="step-input">
+                                    {/* <label>Step {stepOrder} Photo:</label>
+                                <input
                                     type='text'
-                                    name='overview'
-                                    value={overview}
-                                    onChange={(e) => setOverview(e.target.value)}
-                                ></textarea>
+                                    name='photoUrl'
+                                    value={photoUrl}
+                                    onChange={(e) => setPhotoUrl(e.target.value)}
+                                ></input> */}
+                                    <UploadPicture setTitleImagee={setPhotoUrl} />
+                                </div>
+                                {/* <div className="step-input">
+                                <label>Step {stepOrder} Video</label>
+                                <input
+                                    type='text'
+                                    name='videoUrl'
+                                    value={videoUrl}
+                                    onChange={(e) => setVideoUrl(e.target.value)}
+                                ></input>
+                            </div> */}
+                                {/* <button className="submit-comment" type='submit'>Submit your Project</button> */}
                             </div>
-                            <div className="label-input">
-                                <label>Category:</label>
-                                <select name='category' onChange={(e) => setCategory(e.target.value)}>
-                                    <option value='Circuits'>Circuits</option>
-                                    <option value='Workshop'>Workshop</option>
-                                    <option value='Craft'>Craft</option>
-                                    <option value='Cooking'>Cooking</option>
-                                    <option value='Living'>Living</option>
-                                    <option value='Outside'>Outside</option>
-                                    <option value='Teachers'>Teachers</option>
-                                </select>
-                            </div>
-                            <button className="submit-comment" type='submit' onClick={moveOntoSupplies}>Move on to Supplies</button>
+                            <button className="submit-comment" onClick={addAnotherStep}>Add another Step</button>
                         </div>
                     </form>
                 )}
             </div>
             <div className="edit-project-form">
-                {showSupplyForm && (
+                {/* {showSupplyForm && ( */}
 
-                    <form>
-                        <div className="label-input-container">
+                <form>
+                    {/* <div className="label-input-container">
                             <div className="label-input">
                                 <label>Supply:</label>
                                 <input
@@ -240,15 +332,15 @@ const CreateProject = () => {
                             </div>
                             <button className="submit-comment" type='submit' onClick={addMoreSupplies}>Add more Supplies</button>
                             <button className="submit-comment" onClick={moveOnToInstructions}>Move on to Instructions</button>
-                        </div>
-                    </form>
-                )}
+                        </div> */}
+                </form>
+                {/* )} */}
             </div>
             <div className="edit-project-form">
                 {showInstructionForm && (
                     <form onSubmit={handleProjectSubmit}>
-                        <div className="label-input-container">
-                            <div className="label-input">
+                        {/* <div className="label-input-container"> */}
+                        {/* <div className="label-input">
                                 <label>Step {stepOrder} Title:</label>
                                 <input
                                     type='text'
@@ -256,8 +348,8 @@ const CreateProject = () => {
                                     value={stepTitle}
                                     onChange={(e) => setStepTitle(e.target.value)}
                                 ></input>
-                            </div>
-                            <div className="label-input">
+                            </div> */}
+                        {/* <div className="label-input">
                                 <label>Step {stepOrder} Instructions:</label>
                                 <textarea
                                     type='text'
@@ -265,18 +357,18 @@ const CreateProject = () => {
                                     value={stepInstructions}
                                     onChange={(e) => setStepInstructions(e.target.value)}
                                 ></textarea>
-                            </div>
-                            <div className="label-input">
-                                {/* <label>Step {stepOrder} Photo:</label>
+                            </div> */}
+                        {/* <div className="label-input"> */}
+                        {/* <label>Step {stepOrder} Photo:</label>
                                 <input
                                     type='text'
                                     name='photoUrl'
                                     value={photoUrl}
                                     onChange={(e) => setPhotoUrl(e.target.value)}
                                 ></input> */}
-                                <UploadPicture/>
-                            </div>
-                            <div className="label-input">
+                        {/* <UploadPicture setTitleImagee={setPhotoUrl} /> */}
+                        {/* </div> */}
+                        {/* <div className="label-input">
                                 <label>Step {stepOrder} Video</label>
                                 <input
                                     type='text'
@@ -284,10 +376,10 @@ const CreateProject = () => {
                                     value={videoUrl}
                                     onChange={(e) => setVideoUrl(e.target.value)}
                                 ></input>
-                            </div>
-                            <button className="submit-comment" onClick={addAnotherStep}>Add another Step</button>
-                            <button className="submit-comment" type='submit'>Submit your Project</button>
-                        </div>
+                            </div> */}
+                        {/* <button className="submit-comment" onClick={addAnotherStep}>Add another Step</button> */}
+                        {/* <button className="submit-comment" type='submit'>Submit your Project</button> */}
+                        {/* </div> */}
                     </form>
                 )}
             </div>
