@@ -22,13 +22,15 @@ const CreateProject = () => {
     const [showSupplyErrors, setShowSupplyErrors] = useState(false)
     const [supplyErrors, setSupplyErrors] = useState([])
     const [supplies, setSupplies] = useState([])
+    console.log(supplies, "GGGGGGGGGGGGGGG")
     const [supply, setSupply] = useState('')
+    console.log(supply, "LLLLLLLLLLLLLLLL")
     const [amount, setAmount] = useState(0)
 
     const [showInstructionErrors, setShowInstructionErrors] = useState(false)
     const [instructionErrors, setInstructionErrors] = useState([])
     const [instructions, setInstructions] = useState([])
-    console.log(instructions, "YYYYYYYYYYYYYYYY")
+    // console.log(instructions, "YYYYYYYYYYYYYYYY")
     const [stepOrder, setStepOrder] = useState(1)
     const [stepTitle, setStepTitle] = useState('')
     const [stepInstructions, setStepInstructions] = useState('')
@@ -41,9 +43,20 @@ const CreateProject = () => {
     const [imagePreview, setImagePreview] = useState('https://www.elmhurst.edu/wp-content/uploads/2018/12/5-skills-project-management-degree-elmhurst-college-infographic-thumb.jpg')
     // const [showEmptyFields, setShowEmptyFields] = useState(false)
 
+    useEffect(() => {
+        const newSupply = { supply, amount }
+        console.log("FFFFFFFFFFF", newSupply)
+        setSupplies([newSupply])
+    }, [supply])
+
     const handleProjectSubmit = async (e) => {
         e.preventDefault()
         addAnotherStep(e)
+        // if (supplyErrors.length === 0) {
+        // const newSupply = { supply }
+        // console.log("FFFFFFFFFFF", newSupply)
+        // setSupplies([newSupply])
+        // }
         if (instructionErrors.length === 0) {
             const newInstruction = {
                 stepOrder,
@@ -55,7 +68,7 @@ const CreateProject = () => {
             const project = {
                 userId,
                 title,
-                titleImage,
+                'titleImage': imagePreview,
                 overview,
                 category,
                 supplies,
@@ -108,17 +121,17 @@ const CreateProject = () => {
         setInstructionErrors(inFuncErrors)
     }, [stepTitle, stepInstructions, photoUrl, showInstructionErrors])
 
-    const moveOntoSupplies = (e) => {
-        e.preventDefault()
-        console.log(errors)
-        if (errors.length > 0 || title === '' || overview === '') {
-            setShowErrors(true)
-        } else {
-            setShowProjectForm(false)
-            setShowSupplyForm(true)
-            setShowErrors(false)
-        }
-    }
+    // const moveOntoSupplies = (e) => {
+    //     e.preventDefault()
+    //     console.log(errors)
+    //     if (errors.length > 0 || title === '' || overview === '') {
+    //         setShowErrors(true)
+    //     } else {
+    //         setShowProjectForm(false)
+    //         setShowSupplyForm(true)
+    //         setShowErrors(false)
+    //     }
+    // }
 
     const addMoreSupplies = (e) => {
         e.preventDefault()
@@ -133,13 +146,13 @@ const CreateProject = () => {
         }
     }
 
-    const moveOnToInstructions = (e) => {
-        addMoreSupplies(e)
-        if (supplyErrors.length === 0) {
-            setShowSupplyForm(false)
-            setShowInstructionForm(true)
-        }
-    }
+    // const moveOnToInstructions = (e) => {
+    //     addMoreSupplies(e)
+    //     if (supplyErrors.length === 0) {
+    //         setShowSupplyForm(false)
+    //         setShowInstructionForm(true)
+    //     }
+    // }
 
     const addAnotherStep = (e) => {
         e.preventDefault()
@@ -159,11 +172,6 @@ const CreateProject = () => {
             setPhotoUrl('')
             setVideoUrl('')
             setShowInstructionErrors(false)
-            // const newStep = document.createElement("div");
-            // const parentNode = document.getElementsByClassName("label-input-container")
-            // return (
-                
-            // )
         } else {
             setShowInstructionErrors(true)
         }
@@ -173,11 +181,14 @@ const CreateProject = () => {
         <div className="create-page">
             <div className="edit-project-form">
                 {showProjectForm && (
-                    <form className="create-form">
+                    <form className="create-form" onSubmit={handleProjectSubmit}>
                         <div className="label-input-container">
+                            <div className="submit-project">
+                                <button className="submitt-comment" type='submit'>Submit your Project</button>
+                            </div>
                             <div className="title-img-cat">
                                 <div className="titleImage-preview">
-                                    <img src={imagePreview} style={{ width: '310px', height: '245px', opacity: "0.4" }}></img>
+                                    <img src={imagePreview} style={{ width: '310px', height: '245px', opacity: "0.6" }}></img>
                                 </div>
                                 <div className="title-category">
                                     <div className="project-title-input">
@@ -210,7 +221,7 @@ const CreateProject = () => {
                                         {/* </div> */}
                                     </div>
                                     <div>
-                                        {/* <UploadPicture setTitleImagee={setTitleImage}/> */}
+                                        <UploadPicture setTitleImagee={setImagePreview} />
                                     </div>
                                 </div>
                             </div>
@@ -243,7 +254,7 @@ const CreateProject = () => {
                             </div>
                             <div className="title-img-cat">
                                 <div className="supply-input">
-                                    <label>Supply:</label>
+                                    <label>Supplies</label>
                                     <input
                                         placeholder="List all supplies needed for this project"
                                         type='text'
@@ -254,54 +265,105 @@ const CreateProject = () => {
                                     ></input>
                                 </div>
                             </div>
-                            {/* <button className="submit-comment" type='submit' onClick={moveOntoSupplies}>Move on to Supplies</button> */}
-                            <div className="title-img-catt">
-                            {instructions.map(instruction => {
-                                <div key={instruction.id}>
-                                    <p>{instruction.stepOrder}</p>
-                                </div>
-                            })}
-                                <div className="step-title">
-                                    <label>Step {stepOrder}:</label>
-                                    <input
-                                        placeholder="ENTER STEP TITLE"
-                                        type='text'
-                                        name='stepTitle'
-                                        value={stepTitle}
-                                        onChange={(e) => setStepTitle(e.target.value)}
-                                    ></input>
-                                </div>
-                                <div className="step-input">
-                                    <label>Step {stepOrder} Instructions:</label>
-                                    <input
-                                        type='text'
-                                        name='stepInstructions'
-                                        value={stepInstructions}
-                                        onChange={(e) => setStepInstructions(e.target.value)}
-                                    ></input>
-                                </div>
-                                <div className="step-input">
-                                    {/* <label>Step {stepOrder} Photo:</label>
-                                <input
-                                    type='text'
-                                    name='photoUrl'
-                                    value={photoUrl}
-                                    onChange={(e) => setPhotoUrl(e.target.value)}
-                                ></input> */}
-                                    <UploadPicture setTitleImagee={setPhotoUrl} />
-                                </div>
-                                {/* <div className="step-input">
+
+                            {instructions.map(instruction => (
+                                <div className="title-img-catt">
+                                    <div className="titleImage-preview">
+                                        <img src={instruction.photoUrl} style={{ width: '310px', height: '245px', opacity: "0.6" }}></img>
+                                    </div>
+                                    <div>
+                                        <div className="step-title">
+                                            <label>Step {instruction.stepOrder}:</label>
+                                            <input
+                                                disabled={true}
+                                                placeholder="ENTER STEP TITLE"
+                                                type='text'
+                                                name='stepTitle'
+                                                value={instruction.stepTitle}
+                                                onChange={(e) => setStepTitle(e.target.value)}
+                                            ></input>
+                                        </div>
+                                        <div className="step-input">
+                                            <label>Step {instruction.stepOrder} Instructions</label>
+                                            <textarea
+                                                disabled={true}
+                                                type='text'
+                                                name='stepInstructions'
+                                                value={instruction.instructions}
+                                                onChange={(e) => setStepInstructions(e.target.value)}
+                                            ></textarea>
+                                        </div>
+                                        <div className="step-input">
+                                            {/* <UploadPicture setTitleImagee={setPhotoUrl} /> */}
+                                        </div>
+                                    </div>
+                                    {/* <div className="step-input">
                                 <label>Step {stepOrder} Video</label>
                                 <input
-                                    type='text'
+                                type='text'
                                     name='videoUrl'
                                     value={videoUrl}
                                     onChange={(e) => setVideoUrl(e.target.value)}
+                                    ></input>
+                                </div> */}
+                                    {/* <button className="submit-comment" type='submit'>Submit your Project</button> */}
+                                </div>
+                            ))}
+                            {/* <button className="submit-comment" type='submit' onClick={moveOntoSupplies}>Move on to Supplies</button> */}
+                            <div className="title-img-catt">
+                                <div className="titleImage-preview">
+                                    <img src={photoUrl} style={{ width: '310px', height: '245px', opacity: "0.6" }}></img>
+                                </div>
+                                <div>
+                                    <div className="step-title">
+                                        <label>Step {stepOrder}:</label>
+                                        <input
+                                            placeholder="ENTER STEP TITLE"
+                                            type='text'
+                                            name='stepTitle'
+                                            value={stepTitle}
+                                            onChange={(e) => setStepTitle(e.target.value)}
+                                        ></input>
+                                    </div>
+                                    <div className="step-input">
+                                        <label>Step {stepOrder} Instructions</label>
+                                        <textarea
+                                            placeholder="Fill in the instructions for this step"
+                                            type='text'
+                                            name='stepInstructions'
+                                            value={stepInstructions}
+                                            onChange={(e) => setStepInstructions(e.target.value)}
+                                        ></textarea>
+                                    </div>
+                                    <h4 className="photo-header">Click to choose a photo</h4>
+                                    <div className="step-photo">
+                                        <UploadPicture className="step-photo" setTitleImagee={setPhotoUrl} />
+                                    </div>
+                                    {/* <div className="step-input">
+                                <label>Step {stepOrder} Video</label>
+                                <input
+                                type='text'
+                                name='videoUrl'
+                                value={videoUrl}
+                                onChange={(e) => setVideoUrl(e.target.value)}
                                 ></input>
                             </div> */}
-                                {/* <button className="submit-comment" type='submit'>Submit your Project</button> */}
+                                    {/* <button className="submit-comment" type='submit'>Submit your Project</button> */}
+                                </div>
                             </div>
-                            <button className="submit-comment" onClick={addAnotherStep}>Add another Step</button>
+                            <div className="create-btns">
+                                <div className="add-step-btn">
+                                    <button className="submitt-comment" onClick={addAnotherStep}>Add another Step</button>
+                                </div>
+                                <div className="submit-project-btn">
+                                    <button className="submitt-comment" type='submit'>Submit your Project</button>
+                                </div>
+                            </div>
+                            {/* {instructions.map(instruction => {
+                                <div key={instruction.id}>
+                                <h1>hello</h1>
+                                </div>
+                            })} */}
                         </div>
                     </form>
                 )}
@@ -378,7 +440,6 @@ const CreateProject = () => {
                                 ></input>
                             </div> */}
                         {/* <button className="submit-comment" onClick={addAnotherStep}>Add another Step</button> */}
-                        {/* <button className="submit-comment" type='submit'>Submit your Project</button> */}
                         {/* </div> */}
                     </form>
                 )}

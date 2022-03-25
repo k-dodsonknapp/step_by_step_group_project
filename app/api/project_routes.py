@@ -114,6 +114,7 @@ def create_project():
     data = request.json
     instructions = data['instructions']
     supplies = data['supplies']
+    print("JJJJJJJJJ", supplies)
 
     project = Project(userId=data['userId'],
                       title=data['title'],

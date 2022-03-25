@@ -67,6 +67,13 @@
     width: 100%;
 }
 
+.project-image-container img {
+    max-width: 750px;
+    max-height: 1000px;
+    min-width: 300px;
+    min-height: 550px;
+}
+
 #amount {
     display: flex;
     justify-content: space-around;
@@ -80,26 +87,43 @@
 }
 
 #overview-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
     font-size: 25px;
     font-weight: 700;
     margin-top: 20px;
 }
 
 #project-overview {
+    display: flex;
+    justify-content: center;
     width: 700px;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 25px;
+    margin-top: 10px;
 }
 
 #supplies-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
     font-size: 25px;
     font-weight: 700;
     padding: 0px;
     margin-top: 20px;
 }
 
+.title-by p {
+    word-wrap: break-word;
+}
+
 .supply-list {
+    display: flex;
+    justify-content: center;
     width: 700px;
     font-size: 18px;
     font-weight: 500;
@@ -113,7 +137,7 @@
 }
 
 .instruction-image {
-    margin: 20px;
+    /* margin: 20px; */
 }
 
 .instruction-title {
@@ -123,12 +147,14 @@
     font-weight: 700;
     padding: 0px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .instructions {
     list-style: none;
     width: 700px;
     line-height: 25px;
+    margin-top: 20px;
 }
 
 .comments-title {

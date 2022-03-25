@@ -48,17 +48,17 @@ const ProjectExplore = () => {
                 {projects?.map(project => (
                     <div key={project.id} className="allProjectsMap" >
                         <li key={project.id} className="eachProject">
-                            <a href={`/projects/${project.id}`}>
+                            <a href={`/projects/${project?.id}`}>
                                 <div className="projectImage">
-                                    <img src={`${project.titleImage}`} alt="" />
+                                    <img src={`${project?.titleImage}`} alt="" />
                                 </div>
                             </a>
                             <div className="info-container">
                                 <div className="title-by">
                                     <div>
-                                        <p>{project?.title} by <NavLink to={`/users/${project.userId}`}>
-                                            {project.username}
-                                        </NavLink>  in <NavLink to={`/category/${project.category}`}>
+                                        <p>{project?.title} by <NavLink to={`/users/${project?.userId}`}>
+                                            {project?.username}
+                                        </NavLink>  in <NavLink to={`/category/${project?.category}`}>
                                                 {project?.category}
                                             </NavLink>
                                         </p>

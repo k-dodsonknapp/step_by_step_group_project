@@ -218,7 +218,7 @@ const ProjectDetails = () => {
               </div>
             ))}
           </ul>
-          <ul>
+          {/* <ul> */}
             {project?.instructions?.map((instruction) => (
               <div className="instruction-container" key={instruction?.id}>
                 <div className="instruction-title">
@@ -237,7 +237,7 @@ const ProjectDetails = () => {
                 </li>
               </div>
             ))}
-          </ul>
+          {/* </ul> */}
           <h2 className="num-comments">{project?.comments?.length} Comments</h2>
           {project?.comments?.map((comment) => (
             <div key={comment?.id}>

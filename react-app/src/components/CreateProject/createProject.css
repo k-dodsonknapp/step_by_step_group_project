@@ -2,10 +2,97 @@
 .create-page {
     margin-top: 100px;
     height: auto;
-    /* height: 85vh; */
+    /* height: 155vh; */
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.uploadPictureInput {
+    /* border: 1px solid red; */
+    display: flex;
+    margin: 10px 0px;
+}
+
+.step-photo {
+    display: flex;
+    /* width: 150px; */
+    margin-left: 30px;
+    height: 50px;
+}
+
+.create-btns {
+    display: flex;
+    width: 500px;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+
+.submitt-comment::after {
+    display: block;
+    margin: 0 auto;
+    content: "";
+    padding-top: 40px;
+    border-bottom: 1px solid rgba(163, 162, 162, 0.534);
+    width: 75%;
+}  
+
+.submit-project {
+    margin-top: 20px;
+    height: 75px;
+}
+
+.submitt-comment {
+    height: 35px;
+    border: none;
+    padding: 9px 11px;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    background-color: #faac18;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* .uploadPictureInput button {
+
+} */
+
+.uploadPictureInput input {
+    cursor: pointer;  
+    border: 1px solid rgb(186, 186, 186);
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.uploadPictureInput input:hover {
+    border: 1px solid rgb(116, 114, 114);
+}
+
+.uploadPictureInput button {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    padding: 6px;
+    color: rgb(116, 114, 114);
+}
+
+.photo-header {
+    margin-left: 30px;
+}
+
+.uploadPictureInput button:hover {
+    text-decoration: underline;
+    
+}
+
+#file-upload-button {
+    display: none;
+    cursor: pointer;
+}
+
+input[type=file]::file-selector-button {
+    display: none;
+}
 
 .create-form {
     /* border: 1px solid red; */
@@ -186,10 +273,11 @@ select > option {
 }
 
 .step-input label {
+    display: flex;
     font-weight: 500;
     margin-bottom: 15px;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .step-input {
@@ -211,25 +299,52 @@ select > option {
     margin: 4px 0px;
 }
 
+.step-input textarea {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    border-radius: 6px;
+    /* border: 1px solid rgb(186, 186, 186); */
+    border: none;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 4px 0px;
+    overflow-y: hidden;
+    resize: none;
+    border: 1px solid rgb(201, 201, 201);
+    text-indent: none;
+}
+
 .step-input input:hover {
     border: 1px solid rgb(186, 186, 186);
     padding: 8px 11px;
     margin: 3px 0px;
 }
 
+.step-input textarea:hover {
+    border: 2px solid rgb(186, 186, 186);
+    padding: 8px 11px 8px 11px;
+    margin: 3px 0px;
+
+    /* padding: 8px 12px; */
+
+}
+
 .title-img-catt {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border: 1px solid rgb(186, 186, 186);
     margin: 10px;
     width: 80%;
     border-radius: 4px;
+    height: auto;
 }
 
 .step-title {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* justify-content: center; */
     width: 91%;
     margin: 30px 30px;
 }
@@ -243,7 +358,8 @@ select > option {
 }
 
 .step-title input {
-    width: 189px;
+    display: flex;
+    width: auto;
     font-size: 20px;
     font-weight: 500;
     border: none;

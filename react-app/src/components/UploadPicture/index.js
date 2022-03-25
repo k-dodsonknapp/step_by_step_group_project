@@ -7,7 +7,7 @@ const UploadPicture = ({ setTitleImagee }) => {
     const history = useHistory(); // so that we can redirect after the image upload is successful
     const [image, setImage] = useState(null);
     const [imageLoading, setImageLoading] = useState(false);
-    console.log(">>>>>>>>", image)
+    // console.log(">>>>>>>>", image)
 
 
     const handleSubmit = async (e) => {
@@ -25,7 +25,7 @@ const UploadPicture = ({ setTitleImagee }) => {
         });
         if (res.ok) {
             const data = await res.json();
-            console.log("PPPPPPPPPPPP", data);
+            // console.log("PPPPPPPPPPPP", data);
             setImageLoading(false);
             setTitleImagee(data.url);
             // history.push("/images");
@@ -51,7 +51,7 @@ const UploadPicture = ({ setTitleImagee }) => {
                 accept="image/*"
                 onChange={updateImage}
             />
-            <button onClick={handleSubmit} type="submit">Submit</button>
+            <button onClick={handleSubmit} type="submit">Preview Photo</button>
             {(imageLoading) && <p>Loading...</p>}
         </div>
         // </form>
