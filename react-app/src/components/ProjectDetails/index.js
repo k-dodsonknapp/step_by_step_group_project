@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { deleteOneProject, getOneProject } from "../../store/project";
 import { addOneComment, deleteOneComment, updateOneComment } from "../../store/comments";
-// import EditCommentForm from "../EditComments";
 import "./Projects.css";
 
 const ProjectDetails = () => {
@@ -11,40 +10,19 @@ const ProjectDetails = () => {
   const history = useHistory();
   const { projectId } = useParams();
   const project = useSelector((state) => state.projects[+projectId]);
-  console.log("PPPPPPPPPP", project)
-
   const user = useSelector((state) => state.session.user);
-  // console.log("KKKKKKKK", user.name)
   const session = useSelector(state => state.session);
-  // const commentState = useSelector((state) => state.comments);
-
 
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
   const [comment, setComment] = useState('');
-  // console.log("IDKDKDKDKD", comment)
   const [newComment] = useState(0);
   const [commentId, setCommentId] = useState(0);
-  console.log("TTTTTTT", commentId)
   const [editClicked, setEditClicked] = useState(true)
   const [showComment, setShowComment] = useState(true)
   const [showPostCommentBtn, setShowPostCommentBtn] = useState(true)
-  // const editComment = useSelector((state) => state.comments);
   const [body, setBody] = useState('');
   const [editBody, setEditBody] = useState('');
-  console.log("((((()((((((", body)
-
-  // let reversedComments = []
-  // if (project) {
-  //   project.comments.map(comment => {
-  //     return reversedComments.unshift(comment)
-  //   })
-  // }
-
-  // useEffect(() => {
-  //   dispatch(updateOneComment(commentId));
-  // }, [dispatch, commentId]);
-
 
   useEffect(() => {
     addOneComment(newComment)
@@ -70,7 +48,6 @@ const ProjectDetails = () => {
       setShowComment(true)
     }
     await dispatch(getOneProject(+projectId))
-    // setIdPath(data.id)
   }
 
   const handleComment = async (e) => {
@@ -97,7 +74,6 @@ const ProjectDetails = () => {
     setEditClicked(false)
     setShowComment(true)
     setShowCommentEditForm(false);
-
   }
 
   const handleEditProjectButton = (e) => {
@@ -132,9 +108,7 @@ const ProjectDetails = () => {
     console.log("MMMMMM", comms[commentId].comment)
     setEditBody(comms[commentId].comment)
     setCommentId(id)
-    // console.log(+commentId === +id)
     setComment(project.comments.id)
-    // console.log(id)
     if (showCommentEditForm === false) {
       setShowCommentEditForm(true);
       setShowComment(false)
@@ -159,7 +133,6 @@ const ProjectDetails = () => {
     if (showCommentEditForm === true) {
       setShowCommentEditForm(false)
     }
-
   }
 
   const cancelNewComment = (e) => {
@@ -218,11 +191,10 @@ const ProjectDetails = () => {
               </div>
             ))}
           </ul>
-          {/* <ul> */}
             {project?.instructions?.map((instruction) => (
               <div className="instruction-container" key={instruction?.id}>
                 <div className="instruction-title">
-                  Step {instruction?.stepOrder} {instruction?.stepTitle}:
+                  Step {instruction?.stepOrder} - {instruction?.stepTitle}:
                 </div>
                 <div className="project-image-container">
                   <img
@@ -237,7 +209,6 @@ const ProjectDetails = () => {
                 </li>
               </div>
             ))}
-          {/* </ul> */}
           <h2 className="num-comments">{project?.comments?.length} Comments</h2>
           {project?.comments?.map((comment) => (
             <div key={comment?.id}>
@@ -265,7 +236,6 @@ const ProjectDetails = () => {
               {+comment?.id === +commentId && (
                 <div>
                   {showCommentEditForm && (
-                    // <EditCommentForm commentId={comment.id} projectId={projectId} />
                     <div className="comment-">
                       <form className="comment-form" >
                         <div className="edit-container">
@@ -335,7 +305,6 @@ const ProjectDetails = () => {
                         setBody(e?.target?.value)
                       }
                       required />
-                    {/* <textarea value={body} onChange={updateBody} required /> */}
                     <div className="btn-container">
                       <button onClick={cancelNewComment} className="cancel-edit">Cancel</button>
                       <button className="submit-comment" type="submit">Save</button>
@@ -345,7 +314,6 @@ const ProjectDetails = () => {
               </form>
             </div>
           )}
-          {/* </ul> */}
         </div>
       )}
     </>
