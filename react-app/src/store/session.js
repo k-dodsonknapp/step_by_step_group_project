@@ -21,11 +21,9 @@ export const authenticate = () => async (dispatch) => {
   });
   if (response.ok) {
     const data = await response.json();
-    // console.log("auth", data)
     if (data.errors) {
       return;
     }
-  
     dispatch(setUser(data));
   }
 }
@@ -38,7 +36,7 @@ export const login = (email, password) => async (dispatch) => {
     },
     body: JSON.stringify({
       email,
-      password
+      password, 
     })
   });
   
@@ -71,7 +69,8 @@ export const logout = () => async (dispatch) => {
 };
 
 
-export const signUp = (username, email, password) => async (dispatch) => {
+export const signUp = (username, email, password, userPhoto) => async (dispatch) => {
+  console.warn(username, email, password, userPhoto, "LLLLLLLLLL")
   const response = await fetch('/api/auth/signup', {
     method: 'POST',
     headers: {
@@ -81,6 +80,7 @@ export const signUp = (username, email, password) => async (dispatch) => {
       username,
       email,
       password,
+      userPhoto,
     }),
   });
   
@@ -101,6 +101,7 @@ export const signUp = (username, email, password) => async (dispatch) => {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case SET_USER:
+      console.log("MMMMMM", action.payload)
       return { user: action.payload }
     case REMOVE_USER:
       return { user: null }

@@ -1,21 +1,20 @@
 import React from "react";
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProjects } from "../../store/project";
-import './projectExplore.css'
+import './projectExplore.css';
 
 
 const ProjectExplore = () => {
     const dispatch = useDispatch();
-    const projects = useSelector(state => Object.values(state.projects));
+    const projects = useSelector(state => Object?.values(state?.projects));
 
     useEffect(() => {
         dispatch(getAllProjects());
     }, [dispatch]);
 
     const explore = "Explore >"
-
     return (
         <div className="explorePage">
             <div className="slideshow-container">
@@ -46,8 +45,8 @@ const ProjectExplore = () => {
                     <h2>{explore}</h2>
                 </div>
                 {projects?.map(project => (
-                    <div key={project.id} className="allProjectsMap" >
-                        <li key={project.id} className="eachProject">
+                    <div key={project.id} className="allProjectsMap">
+                        <li className="eachProject">
                             <a href={`/projects/${project?.id}`}>
                                 <div className="projectImage">
                                     <img src={`${project?.titleImage}`} alt="" />

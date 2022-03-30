@@ -11,14 +11,12 @@ project_routes = Blueprint('projects', __name__)
 def projects():
     projects = Project.query.all()
     list = [project.to_dict() for project in projects]
-    # print("------LIST", list)
+
     for project in list:
         id = project["userId"]
-        # print("-------",id)
         username = User.query.get(id).to_dict()["username"]
         project["username"] = username
 
-    # print("-------", list)
     return {"projects": list}
 
 
@@ -46,7 +44,6 @@ def project(id):
 @project_routes.route('/<int:id>', methods=['PUT'])
 def update_project(id):
     data = request.json
-    print("HELLO")
     instructions = data['instructions']
     supplies = data['supplies']
 
@@ -61,9 +58,6 @@ def update_project(id):
         db.session.delete(instruction)
 
     for instruction in instructions:
-        # row = Instruction.query.filter(Instruction.projectId == id, Instruction.stepOrder == instruction['stepOrder']).first()
-        # row.stepTitle = instruction['stepTitle']
-        # row.stepOrder = instruction['stepOrder']
         row = Instruction(
             projectId=id,
             stepOrder=instruction["stepOrder"],

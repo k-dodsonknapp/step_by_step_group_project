@@ -45,7 +45,6 @@ export const addOneComment = (comment) => async (dispatch) => {
   });
   if (response.ok) {
     const data = await response.json();
-    console.log('data:', data)
     dispatch(addComment(data.comment));
     return data.comment;
   }
@@ -98,12 +97,10 @@ export default function commentReducer(state = initialState, action) {
       newState = { ...state };
       let newArr = Object.values(newState);
       newArr.forEach(comment => {
-        if (comment.id === action.comment.id) {
+        if (comment.id === action.payload.comment.id) {
           newState[action.comment.id] = action.comment
         }
       })
-      // console.log("KKKKKKK", newState)
-      // state[action.payload.commentId] = action.payload.comment;
       return newState;
 
     case DELETE_COMMENT:

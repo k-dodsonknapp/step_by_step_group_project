@@ -12,10 +12,10 @@ const ProjectDetails = () => {
   const project = useSelector((state) => state.projects[+projectId]);
   const user = useSelector((state) => state.session.user);
   const session = useSelector(state => state.session);
+  console.log("user", user)
 
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
-  const [comment, setComment] = useState('');
   const [newComment] = useState(0);
   const [commentId, setCommentId] = useState(0);
   const [editClicked, setEditClicked] = useState(true)
@@ -71,7 +71,7 @@ const ProjectDetails = () => {
 
   const cancel = (e) => {
     e.preventDefault();
-    setEditClicked(false)
+    // setEditClicked(false)
     setShowComment(true)
     setShowCommentEditForm(false);
   }
@@ -105,10 +105,9 @@ const ProjectDetails = () => {
     comments.map(comment => {
       comms[comment.id] = comment
     })
-    console.log("MMMMMM", comms[commentId].comment)
     setEditBody(comms[commentId].comment)
     setCommentId(id)
-    setComment(project.comments.id)
+    // setComment(project.comments.id)
     if (showCommentEditForm === false) {
       setShowCommentEditForm(true);
       setShowComment(false)

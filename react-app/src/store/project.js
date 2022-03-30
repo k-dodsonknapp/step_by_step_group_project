@@ -43,7 +43,6 @@ export const getAllProjects = () => async (dispatch) => {
     if (data.errors) {
       return;
     }
-    // console.log(data);
     dispatch(getProjects(data));
     return data;
   }
@@ -77,7 +76,6 @@ export const addOneProject = (data) => async (dispatch) => {
 };
 
 export const updateOnePost = (data) => async (dispatch) => {
-  // console.log("FRONT END", data)
   const response = await fetch(`/api/projects/${data.id}`, {
     method: "PUT",
     headers: {
@@ -85,10 +83,8 @@ export const updateOnePost = (data) => async (dispatch) => {
     },
     body: JSON.stringify(data),
   });
-  // console.log("RESPONSE",response)
   if (response.ok) {
     const project = await response.json();
-    console.log("--------", project)
     dispatch(updateProjects(project));
     return project;
   }
@@ -108,7 +104,6 @@ export const search = (search) => async (dispatch) => {
   const response = await fetch(`/api/search/${search}`);
   if (response.ok) {
     const data = await response.json();
-    // console.log("-------", data);
     dispatch(searchResult(data));
     return data;
   }

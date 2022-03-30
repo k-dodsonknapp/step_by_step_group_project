@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import UploadPicture from '../UploadPicture';
 import './auth.css'
 import DemoButton from './DemoUser';
 const SignUpForm = () => {
@@ -10,13 +11,22 @@ const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+  const [userPhoto, setUserPhoto] = useState('')
+  // console.log(userPhoto, "KKKKKKKKKKK")
   const user = useSelector(state => state.session.user);
+  // console.log(">>>>>>>>>", user)
   const dispatch = useDispatch();
 
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      const data = await dispatch(
+        signUp(
+          username,
+          email,
+          password,
+          userPhoto,
+        ));
       if (data) {
         setErrors(data)
       }
@@ -92,6 +102,10 @@ const SignUpForm = () => {
               value={repeatPassword}
               required={true}
             ></input>
+          </div>
+          <div>
+            <label>User Photo</label>
+            <UploadPicture setTitleImagee={setUserPhoto} />
           </div>
           <div className='signupBtns'>
             <button className='loginButton' type='submit'>Sign Up</button>

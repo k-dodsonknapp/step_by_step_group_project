@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 // import "../CreatePost/createPost.css"
 
 
 const UploadPicture = ({ setTitleImagee }) => {
-    const history = useHistory(); // so that we can redirect after the image upload is successful
+    // const history = useHistory(); // so that we can redirect after the image upload is successful
     const [image, setImage] = useState(null);
     const [imageLoading, setImageLoading] = useState(false);
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();

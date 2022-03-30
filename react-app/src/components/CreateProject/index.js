@@ -14,36 +14,28 @@ const CreateProject = () => {
     const [showErrors, setShowErrors] = useState(false)
     const [errors, setErrors] = useState([])
     const [title, setTitle] = useState('')
-    const [titleImage, setTitleImage] = useState('')
-    console.log("DDDDDDD", titleImage)
     const [overview, setOverview] = useState('')
     const [category, setCategory] = useState('')
 
     const [showSupplyErrors, setShowSupplyErrors] = useState(false)
     const [supplyErrors, setSupplyErrors] = useState([])
     const [supplies, setSupplies] = useState([])
-    console.log(supplies, "GGGGGGGGGGGGGGG")
     const [supply, setSupply] = useState('')
-    console.log(supply, "LLLLLLLLLLLLLLLL")
     const [amount, setAmount] = useState(0)
 
     const [showInstructionErrors, setShowInstructionErrors] = useState(false)
     const [instructionErrors, setInstructionErrors] = useState([])
     const [instructions, setInstructions] = useState([])
-    // console.log(instructions, "YYYYYYYYYYYYYYYY")
     const [stepOrder, setStepOrder] = useState(1)
     const [stepTitle, setStepTitle] = useState('')
     const [stepInstructions, setStepInstructions] = useState('')
     const [photoUrl, setPhotoUrl] = useState('')
     const [videoUrl, setVideoUrl] = useState('')
 
-    const [showProjectForm, setShowProjectForm] = useState(true)
     const [imagePreview, setImagePreview] = useState('https://www.elmhurst.edu/wp-content/uploads/2018/12/5-skills-project-management-degree-elmhurst-college-infographic-thumb.jpg')
-    // const [showEmptyFields, setShowEmptyFields] = useState(false)
 
     useEffect(() => {
         const newSupply = { supply, amount }
-        console.log("FFFFFFFFFFF", newSupply)
         setSupplies([newSupply])
     }, [supply])
 
@@ -83,11 +75,11 @@ const CreateProject = () => {
         if (title.length < 6 || title === '') {
             inFuncErrors.push('Please provide a longer title')
         }
-        if (overview.length < 20 || overview === '') {
+        if (overview.length < 10 || overview === '') {
             inFuncErrors.push('Please provide a longer overview')
         }
         setErrors(inFuncErrors)
-    }, [title, titleImage, overview, showErrors])
+    }, [title, overview, showErrors])
 
     useEffect(() => {
         const inFuncErrors = []
@@ -112,7 +104,6 @@ const CreateProject = () => {
     const addAnotherStep = (e) => {
         e.preventDefault()
         if (instructionErrors.length === 0) {
-
             const newInstruction = {
                 stepOrder,
                 stepTitle,
@@ -142,7 +133,7 @@ const CreateProject = () => {
                         </div>
                         <div className="title-img-cat">
                             <div className="titleImage-preview">
-                                <img src={imagePreview} style={{ width: '310px', height: '245px', opacity: "0.6" }}></img>
+                                <img src={imagePreview} style={{ width: '310px', height: '245px', opacity: "0.6" }} alt=''></img>
                             </div>
                             <div className="title-category">
                                 <div className="project-title-input">
@@ -210,9 +201,9 @@ const CreateProject = () => {
                         </div>
 
                         {instructions.map(instruction => (
-                            <div className="title-img-catt">
+                            <div key={instruction.id} className="title-img-catt">
                                 <div className="titleImage-preview">
-                                    <img src={instruction.photoUrl} style={{ width: '310px', height: '245px', opacity: "0.6" }}></img>
+                                    <img src={instruction.photoUrl} style={{ width: '310px', height: '245px', opacity: "0.6" }} alt=''></img>
                                 </div>
                                 <div>
                                     <div className="step-title">
@@ -243,7 +234,7 @@ const CreateProject = () => {
                         ))}
                         <div className="title-img-catt">
                             <div className="titleImage-preview">
-                                <img src={photoUrl} style={{ width: '310px', height: '245px', opacity: "0.6" }}></img>
+                                <img src={photoUrl} style={{ width: '310px', height: '245px', opacity: "0.6" }} alt=''></img>
                             </div>
                             <div>
                                 <div className="step-title">
@@ -287,7 +278,7 @@ const CreateProject = () => {
                 <>
                     <ul>
                         {errors.map(error => (
-                            <li>{error}</li>
+                            <li key={error}>{error}</li>
                         ))}
                     </ul>
                 </>
