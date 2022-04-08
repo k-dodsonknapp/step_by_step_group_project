@@ -12,9 +12,7 @@ const SignUpForm = () => {
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const [userPhoto, setUserPhoto] = useState('')
-  // console.log(userPhoto, "KKKKKKKKKKK")
   const user = useSelector(state => state.session.user);
-  // console.log(">>>>>>>>>", user)
   const dispatch = useDispatch();
 
   const onSignUp = async (e) => {
@@ -103,10 +101,10 @@ const SignUpForm = () => {
               required={true}
             ></input>
           </div>
-          <div>
+          {/* <div>
             <label>User Photo</label>
             <UploadPicture setTitleImagee={setUserPhoto} />
-          </div>
+          </div> */}
           <div className='signupBtns'>
             <button className='loginButton' type='submit'>Sign Up</button>
             <DemoButton />

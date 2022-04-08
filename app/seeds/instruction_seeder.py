@@ -25,7 +25,7 @@ def seed_instructions():
         stepOrder=3,
         stepTitle="Add rest of square",
         instructions="Repeat step 2 with the last two pieces of the square", 
-        photoUrl="Picture of wood pieces and glue", 
+        photoUrl="https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/how-to-build-a-birdhouse-2022-step-2.jpg", 
         videoUrl="Video of the action"
     )
 
@@ -34,7 +34,7 @@ def seed_instructions():
         stepOrder=4,
         stepTitle="Add Roof",
         instructions="Add roof", 
-        photoUrl="Picture of wood pieces and glue", 
+        photoUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb1Cs0ZEUIVryhtLQf6wFiU9lawobBwLCSCg&usqp=CAU", 
         videoUrl="Video of the action"
     )
 
@@ -43,7 +43,7 @@ def seed_instructions():
         stepOrder=5,
         stepTitle="Add Shingles",
         instructions="Add shingles to roof", 
-        photoUrl="Picture of wood pieces and glue", 
+        photoUrl="https://i.ytimg.com/vi/g2xk0lSqm2k/maxresdefault.jpg", 
         videoUrl="Video of the action",
     )
 
