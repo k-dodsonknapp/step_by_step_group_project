@@ -61,6 +61,7 @@ export const getOneProject = (projectId) => async (dispatch) => {
 };
 
 export const addOneProject = (data) => async (dispatch) => {
+  console.log(data, "DATA THUNK")
   const response = await fetch("/api/projects/new", {
     method: "POST",
     headers: {

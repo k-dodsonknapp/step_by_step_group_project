@@ -13,7 +13,6 @@ def get_all_views():
 @views_routes.route('/<int:id>')
 def get_project_views(id):
     view = Views.query.filter(Views.projectId == id).first()
-    print("NNNNNNNNNNN", view.to_dict())
     return view.to_dict()
 
 @views_routes.route('/new', methods=["POST"])

@@ -42,7 +42,7 @@ const CreateProject = () => {
 
     const handleProjectSubmit = async (e) => {
         e.preventDefault()
-        addAnotherStep(e)
+        // addAnotherStep(e)
         if (instructionErrors.length === 0) {
             const newInstruction = {
                 stepOrder,
@@ -72,7 +72,7 @@ const CreateProject = () => {
                 viewCount: 0
             }
             dispatch(addNewProjectView(newView))
-            history.push(`/projects/${projectId}`)
+            // history.push(`/projects/${projectId}`)
         } else {
             setShowInstructionErrors(true)
         }
