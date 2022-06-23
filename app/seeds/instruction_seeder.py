@@ -601,6 +601,96 @@ def seed_instructions():
         videoUrl="",
     )
 
+    mincraft_torch1=Instruction(
+        projectId= 9,
+        stepOrder= 1,
+        stepTitle= 'Print the Templates',
+        instructions= """
+        We've included a PDF file with templates for these torches as well as six other Minecraft-Inspired projects!
+        Each project is meant to be printed double-sided so you can build the circuit on the inside and see the art on the outside.
+        You'll also find black & white versions that you can color yourself.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FUG/DPDX/L1AQ22XS/FUGDPDXL1AQ22XS.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=83df7cabf13b7695d6fbfcc29691c4cd",
+        videoUrl="",
+    )
+
+    mincraft_torch2=Instruction(
+        projectId= 9,
+        stepOrder= 2,
+        stepTitle= 'Cut the Templates',
+        instructions= """
+        After you print the templates you'll need to cut them.
+        Always cut on the outside just in case your printer doesn't line things up perfectly.
+        If the inside is not perfectly aligned, that's okay! Just use it as a rough guide.
+        Tip: If you can't print double-sided easily just print out each page separately and use the diagram for reference when you build your circuit.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FZD/KGYW/L1AQ22XT/FZDKGYWL1AQ22XT.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=12419342e9a0454ecaea7455f6d63820",
+        videoUrl="",
+    )
+
+    mincraft_torch3=Instruction(
+        projectId= 9,
+        stepOrder= 3,
+        stepTitle= 'Fold Templates',
+        instructions= """
+        Fold each piece as indicated using the lines on the outside as a guide.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F3T/XII7/L1AQ22XX/F3TXII7L1AQ22XX.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=c1144af8a6702f1789aac832802d33bd",
+        videoUrl="",
+    )
+
+
+    mincraft_torch4=Instruction(
+        projectId= 9,
+        stepOrder= 4,
+        stepTitle= 'Build the Circuit',
+        instructions= """
+        Grab your CR2032 Battery, a White Jumbo 10mm LED, and some Maker Tape...
+        Build your circuit as shown on template you printed out.
+        Note that we'll use a "Tape Loop" (a small loop of Maker Tape) beneath the battery to stick it down.
+        Maker Tape is conductive all the way through so it can secure our battery and allow current to flow. (Most copper tapes is not conductive on both sides so a tape loop will not work.)
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FUW/M3HV/L1AQ244V/FUWM3HVL1AQ244V.png?auto=webp&frame=1&width=565&height=1024&fit=bounds&md=ab9e7bd91d165c157fd0959537e2bb05",
+        videoUrl="",
+    )
+
+    mincraft_torch5=Instruction(
+        projectId= 9,
+        stepOrder= 5,
+        stepTitle= 'Assemble Pieces',
+        instructions= """
+        Once you've got your circuit working you can assemble each piece.
+        Fold the edges together and use tape to attach them.
+        Once you've got both pieces assembled you can stick them together!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FH9/MEMM/L1AQ22YT/FH9MEMML1AQ22YT.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=a3af1b4d8fc083801d06c50f5f8182ff",
+        videoUrl="",
+    )
+
+    mincraft_torch6=Instruction(
+        projectId= 9,
+        stepOrder= 6,
+        stepTitle= 'Enjoy Your Torch!',
+        instructions= """
+        You've now got a Light-up MINECRAFT-Inspired Torch!
+        Have Fun!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FP0/24BW/L1AQ22ZO/FP024BWL1AQ22ZO.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=2b53e5298f202b22c84e8ed2e8044728",
+        videoUrl="",
+    )
+
+    mincraft_torch7=Instruction(
+        projectId= 9,
+        stepOrder= 7,
+        stepTitle= 'Check Out the Other Projects',
+        instructions= """
+        If you've already downloaded the PDF you may have seen the other project templates.
+        Try building these as well. (The assembly techniques are all pretty similar.)
+        A few of them use a vibrating motor instead of an LED and will move around instead of lighting up!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F4Y/BMJD/L1AQ24KM/F4YBMJDL1AQ24KM.jpg?auto=webp&frame=1&crop=3:2&width=800&height=1024&fit=bounds&md=ccb022a3073c05b57df028ebe30400e0",
+        videoUrl="",
+    )
 
     db.session.add(bird_project1)
     db.session.add(bird_project2)
