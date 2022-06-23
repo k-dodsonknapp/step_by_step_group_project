@@ -1,7 +1,7 @@
 from dis import Instruction
 from flask import Blueprint, request
 from sqlalchemy import insert, update
-from app.models import db, Project, Instruction, Supply, Comment, User
+from app.models import db, Project, Instruction, Supply, Comment, User, Views
 from app.forms.project_form import ProjectForm
 
 project_routes = Blueprint('projects', __name__)
@@ -95,6 +95,9 @@ def delete_project(id):
     projectComments = Comment.query.filter(Comment.projectId == id).all()
     for comment in projectComments:
         db.session.delete(comment)
+    
+    projectViews = Views.query.filter(Views.projectId == id).first()
+    db.session.delete(projectViews)
 
     project = Project.query.get(id)
     db.session.delete(project)

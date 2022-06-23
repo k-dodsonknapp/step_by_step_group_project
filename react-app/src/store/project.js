@@ -115,6 +115,7 @@ export default function projectReducer(state = initialState, action) {
   let newState;
   switch (action.type) {
     case GET_PROJECTS:
+      console.log(state, "ADD PROJECT")
       newState = { ...state };
       action.payload.projects.map(
         (project) => (newState[project.id] = project)
@@ -131,7 +132,7 @@ export default function projectReducer(state = initialState, action) {
     case ADD_PROJECTS:
       newState = {
         ...state,
-        [action.payload.id]: action.payload,
+        [action.payload.projectId]: action.payload,
       };
       return newState;
 
