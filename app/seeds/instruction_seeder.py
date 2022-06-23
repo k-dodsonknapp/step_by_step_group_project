@@ -601,7 +601,7 @@ def seed_instructions():
         videoUrl="",
     )
 
-    mincraft_torch1=Instruction(
+    minecraft_torch1=Instruction(
         projectId= 9,
         stepOrder= 1,
         stepTitle= 'Print the Templates',
@@ -614,7 +614,7 @@ def seed_instructions():
         videoUrl="",
     )
 
-    mincraft_torch2=Instruction(
+    minecraft_torch2=Instruction(
         projectId= 9,
         stepOrder= 2,
         stepTitle= 'Cut the Templates',
@@ -628,7 +628,7 @@ def seed_instructions():
         videoUrl="",
     )
 
-    mincraft_torch3=Instruction(
+    minecraft_torch3=Instruction(
         projectId= 9,
         stepOrder= 3,
         stepTitle= 'Fold Templates',
@@ -640,7 +640,7 @@ def seed_instructions():
     )
 
 
-    mincraft_torch4=Instruction(
+    minecraft_torch4=Instruction(
         projectId= 9,
         stepOrder= 4,
         stepTitle= 'Build the Circuit',
@@ -654,7 +654,7 @@ def seed_instructions():
         videoUrl="",
     )
 
-    mincraft_torch5=Instruction(
+    minecraft_torch5=Instruction(
         projectId= 9,
         stepOrder= 5,
         stepTitle= 'Assemble Pieces',
@@ -667,7 +667,7 @@ def seed_instructions():
         videoUrl="",
     )
 
-    mincraft_torch6=Instruction(
+    minecraft_torch6=Instruction(
         projectId= 9,
         stepOrder= 6,
         stepTitle= 'Enjoy Your Torch!',
@@ -679,7 +679,7 @@ def seed_instructions():
         videoUrl="",
     )
 
-    mincraft_torch7=Instruction(
+    minecraft_torch7=Instruction(
         projectId= 9,
         stepOrder= 7,
         stepTitle= 'Check Out the Other Projects',
@@ -738,6 +738,13 @@ def seed_instructions():
     db.session.add(arcade_stick6)
     db.session.add(arcade_stick7)
     db.session.add(arcade_stick8)
+    db.session.add(minecraft_torch1)
+    db.session.add(minecraft_torch2)
+    db.session.add(minecraft_torch3)
+    db.session.add(minecraft_torch4)
+    db.session.add(minecraft_torch5)
+    db.session.add(minecraft_torch6)
+    db.session.add(minecraft_torch7)
     
 
     db.session.commit()
