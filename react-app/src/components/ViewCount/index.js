@@ -13,7 +13,7 @@ function ViewCount({ project }) {
     useEffect(() => {
         dispatch(getView())
         setProjectViews(views?.filter(view => view?.projectId === project?.id)[0])
-    }, [dispatch, project?.id, views])
+    }, [dispatch])
 
     return (
         <div>
