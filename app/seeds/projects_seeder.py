@@ -110,6 +110,18 @@ def seed_project():
         category="Circuits"
     )
 
+    minecraft_torch = Project (
+        userId = 3,
+        title="MINECRAFT-Inspired Light-Up LED Torch",
+        titleImage="https://content.instructables.com/ORIG/F4Y/BMJD/L1AQ24KM/F4YBMJDL1AQ24KM.jpg?auto=webp&frame=1&crop=3:2&width=800&height=1024&fit=bounds&md=ccb022a3073c05b57df028ebe30400e0",
+        overview="""
+        We love Paper Circuits and yes, we still love MINECRAFT! We've created templates for these torches as well as six other Minecraft-Inspired projects! We've included a PDF eBook with all the files.
+
+        If you are brand new to building paper circuits check out our guide to Getting Started with Paper Circuits to learn the basics.
+        """,
+        category="Circuits"
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -118,8 +130,7 @@ def seed_project():
     db.session.add(slowmo_birds)
     db.session.add(dragonfly)
     db.session.add(arcade_stick)
-
-    #
+    db.session.add(minecraft_torch)
 
     db.session.commit()
 

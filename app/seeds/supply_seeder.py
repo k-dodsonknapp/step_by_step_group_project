@@ -263,6 +263,66 @@ def seed_supplies():
         supply="Ribbon cable adapter: Female to Female JST XH Adapter",
     )
 
+    minecraft_torch1=Supply(
+        projectId=9,
+        supply="""Brown Dog Gadgets sells kits and supplies, but you don't need to buy anything from us to create paper circuits. (Though if you do it does help support us in creating new projects and resources for teacher and students.)
+
+        The easiest way to get all of the parts you need is to pick up a Paper Circuits Kit, but if you've already got some conductive tape, coin cell batteries, and LEDs, you can make those supplies work as well.""",
+    )
+
+    minecraft_torch2=Supply(
+        projectId=9,
+        supply="""
+        PDF Templates (Included!)
+        """,
+    )
+
+    minecraft_torch3=Supply(
+        projectId=9,
+        supply="""
+        Paper
+        """,
+    )
+
+    minecraft_torch4=Supply(
+        projectId=9,
+        supply="""
+        10mm Jumbo LEDs
+        """,
+    )
+
+    minecraft_torch5=Supply(
+        projectId=9,
+        supply="""
+        10mm Jumbo LEDs
+        """,
+    )
+
+    minecraft_torch6=Supply(
+        projectId=9,
+        supply="""
+        Maker Tape (1/4" Wide)
+        """,
+    )
+
+    minecraft_torch7=Supply(
+        projectId=9,
+        supply="""
+        CR2032 Battery
+        """,
+    )
+
+    minecraft_torch8=Supply(
+        projectId=9,
+        supply="""
+        Note: We are using Maker Tape 
+        (a nylon tape that is conductive on the top, bottom, and all the way through) 
+        because it's the easiest tape to work with when creating paper circuits. 
+        Other conductive tapes (copper foil, etc.) are often only conductive on the top surface, 
+        so they will not work for some of these techniques, 
+        including the "Tape Loop" we use to connect the battery.
+        """,
+    )
 
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
@@ -316,6 +376,14 @@ def seed_supplies():
     db.session.add(arcade_stick8)
     db.session.add(arcade_stick9)
     db.session.add(arcade_stick10)
+    db.session.add(minecraft_torch1)
+    db.session.add(minecraft_torch2)
+    db.session.add(minecraft_torch3)
+    db.session.add(minecraft_torch4)
+    db.session.add(minecraft_torch5)
+    db.session.add(minecraft_torch6)
+    db.session.add(minecraft_torch7)
+    db.session.add(minecraft_torch8)
     
     db.session.commit()
 
