@@ -15,8 +15,6 @@ const ProjectDetails = () => {
   // const views = useSelector(state => state?.views?.views?.filter(view => view?.projectId === +projectId))
   // console.log("asdfasdf", typeof(view?.viewCount))
   // let count = views[0]
-  // const viewCount = view.viewCount
-  console.log("LLLLLLLLLLLLLLLLL", view)
   const user = useSelector((state) => state?.session?.user);
   const session = useSelector(state => state?.session);
   // console.log("user", user)
@@ -42,27 +40,12 @@ const ProjectDetails = () => {
   useEffect(() => {
     const addView = {
       "projectId": +projectId
-    }
-    console.log(addView)
+    };
     dispatch(updateView(addView));
-  }, [dispatch])
-
-  useEffect(() => {
-    dispatch(getOneView(+projectId))
-    // dispatch(getView())
-  }, [dispatch])
-
-  useEffect(() => {
-    addOneComment(newComment)
-  }, [dispatch, newComment])
-
-  useEffect(() => {
-    dispatch(getOneProject(projectId))
-  }, [dispatch, projectId])
-
-  useEffect(() => {
+    dispatch(getOneView(+projectId));
+    dispatch(getOneProject(projectId));
     dispatch(getOneProject(+projectId));
-  }, [dispatch, projectId]);
+  }, [dispatch]);
 
   const saveEditComment = async (e) => {
     e.preventDefault();
@@ -86,7 +69,6 @@ const ProjectDetails = () => {
       comment: body,
       username: user?.username,
     };
-    console.log("", newComment)
     await dispatch(addOneComment(newComment));
     await dispatch(getOneProject(projectId));
     setBody('')
