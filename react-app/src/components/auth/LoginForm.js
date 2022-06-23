@@ -16,7 +16,7 @@ const LoginForm = () => {
     const data = await dispatch(login(email, password));
     if (data) {
       setErrors(data);
-    }
+    };
   };
 
   const updateEmail = (e) => {
@@ -29,7 +29,7 @@ const LoginForm = () => {
 
   if (user) {
     return <Redirect to='/' />;
-  }
+  };
 
   return (
     <div className="loginPage">

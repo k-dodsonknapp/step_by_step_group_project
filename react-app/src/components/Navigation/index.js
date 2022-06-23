@@ -99,13 +99,13 @@ const Navigation = () => {
                 <div>
                   <NavLink to="/create">PUBLISH</NavLink>
                 </div>
-              )};
+              )}
               {!session.user && (
                 <>
                   <NavLink to="/login">LOGIN</NavLink>
                   <NavLink to="/sign-up">SIGN-UP</NavLink>
                 </>
-              )};
+              )}
               <div>
                 <SearchResults />
               </div>
@@ -144,7 +144,7 @@ const Navigation = () => {
             </div>
           </div>
         </ul>
-      )};
+      )}
     </div>
   );
 };

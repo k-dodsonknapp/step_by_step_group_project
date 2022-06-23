@@ -171,7 +171,7 @@ const ProjectDetails = () => {
                 <button className="submit-comment" onClick={handleEditProjectButton}>Edit</button>
                 <button className="submit-comment" onClick={handleDelete}>Delete</button>
               </div>
-            )};
+            )}
           </div>
           <div className="project-image-container">
             <img
@@ -192,7 +192,7 @@ const ProjectDetails = () => {
                   {supply?.supply}
                 </li>
               </div>
-            ))};
+            ))}
           </ul>
           {project?.instructions?.map((instruction) => (
             <div className="instruction-container" key={instruction?.id}>
@@ -211,7 +211,7 @@ const ProjectDetails = () => {
                 {instruction?.instructions}
               </li>
             </div>
-          ))};
+          ))}
           <h2 className="num-comments">{project?.comments?.length} Comments</h2>
           {project?.comments?.map((comment) => (
             <div key={comment?.id}>
@@ -228,13 +228,13 @@ const ProjectDetails = () => {
                       <button className="submit-commentt" id={comment?.id} onClick={handleDeleteComment}>Delete</button>
                       <button className="submit-commentt" id={comment?.id} onClick={handleShowEditForm(comment.id)}>Edit</button>
                     </div>
-                  )};
+                  )}
                 </div>
                 {showComment && (
                   <div className="comment">
                     {comment?.comment}
                   </div>
-                )};
+                )}
               </div>
               {+comment?.id === +commentId && (
                 <div>
@@ -262,13 +262,13 @@ const ProjectDetails = () => {
                         </div>
                       </form>
                     </div>
-                  )};
+                  )}
                 </div>
-              )};
+              )}
               <div >
               </div>
             </div>
-          )).reverse()};
+          )).reverse()}
           {user && showPostCommentBtn && (
             <div className="post-comment">
               <button
@@ -278,7 +278,7 @@ const ProjectDetails = () => {
                 Post Comment
               </button>
             </div>
-          )};
+          )}
           {!user && (
             <div className="not-logged-in">
               <div className="login-sign-up">
@@ -290,7 +290,7 @@ const ProjectDetails = () => {
                 <button onClick={handleSignUp} className="projectDetailsLogin">Sign Up Here!</button>
               </div>
             </div>
-          )};
+          )}
           {showCommentForm && (
             <div className="comment-">
               <form className="comment-form" onSubmit={handleComment}>
@@ -316,9 +316,9 @@ const ProjectDetails = () => {
                 </div>
               </form>
             </div>
-          )};
+          )}
         </div>
-      )};
+      )}
     </>
   );
 };

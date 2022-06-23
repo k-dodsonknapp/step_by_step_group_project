@@ -81,7 +81,7 @@ const ProjectExplore = () => {
                             </div>
                         </li>
                     </div>
-                ))};
+                ))}
             </ul>
         </div >
     )

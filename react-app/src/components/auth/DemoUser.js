@@ -9,18 +9,18 @@ const DemoButton = () => {
   const dispatch = useDispatch()
   const handleDemo = async (e) => {
     e.preventDefault();
-    const email = 'demo@aa.io'
-    const password = 'password'
+    const email = 'demo@aa.io';
+    const password = 'password';
     await dispatch(login(email, password));
 
   };
 
   if (user) {
     return <Redirect to='/' />;
-  }
+  };
 
   return <button className='demo-user' onClick={handleDemo}>Demo User</button>;
-}
+};
 
 
 export default DemoButton;

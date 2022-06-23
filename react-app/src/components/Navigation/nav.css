@@ -161,12 +161,10 @@ li > a {
 }
 
 
-    /* height: 33px
-} */
-
 .step-by-step-logo p {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: bolder;
+    margin-left: 3px;
 }
 
 .left-lower,
