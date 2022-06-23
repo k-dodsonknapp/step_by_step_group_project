@@ -72,7 +72,7 @@ const CreateProject = () => {
                 viewCount: 0
             }
             dispatch(addNewProjectView(newView))
-            // history.push(`/projects/${projectId}`)
+            history.push(`/projects/${projectId}`)
         } else {
             setShowInstructionErrors(true)
         }
