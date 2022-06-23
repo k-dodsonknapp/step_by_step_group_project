@@ -9,18 +9,18 @@ import ViewCount from "../ViewCount";
 
 
 const ProjectExplore = () => {
+
     const dispatch = useDispatch();
     const projects = useSelector(state => Object?.values(state?.projects));
-    // console.log(projects[1].id)
     const views = useSelector(state => state.views.views)
-    // console.log("HHHHH",view)
-    // console.log(view)
+    const explore = "Explore >";
+    
     useEffect(() => {
         dispatch(getAllProjects());
         dispatch(getView())
     }, [dispatch]);
 
-    const explore = "Explore >"
+
     return (
         <div className="explorePage">
             <div className="slideshow-container">
@@ -69,7 +69,6 @@ const ProjectExplore = () => {
                                         </p>
                                     </div>
                                     <div className="likes-views">
-                                        
                                         <ViewCount views={views} project={project}/>
                                         {/* {views.map(view => (
                                             view.viewCount
@@ -82,7 +81,7 @@ const ProjectExplore = () => {
                             </div>
                         </li>
                     </div>
-                ))}
+                ))};
             </ul>
         </div >
     )
