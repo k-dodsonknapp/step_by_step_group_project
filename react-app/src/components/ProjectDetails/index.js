@@ -122,21 +122,21 @@ const ProjectDetails = () => {
     if (showCommentForm === true) {
       setShowCommentForm(false)
       setShowPostCommentBtn(true)
-    }
-  }
+    };
+  };
 
   const postComment = (e) => {
     e.preventDefault()
     if (showCommentForm === false) {
-      setShowCommentForm(true)
+      setShowCommentForm(true);
     } else {
-      setShowCommentForm(false)
-    }
-    setShowPostCommentBtn(false)
+      setShowCommentForm(false);
+    };
+    setShowPostCommentBtn(false);
     if (showCommentEditForm === true) {
-      setShowCommentEditForm(false)
-    }
-  }
+      setShowCommentEditForm(false);
+    };
+  };
 
   const cancelNewComment = (e) => {
     e.preventDefault();
@@ -144,17 +144,17 @@ const ProjectDetails = () => {
       setShowCommentForm(false);
     } else {
       setShowCommentForm(true);
-    }
-    setShowPostCommentBtn(true)
-  }
+    };
+    setShowPostCommentBtn(true);
+  };
 
   const handleLogin = (e) => {
-    history.push('/login')
-  }
+    history.push('/login');
+  };
 
   const handleSignUp = (e) => {
-    history.push('/sign-up')
-  }
+    history.push('/sign-up');
+  };
 
   return (
     <>
