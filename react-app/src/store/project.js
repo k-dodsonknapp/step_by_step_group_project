@@ -4,7 +4,6 @@ const ADD_PROJECTS = "/projects/new";
 const UPDATE_PROJECTS = "/projects/update";
 const DELETE_PROJECTS = "/projects/delete";
 const SEARCH_RESULTS = "/howto/search";
-// const GET_PROJECT = "/projects/:id";
 
 const getProjects = (projects) => ({
   type: GET_PROJECTS,
@@ -42,10 +41,10 @@ export const getAllProjects = () => async (dispatch) => {
     const data = await response.json();
     if (data.errors) {
       return;
-    }
+    };
     dispatch(getProjects(data));
     return data;
-  }
+  };
 };
 
 export const getOneProject = (projectId) => async (dispatch) => {
@@ -54,14 +53,13 @@ export const getOneProject = (projectId) => async (dispatch) => {
     const data = await response.json();
     if (data.errors) {
       return;
-    }
+    };
     dispatch(getProject(data));
     return data;
-  }
+  };
 };
 
 export const addOneProject = (data) => async (dispatch) => {
-  console.log(data, "DATA THUNK")
   const response = await fetch("/api/projects/new", {
     method: "POST",
     headers: {
@@ -116,7 +114,6 @@ export default function projectReducer(state = initialState, action) {
   let newState;
   switch (action.type) {
     case GET_PROJECTS:
-      console.log(state, "ADD PROJECT")
       newState = { ...state };
       action.payload.projects.map(
         (project) => (newState[project.id] = project)
@@ -156,5 +153,5 @@ export default function projectReducer(state = initialState, action) {
 
     default:
       return state;
-  }
-}
+  };
+};
