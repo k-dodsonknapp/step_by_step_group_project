@@ -50,11 +50,11 @@ const ProjectDetails = () => {
     };
     await dispatch(updateOneComment(payload));
     if (showCommentEditForm === true) {
-      setShowCommentEditForm(false)
-      setShowComment(true)
+      setShowCommentEditForm(false);
+      setShowComment(true);
     }
-    await dispatch(getOneProject(+projectId))
-  }
+    await dispatch(getOneProject(+projectId));
+  };
 
   const handleComment = async (e) => {
     e.preventDefault();
@@ -66,33 +66,32 @@ const ProjectDetails = () => {
     };
     await dispatch(addOneComment(newComment));
     await dispatch(getOneProject(projectId));
-    setBody('')
-    setShowCommentForm(false)
+    setBody('');
+    setShowCommentForm(false);
 
     if (showPostCommentBtn === false) {
-      setShowPostCommentBtn(true)
-    }
+      setShowPostCommentBtn(true);
+    };
   };
 
   const cancel = (e) => {
     e.preventDefault();
-    // setEditClicked(false)
-    setShowComment(true)
+    setShowComment(true);
     setShowCommentEditForm(false);
-  }
+  };
 
   const handleEditProjectButton = (e) => {
     e.preventDefault();
-    history.push(`/projects/${projectId}/edit`)
-  }
+    history.push(`/projects/${projectId}/edit`);
+  };
 
   const handleDelete = async (e) => {
     e.preventDefault();
-    const projectDelete = await dispatch(deleteOneProject(projectId))
+    const projectDelete = await dispatch(deleteOneProject(projectId));
     if (projectDelete) {
-      history.push('/')
-    }
-  }
+      history.push('/');
+    };
+  };
 
   const handleDeleteComment = async (e) => {
     console.log(e)
