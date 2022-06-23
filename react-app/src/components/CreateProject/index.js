@@ -12,17 +12,17 @@ const CreateProject = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const [showErrors, setShowErrors] = useState(false)
+    const [showErrors] = useState(false)
     const [errors, setErrors] = useState([])
     const [title, setTitle] = useState('')
     const [overview, setOverview] = useState('')
     const [category, setCategory] = useState('')
 
-    const [showSupplyErrors, setShowSupplyErrors] = useState(false)
+    const [showSupplyErrors] = useState(false)
     const [supplyErrors, setSupplyErrors] = useState([])
     const [supplies, setSupplies] = useState([])
     const [supply, setSupply] = useState('')
-    const [amount, setAmount] = useState(0)
+    const [amount] = useState(0)
 
     const [showInstructionErrors, setShowInstructionErrors] = useState(false)
     const [instructionErrors, setInstructionErrors] = useState([])
@@ -38,7 +38,7 @@ const CreateProject = () => {
     useEffect(() => {
         const newSupply = { supply, amount }
         setSupplies([newSupply])
-    }, [supply])
+    }, [supply, amount])
 
     const handleProjectSubmit = async (e) => {
         e.preventDefault()

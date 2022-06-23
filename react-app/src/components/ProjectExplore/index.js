@@ -12,12 +12,12 @@ const ProjectExplore = () => {
 
     const dispatch = useDispatch();
     const projects = useSelector(state => Object?.values(state?.projects));
-    const views = useSelector(state => state.views.views)
+    const views = useSelector(state => state.views.views);
     const explore = "Explore >";
-    
+
     useEffect(() => {
         dispatch(getAllProjects());
-        dispatch(getView())
+        dispatch(getView());
     }, [dispatch]);
 
 
@@ -30,19 +30,19 @@ const ProjectExplore = () => {
                 <div className="content">
                     <h2>Instructions STEP-BY-STEP</h2>
                     <p>
-                    We make it easy to learn how to make anything, one step at a time. From the stovetop to the workshop, you are sure to be inspired by the awesome projects that are shared everyday.
+                        We make it easy to learn how to make anything, one step at a time. From the stovetop to the workshop, you are sure to be inspired by the awesome projects that are shared everyday.
                     </p>
                 </div>
                 <div className="content">
                     <h2>MADE by THE COMMUNITY </h2>
                     <p>
-                    Step-by-Steps are created by you. No matter who you are, we all have secret skills to share. Come join our community of curious makers, innovators, teachers, and life long learners who love to share what they make.
+                        Step-by-Steps are created by you. No matter who you are, we all have secret skills to share. Come join our community of curious makers, innovators, teachers, and life long learners who love to share what they make.
                     </p>
                 </div>
                 <div id="place" className="content">
                     <h2>A PLACE</h2>
                     <p>
-                    Making things. We can't prove it, but we know it to be true. Find your place, and join one of the friendliest online communities anywhere.
+                        Making things. We can't prove it, but we know it to be true. Find your place, and join one of the friendliest online communities anywhere.
                     </p>
                 </div>
             </div>
@@ -63,13 +63,13 @@ const ProjectExplore = () => {
                                     <div>
                                         <p>{project?.title} by <NavLink to={`/users/${project?.userId}`}>
                                             {project?.username}
-                                        </NavLink>  in <NavLink to={`/category/${project?.category}`}>
+                                        </NavLink> in <NavLink to={`/category/${project?.category}`}>
                                                 {project?.category}
                                             </NavLink>
                                         </p>
                                     </div>
                                     <div className="likes-views">
-                                        <ViewCount views={views} project={project}/>
+                                        <ViewCount views={views} project={project} />
                                         {/* {views.map(view => (
                                             view.viewCount
                                         ))

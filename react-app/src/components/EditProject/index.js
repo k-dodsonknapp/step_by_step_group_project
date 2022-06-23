@@ -19,7 +19,7 @@ function EditProject() {
     const [category, setCategory] = useState(project.category);
     const [overview, setOverview] = useState(project.overview);
 
-    let [supplies, setSupplies] = useState(project.supplies);
+    let [setSupplies] = useState(project.supplies);
 
     // project instructions
     const [instructions, setInstructions] = useState(project?.instructions);

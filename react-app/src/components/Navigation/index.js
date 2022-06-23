@@ -8,16 +8,15 @@ import SearchResults from '../SearchResults';
 import { useSelector } from 'react-redux';
 
 const Navigation = () => {
-  // const session = useSelector(state => session.user)
-  const [showMenu, setShowMenu] = useState(false)
-  // const [seeCategory, setSeeCategory] = useState(false)
-  const user = useSelector(state => state.session.user)
+
+  const [showMenu, setShowMenu] = useState(false);
+  // const user = useSelector(state => state.session.user);
   const session = useSelector(state => state.session);
 
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
-  }
+  };
 
   useEffect(() => {
     if (!showMenu) return;
@@ -29,12 +28,7 @@ const Navigation = () => {
     document.addEventListener("click", closeMenu);
 
     return () => document.removeEventListener("click", closeMenu)
-  }, [showMenu])
-
-  // const whichCategory(() => {
-  //   const { category } = useParams();
-
-  // })
+  }, [showMenu]);
 
   return (
     <div className='navbar'>
@@ -42,11 +36,9 @@ const Navigation = () => {
         <ul>
           <div className='nav-container'>
             <div className='category-links'>
-              {/* <li id="home-icon"> */}
               <NavLink to='/' exact={true} id="home-icon" activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                 🏠
               </NavLink>
-              {/* </li> */}
               <li>
                 <NavLink to='/projects/1' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Circuits
@@ -78,7 +70,7 @@ const Navigation = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to='api/projects/7' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
+                <NavLink to='/projects/7' exact={true} activeClassName='active' style={{ textDecoration: 'none', color: "#CCCCCC" }}>
                   Teachers
                 </NavLink>
               </li>
@@ -107,13 +99,13 @@ const Navigation = () => {
                 <div>
                   <NavLink to="/create">PUBLISH</NavLink>
                 </div>
-              )}
+              )};
               {!session.user && (
                 <>
                   <NavLink to="/login">LOGIN</NavLink>
                   <NavLink to="/sign-up">SIGN-UP</NavLink>
                 </>
-              )}
+              )};
               <div>
                 <SearchResults />
               </div>
@@ -152,9 +144,9 @@ const Navigation = () => {
             </div>
           </div>
         </ul>
-      )}
+      )};
     </div>
   );
-}
+};
 
 export default Navigation;

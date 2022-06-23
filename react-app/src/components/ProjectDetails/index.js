@@ -17,7 +17,7 @@ const ProjectDetails = () => {
   const session = useSelector(state => state?.session);
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
-  const [newComment] = useState(0);
+  // const [newComment] = useState(0);
   const [commentId, setCommentId] = useState(0);
   const [showComment, setShowComment] = useState(true);
   const [showPostCommentBtn, setShowPostCommentBtn] = useState(true);
@@ -36,7 +36,7 @@ const ProjectDetails = () => {
     dispatch(getOneView(+projectId));
     dispatch(getOneProject(projectId));
     dispatch(getOneProject(+projectId));
-  }, [dispatch]);
+  }, [dispatch, projectId]);
 
   const saveEditComment = async (e) => {
     e.preventDefault();
@@ -103,7 +103,7 @@ const ProjectDetails = () => {
     const comments = project.comments;
     let comms = {};
     comments.map(comment => {
-      comms[comment.id] = comment
+      return comms[comment.id] = comment
     });
     setEditBody(comms[commentId].comment);
     setCommentId(id);

@@ -1,20 +1,10 @@
 import './footer.css'
 
 const Footer = () => {
+
     return (
         <footer>
             <div id='footer-top'>
-                {/* <div id='categories-list'>Categories
-                    <ul id='footer-left'>
-                        <li>Circuits</li>
-                        <li>Workshop</li>
-                        <li>Craft</li>
-                        <li>Cooking</li>
-                        <li>Living</li>
-                        <li>Outside</li>
-                        <li>Teachers</li>
-                    </ul>
-                </div> */}
                 <div id='find-us'>
                     <div id='footer-right'>
                     <div>
@@ -54,8 +44,8 @@ const Footer = () => {
                 <li>CSS</li>
             </ul>
         </footer>
-    )
+    );
 
-}
+};
 
 export default Footer
