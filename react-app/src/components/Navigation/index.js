@@ -77,7 +77,9 @@ const Navigation = () => {
             </div>
             <div className='profile-following-div'>
               <button id='profile-quickmenu' onClick={openMenu}>
+                {user && (
                 <img src={user.userPhoto} alt=''></img>
+                )}
               </button>
             </div>
           </div>
