@@ -23,11 +23,6 @@ const ProjectDetails = () => {
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
   const [newComment] = useState(0);
   const [commentId, setCommentId] = useState(0);
-  // if (views[0]){
-  // let [viewCount, setViewCount] = useState(view?.viewCount += 1);
-  // }
-  // console.log("????????????????", viewCount)
-  const [editClicked, setEditClicked] = useState(true)
   const [showComment, setShowComment] = useState(true)
   const [showPostCommentBtn, setShowPostCommentBtn] = useState(true)
   const [body, setBody] = useState('');

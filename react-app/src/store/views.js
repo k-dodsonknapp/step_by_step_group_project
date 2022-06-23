@@ -4,7 +4,7 @@ const NEW_VIEW = '/views/new';
 const ADD_VIEW = '/views/add';
 
 const getSingleProjectView = (view) => ({
-    type:GET_ONE_VIEW,
+    type: GET_ONE_VIEW,
     payload: view,
 });
 
@@ -13,7 +13,7 @@ export const getOneView = (id) => async (dispatch) => {
     if (res.ok) {
         const data = await res.json();
         // console.log(data)
-        if(data.errors) {
+        if (data.errors) {
             return "error occured getting one project views"
         }
         dispatch(getSingleProjectView(data));
@@ -82,7 +82,7 @@ export const updateView = (projectId, viewCount) => async (dispatch) => {
         // console.log("DDDDDDDDDD",data)
         dispatch(updateProjectView(data));
         return data;
-    } 
+    }
 }
 
 export default function viewReducer(state = {}, action) {
@@ -90,27 +90,22 @@ export default function viewReducer(state = {}, action) {
     switch (action.type) {
         case GET_VIEW:
             // console.log(action.payload.views)
-            newState = {...state}
+            newState = { ...state }
             // console.log(newState)
             return {
                 ...newState,
                 "views": action.payload.views
             }
         case GET_ONE_VIEW:
-            newState = {...state}
+            newState = { ...state }
             // console.log(action.payload)
             return {
                 ...newState,
                 "view": action.payload
             }
         case ADD_VIEW:
-            console.log("VVVVVVVV",action)
-            newState = {...state}
-            // console.log("MMMMMMM", newState.view.viewCount)
-            // if (newState.view.viewCount !== action.payload.view.viewCount){
-                newState.view = action.payload.view
-            // }
-            // console.log(newState.view)
+            newState = { ...state }
+            newState.view = action.payload.view
             return state
         default:
             return state;
