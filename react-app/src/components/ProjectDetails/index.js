@@ -4,27 +4,23 @@ import { useParams, useHistory } from "react-router-dom";
 import { deleteOneProject, getOneProject } from "../../store/project";
 import { addOneComment, deleteOneComment, updateOneComment } from "../../store/comments";
 import "./Projects.css";
-import { getOneView, getView, updateView } from "../../store/views";
+import { getOneView, updateView } from "../../store/views";
 
 const ProjectDetails = () => {
+
   const dispatch = useDispatch();
   const history = useHistory();
   const { projectId } = useParams();
   const project = useSelector((state) => state?.projects[+projectId]);
   let view = useSelector(state => state?.views?.view)
-  // const views = useSelector(state => state?.views?.views?.filter(view => view?.projectId === +projectId))
-  // console.log("asdfasdf", typeof(view?.viewCount))
-  // let count = views[0]
   const user = useSelector((state) => state?.session?.user);
   const session = useSelector(state => state?.session);
-  // console.log("user", user)
-  // const [viewObject, setViewObject] = useState(0)
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
   const [newComment] = useState(0);
   const [commentId, setCommentId] = useState(0);
-  const [showComment, setShowComment] = useState(true)
-  const [showPostCommentBtn, setShowPostCommentBtn] = useState(true)
+  const [showComment, setShowComment] = useState(true);
+  const [showPostCommentBtn, setShowPostCommentBtn] = useState(true);
   const [body, setBody] = useState('');
   const [editBody, setEditBody] = useState('');
 
@@ -96,32 +92,31 @@ const ProjectDetails = () => {
   const handleDeleteComment = async (e) => {
     console.log(e)
     e.preventDefault();
-    await dispatch(deleteOneComment(e.target.id))
-    dispatch(getOneProject(projectId))
-  }
+    await dispatch(deleteOneComment(e.target.id));
+    dispatch(getOneProject(projectId));
+  };
 
   const handleShowEditForm = (commentId) => async (e) => {
     e.preventDefault();
-    setShowComment(false)
-    const id = +e?.target?.id
-    const comments = project.comments
-    let comms = {}
+    setShowComment(false);
+    const id = +e?.target?.id;
+    const comments = project.comments;
+    let comms = {};
     comments.map(comment => {
       comms[comment.id] = comment
-    })
-    setEditBody(comms[commentId].comment)
-    setCommentId(id)
-    // setComment(project.comments.id)
+    });
+    setEditBody(comms[commentId].comment);
+    setCommentId(id);
     if (showCommentEditForm === false) {
       setShowCommentEditForm(true);
-      setShowComment(false)
+      setShowComment(false);
     } else {
-      setShowCommentEditForm(false)
-      setShowComment(true)
-    }
+      setShowCommentEditForm(false);
+      setShowComment(true);
+    };
     if (showCommentForm === true) {
-      setShowCommentForm(false)
-      setShowPostCommentBtn(true)
+      setShowCommentForm(false);
+      setShowPostCommentBtn(true);
     };
   };
 
