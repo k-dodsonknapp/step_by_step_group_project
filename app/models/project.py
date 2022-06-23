@@ -14,6 +14,7 @@ class Project(db.Model):
     instruction = db.relationship('Instruction', back_populates='project')
     supply = db.relationship('Supply', back_populates='project')
     comment = db.relationship('Comment', back_populates='project')
+    views = db.relationship('Views', back_populates='project')
 
 
     def to_dict(self):

@@ -4,25 +4,84 @@ import { useParams, useHistory } from "react-router-dom";
 import { deleteOneProject, getOneProject } from "../../store/project";
 import { addOneComment, deleteOneComment, updateOneComment } from "../../store/comments";
 import "./Projects.css";
+import { getOneView, getView, updateView } from "../../store/views";
 
 const ProjectDetails = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { projectId } = useParams();
-  const project = useSelector((state) => state.projects[+projectId]);
-  const user = useSelector((state) => state.session.user);
-  const session = useSelector(state => state.session);
-  console.log("user", user)
-
+  const project = useSelector((state) => state?.projects[+projectId]);
+  let view = useSelector(state => state?.views?.view)
+  // const views = useSelector(state => state?.views?.views?.filter(view => view?.projectId === +projectId))
+  // console.log("asdfasdf", typeof(view?.viewCount))
+  // let count = views[0]
+  // const viewCount = view.viewCount
+  console.log("LLLLLLLLLLLLLLLLL", view)
+  const user = useSelector((state) => state?.session?.user);
+  const session = useSelector(state => state?.session);
+  // console.log("user", user)
+  // const [viewObject, setViewObject] = useState(0)
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
   const [newComment] = useState(0);
   const [commentId, setCommentId] = useState(0);
+  // if (views[0]){
+  // let [viewCount, setViewCount] = useState(view?.viewCount += 1);
+  // }
+  // console.log("????????????????", viewCount)
   const [editClicked, setEditClicked] = useState(true)
   const [showComment, setShowComment] = useState(true)
   const [showPostCommentBtn, setShowPostCommentBtn] = useState(true)
   const [body, setBody] = useState('');
   const [editBody, setEditBody] = useState('');
+
+  // useEffect(() => {
+  //   // setViewCount(views?.viewCount += 1)
+  // }, [])
+
+  useEffect(() => {
+    const addView = {
+      "projectId": +projectId
+    }
+    console.log(addView)
+    dispatch(updateView(addView));
+  }, [dispatch])
+
+  // useEffect(() => {
+  //   console.log("DDDDDDDDD", viewCount)
+  //   // if (viewCount) {
+  //     setViewCount(7 + 1)
+  //   // }
+  // }, [viewCount])
+
+  // useEffect(() => {
+  //   // const newCount = (view?.viewCount += 1);
+  //   // setViewCount(view?.viewCount)
+  //   // console.log("VVVVVVVVVVVVV", view)
+  //   let count;
+  //   for (let key in view){
+  //     let value = view[key]
+  //     console.log(key)
+  //     console.log(value)
+  //     if (key === "viewCount"){
+  //       count = view[key] += 1
+  //     }
+  //   }
+  //   // console.log(+count)
+  //   // setViewCount(view += 1)
+  //   const data = {
+  //     // "id": +projectId,
+  //     "viewCount": count,
+  //     "projectId": +projectId,
+  //   }
+  //   console.log("BBBBBBBBBBB", data)
+  //   dispatch(updateView(data))
+  // }, [dispatch])
+
+  useEffect(() => {
+    dispatch(getOneView(+projectId))
+    // dispatch(getView())
+  }, [dispatch])
 
   useEffect(() => {
     addOneComment(newComment)
@@ -161,6 +220,12 @@ const ProjectDetails = () => {
             By
             <span className="username-category">{project?.owner?.username}</span>
             in<span className="username-category">{project?.category}</span>
+            <p>
+              {/* <button>
+                ❤
+              </button> */}
+              👁 {view?.viewCount}
+            </p>
             {session?.user?.id === project?.owner?.id && (
               <div className="btn-div">
                 <button className="submit-comment" onClick={handleEditProjectButton}>Edit</button>
@@ -190,24 +255,24 @@ const ProjectDetails = () => {
               </div>
             ))}
           </ul>
-            {project?.instructions?.map((instruction) => (
-              <div className="instruction-container" key={instruction?.id}>
-                <div className="instruction-title">
-                  Step {instruction?.stepOrder} - {instruction?.stepTitle}:
-                </div>
-                <div className="project-image-container">
-                  <img
-                    className="instruction-image"
-                    key={instruction?.id}
-                    src={instruction?.photoUrl}
-                    alt={`Step ${instruction?.stepOrder}`}
-                  ></img>
-                </div>
-                <li className="instructions" key={instruction?.id}>
-                  {instruction?.instructions}
-                </li>
+          {project?.instructions?.map((instruction) => (
+            <div className="instruction-container" key={instruction?.id}>
+              <div className="instruction-title">
+                Step {instruction?.stepOrder} - {instruction?.stepTitle}:
               </div>
-            ))}
+              <div className="project-image-container">
+                <img
+                  className="instruction-image"
+                  key={instruction?.id}
+                  src={instruction?.photoUrl}
+                  alt={`Step ${instruction?.stepOrder}`}
+                ></img>
+              </div>
+              <li className="instructions" key={instruction?.id}>
+                {instruction?.instructions}
+              </li>
+            </div>
+          ))}
           <h2 className="num-comments">{project?.comments?.length} Comments</h2>
           {project?.comments?.map((comment) => (
             <div key={comment?.id}>

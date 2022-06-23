@@ -4,6 +4,7 @@ from app.seeds.supply_seeder import seed_supplies, undo_supplies
 from app.seeds.comment_seeder import seed_comments, undo_comments
 
 from app.seeds.projects_seeder import seed_project, undo_project
+from app.seeds.views_seeder import seed_views, undo_views
 from .users import seed_users, undo_users
 
 # Creates a seed group to hold our commands
@@ -20,6 +21,7 @@ def seed():
     seed_instructions()
     seed_supplies()
     seed_comments()
+    seed_views()
 
 
 
@@ -32,3 +34,4 @@ def undo():
     undo_instructions()
     undo_supplies()
     undo_comments()
+    undo_views()

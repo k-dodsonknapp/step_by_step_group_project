@@ -62,6 +62,7 @@ const CreateProject = () => {
                     newInstruction
                 ],
             }
+
             const data = await dispatch(addOneProject(project))
             const projectId = data.projectId
             history.push(`/projects/${projectId}`)

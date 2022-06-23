@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 import projectReducer from './project';
 import reducer from './session';
 import commentReducer from './comments';
+import viewReducer from './views';
 
 const rootReducer = combineReducers({
   session: reducer,
   projects: projectReducer,
   comments: commentReducer,
+  views: viewReducer
 });
 
 let enhancer;

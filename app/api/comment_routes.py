@@ -38,9 +38,9 @@ def edit_comment(id):
     print(data)
 
     comment = Comment.query.get(id)
+    print(comment)
     comment.comment = data['comment']
     # db.session.add(comment)
     db.session.commit()
-    print(comment)
 
     return comment.to_dict()

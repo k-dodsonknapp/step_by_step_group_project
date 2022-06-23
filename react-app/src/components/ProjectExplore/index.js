@@ -4,14 +4,20 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProjects } from "../../store/project";
 import './projectExplore.css';
+import { getView } from "../../store/views";
+import ViewCount from "../ViewCount";
 
 
 const ProjectExplore = () => {
     const dispatch = useDispatch();
     const projects = useSelector(state => Object?.values(state?.projects));
-
+    // console.log(projects[1].id)
+    const views = useSelector(state => state.views.views)
+    // console.log("HHHHH",view)
+    // console.log(view)
     useEffect(() => {
         dispatch(getAllProjects());
+        dispatch(getView())
     }, [dispatch]);
 
     const explore = "Explore >"
@@ -63,7 +69,14 @@ const ProjectExplore = () => {
                                         </p>
                                     </div>
                                     <div className="likes-views">
-                                        <p>❤ 5  👁 105</p>
+                                        
+                                        <ViewCount views={views} project={project}/>
+                                        {/* {views.map(view => (
+                                            view.viewCount
+                                        ))
+
+                                        }
+                                        <p>❤ 5  👁 105</p> */}
                                     </div>
                                 </div>
                             </div>
