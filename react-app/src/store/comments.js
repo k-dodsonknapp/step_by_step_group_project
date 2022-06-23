@@ -29,10 +29,10 @@ export const getAllComments = (projectId) => async (dispatch) => {
     const data = await response.json();
     if (data.errors) {
       return;
-    }
+    };
     dispatch(getComments(data));
     return data;
-  }
+  };
 };
 
 export const addOneComment = (comment) => async (dispatch) => {
@@ -47,7 +47,7 @@ export const addOneComment = (comment) => async (dispatch) => {
     const data = await response.json();
     dispatch(addComment(data.comment));
     return data.comment;
-  }
+  };
 };
 
 export const updateOneComment = ({commentId, comment}) => async (dispatch) => {
@@ -62,7 +62,7 @@ export const updateOneComment = ({commentId, comment}) => async (dispatch) => {
     const data = await response.json();
     dispatch(updateComment(data));
     return data;
-  }
+  };
 };
 export const deleteOneComment = (id) => async (dispatch) => {
   const res = await fetch(`/api/comments/${id}`, {
@@ -71,7 +71,7 @@ export const deleteOneComment = (id) => async (dispatch) => {
   if (res.ok) {
     dispatch(deleteComment(id));
     return "Successfully deleted.";
-  }
+  };
 };
 
 const initialState = {};
@@ -90,7 +90,7 @@ export default function commentReducer(state = initialState, action) {
       newState = {
         ...state,
       };
-      newState[action.payload.id] = action.payload
+      newState[action.payload.id] = action.payload;
       return newState;
 
     case UPDATE_COMMENT:
@@ -98,9 +98,9 @@ export default function commentReducer(state = initialState, action) {
       let newArr = Object.values(newState);
       newArr.forEach(comment => {
         if (comment.id === action.payload.comment.id) {
-          newState[action.comment.id] = action.comment
-        }
-      })
+          newState[action.comment.id] = action.comment;
+        };
+      });
       return newState;
 
     case DELETE_COMMENT:
