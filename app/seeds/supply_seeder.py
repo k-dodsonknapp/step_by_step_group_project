@@ -223,7 +223,7 @@ def seed_supplies():
         supply="Body: Just some scraps of 3/4-inch pine I had on hand",
     )
 
-    arcade_stick3,=Supply(
+    arcade_stick3=Supply(
         projectId=8,
         supply="Mineral oil for treating the wood",
     )
