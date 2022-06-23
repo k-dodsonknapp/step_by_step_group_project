@@ -35,10 +35,6 @@ const ProjectDetails = () => {
   const [body, setBody] = useState('');
   const [editBody, setEditBody] = useState('');
 
-  // useEffect(() => {
-  //   // setViewCount(views?.viewCount += 1)
-  // }, [])
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -50,37 +46,6 @@ const ProjectDetails = () => {
     console.log(addView)
     dispatch(updateView(addView));
   }, [dispatch])
-
-  // useEffect(() => {
-  //   console.log("DDDDDDDDD", viewCount)
-  //   // if (viewCount) {
-  //     setViewCount(7 + 1)
-  //   // }
-  // }, [viewCount])
-
-  // useEffect(() => {
-  //   // const newCount = (view?.viewCount += 1);
-  //   // setViewCount(view?.viewCount)
-  //   // console.log("VVVVVVVVVVVVV", view)
-  //   let count;
-  //   for (let key in view){
-  //     let value = view[key]
-  //     console.log(key)
-  //     console.log(value)
-  //     if (key === "viewCount"){
-  //       count = view[key] += 1
-  //     }
-  //   }
-  //   // console.log(+count)
-  //   // setViewCount(view += 1)
-  //   const data = {
-  //     // "id": +projectId,
-  //     "viewCount": count,
-  //     "projectId": +projectId,
-  //   }
-  //   console.log("BBBBBBBBBBB", data)
-  //   dispatch(updateView(data))
-  // }, [dispatch])
 
   useEffect(() => {
     dispatch(getOneView(+projectId))
