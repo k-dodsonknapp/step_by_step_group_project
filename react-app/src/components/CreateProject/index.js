@@ -5,6 +5,7 @@ import { addOneProject } from "../../store/project";
 import { useHistory } from "react-router-dom";
 import "./createProject.css"
 import UploadPicture from "../UploadPicture";
+import { addNewProjectView } from "../../store/views";
 
 const CreateProject = () => {
     const userId = useSelector(state => state.session.user['id'])
@@ -65,6 +66,12 @@ const CreateProject = () => {
 
             const data = await dispatch(addOneProject(project))
             const projectId = data.projectId
+            console.log(projectId)
+            const newView = {
+                projectId: projectId,
+                viewCount: 0
+            }
+            dispatch(addNewProjectView(newView))
             history.push(`/projects/${projectId}`)
         } else {
             setShowInstructionErrors(true)
