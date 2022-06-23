@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
-// import UploadPicture from '../UploadPicture';
+import UploadPicture from '../UploadPicture';
 import './auth.css'
 import DemoButton from './DemoUser';
 const SignUpForm = () => {
@@ -11,7 +11,7 @@ const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
-  const [userPhoto] = useState('')
+  const [userPhoto, setUserPhoto] = useState('')
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -101,10 +101,10 @@ const SignUpForm = () => {
               required={true}
             ></input>
           </div>
-          {/* <div>
+          <div>
             <label>User Photo</label>
             <UploadPicture setTitleImagee={setUserPhoto} />
-          </div> */}
+          </div>
           <div className='signupBtns'>
             <button className='loginButton' type='submit'>Sign Up</button>
             <DemoButton />

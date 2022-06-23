@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 const Navigation = () => {
 
   const [showMenu, setShowMenu] = useState(false);
-  // const user = useSelector(state => state.session.user);
+  const user = useSelector(state => state.session.user);
   const session = useSelector(state => state.session);
 
   const openMenu = () => {
@@ -77,7 +77,7 @@ const Navigation = () => {
             </div>
             <div className='profile-following-div'>
               <button id='profile-quickmenu' onClick={openMenu}>
-                <img src='https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg' alt=''></img>
+                <img src={user.userPhoto} alt=''></img>
               </button>
             </div>
           </div>
