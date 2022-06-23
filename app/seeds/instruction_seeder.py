@@ -511,6 +511,96 @@ def seed_instructions():
         videoUrl="https://www.youtube.com/watch?v=pjgGGpcfTYQ"
     )
 
+    arcade_stick1=Instruction(
+        projectId= 8,
+        stepOrder= 1,
+        stepTitle= 'Cut Control Panel to Size and Drill Holes',
+        instructions= """
+        After cutting the butcher block to my desired size for the control panel, I printed out my preferred panel layout (grabbed from Slagcoin) and taped it to the top. I went with a Sega-style layout that had extra space between the joystick and buttons. I then used my drill press and a 1 1/8” hole saw ( about 29mm) to drill the holes for the buttons and a 7/8” (about 22mm) hole saw for the joystick.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F24/J26L/L1C5JWFA/F24J26LL1C5JWFA.jpg?auto=webp&frame=1&width=588&fit=bounds&md=d363415de2a3e526c8ddecaa37676260",
+        videoUrl="",
+    )
+
+    arcade_stick2=Instruction(
+        projectId= 8,
+        stepOrder= 2,
+        stepTitle= 'Route the Inside of the Control Panel',
+        instructions= """
+        I then used my router to thin out the 1 1/8” thick butcher block to the desired 3/8” thickness inside to allow for the proper range of motion for the joystick. Usually it’s recommended that the distance between the bottom of the joystick ball and the top of the control panel is about 9/10” (23mm). Doing this also gave me more space inside for all the required components.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F72/FE72/L1C5JWFB/F72FE72L1C5JWFB.jpg?auto=webp&frame=1&width=1009&fit=bounds&md=bee81bc88c813f089ac8e76c56b641df",
+        videoUrl="",
+    )
+
+    arcade_stick3=Instruction(
+        projectId= 8,
+        stepOrder= 3,
+        stepTitle= 'Test Fit the Buttons and Joystick',
+        instructions= """
+        After routing the inside of the control panel, I propped it up on some blocks of wood and test fit the buttons to make sure they fit in securely but weren't too tight. My holes ended up being the perfect size didn't require any sanding. I also made sure the joystick fit correctly and checked the spacing between the joystick ball and control panel.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F24/SYEZ/L1C5JX62/F24SYEZL1C5JX62.jpg?auto=webp&frame=1&width=933&fit=bounds&md=a9bed55cb63bdc199816f3bb69ecf371",
+        videoUrl="",
+    )
+
+    arcade_stick4=Instruction(
+        projectId= 8,
+        stepOrder= 4,
+        stepTitle= 'Assemble Panel Support Box',
+        instructions= """
+        I assembled a small box out of an extra 3/4" scrape wood and drilled the necessary holes for the three front buttons I wanted (Start, Select and Special), as well as the USB port. I didn’t have the necessary 24mm diameter bit for the USB port so I used my 7/8” (22mm) hole saw and used a smaller drill bit to increase the diameter to fit. I then glued the box to the the control panel top, clamped it up and let it dry for 24 hours.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F1Y/P0GI/L1C5JX63/F1YP0GIL1C5JX63.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=9c79edc75cf0ba44cdbe8d9497a54e27",
+        videoUrl="",
+    )
+
+    arcade_stick5=Instruction(
+        projectId= 8,
+        stepOrder= 5,
+        stepTitle= 'Apply Coats of Mineral Oil',
+        instructions= """
+        Using a rag, I applied a few coats of mineral oil to the control panel top and to the sides to bring out the natural color of the wood and prevent any drying or cracking. It made a huge difference!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F0R/SISZ/L1C5JX64/F0RSISZL1C5JX64.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=bf0f8e50c6b6115783ad05568fcecaa6",
+        videoUrl="",
+    )
+
+    arcade_stick6=Instruction(
+        projectId= 8,
+        stepOrder= 6,
+        stepTitle= 'Attach Buttons and Wire Them to USB Encoder',
+        instructions= """
+        I then assembled all the components inside the box. It was a little tricky to securely mount the joystick into the 3/8” top but I managed to do it using some small screws and extra washers. This gives it a nice clean look without screws showing on the top of the control panel (something I see on a lot of other DIY arcade sticks).
+
+        I then glued the USB encoder to the side of the box to keep it secure and also glued some small blocks to the inside edges of the box so that I had something for the feet to screw into. Lastly, I attached the ribbon cable from going between the Joystick and USB encoder and wired up all the buttons to the USB encoder. As long as you hook up the buttons to the button slots, the actual order doesn't matter as you can easily remap these in RetroPie.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FXK/9RZI/L1C5JWFC/FXK9RZIL1C5JWFC.jpg?auto=webp&frame=1&width=1009&fit=bounds&md=039ebbf73a0800d382e966ee7af24dc7",
+        videoUrl="",
+    )
+
+    arcade_stick7=Instruction(
+        projectId= 8,
+        stepOrder= 7,
+        stepTitle= 'Cut and Attach Bottom Panel With Rubber Feet',
+        instructions= """
+        I cut a small piece of 1/8” MDF for the bottom cover. This way I could use the feet to hold the cover on so it’s easily removable if I ever need to mess with any of the components.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F65/7448/L1C5JWFD/F657448L1C5JWFD.jpg?auto=webp&frame=1&width=525&fit=bounds&md=0e5dc314d2be6f4a9d36e5fb357fd9c8",
+        videoUrl="",
+    )
+
+    arcade_stick8=Instruction(
+        projectId= 8,
+        stepOrder= 8,
+        stepTitle= 'Play Some Games',
+        instructions= """
+        I plugged it into my RetroPie machine and it was instantly recognized as a game controller. I quickly mapped the controls and jumped into playing one of my favorite games. I love the experience of playing old arcade games with it.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FKO/1V4V/L1C5JWFE/FKO1V4VL1C5JWFE.jpg?auto=webp&frame=1&width=933&fit=bounds&md=86e835969f64c7ee7cca8315646a48c8",
+        videoUrl="",
+    )
+
 
     db.session.add(bird_project1)
     db.session.add(bird_project2)
@@ -524,6 +614,7 @@ def seed_instructions():
     db.session.add(casino_clock5)
     db.session.add(casino_clock6)
     db.session.add(casino_clock7)
+    db.session.add(casino_clock8)
     db.session.add(one_board_mug1)
     db.session.add(one_board_mug2)
     db.session.add(one_board_mug3)
@@ -549,6 +640,14 @@ def seed_instructions():
     db.session.add(dragonfly2)
     db.session.add(dragonfly3)
     db.session.add(dragonfly4)
+    db.session.add(arcade_stick1)
+    db.session.add(arcade_stick2)
+    db.session.add(arcade_stick3)
+    db.session.add(arcade_stick4)
+    db.session.add(arcade_stick5)
+    db.session.add(arcade_stick6)
+    db.session.add(arcade_stick7)
+    db.session.add(arcade_stick8)
     
 
     db.session.commit()
