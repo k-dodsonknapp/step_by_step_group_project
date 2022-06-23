@@ -40,6 +40,10 @@ const ProjectDetails = () => {
   // }, [])
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const addView = {
       "projectId": +projectId
     }
