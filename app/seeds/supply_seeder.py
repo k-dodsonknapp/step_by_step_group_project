@@ -213,6 +213,56 @@ def seed_supplies():
         supply="Acrylic paint (blue, white, black)"
     )
 
+    arcade_stick1=Supply(
+        projectId=8,
+        supply="Top: 1 1/8 Inch Ikea Butcher block (leftover from another project)",
+    )
+
+    arcade_stick2=Supply(
+        projectId=8,
+        supply="Body: Just some scraps of 3/4-inch pine I had on hand",
+    )
+
+    arcade_stick3,=Supply(
+        projectId=8,
+        supply="Mineral oil for treating the wood",
+    )
+
+    arcade_stick4=Supply(
+        projectId=8,
+        supply="Joystick: Sanwa JLF - TP - 8YT Stick 8 Way 5Pin Handle",
+    )
+
+    arcade_stick5=Supply(
+        projectId=8,
+        supply="Buttons: SANWA 6 Piece Original OBSF-30",
+    )
+
+    arcade_stick6=Supply(
+        projectId=8,
+        supply="USB Encoder: Reyann Zero Delay Arcade USB Encoder",
+    )
+
+    arcade_stick7=Supply(
+        projectId=8,
+        supply="USB Port: Neutrik NAUSB-W-B Reversible USB Port",
+    )
+
+    arcade_stick8=Supply(
+        projectId=8,
+        supply="Rubber Feet: Ace Anti-Skid Pads Black Round 1-1/2 in.",
+    )
+
+    arcade_stick9=Supply(
+        projectId=8,
+        supply="USB Cable: Tripp Lite Coiled 10 ft. Cable",
+    )
+
+    arcade_stick10=Supply(
+        projectId=8,
+        supply="Ribbon cable adapter: Female to Female JST XH Adapter",
+    )
+
 
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
@@ -256,6 +306,16 @@ def seed_supplies():
     db.session.add(dragonfly3)
     db.session.add(dragonfly4)
     db.session.add(dragonfly5)
+    db.session.add(arcade_stick1)
+    db.session.add(arcade_stick2)
+    db.session.add(arcade_stick3)
+    db.session.add(arcade_stick4)
+    db.session.add(arcade_stick5)
+    db.session.add(arcade_stick6)
+    db.session.add(arcade_stick7)
+    db.session.add(arcade_stick8)
+    db.session.add(arcade_stick9)
+    db.session.add(arcade_stick10)
     
     db.session.commit()
 

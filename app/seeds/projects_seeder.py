@@ -25,18 +25,6 @@ def seed_project():
         category="Circuits"
     )
 
-    arcade_stick = Project (
-        userId = 1,
-        title="Simple Wood Arcade Stick",
-        titleImage="https://content.instructables.com/ORIG/FOO/JQM4/L1C5JWFO/FOOJQM4L1C5JWFO.jpg?auto=webp&frame=1&width=790&height=1024&fit=bounds&md=5bc681ceff36641e5720e856a562ab9d",
-        overview="""
-        I’ve been into playing retro games lately and thought it would be cool to build an arcade stick (also called a “fight stick”) for use with RetroPie. 
-        I had some leftover IKEA oak butcher block from a kitchen project and figured it would be a great material to use for this. 
-        I love the look and the feel of it and at 1 1/8-inch thick, it’s super sturdy and solid. Also, it’s easy to treat with mineral oil to make it look nice.
-        """,
-        category="Circuits"
-    )
-
     one_board_mug= Project(
         userId=3, 
         title="One Board Mug", 
@@ -110,14 +98,26 @@ def seed_project():
         category="Teachers"
     )
 
+    arcade_stick = Project (
+        userId = 1,
+        title="Simple Wood Arcade Stick",
+        titleImage="https://content.instructables.com/ORIG/FOO/JQM4/L1C5JWFO/FOOJQM4L1C5JWFO.jpg?auto=webp&frame=1&width=790&height=1024&fit=bounds&md=5bc681ceff36641e5720e856a562ab9d",
+        overview="""
+        I’ve been into playing retro games lately and thought it would be cool to build an arcade stick (also called a “fight stick”) for use with RetroPie. 
+        I had some leftover IKEA oak butcher block from a kitchen project and figured it would be a great material to use for this. 
+        I love the look and the feel of it and at 1 1/8-inch thick, it’s super sturdy and solid. Also, it’s easy to treat with mineral oil to make it look nice.
+        """,
+        category="Circuits"
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
-    db.session.add(arcade_stick)
     db.session.add(one_board_mug)
     db.session.add(skillet_burger)
     db.session.add(james_webb_clock)
     db.session.add(slowmo_birds)
     db.session.add(dragonfly)
+    db.session.add(arcade_stick)
 
     #
 
