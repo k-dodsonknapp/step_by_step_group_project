@@ -198,7 +198,7 @@ const ProjectDetails = () => {
           {project?.instructions?.map((instruction) => (
             <div className="instruction-container" key={instruction?.id}>
               <div className="instruction-title">
-                Step {instruction?.stepOrder} - {instruction?.stepTitle}:
+                Step {instruction?.stepOrder}: {instruction?.stepTitle}
               </div>
               <div className="project-image-container">
                 <img
