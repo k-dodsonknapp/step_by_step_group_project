@@ -265,9 +265,7 @@ def seed_supplies():
 
     minecraft_torch1=Supply(
         projectId=9,
-        supply="""Brown Dog Gadgets sells kits and supplies, but you don't need to buy anything from us to create paper circuits. (Though if you do it does help support us in creating new projects and resources for teacher and students.)
-
-        The easiest way to get all of the parts you need is to pick up a Paper Circuits Kit, but if you've already got some conductive tape, coin cell batteries, and LEDs, you can make those supplies work as well.""",
+        supply="Brown Dog Gadgets sells kits and supplies, but you don't need to buy anything from us to create paper circuits. (Though if you do it does help support us in creating new projects and resources for teacher and students.) The easiest way to get all of the parts you need is to pick up a Paper Circuits Kit, but if you've already got some conductive tape, coin cell batteries, and LEDs, you can make those supplies work as well.",
     )
 
     minecraft_torch2=Supply(
@@ -314,14 +312,7 @@ def seed_supplies():
 
     minecraft_torch8=Supply(
         projectId=9,
-        supply="""
-        Note: We are using Maker Tape 
-        (a nylon tape that is conductive on the top, bottom, and all the way through) 
-        because it's the easiest tape to work with when creating paper circuits. 
-        Other conductive tapes (copper foil, etc.) are often only conductive on the top surface, 
-        so they will not work for some of these techniques, 
-        including the "Tape Loop" we use to connect the battery.
-        """,
+        supply="Note: We are using Maker Tape (a nylon tape that is conductive on the top, bottom, and all the way through) because it's the easiest tape to work with when creating paper circuits. Other conductive tapes (copper foil, etc.) are often only conductive on the top surface, so they will not work for some of these techniques, including the 'Tape Loop' we use to connect the battery.",
     )
 
     db.session.add(bird_house_supply1)

@@ -35,13 +35,10 @@ def create_views():
 def update_views():
     data = request.json
     print("DDSFSDAFSDFASDF", data["projectId"]["projectId"])
-    # viewCount = data['viewCount']
     projectId = data["projectId"]["projectId"]
-    # print("ASDFASDF", projectId)
 
     view = Views.query.filter(projectId == Views.projectId).first()
     view.viewCount+=1
-    print("LLLLLLLLL", view.to_dict())
     db.session.commit()
 
     return {}
