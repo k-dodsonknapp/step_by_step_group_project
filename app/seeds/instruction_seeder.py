@@ -746,7 +746,6 @@ def seed_instructions():
     db.session.add(minecraft_torch6)
     db.session.add(minecraft_torch7)
     
-
     db.session.commit()
 
 

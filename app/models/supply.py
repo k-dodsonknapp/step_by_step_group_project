@@ -5,7 +5,7 @@ class Supply(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     projectId = db.Column(db.Integer, db.ForeignKey('projects.id'), nullable=False)
-    supply = db.Column(db.String(150), nullable=False)
+    supply = db.Column(db.Text, nullable=False)
     amount = db.Column(db.Integer)
 
     project = db.relationship('Project', back_populates='supply')
