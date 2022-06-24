@@ -130,6 +130,10 @@
     line-height: 25px;
 }
 
+.supply-list p {
+    font-weight: 500;
+}
+
 .instruction-container {
     display: flex;
     flex-direction: column;
