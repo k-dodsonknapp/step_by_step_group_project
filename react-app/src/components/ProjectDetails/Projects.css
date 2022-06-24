@@ -108,9 +108,9 @@
 
 #supplies-title {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
-    text-align: center;
+    /* text-align: center; */
     font-size: 25px;
     font-weight: 700;
     padding: 0px;
@@ -123,10 +123,10 @@
 
 .supply-list {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     width: 700px;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 25px;
 }
 

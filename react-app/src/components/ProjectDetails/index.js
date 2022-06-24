@@ -5,6 +5,7 @@ import { deleteOneProject, getOneProject } from "../../store/project";
 import { addOneComment, deleteOneComment, updateOneComment } from "../../store/comments";
 import "./Projects.css";
 import { getOneView, updateView } from "../../store/views";
+// import { BsDot } from 'react-icons/bs';
 
 const ProjectDetails = () => {
 
@@ -185,11 +186,11 @@ const ProjectDetails = () => {
             <p id="project-overview">{project?.overview}</p>
           </div>
           <ul id="supplies-title">
-            Supplies Needed:
+            Supplies:
             {project?.supplies?.map((supply) => (
               <div key={supply?.id}>
                 <li className="supply-list" >
-                  {supply?.supply}
+                  <p>-</p>{supply?.supply}
                 </li>
               </div>
             ))}
