@@ -695,6 +695,56 @@ def seed_supplies():
         supply="Gummed paper tape",
     )
 
+    bike_mount1=Supply(
+        projectId=19,
+        supply="Band saw",
+    )
+
+    bike_mount2=Supply(
+        projectId=19,
+        supply="Hand saw",
+    )
+
+    bike_mount3=Supply(
+        projectId=19,
+        supply="Sand paper (Bench top sander is easier for some parts, but not necessary)",
+    )
+
+    bike_mount4=Supply(
+        projectId=19,
+        supply="Table saw",
+    )
+
+    bike_mount5=Supply(
+        projectId=19,
+        supply="Dowels x 12",
+    )
+
+    bike_mount6=Supply(
+        projectId=19,
+        supply="Glue",
+    )
+    
+    bike_mount7=Supply(
+        projectId=19,
+        supply="Finish",
+    )
+    
+    bike_mount8=Supply(
+        projectId=19,
+        supply="Paint",
+    )
+    
+    bike_mount9=Supply(
+        projectId=19,
+        supply="2 Keyhole hangers",
+    )
+    
+    bike_mount10=Supply(
+        projectId=19,
+        supply="Pocket hole jig, or something to make sure the dowels are going in straight",
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -830,6 +880,16 @@ def seed_supplies():
     db.session.add(torus8)
     db.session.add(torus9)
     db.session.add(torus10)
+    db.session.add(bike_mount1)
+    db.session.add(bike_mount2)
+    db.session.add(bike_mount3)
+    db.session.add(bike_mount4)
+    db.session.add(bike_mount5)
+    db.session.add(bike_mount6)
+    db.session.add(bike_mount7)
+    db.session.add(bike_mount8)
+    db.session.add(bike_mount9)
+    db.session.add(bike_mount10)
 
     
     db.session.commit()
