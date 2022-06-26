@@ -26,6 +26,7 @@ def project(id):
     owner = User.query.filter(User.id == project['userId']).first()
     supplies = Supply.query.filter(Supply.projectId == id).all()
     instructions = Instruction.query.filter(Instruction.projectId == id).all()
+    print(instructions, "INSTRUCTIONS!!!!!!")
     comments = Comment.query.filter(Comment.projectId == id).all()
 
     return {'project': {

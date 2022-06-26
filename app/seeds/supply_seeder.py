@@ -315,6 +315,37 @@ def seed_supplies():
         supply="Note: We are using Maker Tape (a nylon tape that is conductive on the top, bottom, and all the way through) because it's the easiest tape to work with when creating paper circuits. Other conductive tapes (copper foil, etc.) are often only conductive on the top surface, so they will not work for some of these techniques, including the 'Tape Loop' we use to connect the battery.",
     )
 
+    giant_match1=Supply(
+        projectId=10,
+        supply="1/2 inch stick of balsa wood with a square section"
+    )
+
+    giant_match2=Supply(
+        projectId=10,
+        supply="1/3 inch x 1/16 inch balsa wood strips"
+    )
+
+    giant_match3=Supply(
+        projectId=10,
+        supply="Boxes of normally sized matches - one per giant match"
+    )
+
+    giant_match4=Supply(
+        projectId=10,
+        supply="A big bottle of superglue"
+    )
+
+    giant_match5=Supply(
+        projectId=10,
+        supply="A brown marker"
+    )
+
+    giant_match6=Supply(
+        projectId=10,
+        supply="1/16 inch thick cardboard"
+    )
+
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -375,6 +406,12 @@ def seed_supplies():
     db.session.add(minecraft_torch6)
     db.session.add(minecraft_torch7)
     db.session.add(minecraft_torch8)
+    db.session.add(giant_match1)
+    db.session.add(giant_match2)
+    db.session.add(giant_match3)
+    db.session.add(giant_match4)
+    db.session.add(giant_match5)
+    db.session.add(giant_match6)
     
     db.session.commit()
 

@@ -13,6 +13,7 @@ const ProjectDetails = () => {
   const history = useHistory();
   const { projectId } = useParams();
   const project = useSelector((state) => state?.projects[+projectId]);
+  console.log(project)
   let view = useSelector(state => state?.views?.view)
   const user = useSelector((state) => state?.session?.user);
   const session = useSelector(state => state?.session);

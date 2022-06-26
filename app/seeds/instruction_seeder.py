@@ -601,6 +601,7 @@ def seed_instructions():
         videoUrl="",
     )
 
+
     minecraft_torch1=Instruction(
         projectId= 9,
         stepOrder= 1,
@@ -692,6 +693,118 @@ def seed_instructions():
         videoUrl="",
     )
 
+    giant_matches1=Instruction(
+        projectId=10,
+        stepOrder=1,
+        stepTitle="The Match Sticks", 
+        instructions="""
+        Measure out a desirable length of balsa wood and cut it to get the base for our giant match. I'm using balsa because it is super easy to cut and shape later, and it also burns better than ordinary wood.
+
+        For the cutting, I used a tiny saw to get a very clean edge.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FTB/XTNI/L4LBOHR2/FTBXTNIL4LBOHR2.jpg?auto=webp&frame=1&crop=3:2&width=300&height=1024&fit=bounds&md=879e974f05832f418801e15aa714928a",
+        videoUrl="",
+    )
+
+    giant_matches2=Instruction(
+        projectId=10,
+        stepOrder=2,
+        stepTitle="Shaping the Head of the Match", 
+        instructions="""
+        When you look closely at a real match, you'll see that the head of the match is a lot larger than the stick. To make your matches look like the real deal, you can use some thin balsa wood and glue it around the end of the matchstick. Then, using a sharp cutter, round off the edges so that the match head looks like a sphere - don't worry about the surface finish as it will be covered up.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FZX/15EN/L4LBOHZ2/FZX15ENL4LBOHZ2.jpg?auto=webp&frame=1&crop=3:2&width=600&height=1024&fit=bounds&md=1b2c51ee786618707f65f6f347f38bd8",
+        videoUrl="",
+    )
+
+    giant_matches3=Instruction(
+        projectId=10,
+        stepOrder=3,
+        stepTitle="The Fuel", 
+        instructions="""
+        Commercial matches are made essentially out of potassium chlorate and sulfur. To save ourselves from the hustle of resourcing those hard-to-find and hazardous components, let's utilize some real matches for this project.
+
+        Use a knife to scrape away the hard material from the match heads. In my case, I needed the fuel of one box of matches (60 matches inside) for one giant match.
+
+        Once the matches are scraped, pour all the pieces of match head in a mortar and grind them until you get a granular dust.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F7Y/P59O/L4LBOHVY/F7YP59OL4LBOHVY.jpg?auto=webp&frame=1&crop=3:2&width=300&height=1024&fit=bounds&md=49ea398e2a7e4a022c46c132b0219cf0",
+        videoUrl="",
+    )
+
+    giant_matches4=Instruction(
+        projectId=10,
+        stepOrder=4,
+        stepTitle="Coloring", 
+        instructions="""
+        To make the end result more uniform, use a marker to color the match head.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FF0/CWWM/L4LBOI6T/FF0CWWML4LBOI6T.jpg?auto=webp&frame=1&crop=3:2&width=800&height=1024&fit=bounds&md=0162ef1586c9a4e62b7e44e536bab33d",
+        videoUrl="",
+    )
+
+    giant_matches5=Instruction(
+        projectId=10,
+        stepOrder=5,
+        stepTitle="Gluing", 
+        instructions="""
+        Apply superglue on the end of your matchstick and sprinkle the match fuel on top of it. Make multiple passes to make sure all the sides are covered.
+
+        That's it, the giant match is now done and ready for use! Repeat the same steps for the rest of the matches.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F2K/82MM/L4LBOID1/F2K82MML4LBOID1.jpg?auto=webp&frame=1&crop=3:2&width=900&height=1024&fit=bounds&md=172eb6a1e6bd331454605f9f9e3276d4",
+        videoUrl="",
+    )
+
+    giant_matches6=Instruction(
+        projectId=10,
+        stepOrder=6,
+        stepTitle="The Matchbox", 
+        instructions="""
+        For the box, I used some 1/16-inch cardboard. The designing procedure is fairly straightforward, and you can use a commercial matchbox as a reference.
+
+        Essentially you will have first a box that has no cover, that will fit into a slightly larger box that misses two side pieces. To be exact, the larger box is 1/8 inch larger and 1/8 taller than the smaller one (but those numbers vary on the thickness of the cardboard you're using).
+
+        To glue the cardboard, superglue works remarkably well, but hot glue is also good - though it's messier.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FX4/NDK5/L4LBOIME/FX4NDK5L4LBOIME.jpg?auto=webp&frame=1&crop=3:2&width=300&height=1024&fit=bounds&md=65f28e49ef732f218b43d9b9b1b16dc6",
+        videoUrl="",
+    )
+
+    giant_matches7=Instruction(
+        projectId=10,
+        stepOrder=7,
+        stepTitle="The Label", 
+        instructions="""
+        As a final touch, I designed a quick label using Autocad, as it allows me to use precise dimensions that I can set to be printed out with a 1:1 scale - the PDF file for my box is in the attachments. If you don't fancy using a computer to design your label, feel free to use a ruler or whatever old-school technology you're comfortable with.
+
+        I cut out parts of my label and placed a sheet of yellow paper behind it, as I don't have a color printer.
+
+        Finally, I salvaged the striking surfaces from the boxes of matches that were used in previous steps, and glued them to the side of the giant matchbox.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FVE/XNF3/L4LBOISM/FVEXNF3L4LBOISM.jpg?auto=webp&frame=1&crop=3:2&width=900&height=1024&fit=bounds&md=3f931c52b2b6d853281fbe0d4b234105",
+        videoUrl="",
+    )
+
+    giant_matches8=Instruction(
+        projectId=10,
+        stepOrder=8,
+        stepTitle="Done!", 
+        instructions="""
+        And here it is! A very big box for some giant matches. Only one more thing to find out: will those matches actually burn?
+
+        Surprisingly, they work really good. They can be lit up with just one stroke, and once they produce a spark, they turn into a big ball of fire. However, the matchstick won't light up quickly enough to be of any use, so if you want to make a camping fire in the forest, you better be quick once you have lit your match.
+
+        All in all, I'm pretty happy with how this project turned out. It's the first time I made a XXL version out of a small everyday item, and it was such a fun challenge that I will probably do it again in the future.
+
+        Thank you for reading and have a nice day! :)
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FQF/2B7L/L4LBOOR6/FQF2B7LL4LBOOR6.jpg?auto=webp&frame=1&crop=3:2&width=900&height=1024&fit=bounds&md=5ec91b742bb8da7c51ce0822980b328d",
+        videoUrl="",
+    )
+
+        
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -744,7 +857,17 @@ def seed_instructions():
     db.session.add(minecraft_torch4)
     db.session.add(minecraft_torch5)
     db.session.add(minecraft_torch6)
+    
     db.session.add(minecraft_torch7)
+
+    db.session.add(giant_matches1)
+    db.session.add(giant_matches2)
+    db.session.add(giant_matches3)
+    db.session.add(giant_matches4)
+    db.session.add(giant_matches5)
+    db.session.add(giant_matches6)
+    db.session.add(giant_matches7)
+    db.session.add(giant_matches8)
     
     db.session.commit()
 

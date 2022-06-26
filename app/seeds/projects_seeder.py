@@ -1,3 +1,4 @@
+from unicodedata import category
 from app.models import db, Project
 
 
@@ -122,6 +123,18 @@ def seed_project():
         category="Circuits"
     )
 
+    giant_matches=Project(
+        userId=3,
+        title="Giant Matches - That Work!",
+        titleImage="https://content.instructables.com/ORIG/FM0/LQTT/L4LBOJCW/FM0LQTTL4LBOJCW.jpg?auto=webp&frame=1&crop=3:2&width=600&height=1024&fit=bounds&md=a1f9f4fefd53e9ff6d07d759b93f9d30",
+        overview="""
+        Many years ago, I saw Shrek The Musical back in London. There was one scene in particular that I remember very well, that involved a giant box of matches. Unfortunately, that day no matches were lit on the scene, but that image of a giant match in a huge box stuck in my brain. There is something quirky about it that I dig - and above all, I was really curious if such a big match would actually light up and how big would that flame then be.
+
+        So, without any further ado, let's make some giant matches with a nice box to go with them, to answer those burning questions.
+        """,
+        category="Outside",
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -131,6 +144,7 @@ def seed_project():
     db.session.add(dragonfly)
     db.session.add(arcade_stick)
     db.session.add(minecraft_torch)
+    db.session.add(giant_matches)
 
     db.session.commit()
 
