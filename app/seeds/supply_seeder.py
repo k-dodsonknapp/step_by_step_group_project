@@ -645,6 +645,56 @@ def seed_supplies():
         supply="ONE PAINT BRUSH",
     )
 
+    torus1=Supply(
+        projectId=18,
+        supply="Carboard (you can even use old carboard but news ones are recommended for smoother panting surface)",
+    )
+
+    torus2=Supply(
+        projectId=18,
+        supply="Acrylic paint basics(to give color to each and every peace of the cardboard)",
+    )
+
+    torus3=Supply(
+        projectId=18,
+        supply="Gesso (which is applied FIRST before putting down your favorite color acrylic basic)",
+    )
+
+    torus4=Supply(
+        projectId=18,
+        supply="iPad",
+    )
+
+    torus5=Supply(
+        projectId=18,
+        supply="App called Grid#",
+    )
+
+    torus6=Supply(
+        projectId=18,
+        supply="google docs",
+    )
+
+    torus7=Supply(
+        projectId=18,
+        supply="Carboard scissors",
+    )
+
+    torus8=Supply(
+        projectId=18,
+        supply="Retractable Utility Knife(VERY recommended)",
+    )
+
+    torus9=Supply(
+        projectId=18,
+        supply="Big Cutting matte or some old durable material that will endure the cuts from the Retractable Utility Knife",
+    )
+
+    torus10=Supply(
+        projectId=18,
+        supply="Gummed paper tape",
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -770,6 +820,16 @@ def seed_supplies():
     db.session.add(blossom7)
     db.session.add(blossom8)
     db.session.add(blossom9)
+    db.session.add(torus1)
+    db.session.add(torus2)
+    db.session.add(torus3)
+    db.session.add(torus4)
+    db.session.add(torus5)
+    db.session.add(torus6)
+    db.session.add(torus7)
+    db.session.add(torus8)
+    db.session.add(torus9)
+    db.session.add(torus10)
 
     
     db.session.commit()
