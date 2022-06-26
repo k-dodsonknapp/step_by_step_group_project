@@ -550,6 +550,55 @@ def seed_supplies():
         supply="1 cup heavy whipping cream (for serving)",
     )
 
+    cocoa_bombs1=Supply(
+        projectId=16,
+        supply="2/3 cup Hershey's 100% cocoa powder",
+    )
+
+    cocoa_bombs2=Supply(
+        projectId=16,
+        supply="3 TBSP maple syrup",
+    )
+
+    cocoa_bombs3=Supply(
+        projectId=16,
+        supply="Pinch of salt",
+    )
+
+    cocoa_bombs4=Supply(
+        projectId=16,
+        supply="1 TBSP ground cinnamon",
+    )
+
+    cocoa_bombs5=Supply(
+        projectId=16,
+        supply="2/3 cups milk",
+    )
+
+    cocoa_bombs6=Supply(
+        projectId=16,
+        supply="1 T measuring spoon",
+    )
+
+    cocoa_bombs7=Supply(
+        projectId=16,
+        supply="1/3 c measuring cup",
+    )
+
+    cocoa_bombs8=Supply(
+        projectId=16,
+        supply="Mug",
+    )
+
+    cocoa_bombs9=Supply(
+        projectId=16,
+        supply="Rubber spatula",
+    )
+
+    cocoa_bombs10=Supply(
+        projectId=16,
+        supply="Small bowl",
+    )
 
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
@@ -657,6 +706,16 @@ def seed_supplies():
     db.session.add(hot_chocolate5)
     db.session.add(hot_chocolate6)
     db.session.add(hot_chocolate7)
+    db.session.add(cocoa_bombs1)
+    db.session.add(cocoa_bombs2)
+    db.session.add(cocoa_bombs3)
+    db.session.add(cocoa_bombs4)
+    db.session.add(cocoa_bombs5)
+    db.session.add(cocoa_bombs6)
+    db.session.add(cocoa_bombs7)
+    db.session.add(cocoa_bombs8)
+    db.session.add(cocoa_bombs9)
+    db.session.add(cocoa_bombs10)
 
     
     db.session.commit()

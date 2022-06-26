@@ -195,6 +195,16 @@ def seed_project():
         category="Cooking",
     )
 
+    cocoa_bombs=Project(
+        userId=2,
+        title="☕🍫Hot Cocoa Bombs🍫☕",
+        titleImage="https://content.instructables.com/ORIG/FKX/H8AQ/KV3TDZJW/FKXH8AQKV3TDZJW.png?auto=webp&frame=1&width=515&fit=bounds&md=4eb1a85d2289fbae7b6fb9d9c8f3227d",
+        overview="""
+        I made this recipe because I feel like it is always so hard to make hot cocoa, but with this recipe, you can just plop one in the milk and stir for a little bit then you have yourself a nice little cup of fast and easy hot cocoa. This is the second instructable I have created. I love doing Instructables. It is such a fun way to express your creativity.
+        """,
+        category="Cooking",
+    )
+
 
     db.session.add(bird_house)
     db.session.add(casino_clock)
@@ -211,6 +221,7 @@ def seed_project():
     db.session.add(frankenstein)
     db.session.add(ice_cream)
     db.session.add(hot_chocolate)
+    db.session.add(cocoa_bombs)
 
     db.session.commit()
 

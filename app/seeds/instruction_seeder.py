@@ -1187,6 +1187,51 @@ def seed_instructions():
         videoUrl="",
     )
 
+    cocoa_bomb1=Instruction(
+        projectId=16,
+        stepOrder=1,
+        stepTitle="Coco Bombs", 
+        instructions="""
+        To start out, put 3 TBSP of maple syrup in a small bowl then slowly mix in 2/3 cup Hershey's cocoa powder. This may take a while to get all the cocoa powder into the syrup, but it ends up resembling cookie dough. If it is not molding correctly you can add a little bit more syrup to bond it.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FCQ/KAXZ/KV3TDYV4/FCQKAXZKV3TDYV4.jpg?auto=webp&frame=1&width=932&height=1024&fit=bounds&md=a5d634e618f60df8791473400b9fe683",
+        videoUrl="",
+    )
+
+    cocoa_bomb2=Instruction(
+        projectId=16,
+        stepOrder=2,
+        stepTitle="Shaping", 
+        instructions="""
+        Shape your cocoa mixture into teaspoon-sized balls.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F33/CVUG/KV3TDYYT/F33CVUGKV3TDYYT.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=7caf422754ba0449cbf5d4abe9b01643",
+        videoUrl="",
+    )
+
+    cocoa_bomb3=Instruction(
+        projectId=16,
+        stepOrder=3,
+        stepTitle="More Shaping", 
+        instructions="""
+        Shape out more bombs for future use!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FV7/DQVX/KV3TDZ1G/FV7DQVXKV3TDZ1G.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=6f50a0da8c92425ae23341dc02cd1bbf",
+        videoUrl="",
+    )
+
+    cocoa_bomb4=Instruction(
+        projectId=16,
+        stepOrder=4,
+        stepTitle="Hot Coco", 
+        instructions="""
+        Microwave 2/3 cups milk for 2 minutes or until foaming then add in one or two cocoa bombs and stir until fully melted then enjoy. you can add more syrup or sweetener of your choice so it is sweeter. I added a little bit of cinnamon for a kick of spice
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FN6/AVJM/KV3TDZK6/FN6AVJMKV3TDZK6.png?auto=webp&frame=1&width=515&fit=bounds&md=64070c3a44149b9f4cf40a28328c0dd3",
+        videoUrl="",
+    )
+
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -1278,6 +1323,10 @@ def seed_instructions():
     db.session.add(hot_chocolate3)
     db.session.add(hot_chocolate4)
     db.session.add(hot_chocolate5)
+    db.session.add(cocoa_bomb1)
+    db.session.add(cocoa_bomb2)
+    db.session.add(cocoa_bomb3)
+    db.session.add(cocoa_bomb4)
     
     db.session.commit()
 
