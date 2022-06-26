@@ -1231,6 +1231,64 @@ def seed_instructions():
         videoUrl="",
     )
 
+    blossom1=Instruction(
+        projectId=17,
+        stepOrder=1,
+        stepTitle="Applying Paint to the Candle Jar", 
+        instructions="""
+        Start with taking your candle jar and applying your acrylic paint. I combined both colors when I applied it onto my candle jar. Be sure to allow your paint to dry between coats. I used a blow dryer to help with drying. I applied around three coats of paint.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F9B/ZPBB/L4PLX75S/F9BZPBBL4PLX75S.png?auto=webp&frame=1&width=600&fit=bounds&md=bd904319753cb33a1ce501f7cdc82b6c",
+        videoUrl="",
+    )
+
+    blossom2=Instruction(
+        projectId=17,
+        stepOrder=2,
+        stepTitle="Cutting Foam Block to Size", 
+        instructions="""
+        Next, take your scissors, or if you have a craft knife, use it to split your foam block in half. Depending on the size of your candle jar, be sure you cut it to a size that will work with your jar. Take your foam block, and add it into your glass jar.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FSH/TPNB/L4PLX77T/FSHTPNBL4PLX77T.png?auto=webp&frame=1&width=600&fit=bounds&md=1ab3e917b8f43815b39b892296a68bae",
+        videoUrl="",
+    )
+
+    blossom3=Instruction(
+        projectId=17,
+        stepOrder=3,
+        stepTitle="Inserting Your Branch", 
+        instructions="""
+        After, take your branch and insert it into the middle of your foam block. I decided to use a branch I cut when my husband and I were doing our spring clean up in our yard. We had a few trees that we had to trim, and I thought it would be perfect to use a few of the branches for projects.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FJQ/WJPE/L4PLX79P/FJQWJPEL4PLX79P.png?auto=webp&frame=1&width=600&fit=bounds&md=8a8579d2b3a57dc11d819bf29e54766e",
+        videoUrl="",
+    )
+
+    blossom4=Instruction(
+        projectId=17,
+        stepOrder=4,
+        stepTitle="Preparing Your Floral", 
+        instructions="""
+        Using your floral snips, begin to cut the tops of your faux floral. You can also cut some of the greenery as well. 
+
+        Take your hot glue, and apply it onto each floral piece, and add your floral onto your branches.
+
+        Next, take your greenery, and use your hot glue to apply it onto the top section of your foam block. I did this to cover any areas that my foam block was visible. 
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FS0/GF6P/L4PLX7CI/FS0GF6PL4PLX7CI.png?auto=webp&frame=1&width=600&fit=bounds&md=defd87ba7484d23e88944a94a1fa7f33",
+        videoUrl="",
+    )
+
+    blossom5=Instruction(
+        projectId=17,
+        stepOrder=5,
+        stepTitle="Your Blossom Design Is Complete", 
+        instructions="""
+        You're all done! Your blossom branch arrangement is all done. I love how simple this was to create, and I love that I had all of my materials on hand. I hope that you enjoyed this simple creation. Thank you so much for stopping by, and creating with me! I'll see you soon.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FOZ/9Z06/L4PLX7EZ/FOZ9Z06L4PLX7EZ.png?auto=webp&frame=1&width=777&fit=bounds&md=055f53fc1842898f121fa483ecfe9611",
+        videoUrl="",
+    )
 
     db.session.add(bird_project1)
     db.session.add(bird_project2)
@@ -1327,6 +1385,11 @@ def seed_instructions():
     db.session.add(cocoa_bomb2)
     db.session.add(cocoa_bomb3)
     db.session.add(cocoa_bomb4)
+    db.session.add(blossom1)
+    db.session.add(blossom2)
+    db.session.add(blossom3)
+    db.session.add(blossom4)
+    db.session.add(blossom5)
     
     db.session.commit()
 
