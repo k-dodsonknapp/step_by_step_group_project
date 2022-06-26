@@ -135,6 +135,22 @@ def seed_project():
         category="Outside",
     )
 
+    bike_lamp=Project(
+        userId=1,
+        title="Be Seen! 3D Printed Bike Lights With Fusion 360",
+        titleImage="https://content.instructables.com/ORIG/FX1/S8ZB/L2EQF6ZI/FX1S8ZBL2EQF6ZI.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=973936be7f8d4952d83d6839f695e0a9",
+        overview="""
+        When I'm out and about on my bicycle at night I like to Be Seen, the more lights the better, I do have some USB rechargeable lights and they work really well, my bike is electric and it has of all things a USB port, I'm thinking along the lines of having a Bike lamp as say a reserve lamp, it could run off either AA or AAA Batteries or USB?
+
+        The trips I make on an evening are no marathons but a time or 2 I've forgotten to charge my lights or something and here in the UK having no lights carries a hefty fine.
+
+        My cycle helmet has a built in rear LED lamp, so my thinking is with a reserve front lamp I've got all bases covered, not sure how much it would drain the bike battery yet but should be ok over short distances, and the LED lamp that I'm going to use is 5v with 9 LED's and on 4 xAA batteries (even they could be rechargeable) the LED lasts for 5 Hours.
+
+        After seeing the light it's time to get on with a design.
+        """,
+        category="Outside",
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -145,6 +161,7 @@ def seed_project():
     db.session.add(arcade_stick)
     db.session.add(minecraft_torch)
     db.session.add(giant_matches)
+    db.session.add(bike_lamp)
 
     db.session.commit()
 
