@@ -1132,6 +1132,61 @@ def seed_instructions():
         videoUrl="",
     )
 
+    hot_chocolate1=Instruction(
+        projectId=15,
+        stepOrder=1,
+        stepTitle="Flavoring", 
+        instructions="""
+        To begin put milk, cream, powdered sugar, cinnamon and nutmeg over medium heat. Then stir it all together.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FR8/355M/KZ9UM21K/FR8355MKZ9UM21K.jpg?auto=webp&frame=1&crop=3:2&width=400&height=1024&fit=bounds&md=cb38e6a6a223aa66182978c228718e1d",
+        videoUrl="",
+    )
+
+    hot_chocolate2=Instruction(
+        projectId=15,
+        stepOrder=2,
+        stepTitle="Adding Chocolate", 
+        instructions="""
+        Once your milk mixture is almost boiling remove it from heat and add chocolate chips. Stir them in until completely melted. Then leave it on low to stay warm.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FDU/LJJ0/KZ9UM3U0/FDULJJ0KZ9UM3U0.jpg?auto=webp&frame=1&crop=3:2&width=600&height=1024&fit=bounds&md=bcdc3883c5833c04c6401e855c4f841f",
+        videoUrl="",
+    )
+
+    hot_chocolate3=Instruction(
+        projectId=15,
+        stepOrder=3,
+        stepTitle="Whipped Cream", 
+        instructions="""
+        While you Hot Chocolate is staying warm on low you can make some whipped cream! To do this put your heaving whipping cream into your kitchen aid and stir it at six. then mix for about five minutes or until desired consistency.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F1G/RA2D/KZ9UM3UQ/F1GRA2DKZ9UM3UQ.jpg?auto=webp&frame=1&crop=3:2&width=400&height=1024&fit=bounds&md=7e0b1ccce7ffb52286a0f0237edc9b00",
+        videoUrl="",
+    )
+
+    hot_chocolate4=Instruction(
+        projectId=15,
+        stepOrder=4,
+        stepTitle="Topping It Off", 
+        instructions="""
+        Now you can have as much fun as you want making your Hot Chocolate look appetizing! Once I put the whipped cream on top I sprinkled on some cinnamon this had a delicious looking affect!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FN8/TBD6/KZ9UMDIO/FN8TBD6KZ9UMDIO.jpg?auto=webp&frame=1&width=481&height=1024&fit=bounds&md=054cc03050fbc605a7f9d58faec07483",
+        videoUrl="",
+    )
+
+    hot_chocolate5=Instruction(
+        projectId=15,
+        stepOrder=5,
+        stepTitle="Enjoy!", 
+        instructions="""
+        To fully enjoy your French Hot Chocolate follow the four S's. First sniff the amazing aroma, then sip slowly, next savor it and let it soak into your taste buds, then swallow.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F93/LQGK/KZ9UMFIT/F93LQGKKZ9UMFIT.jpg?auto=webp&frame=1&width=499&height=1024&fit=bounds&md=4ce9a4cbe94ab8332dc66f13d72ffa5c",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -1218,6 +1273,11 @@ def seed_instructions():
     db.session.add(ice_cream3)
     db.session.add(ice_cream4)
     db.session.add(ice_cream5)
+    db.session.add(hot_chocolate1)
+    db.session.add(hot_chocolate2)
+    db.session.add(hot_chocolate3)
+    db.session.add(hot_chocolate4)
+    db.session.add(hot_chocolate5)
     
     db.session.commit()
 

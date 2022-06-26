@@ -64,6 +64,11 @@ def seed_views():
         viewCount=0,
     )
 
+    project15=Views(
+        projectId=15,
+        viewCount=0,
+    )
+
     db.session.add(project1)
     db.session.add(project2)
     db.session.add(project3)
@@ -78,6 +83,7 @@ def seed_views():
     db.session.add(project12)
     db.session.add(project13)
     db.session.add(project14)
+    db.session.add(project15)
 
 
     db.session.commit()
