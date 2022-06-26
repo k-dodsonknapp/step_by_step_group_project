@@ -803,7 +803,100 @@ def seed_instructions():
         videoUrl="",
     )
 
-        
+    bike_lamp1=Instruction(
+        projectId=11,
+        stepOrder= 1,
+        stepTitle="Bike Lamp Design, the Main Lamp Body", 
+        instructions="""
+        This Lamp doesn't need to be anything fancy design wise, the LED's soldered PCB is square shaped as is the Battery holder albeit smaller in diameter, so this design will be a simple oblong square shape.
+
+        Using Fusion 360, and using the Top plane, I create a square of 46mm then offset this outwards by 2mm this will be the wall thickness, I want to slot a piece of Acrylic into the oblong to protect the Led's so I make another centre square at 38mm this will create a lip when we drop the piece of Acrylic in, or clear plastic sheet off cut, whatever I have available.
+
+        To Extrude I highlight the inner lip first and extrude this to 2mm, then clicking on sketches again, I select the 2mm wall part and extrude this to 80mm, this will give us enough play internally to mess about with cables later, the LED and Battery holder overall length is approx 67mm, I apply a fillet to all 4 corners of the body of 1mm.
+
+        I'm going to create a Push in fit base to this lamp on this there will be a connector for the Mini USB connector so I can power it from the Bikes own electrics and also a on off on switch to select between battery power or USB power.
+
+        The lid will be secured with 2no 3mm Allen head bolts say around 5 or 6mm whatever I can find so with this mind I need to create 2 side holes @3.2mm to accept the bolts, I can project these holes onto the base part later.
+
+        Onto creating a Base or Lid for the Lamp:
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FAT/DZBI/L2DB2HYS/FATDZBIL2DB2HYS.png?auto=webp&frame=1&crop=3:2&width=900&height=1024&fit=bounds&md=a9e660199a36fd58015e519de18f71f1",
+        videoUrl="",
+    )
+
+    bike_lamp2=Instruction(
+        projectId=11,
+        stepOrder=2,
+        stepTitle="Creating the End Cap for the Lamp", 
+        instructions="""
+        After creating a new sketch and using the 2mm top of the wall to sketch to, I use project to highlight the top of the main body of the lamp, selecting the inner line of the wall, I offset this to 0.3mm inboard, this will give the end cap enough clearance for a snug fit hopefully then offset again to 2mm to create the inner wall of the lid, sounds a bit confusing? I will add plenty of screen shots for reference as always.
+
+        Using the extrude tab, I highlight this inner wall then extrude down to 5mm creating a new Component as we go, then the main section of the end cap can be highlighted and extruded to 2mm.
+
+        On the base I need to create a slot for the mini USB connector which will be internal and also a slot for the switch this will also be fitted from the inside.
+
+        The slot dimensions are added to the sketch and extruded, the Mini USB adapter is on a small PSB I need to create a lip on the inner of the end cap for this to be secured to with CA or Hot glue, this is a rectangle just below the slot then extruded to 10mm.
+
+        Update: I didn't leave enough space when fitting the end cap to the main body of the lamp, so I adjusted the end cap to leave more space, now rather than the end being inserted into the main body so its flush, it is now the same diameter as the main body with an insert which locates into the lamp, a lot better idea all round.
+
+        This finishes the end cap.
+
+        We can now move onto the Electrics:
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F78/01SI/L2EQF3PT/F7801SIL2EQF3PT.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=1ed37d8b34d46ed2006dd97080833f02",
+        videoUrl="",
+    )
+
+    bike_lamp3=Instruction(
+        projectId=11,
+        stepOrder= 3,
+        stepTitle="Lamp Electrics.", 
+        instructions="""
+        The Bike Lamp will have a dual feed, It can either be run off the inboard batteries or the Bikes own battery via the onboard USB port.
+
+        The switch I have has 2 soldering points for the centre poles and 2 poles for each way which is handy for this purpose, I will use one of the ways from the batteries, I need to install a Buck converter to drop the 6v battery power down to 5v for the LED's so from the converter the 5v and Gnd from the batteries will go directly to the to the Buck converter IN then out of the converter, the 5v will go to one of the centre poles on the switch the ground along with the gnd from the USB pcb are soldered together and then soldered to the gnd wire from the LED and sleeved, the same applies to the 5v from the LED this will have a Switched battery feed and also a switched USB supplied feed then I can leave the lamp attached to the bike at all times and just switch it off rather than unplug the cable each time if indeed I ever have to use it.
+
+        The Assembly:
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F78/01SI/L2EQF3PT/F7801SIL2EQF3PT.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=1ed37d8b34d46ed2006dd97080833f02",
+        videoUrl="",
+    )
+
+    bike_lamp4=Instruction(
+        projectId=11,
+        stepOrder= 4,
+        stepTitle="Assembling the Lamp and Designing and Making the Bracket.", 
+        instructions="""
+        I need a bracket to attach the lamp to the handlebar of the bike, I'm going to make it a more permanent feature and for this reason it needs to be more secure so I'm thinking of a clamp based design secured with Allen head 3mm bolts and washers and locknuts.
+
+        To start with I get the diameter of the handlebar(22.5mm) then I select the top plane and sketch a rectangle of 50 x 6mm we are looking down on this bracket from a side view, the next thing to do is sketch a circle then off set it outwards until it sinks into the rectangle we created.
+
+        We now need to make it into 2 separate components, rather than me explain the process, the screen shots can explain it a lot better, there needs to be a gap between both components so that it can clamp onto the handlebar, to achieve this we can insert more lines and use the trim tool to delete lines we no longer need to ease the extrude process then we need to make holes for for the bolts to go through, on the nut side I've used a circumscribed Polygon, this is made using half the dimension of the nuts between the flats and adding a little for clearance, we only have to do this on one side of the clamp, we can mirror using features to mirror to the other side using the centre plane.
+
+        A few fillets are added to finish these 2 components.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FJB/FUCF/L2DB2KGM/FJBFUCFL2DB2KGM.png?auto=webp&frame=1&crop=3:2&width=900&height=1024&fit=bounds&md=c8bea2a3e1af90df2ef2ccbdbec5a471",
+        videoUrl="",
+    )
+
+    bike_lamp5=Instruction(
+        projectId=11,
+        stepOrder= 5,
+        stepTitle="First Test of the Lamp at Night and Assumptions", 
+        instructions="""
+        I wanted to test the light in the dark and compare it to my normal front bike light and I was presently surprised, the coverage right in front of you which is really what you want to see for the ever growing number of Pot holes etc was very very good, and the light does what it says on the tin, it works very well on its own battery power and switching over to the Bike battery there was no difference, the clamp works well and holds really good, the height can be adjusted to suit.
+
+        I quite like the square lamp, it looks radical, a bit like the weapon the predator has on its shoulder, well ish! I didn't realise until I'd finished it that I also had a round 5v led lamp, I soldered the resistors and LED's as per the Instructions, and then set about designing a cylindrical lamp as well, the only difference being is that the round lamp only has 3 batteries in a holder, AAA this time, so it will have the same switch and Mini usb connector and will be wired pretty much the same but omitting the Buck converter, the design priciples are the same as the square lamp, I cut a piece of 4mm Acrylic for the Lens on the CNC machine for ease, I feared I would make a mess cutting on the band saw.
+
+        The Lights look different that's a fact and were very enjoyable to make, and with the USB as well as battery option it could get me out of a situation, you never know, and save me getting a fine.
+
+        I might try another lamp at some point with a 9v Battery and Buck Converter.
+
+        Thanks for looking in!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FTI/EU3K/L2EQF4XR/FTIEU3KL2EQF4XR.jpg?auto=webp&frame=1&width=247&height=1024&fit=bounds&md=f9488456d3a1d6bbd20d13d0e5539991",
+        videoUrl="",
+    )   
 
     db.session.add(bird_project1)
     db.session.add(bird_project2)
@@ -868,6 +961,11 @@ def seed_instructions():
     db.session.add(giant_matches6)
     db.session.add(giant_matches7)
     db.session.add(giant_matches8)
+    db.session.add(bike_lamp1)
+    db.session.add(bike_lamp2)
+    db.session.add(bike_lamp3)
+    db.session.add(bike_lamp4)
+    db.session.add(bike_lamp5)
     
     db.session.commit()
 

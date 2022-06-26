@@ -345,6 +345,66 @@ def seed_supplies():
         supply="1/16 inch thick cardboard"
     )
 
+    bike_lamp1=Supply(
+        projectId=11,
+        supply="Kitronik 5V LED lamp kits",
+    )
+
+    bike_lamp2=Supply(
+        projectId=11,
+        supply="On/Off Switch",
+    )
+
+    bike_lamp3=Supply(
+        projectId=11,
+        supply="Micro usb connector",
+    )
+
+    bike_lamp4=Supply(
+        projectId=11,
+        supply="4 x AA Battery holder",
+    )
+
+    bike_lamp5=Supply(
+        projectId=11,
+        supply="",
+    )
+
+    bike_lamp6=Supply(
+        projectId=11,
+        supply="Buck Converter",
+    )
+
+    bike_lamp7=Supply(
+        projectId=11,
+        supply="Fusion 360",
+    )
+
+    bike_lamp8=Supply(
+        projectId=11,
+        supply="3D Printer",
+    )
+
+    bike_lamp9=Supply(
+        projectId=11,
+        supply="1.75mm PLA(Black)",
+    )
+
+    bike_lamp10=Supply(
+        projectId=11,
+        supply="Acrylic off cut",
+    )
+
+    bike_lamp11=Supply(
+        projectId=11,
+        supply="2no 3mm Allen head bolts 6mm long",
+    )
+
+    bike_lamp11=Supply(
+        projectId=11,
+        supply="Hot glue",
+    )
+
 
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
@@ -412,6 +472,17 @@ def seed_supplies():
     db.session.add(giant_match4)
     db.session.add(giant_match5)
     db.session.add(giant_match6)
+    db.session.add(bike_lamp1)
+    db.session.add(bike_lamp2)
+    db.session.add(bike_lamp3)
+    db.session.add(bike_lamp4)
+    db.session.add(bike_lamp5)
+    db.session.add(bike_lamp6)
+    db.session.add(bike_lamp7)
+    db.session.add(bike_lamp8)
+    db.session.add(bike_lamp9)
+    db.session.add(bike_lamp10)
+    db.session.add(bike_lamp11)
     
     db.session.commit()
 
