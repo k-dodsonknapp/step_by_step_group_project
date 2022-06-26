@@ -490,6 +490,33 @@ def seed_supplies():
         supply="Battery tester",
     )
 
+    ice_cream1=Supply(
+        projectId=14,
+        supply="1/4 cup of oil",
+    )
+
+    ice_cream2=Supply(
+        projectId=14,
+        supply="1 cup of chocolate chips",
+    )
+
+    ice_cream3=Supply(
+        projectId=14,
+        supply="6 cones",
+    )
+
+    ice_cream4=Supply(
+        projectId=14,
+        supply="1/2 cup roasted and chopped peanuts",
+    )
+
+    ice_cream5=Supply(
+        projectId=14,
+        supply="1 pint of ice cream",
+    )
+
+
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -584,6 +611,11 @@ def seed_supplies():
     db.session.add(frankenstein9)
     db.session.add(frankenstein10)
     db.session.add(frankenstein11)
+    db.session.add(ice_cream1)
+    db.session.add(ice_cream2)
+    db.session.add(ice_cream3)
+    db.session.add(ice_cream4)
+    db.session.add(ice_cream5)
 
     
     db.session.commit()

@@ -1077,7 +1077,60 @@ def seed_instructions():
         videoUrl="",
     ) 
 
+    ice_cream1=Instruction(
+        projectId=14,
+        stepOrder=1,
+        stepTitle="Make the Chocolate Fudge", 
+        instructions="""
+        In a small microwave-safe bowl add oil and chocolate chips. Next heat the mixture for one minute. Mix it well so it isn't too thick.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FXK/9TLJ/L4LBMVUJ/FXK9TLJL4LBMVUJ.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=d4da1f5077bac7c00a94eef314a0a581",
+        videoUrl="",
+    )
 
+    ice_cream2=Instruction(
+        projectId=14,
+        stepOrder=2,
+        stepTitle="Scoop ice cream into cone", 
+        instructions="""
+        Put the ice cream in the cone and get ready to dip it.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FOG/7WQZ/L4LBMV6E/FOG7WQZL4LBMV6E.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=528c24f6c076cfb020faa1a109f0a3cc",
+        videoUrl="",
+    )
+
+    ice_cream3=Instruction(
+        projectId=14,
+        stepOrder=3,
+        stepTitle="Add the Fudge Mixture", 
+        instructions="""
+        Dip the ice cream in the fudge mixture.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FUU/N0C4/L4LBMWQO/FUUN0C4L4LBMWQO.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=54376b5f0d2c5f28ff158bb954ca2301",
+        videoUrl="",
+    )
+
+    ice_cream4=Instruction(
+        projectId=14,
+        stepOrder=4,
+        stepTitle="", 
+        instructions="""
+        Quickly and softly roll the ice cream over the peanuts
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FQR/UBSN/L4LBMZK1/FQRUBSNL4LBMZK1.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=922869171129c40572fcefbb9e5e289b",
+        videoUrl="",
+    )
+
+    ice_cream5=Instruction(
+        projectId=14,
+        stepOrder=5,
+        stepTitle="The End", 
+        instructions="""
+        Now you can finally dig in.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FYJ/7848/L4LBNCVX/FYJ7848L4LBNCVX.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=75e25aab8c28a7b171929c0ce79f5d72",
+        videoUrl="",
+    )
 
     db.session.add(bird_project1)
     db.session.add(bird_project2)
@@ -1160,6 +1213,11 @@ def seed_instructions():
     db.session.add(frankenstein7)
     db.session.add(frankenstein8)
     db.session.add(frankenstein9)
+    db.session.add(ice_cream1)
+    db.session.add(ice_cream2)
+    db.session.add(ice_cream3)
+    db.session.add(ice_cream4)
+    db.session.add(ice_cream5)
     
     db.session.commit()
 

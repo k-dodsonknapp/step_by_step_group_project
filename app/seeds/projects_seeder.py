@@ -175,6 +175,16 @@ def seed_project():
         category="Teachers",
     )
 
+    ice_cream=Project(
+        userId=4,
+        title="World's Easiest Way to Make Dipped Ice Cream",
+        titleImage="https://content.instructables.com/ORIG/FEW/LVTX/L4LBN3M7/FEWLVTXL4LBN3M7.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=1a73c1c279c44233c557310d38d9331d",
+        overview="""
+        I scream! You scream! We all scream for Ice Cream! Everyone loves ice cream, but have you ever thought of adding It with some chocolate and peanuts. Just thinking of that makes me hungry for dipped ice cream. This is why you have to try this recipe.
+        """,
+        category="Cooking",
+    )
+
 
     db.session.add(bird_house)
     db.session.add(casino_clock)
@@ -189,6 +199,7 @@ def seed_project():
     db.session.add(bike_lamp)
     db.session.add(rainbow)
     db.session.add(frankenstein)
+    db.session.add(ice_cream)
 
     db.session.commit()
 
