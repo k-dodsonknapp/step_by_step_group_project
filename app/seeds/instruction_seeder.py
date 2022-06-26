@@ -1358,6 +1358,104 @@ def seed_instructions():
         videoUrl="",
     )
 
+    bike_mount1=Instruction(
+        projectId=19,
+        stepOrder=1,
+        stepTitle="Starting With the Hands", 
+        instructions="""
+        I used two chunks of wood for the hands
+
+        Wood size: 3.5" x 3.5" X 5.5'
+
+        -After drawing out the shape, cut the spaces between the fingers at about 5-6mm each on the bandsaw
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F29/7U2B/JUGRSOQF/F297U2BJUGRSOQF.png?auto=webp&frame=1&width=765&height=1024&fit=bounds&md=604caf9f345d87ab68efa4da459a300d",
+        videoUrl="",
+    )
+
+    bike_mount2=Instruction(
+        projectId=19,
+        stepOrder=2,
+        stepTitle="Cut out side profile and rest of palms", 
+        instructions="""
+        -Cut out the side profile of the hand, make sure to measure your bike and make the area that holds the frame 1/8" - 1/4" bigger then the top bar of the bike frame.
+
+        -The second step I missed in the video and it involves cutting away the rest of the palm besides the thumb, you can do this with a hand saw
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F5F/OPJJ/JUGRSOFK/F5FOPJJJUGRSOFK.png?auto=webp&frame=1&crop=3:2&width=431&height=1024&fit=bounds&md=3ec00f48b21f8ae446d2395162430d2e",
+        videoUrl="",
+    )
+
+    bike_mount3=Instruction(
+        projectId=19,
+        stepOrder=3,
+        stepTitle="Finishing", 
+        instructions="""
+        Basically sand everything down to 220 grit and use whatever finish you like. I used a Poly Finish
+
+        -use a thin piece of wood wrapped in sand paper to smooth out between the fingers.
+
+        -use a rounded piece of wood to sand between the thumb and the fingers
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FYS/MRTB/JUGRSO9T/FYSMRTBJUGRSO9T.png?auto=webp&frame=1&width=824&height=1024&fit=bounds&md=16d135a6dc24333e0053a57386c04bb4",
+        videoUrl="",
+    )
+
+    bike_mount4=Instruction(
+        projectId=19,
+        stepOrder=4,
+        stepTitle="The Wall Mount", 
+        instructions="""
+        The wall mount is made with wood that I had laying around.
+
+        Back panel: 9" x 9"
+
+        Horizontal piece: 6" x 11.5" Its important to make sure the bike is far enough away from the wall so the pedals don't hit the wall. The 6" plus the depth of the hand made the bike sit 8" off the wall.
+
+        I used a pocket hole jig by milescraft to get the dowel holes in the right place.
+
+        **If I were to do this again I would have made the back panel a at least a bit thicker.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F5E/IMCB/JUGRSO3U/F5EIMCBJUGRSO3U.png?auto=webp&frame=1&width=583&height=1024&fit=bounds&md=901383a6b8febf4524739801a19adef8",
+        videoUrl="",
+    )
+
+    bike_mount5=Instruction(
+        projectId=19,
+        stepOrder=5,
+        stepTitle="Mounting the Hands", 
+        instructions="""
+        Mount the hands using the pocket hole jig and dowels.
+
+        Do some extra measurements here because the last thing you want is for the hands to be a little off.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FT0/6OSX/JUGRSO25/FT06OSXJUGRSO25.png?auto=webp&frame=1&width=798&height=1024&fit=bounds&md=14e7963f9c7e5469cbd7134cb95e58be",
+        videoUrl="",
+    )
+
+    bike_mount6=Instruction(
+        projectId=19,
+        stepOrder=6,
+        stepTitle="Hanging", 
+        instructions="""
+        I wanted the mount to lay flush against the wall so I embed two Keyhole Hangers, one on the top and one on the bottom.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FB8/JWWJ/JUGRSNUY/FB8JWWJJUGRSNUY.png?auto=webp&frame=1&width=1010&height=1024&fit=bounds&md=f75a5dfd3cfa6d41dbdaeaa01cccc631",
+        videoUrl="",
+    )
+
+    bike_mount7=Instruction(
+        projectId=19,
+        stepOrder=7,
+        stepTitle="Finished", 
+        instructions="""
+        I added a little support, just for some security.
+
+        And we're done!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FD0/I9FH/JUGRSQ6A/FD0I9FHJUGRSQ6A.png?auto=webp&frame=1&crop=3:2&width=406&height=1024&fit=bounds&md=f8bff4051ac998d091f0d6d95861af9d",
+        videoUrl="",
+    )
 
     db.session.add(bird_project1)
     db.session.add(bird_project2)
@@ -1465,6 +1563,13 @@ def seed_instructions():
     db.session.add(torus4)
     db.session.add(torus5)
     db.session.add(torus6)
+    db.session.add(bike_mount1)
+    db.session.add(bike_mount2)
+    db.session.add(bike_mount3)
+    db.session.add(bike_mount4)
+    db.session.add(bike_mount5)
+    db.session.add(bike_mount6)
+    db.session.add(bike_mount7)
     
     db.session.commit()
 
