@@ -225,6 +225,19 @@ def seed_project():
         category="Craft",
     )
 
+    bike_mount=Project(
+        userId=5,
+        title="Bike Wall Mount, SUPER HANDY!",
+        titleImage="https://content.instructables.com/ORIG/FFH/3EW3/JUGRSTJH/FFH3EW3JUGRSTJH.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=ff6f8b77c27ca3f7462c30e0fbe72903",
+        overview="""
+        I needed a bike rack and came up with this.
+
+        If you want to watch the video check out the ol' youtube: https://www.youtube.com/watch?v=0NQ9S2y85i0&t=6s
+
+        This was a fun project and it works really well. I use it consistently. The Process of figuring out how to make the hands was great and would consider making some coat hangers that are similar.
+        """,
+        category="Workshop",
+    )
 
     db.session.add(bird_house)
     db.session.add(casino_clock)
@@ -244,6 +257,7 @@ def seed_project():
     db.session.add(cocoa_bombs)
     db.session.add(blossom)
     db.session.add(torus)
+    db.session.add(bike_mount)
 
     db.session.commit()
 
