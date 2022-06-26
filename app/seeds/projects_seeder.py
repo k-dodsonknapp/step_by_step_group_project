@@ -185,6 +185,16 @@ def seed_project():
         category="Cooking",
     )
 
+    hot_chocolate=Project(
+        userId=3,
+        title="French Hot Chocolate",
+        titleImage="https://content.instructables.com/ORIG/F9O/VXCJ/KZ9UMEEF/F9OVXCJKZ9UMEEF.jpg?auto=webp&frame=1&width=570&height=1024&fit=bounds&md=ef91a0a81d51a6ebb85cef4412143f65",
+        overview="""
+        French Hot Chocolate is the perfect beverage to sip on after being out on a cold winter day, but not only is it delicious and warm but it is very easy to make.
+        """,
+        category="Cooking",
+    )
+
 
     db.session.add(bird_house)
     db.session.add(casino_clock)
@@ -200,6 +210,7 @@ def seed_project():
     db.session.add(rainbow)
     db.session.add(frankenstein)
     db.session.add(ice_cream)
+    db.session.add(hot_chocolate)
 
     db.session.commit()
 
