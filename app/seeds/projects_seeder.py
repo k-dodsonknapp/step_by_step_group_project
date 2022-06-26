@@ -205,6 +205,16 @@ def seed_project():
         category="Cooking",
     )
 
+    blossom=Project(
+        userId=1,
+        title="Blossom Branch Arrangement",
+        titleImage="https://content.instructables.com/ORIG/F57/NS1O/L4PLX73W/F57NS1OL4PLX73W.png?auto=webp&frame=1&width=963&fit=bounds&md=5bd39168d63663cb0766616b5645ed96",
+        overview="""
+        Hello everyone! I'm so excited to share this upcycled craft with all of you. We're using just a few materials, and what is so exciting about this is that I had all of my materials on hand. If you were to have to purchase materials, I purchased my paint at my local Walmart for $0.50 each, and my craft foam was $1.25 at my local Dollar Tree. You can also find your floral at Dollar Tree, or any craft store at a discounted price.
+        """,
+        category="Craft",
+    )
+
 
     db.session.add(bird_house)
     db.session.add(casino_clock)
@@ -222,6 +232,7 @@ def seed_project():
     db.session.add(ice_cream)
     db.session.add(hot_chocolate)
     db.session.add(cocoa_bombs)
+    db.session.add(blossom)
 
     db.session.commit()
 
