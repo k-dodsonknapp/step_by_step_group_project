@@ -1347,6 +1347,18 @@ def seed_instructions():
         videoUrl="",
     )
 
+    torus6=Instruction(
+        projectId=18,
+        stepOrder=6,
+        stepTitle="Enjoy your Torus", 
+        instructions="""
+        Enjoy all your hardwork!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FNX/531A/L42QV88N/FNX531AL42QV88N.jpg?auto=webp&frame=1&width=350&height=1024&fit=bounds&md=457cba7cf3f20e8775c0ab2408523fbb",
+        videoUrl="",
+    )
+
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -1452,6 +1464,7 @@ def seed_instructions():
     db.session.add(torus3)
     db.session.add(torus4)
     db.session.add(torus5)
+    db.session.add(torus6)
     
     db.session.commit()
 
