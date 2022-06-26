@@ -215,6 +215,16 @@ def seed_project():
         category="Craft",
     )
 
+    torus=Project(
+        userId=6,
+        title="How to Make a Cardboard Torus(You Can Also Make a Sculpture Out of It As It Is Being Shown)",
+        titleImage="https://content.instructables.com/ORIG/FVW/1Z2N/L42QV8A3/FVW1Z2NL42QV8A3.jpg?auto=webp&frame=1&width=350&height=1024&fit=bounds&md=5fa4aa68632c29e529a2aac6c742361b",
+        overview="""
+        In this image I created a cardboard sculpture. The geometric shape I wanted to use was the torus so the main focus of this sculpture was how to make a tours by using carboard. And as stated in the title I presented this original handmade sculpture as an example on what is capable if one were to create a torus out of carboard.
+        """,
+        category="Craft",
+    )
+
 
     db.session.add(bird_house)
     db.session.add(casino_clock)
@@ -233,6 +243,7 @@ def seed_project():
     db.session.add(hot_chocolate)
     db.session.add(cocoa_bombs)
     db.session.add(blossom)
+    db.session.add(torus)
 
     db.session.commit()
 
