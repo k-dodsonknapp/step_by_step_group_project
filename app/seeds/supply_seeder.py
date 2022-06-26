@@ -435,6 +435,61 @@ def seed_supplies():
         supply="Your printer bed or extra printer bed",
     )
 
+    frankenstein1=Supply(
+        projectId=13,
+        supply="Gallon size plastic water bottle (The square bottles from the dollar tree are my favorite)",
+    )
+
+    frankenstein2=Supply(
+        projectId=13,
+        supply="A scrap piece of wood",
+    )
+
+    frankenstein3=Supply(
+        projectId=13,
+        supply="Assorted bolts",
+    )
+
+    frankenstein4=Supply(
+        projectId=13,
+        supply="A 6 volt buzzer",
+    )
+
+    frankenstein5=Supply(
+        projectId=13,
+        supply="Wire or alligators wires",
+    )
+
+    frankenstein6=Supply(
+        projectId=13,
+        supply="9 volt battery",
+    )
+
+    frankenstein7=Supply(
+        projectId=13,
+        supply="Aluminum foil",
+    )
+
+    frankenstein8=Supply(
+        projectId=13,
+        supply="Stick glue,Velcro dots, duct tape",
+    )
+
+    frankenstein9=Supply(
+        projectId=13,
+        supply="Tool bench tweezers (Dollar Tree, 4 in a package)",
+    )
+
+    frankenstein10=Supply(
+        projectId=13,
+        supply="Spray paint (green/purple), craft paint (black/white)",
+    )
+
+    frankenstein11=Supply(
+        projectId=13,
+        supply="Battery tester",
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -518,6 +573,17 @@ def seed_supplies():
     db.session.add(rainbow4)
     db.session.add(rainbow5)
     db.session.add(rainbow6)
+    db.session.add(frankenstein1)
+    db.session.add(frankenstein2)
+    db.session.add(frankenstein3)
+    db.session.add(frankenstein4)
+    db.session.add(frankenstein5)
+    db.session.add(frankenstein6)
+    db.session.add(frankenstein7)
+    db.session.add(frankenstein8)
+    db.session.add(frankenstein9)
+    db.session.add(frankenstein10)
+    db.session.add(frankenstein11)
 
     
     db.session.commit()

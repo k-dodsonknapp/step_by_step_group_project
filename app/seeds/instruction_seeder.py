@@ -966,6 +966,119 @@ def seed_instructions():
         videoUrl="",
     )  
 
+    frankenstein1=Instruction(
+        projectId=13,
+        stepOrder= 1,
+        stepTitle="The Monster Hospital- Frankenstein ER", 
+        instructions="""
+        The first part of this activity is the monster hospital.  I have a collection of Frankenstien candy games that have been built over the years, which I intentionally break: a foil mouth that has a gap, positive and negative wires reversed, missing eyes, dead batteries, loose connections….Before,  I give each team a patient to repair, we review electrical circuits and I stress test, test, test the individual parts of the circuits.  Check the battery, check the buzzer, check the connections, check the circuit, identify the parts.  The teams then work to fix their mangled monster, once a monster head is working properly it is moved to the recovery area.  The recovery area is a resource and reference for all students.  Once a team has successfully repaired their monster, they are now considered  doctors and may build their own monster and offer advice to other teams.  I am the hospital director (always wear my lab coat for this activity) so before they ask me for help they must confer with at least two other doctors. 
+
+        As the hospital director, my main role is safety.  I stress that I must cut any starting points for cutting.  Anyone trying to puncture the bottle with scissors or pencils will lose their hospital privileges.  I am always impressed at the ability of my students to successfully rise to the challenge and build their own monsters with only guiding questions from me.  The first time I did this activity we built the heads step by step as a group, still very fun, but the “hospital activity” is an easy assessment product.  For example, some wires on the supply table can have stripped ends, but not all or some batteries can be dead, which allows me to observe each student's problem solving and knowledge of circuits.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FIN/5Y7M/L3YGJH8D/FIN5Y7ML3YGJH8D.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=76331cc2fa427914bc46c395269dfadf",
+        videoUrl="",
+    )  
+
+    frankenstein2=Instruction(
+        projectId=13,
+        stepOrder=2,
+        stepTitle="The Monster’s Complexion", 
+        instructions="""
+        Spray paint is the quickest and best method to produce a glowing green complexion and frightful hairdo. Spray paint the bottom and about an inch of the bottle purple. Spray paint the rest green. This is the only step that I do not let students do. I have the students bring in the bottles several weeks before the project, so I can paint them. Remember, KEEP the caps. If you don’t want to spray paint, green soda bottles can be used and the hair can be colored with a black sharpie marker.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FLG/R7J9/L3YGJH9L/FLGR7J9L3YGJH9L.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=ce7d703d03c597fb171df9beee1fbffa",
+        videoUrl="",
+    ) 
+
+    frankenstein3=Instruction(
+        projectId=13,
+        stepOrder=3,
+        stepTitle="Snip, Snip Perfect Hair", 
+        instructions="""
+        Make a small slit near the bottom of the bottle with a utility knife. (Adult only) Cut all the way around the bottom of the bottle, once the slit is made kid scissors work fine. Remove and save the bottom of the bottle. Snip triangles all the way to form the hair.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FEE/1T29/L3YGJHAW/FEE1T29L3YGJHAW.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=68ddb3c82094c4494e6e090a73af6671",
+        videoUrl="",
+    ) 
+
+    frankenstein4=Instruction(
+        projectId=13,
+        stepOrder=4,
+        stepTitle="Open Wide- the Mouth", 
+        instructions="""
+        The mouth is a key feature of the monster.  It is how the candy will be accessed, too big the game is too easy, too small and the game is too frustrating. Cutting the mouth just a little bigger than a deck of cards seems to work. Cut a strip of foil about 2 inches wide and slightly longer than the perimeter of the mouth.  Fold the foil in half and glue around both the inside and outside perimeter of the mouth.
+
+        Tip- if the mouth is cut too large, teeth can be added to make the area smaller
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F49/MULW/L3YGJHDB/F49MULWL3YGJHDB.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=d01867427df4f2dfd6a89683fd2d5a24",
+        videoUrl="",
+    ) 
+
+    frankenstein5=Instruction(
+        projectId=13,
+        stepOrder=5,
+        stepTitle="Neck( Actually Ear) Bolts", 
+        instructions="""
+        All great monsters need neck bolts.  These neck bolts have several jobs; they link the mouth “switch” into the circuit, they support the lid to reduce candy snatching thru the top of the head and they are a convenient spot to hang the tweezers when the game is not being played.  Two large side bolts work the best and a row of decorative bolts across the back of the head add interest and help support the lid.  Make sure to position the bolts above the top of the mouth.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FBY/03PK/L3YGJHES/FBY03PKL3YGJHES.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=50891352b93dc489d9579b01cd0482ba",
+        videoUrl="",
+    ) 
+
+    frankenstein6=Instruction(
+        projectId=13,
+        stepOrder= 6,
+        stepTitle="Eyes /scars", 
+        instructions="""
+        The eyes can be painted on with craft paint or cut out of construction paper and glued. The scars can also be either painted on with craft paint or drawn with a Sharpie marker. The final product is a monster so scrapes, scratches and nicks are great and reduce the need for a perfect product and allow the focus to be on a working circuit.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FSE/42UJ/L3YGJHER/FSE42UJL3YGJHER.jpg?auto=webp&frame=1&width=800&height=1024&fit=bounds&md=a5e315698afb9c4d5d057cdef225cc9e",
+        videoUrl="",
+    ) 
+
+    frankenstein7=Instruction(
+        projectId=13,
+        stepOrder=7,
+        stepTitle="The Base", 
+        instructions="""
+        Use a drill or nail, to make a hole in the bottle cap.  Use a wood screw, attach the cap to the base. The game's level of difficulty can be adjusted with the screw.  If the cap is secured securely the game is easier because the bottle will not wobble.  If it is loosely attached the bottle will wobble and make the game more difficult.  Attach the bottle to the base.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F7L/IVST/L3YGJHMS/F7LIVSTL3YGJHMS.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=d07b9ba4db8b4dc41114a4d534a470ef",
+        videoUrl="",
+    ) 
+
+    frankenstein8=Instruction(
+        projectId=13,
+        stepOrder=8,
+        stepTitle="Connecting the Circuit", 
+        instructions="""
+        The switch- connect the foil mouth to an ear bolt, secure with duct tape.  This connection can be either inside or outside the bottle.  Since, you are building a monster, curling wires and duct tape add to the final product.
+
+        Test the buzzer directly to the battery.  Note that the buzzer has polarity.  It will only work if the negative lead is connected to the negative terminal. Strip the ends of about 12 inches of wire, secure  to a battery  terminal with a small piece of duct tape.  Test your connection.  Then connect the other end of the wire to the ear bolt that is connected to the mouth.
+
+        Add another wire to the other battery terminal, connect to one wire of the buzzer. Remember polarity. Check connection
+
+        Connect a wire to the tweezers.  A wire with alligators clips is a nice option, because this connection is pulled and yanked as the game is played.  Due to expense, I only give each student one wire with alligator clips.  The connection can be made without alligator clips, just make sure the connection is taped well.  Connect the other end of the wire to the buzzer. To test connection, touch the ear bolt connected to the battery.  Then test the mouth connection, by touching the tweezers to all parts of the mouth.
+
+        Use Velcro dots to secure the battery and buzzer to the base and your monster is ready to guard your candy
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FJU/25NV/L3YGJKQN/FJU25NVL3YGJKQN.jpg?auto=webp&frame=1&width=800&height=1024&fit=bounds&md=e2f4dc19cd1a30bf426ba9dc9673bf9f",
+        videoUrl="",
+    ) 
+
+    frankenstein9=Instruction(
+        projectId=13,
+        stepOrder=9,
+        stepTitle="Frankenstein Fun", 
+        instructions="""
+        A candy snatch game makes learning about circuits fun.  It also creates a product that students are able to share and explain to their families and friends, which is the point of learning.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FBP/HOVD/L3YGJKRK/FBPHOVDL3YGJKRK.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=44b4a891add7b2f157b0d8baf7f96a50",
+        videoUrl="",
+    ) 
+
+
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -1038,6 +1151,15 @@ def seed_instructions():
     db.session.add(rainbow2)
     db.session.add(rainbow3)
     db.session.add(rainbow4)
+    db.session.add(frankenstein1)
+    db.session.add(frankenstein2)
+    db.session.add(frankenstein3)
+    db.session.add(frankenstein4)
+    db.session.add(frankenstein5)
+    db.session.add(frankenstein6)
+    db.session.add(frankenstein7)
+    db.session.add(frankenstein8)
+    db.session.add(frankenstein9)
     
     db.session.commit()
 

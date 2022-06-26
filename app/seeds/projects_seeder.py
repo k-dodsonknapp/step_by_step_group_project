@@ -163,6 +163,18 @@ def seed_project():
         category="Workshop",
     )
 
+    frankenstein=Project(
+        userId=5,
+        title="Teach Electrical Circuits- Frankenstein ER",
+        titleImage="https://content.instructables.com/ORIG/FC7/V4PZ/L3YGJH7E/FC7V4PZL3YGJH7E.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=ea12fd6900ceea153d72023192902151",
+        overview="""
+        The game operation is a standard in my electrical circuit curriculum. I love the language connection as the students get butterflies in their stomach trying to avoid the shrill buzzer that indicates the circuit has been completed.  It is also the perfect introduction to  Frankenstein ER. The room is dimmed, mangled monster heads are delivered to teams to repair, to rebuild, to advance them from interns to doctors that can build their own Frankenstien to protect their candy stash.  
+
+        Teaching circuits always lights up my day and I am always looking for projects that connect learning to seasonal events.  Years ago, I saw a monster snatch game in Make magazine (https://makezine.com/projects/monster-candy-game/).  It was a great idea but too complicated and expensive for an elementary classroom.  So I modified it to an easy, fun and project that produces monster size learning and is a seasonal favorite that rewards the player with the chance to get a piece of candy for understanding the parts of a circuit.
+        """,
+        category="Teachers",
+    )
+
 
     db.session.add(bird_house)
     db.session.add(casino_clock)
@@ -176,6 +188,7 @@ def seed_project():
     db.session.add(giant_matches)
     db.session.add(bike_lamp)
     db.session.add(rainbow)
+    db.session.add(frankenstein)
 
     db.session.commit()
 
