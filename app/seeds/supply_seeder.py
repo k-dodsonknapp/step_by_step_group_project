@@ -600,6 +600,51 @@ def seed_supplies():
         supply="Small bowl",
     )
 
+    blossom1=Supply(
+        projectId=17,
+        supply="ONE CANDLE JAR",
+    )
+
+    blossom2=Supply(
+        projectId=17,
+        supply="CRAFT FOAM BLOCK",
+    )
+
+    blossom3=Supply(
+        projectId=17,
+        supply="ACRYLIC PAINT (ANTIQUE WHITE, AND BRIGHT MAGENTA)",
+    )
+
+    blossom4=Supply(
+        projectId=17,
+        supply="FLORAL",
+    )
+
+    blossom5=Supply(
+        projectId=17,
+        supply="FLORAL SNIPS",
+    )
+
+    blossom6=Supply(
+        projectId=17,
+        supply="ONE TREE BRANCH",
+    )
+
+    blossom7=Supply(
+        projectId=17,
+        supply="ONE PAINT BRUSH",
+    )
+
+    blossom8=Supply(
+        projectId=17,
+        supply="HOT GLUE",
+    )
+
+    blossom9=Supply(
+        projectId=17,
+        supply="ONE PAINT BRUSH",
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -716,6 +761,15 @@ def seed_supplies():
     db.session.add(cocoa_bombs8)
     db.session.add(cocoa_bombs9)
     db.session.add(cocoa_bombs10)
+    db.session.add(blossom1)
+    db.session.add(blossom2)
+    db.session.add(blossom3)
+    db.session.add(blossom4)
+    db.session.add(blossom5)
+    db.session.add(blossom6)
+    db.session.add(blossom7)
+    db.session.add(blossom8)
+    db.session.add(blossom9)
 
     
     db.session.commit()
