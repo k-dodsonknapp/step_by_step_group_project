@@ -515,6 +515,40 @@ def seed_supplies():
         supply="1 pint of ice cream",
     )
 
+    hot_chocolate1=Supply(
+        projectId=15,
+        supply="1 1/2 cups whole milk",
+    )
+
+    hot_chocolate2=Supply(
+        projectId=15,
+        supply="1/2 cup cream",
+    )
+
+    hot_chocolate3=Supply(
+        projectId=15,
+        supply="2 teaspoons powdered sugar",
+    )
+
+    hot_chocolate4=Supply(
+        projectId=15,
+        supply="1/2 teaspoon cinnamon",
+    )
+
+    hot_chocolate5=Supply(
+        projectId=15,
+        supply="1/4 teaspoon nutmeg",
+    )
+
+    hot_chocolate6=Supply(
+        projectId=15,
+        supply="1 cup chocolate chips",
+    )
+
+    hot_chocolate7=Supply(
+        projectId=15,
+        supply="1 cup heavy whipping cream (for serving)",
+    )
 
 
     db.session.add(bird_house_supply1)
@@ -616,6 +650,13 @@ def seed_supplies():
     db.session.add(ice_cream3)
     db.session.add(ice_cream4)
     db.session.add(ice_cream5)
+    db.session.add(hot_chocolate1)
+    db.session.add(hot_chocolate2)
+    db.session.add(hot_chocolate3)
+    db.session.add(hot_chocolate4)
+    db.session.add(hot_chocolate5)
+    db.session.add(hot_chocolate6)
+    db.session.add(hot_chocolate7)
 
     
     db.session.commit()
