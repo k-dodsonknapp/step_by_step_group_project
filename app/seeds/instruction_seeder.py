@@ -1290,6 +1290,63 @@ def seed_instructions():
         videoUrl="",
     )
 
+    torus1=Instruction(
+        projectId=18,
+        stepOrder=1,
+        stepTitle="Finding the Correct Template", 
+        instructions="""
+        You can go off of this Torotaller.pdf template but then you would have to use a different material. Card board is too chunky and it would be hell to construct with such bulky material if you are attempting to build a small torus. If you were to make a smaller torus I would recommend using a much more flexible material similar to the one show cased in the YouTube video that I will share with you guys on 
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FYN/Z5K9/L42QVJIX/FYNZ5K9L42QVJIX.jpg?auto=webp&frame=1&crop=2:3&width=467&height=1024&fit=bounds&md=69b0f18fabdf67e0d928cb0ebc55329d",
+        videoUrl="",
+    )
+
+    torus2=Instruction(
+        projectId=18,
+        stepOrder=2,
+        stepTitle="Decide on What Size You Want Your Torus to Be", 
+        instructions="""
+        The one that I used for the Mouquet (the one that I am holding in my hand) I used a illustration board which is not really recommend unless if you size up the template. You can see how there was a tiny bit of struggle in the smallest torus with the illustration board but as a I progressed to larger sizes it was much easier to manipulate the illustration board resulting in a much cleaner finish.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FN6/5BMU/L42QVJUR/FN65BMUL42QVJUR.jpg?auto=webp&frame=1&width=280&height=1024&fit=bounds&md=5d0d119c7cdbcbf0ec4a6b579f52735b",
+        videoUrl="",
+    )
+
+    torus3=Instruction(
+        projectId=18,
+        stepOrder=3,
+        stepTitle="How to Construct Your Torus", 
+        instructions="""
+        For this step I will share with you guys a YouTube video in which this person does a great job of explains how to contrast the torus.
+        https://www.youtube.com/watch?v=rft4EJkVZ9Y
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FEU/QSK9/L42QVP8H/FEUQSK9L42QVP8H.jpg?auto=webp&frame=1&width=686&height=1024&fit=bounds&md=6118c43c5e12637c72c0731ad7e78587",
+        videoUrl="",
+    )
+
+
+    torus4=Instruction(
+        projectId=18,
+        stepOrder=4,
+        stepTitle="Scale Up Your Torus Template", 
+        instructions="""
+        In order for me to scale up on this project I used this app on my iPad called the Grid#. This will allow you to grid off one piece of the torus template. Once you gridded the torus template you have to save the image on to photos and go back to your photo library to clearly section off the gridded image in order to change the size of the torus template. Once everything is sectioned off you would then have to send you sectioned off images into a google docs to change the size of the sectioned off template. The size of the sectioned off template should not be a size to where google docs would cut your image off. I'd say when you go to image options the maximum size you could scale up to is about 8 inches. This way when you print out the sectioned off template when it prints out nothing is cut off. Once you have your torus shape at a desired shape then next you would have to print it out. After printing it out you will then have to piece together the sectioned off template so you can create and get your own customized torus stencil. I recommend piecing these together with a clear tape or semi transparent masking tape. after you have finished creating you r template it is then time to repeat that same process with the opposite side of the torus piece you were working with. Once that is complete you can start stenciling the template on to your cardboard. You will have to make 12 for each side(Toro 1 =12 Toro 2 =12).
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FOH/1NBF/L42QVQQ5/FOH1NBFL42QVQQ5.png?auto=webp&frame=1&width=360&fit=bounds&md=b92535e4085234de6565cd2212bcce3b",
+        videoUrl="",
+    )
+
+    torus5=Instruction(
+        projectId=18,
+        stepOrder=5,
+        stepTitle="Coloring Your Torus", 
+        instructions="""
+        It is recommended to paint all of the templates before assembling your torus.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FLE/AR6N/L42QVPM8/FLEAR6NL42QVPM8.jpg?auto=webp&frame=1&width=700&height=1024&fit=bounds&md=14546db57011071f6fc957e1995ca905",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -1390,6 +1447,11 @@ def seed_instructions():
     db.session.add(blossom3)
     db.session.add(blossom4)
     db.session.add(blossom5)
+    db.session.add(torus1)
+    db.session.add(torus2)
+    db.session.add(torus3)
+    db.session.add(torus4)
+    db.session.add(torus5)
     
     db.session.commit()
 
