@@ -151,6 +151,19 @@ def seed_project():
         category="Outside",
     )
 
+    rainbow=Project(
+        userId=6,
+        title="Holographic Rainbow Reflective 3D Prints - 3D Printing on Diffraction Grating Sheets",
+        titleImage="https://content.instructables.com/ORIG/FG5/GBXG/L4R1CJG3/FG5GBXGL4R1CJG3.jpg?auto=webp&frame=1&width=632&height=1024&fit=bounds&md=c6aef9abb5200a296087377b2bacd5f0",
+        overview="""
+        A few years ago, I learned you could 3D print on a diffraction grating sheet and it will transfer the rainbow reflectiveness onto the print (the same as this chocolate). Like most things, I tried it out, had some luck and some failure, then moved on to something else. Luckily, I decided to finally visit it again and am having consistent good results and wanted to share how I'm doing it, so you can too!
+
+        *Be aware that the reflectiveness works best in direct sunlight, but can also work with other lights.
+        """,
+        category="Workshop",
+    )
+
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -162,6 +175,7 @@ def seed_project():
     db.session.add(minecraft_torch)
     db.session.add(giant_matches)
     db.session.add(bike_lamp)
+    db.session.add(rainbow)
 
     db.session.commit()
 

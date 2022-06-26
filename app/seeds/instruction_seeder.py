@@ -898,6 +898,74 @@ def seed_instructions():
         videoUrl="",
     )   
 
+    rainbow1=Instruction(
+        projectId=12,
+        stepOrder= 1,
+        stepTitle="Designing Your 3D Print", 
+        instructions="""
+        Now, you could probably do this with most prints, but my recommendations is to make sure your design has a nice flat surface (this rainbow effect won't go up curved sides, only the side that is touching the build plate), and the thicker the lines, the more rainbow reflectiveness you'll get!
+
+        I used a teardrop/raindrop shape that I imported and combined that with a Voronoi adjustable shape from the Shape Generators section of the shapes panel.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FGX/34KN/L4R1CQ74/FGX34KNL4R1CQ74.png?auto=webp&frame=1&crop=3:2&width=605&height=1024&fit=bounds&md=bb90f170a23d80b1d7bb9d036e2408d0",
+        videoUrl="",
+    )   
+
+    rainbow2=Instruction(
+        projectId=12,
+        stepOrder= 2,
+        stepTitle="Prep Your Printer", 
+        instructions="""
+        This is, obviously, the most important part for getting your rainbow prints.
+
+        In the past articles I had seen, others had either taped down the edges of the sheet or used a sticky sheet to completely convert a printer bed into a rainbow surface. The first option is what I tried and my prints constantly curled up, and the second I just wasn't ready to attempt. So I came up with an option in between that works great for me!
+
+        *I'm doing this on a spare spring steel sheet for my Prusa, but this is not permanent, so you should be able to do this and undo it whenever you need. It is meant to last, but not meant to last forever.
+
+        First, start by figuring out which side is rainbow (they aren't both rainbow).
+
+        Rub it between your fingers. One finger will catch and one will slide. The side the slides, should go up (I thought it would be the opposite but it isn't). If you print on the wrong side, your print will be shiny smooth but not rainbow reflective.
+
+        Now time to put the sheet down.
+
+        Start by cutting off a sheet of your diffraction grating roll.
+        I've only ever seen this stuff in 6" width so if you can find a bigger sheet, that's great.
+        Make sure your sheet isn't bent or wrinkled, it will wreck the finished result of the print.
+        Figure out what space it will cover (likely the middle) and put glue stick down on the build plate to cover the whole area the sheet will cover.
+        Carefully lay down the sheet and get as many bubbles out as you can.
+        I tried to use cardboard or a squeegee type object (these didn't work for me), but be careful about scraping the glue underneath the sheet through the diffraction grating sheet as that can also wreak the finish of the finished print.
+        Once it's all smoothed out, tape all edges down with blue painters tape.
+        Done!
+        It is very easy to take off the tape, carefully peel off the sheet, and wash both the sheet and the bed to get the glue off. I've done this a couple times already actually as the more you bend the sheet, the more it will start to pull up from the glue. I've reused the same diffraction grating sheet over and over too after carefully cleaning it.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F2M/REJO/L4R1CPW9/F2MREJOL4R1CPW9.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=700911c679eea62a9f154d598cbfec67",
+        videoUrl="",
+    )  
+
+    rainbow3=Instruction(
+        projectId=12,
+        stepOrder= 3,
+        stepTitle="Check First Layer Height", 
+        instructions="""
+        My Prusa allows me to have settings for different sheets, so I did a different first layer setting for my "rainbow" sheet. It doesn't add much thickness, but it also doesn't hurt to get new settings to make sure that first layer works right. If you print too close, you could meld your print to the sheet, though this hasn't happened to me yet.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FNS/AOKK/L4R1CPWD/FNSAOKKL4R1CPWD.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=cee23af43a05b904a7bb6c2f32ae39ea",
+        videoUrl="",
+    )  
+
+    rainbow4=Instruction(
+        projectId=12,
+        stepOrder= 4,
+        stepTitle="Final Prints!", 
+        instructions="""
+        Have fun printing your designs!
+
+        I haven't noticed needing any special settings to get these to work right.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F04/4BVY/L4R1CJET/F044BVYL4R1CJET.jpg?auto=webp&frame=1&width=785&height=1024&fit=bounds&md=1e8787a29659bfa80ebe688e35fe80e0",
+        videoUrl="",
+    )  
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -966,6 +1034,10 @@ def seed_instructions():
     db.session.add(bike_lamp3)
     db.session.add(bike_lamp4)
     db.session.add(bike_lamp5)
+    db.session.add(rainbow1)
+    db.session.add(rainbow2)
+    db.session.add(rainbow3)
+    db.session.add(rainbow4)
     
     db.session.commit()
 

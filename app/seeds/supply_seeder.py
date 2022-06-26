@@ -405,6 +405,35 @@ def seed_supplies():
         supply="Hot glue",
     )
 
+    rainbow1=Supply(
+        projectId=12,
+        supply="Double Axis Diffraction Grating Sheet",
+    )
+
+    rainbow2=Supply(
+        projectId=12,
+        supply="Glue Stick",
+    )
+
+    rainbow3=Supply(
+        projectId=12,
+        supply="Blue Painters Tape - Always use this on your bed and no other tapes as other tapes will leave residue",
+    )
+
+    rainbow4=Supply(
+        projectId=12,
+        supply="Your 3D printing file",
+    )
+
+    rainbow5=Supply(
+        projectId=12,
+        supply="Your printer",
+    )
+
+    rainbow6=Supply(
+        projectId=12,
+        supply="Your printer bed or extra printer bed",
+    )
 
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
@@ -483,6 +512,13 @@ def seed_supplies():
     db.session.add(bike_lamp9)
     db.session.add(bike_lamp10)
     db.session.add(bike_lamp11)
+    db.session.add(rainbow1)
+    db.session.add(rainbow2)
+    db.session.add(rainbow3)
+    db.session.add(rainbow4)
+    db.session.add(rainbow5)
+    db.session.add(rainbow6)
+
     
     db.session.commit()
 
