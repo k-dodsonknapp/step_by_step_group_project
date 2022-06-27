@@ -296,6 +296,7 @@ def seed_project():
     db.session.add(bike_mount)
     db.session.add(data_crystals)
     db.session.add(mpcnc_controller)
+    db.session.add(garage_door)
 
     db.session.commit()
 
