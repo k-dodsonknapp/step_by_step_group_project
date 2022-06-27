@@ -1646,6 +1646,122 @@ def seed_instructions():
         videoUrl="",
     )
 
+    garage_door1=Instruction(
+        projectId=22,
+        stepOrder=1,
+        stepTitle="Research", 
+        instructions="""
+        There was a planning process before I started this project to figure out what to do. I wanted to create something unique that had never been done before, and I couldn't find anything on garage doors. So, right there, I confirmed my project idea. This section contains background information on the most important and intricate components.
+
+        Arduino:
+        Arduino is an open-source electronics platform that uses simple hardware and software to make it easy to use. Arduino boards can take inputs - such as light from a sensor, a finger on a button, or a Twitter message - and convert them to outputs - such as turning on an LED, triggering a motor, or publishing anything online. The arduino uses the format code of C++.
+        Infarred Receiver (IR):
+        IR(Infrared) Receiver Extender cable, which consists of an IR receiver and a plug connected by a wire, is used to conveniently receive and amplify the infrared remote controller signal. The epoxy package and shell of an infrared receiver can filter out visual interference.
+        Servo Motor:
+        A servomotor (or servo motor) is a rotary actuator or linear actuator that can control angular or linear position, velocity, and acceleration precisely. It consists of a suitable motor coupled to a position feedback sensor.
+        Transistor (NPN):
+        The NPN transistor is designed to pass electrons from the emitter to the collector (so conventional current flows from collector to emitter). The emitter "emits" electrons into the base, which controls the number of electrons the emitter emits.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FTZ/RD7H/L4MR0E44/FTZRD7HL4MR0E44.jpg?auto=webp&frame=1&fit=bounds&md=73583b95541f6761979ff7adcbb25cc9",
+        videoUrl="",
+    )
+
+    garage_door2=Instruction(
+        projectId=22,
+        stepOrder=2,
+        stepTitle="Wiring Part 1", 
+        instructions="""
+        Before Starting the wiring let me tell you what each wire color represents:
+
+        Black = Ground
+
+        Red = Power
+
+        Green = Arduino Output To BredBoard
+
+        Blue = Arduino Output To Component
+
+        Steps:
+        Connect power and ground from the arduino to the bredboard
+        Connect the first servo to pin 11 on the arduino
+        Connect the second servo to pin 3 on the arduino
+        Note : connecting the servos to the arduino will allow it to send code straight to the servo
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FQS/J0CI/L4IQABAZ/FQSJ0CIL4IQABAZ.png?auto=webp&frame=1&fit=bounds&md=1c151b7e18370b35f287e577215b1850",
+        videoUrl="",
+    )
+    
+    garage_door3=Instruction(
+        projectId=22,
+        stepOrder=3,
+        stepTitle="Wiring Part 2", 
+        instructions="""
+        In this wiring step, we will connect the IR receiver. The IR Reciver is the most important component in this project because it connects to a controller, which sends signals to the arduino and then to the servo to tell it to move up and down when pressed.
+
+        Steps:
+        Connect the IR Reciver to pin 7 on the arduino
+        connect the IR Reciver to Power and Ground
+        Note : For the IR Controller you will program that in the coding section. also make sure that the IR reciver in facing in the downwards direction of the bredboard
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FUC/SLGL/L4MR0UWI/FUCSLGLL4MR0UWI.png?auto=webp&frame=1&fit=bounds&md=cd8367ea67f475e916f1b3913dcc8a97",
+        videoUrl="",
+    )
+
+    garage_door4=Instruction(
+        projectId=22,
+        stepOrder=4,
+        stepTitle="Wiring Part 3 (optional)", 
+        instructions="""
+        This step is optional; it simply adds a spark to the project by turning on a light when the garage opens and off when the garage closes. Instead of just one led, I soldered eight together to make a chandalier. Looking at the diagram, the inner circle connects to ground, while the outer circle connects to power.
+
+        Steps:
+        Connect Arduino pin 4 to the transistor's base (make sure the connection is through a 1k OHM resistor)
+        Connect the LED's negative side to the emitter and positive side to power from the bredboard (make sure poweris connected thorugh a 330 OHM resistor)
+        Connect the transistor's collector side to ground directly.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FKC/1SUF/L4MR0UYP/FKC1SUFL4MR0UYP.png?auto=webp&frame=1&width=631&fit=bounds&md=b48aa4edd60824ca59f2ac53c85b345c",
+        videoUrl="",
+    )
+
+    garage_door5=Instruction(
+        projectId=22,
+        stepOrder=5,
+        stepTitle="Code", 
+        instructions="""
+        Simply copy and paste the code into the Arduino editor and connect your computer to the Arduino to upload it. To program your remote controller with your IR just open up the serial monitor then click the button you want to be assigned to that command e.g. if your want 1 to be forward click 1 on your remote while pointing it at the IR then look for the Hexacode that pops up and copy that into "if (results.value == 0x000000)" keep the 0x but replace the other long string of numbers and letters with your Hexacode.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FLW/ZSWG/L4MR0MME/FLWZSWGL4MR0MME.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=7d5b767b07df733a285bf0e7fd0d7e18",
+        videoUrl="",
+    )
+
+    garage_door6=Instruction(
+        projectId=22,
+        stepOrder=6,
+        stepTitle="Frame Assembly", 
+        instructions="""
+        When all of the wiring and code is finished, it's time for the final assembly. I used a small immatation of a house that I had lying around for the frame. I cut a hole in one of the walls that I thought was big enough for the garage door. If you don't have the materials, don't worry; you can make a frame out of whatever you have lying around; just make sure it has a rectangular shape to which you can glue the servos.
+
+        Steps :
+        Glue the bredboard and arduino to the inner-top of the frame
+        glue the servos to either side of the frame, facing eachother
+        cut out a peice of construction paper that fits the dimensions of the frame and glue to the arms of the servo
+        Note: if the servos are opening in the opposite directions, Flip one of them . also make sure the IR Reciver is visible and not behind something
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FQO/PVR6/L4MR0MMD/FQOPVR6L4MR0MMD.jpg?auto=webp&frame=1&width=800&height=1024&fit=bounds&md=6affd9904377fc1325d4a1a0e5ba21e7",
+        videoUrl="",
+    )
+
+    garage_door7=Instruction(
+        projectId=22,
+        stepOrder=7,
+        stepTitle="Conclusion", 
+        instructions="""
+        If you followed the steps correctly, you should have a fully functional garage door. If not, go over the steps again to see where you went wrong. The video attached i what it should look like when working.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FN0/9F4R/L4IQAABR/FN09F4RL4IQAABR.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=873d56eaa22151a580dfd9028725cb2c",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -1771,6 +1887,13 @@ def seed_instructions():
     db.session.add(data_crystals10)
     db.session.add(mpcnc_controller1)
     db.session.add(mpcnc_controller2)
+    db.session.add(garage_door1)
+    db.session.add(garage_door2)
+    db.session.add(garage_door3)
+    db.session.add(garage_door4)
+    db.session.add(garage_door5)
+    db.session.add(garage_door6)
+    db.session.add(garage_door7)
     
     db.session.commit()
 
