@@ -795,6 +795,86 @@ def seed_supplies():
         supply='A small 0.96" OLED',
     )
 
+    garage_door1=Supply(
+        projectId=22,
+        supply="2 Servo Motor's",
+    )
+
+    garage_door2=Supply(
+        projectId=22,
+        supply='1 Infarred Sensor (IR)',
+    )
+
+    garage_door3=Supply(
+        projectId=22,
+        supply='1 Infarred Remote (IR) (any tv remote works)',
+    )
+
+    garage_door4=Supply(
+        projectId=22,
+        supply='2 Resistors',
+    )
+
+    garage_door5=Supply(
+        projectId=22,
+        supply="5-10 LED's (optional)",
+    )
+
+    garage_door6=Supply(
+        projectId=22,
+        supply='1 Breadboard',
+    )
+
+    garage_door7=Supply(
+        projectId=22,
+        supply='1 Arduino Uno',
+    )
+
+    garage_door8=Supply(
+        projectId=22,
+        supply='Frame (wood, 3D printed)',
+    )
+
+    garage_door9=Supply(
+        projectId=22,
+        supply='Construction Paper (Garage door)',
+    )
+
+    garage_door10=Supply(
+        projectId=22,
+        supply='1 Wire Cutter',
+    )
+
+    garage_door11=Supply(
+        projectId=22,
+        supply='1 Glue Gun',
+    )
+
+    garage_door12=Supply(
+        projectId=22,
+        supply='1 Soldering Iron',
+    )
+
+    garage_door13=Supply(
+        projectId=22,
+        supply='Wires',
+    )
+
+    garage_door14=Supply(
+        projectId=22,
+        supply='2 9v Batteries',
+    )
+
+    garage_door15=Supply(
+        projectId=22,
+        supply='1 battery cap (buckle connector)',
+    )
+
+    garage_door16=Supply(
+        projectId=22,
+        supply='1 battery cap (male DC plug)',
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -950,6 +1030,22 @@ def seed_supplies():
     db.session.add(mpcnc_controller5)
     db.session.add(mpcnc_controller6)
     db.session.add(mpcnc_controller7)
+    db.session.add(garage_door1)
+    db.session.add(garage_door2)
+    db.session.add(garage_door3)
+    db.session.add(garage_door4)
+    db.session.add(garage_door5)
+    db.session.add(garage_door6)
+    db.session.add(garage_door7)
+    db.session.add(garage_door8)
+    db.session.add(garage_door9)
+    db.session.add(garage_door10)
+    db.session.add(garage_door11)
+    db.session.add(garage_door12)
+    db.session.add(garage_door13)
+    db.session.add(garage_door14)
+    db.session.add(garage_door15)
+    db.session.add(garage_door16)
 
     
     db.session.commit()

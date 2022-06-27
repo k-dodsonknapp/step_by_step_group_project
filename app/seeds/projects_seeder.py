@@ -265,6 +265,16 @@ def seed_project():
         category="Circuits",
     )
 
+    garage_door=Project(
+        userId=2,
+        title="How to Make a Garage Door (EASY!!!)",
+        titleImage="https://content.instructables.com/ORIG/FN0/9F4R/L4IQAABR/FN09F4RL4IQAABR.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=873d56eaa22151a580dfd9028725cb2c",
+        overview="""
+        This is a EASY arduino project that you could create to impress your teacher and friends. This project is an IR sensor-controlled garage door. It uses 2 Servo motor's to move the garage door into an opened and closed orentation. The inferred sensor (IR) is effective and long range with a range of 1-5 meters. This project is great When paired with an arduino car project.
+        """,
+        category="Circuits",
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
