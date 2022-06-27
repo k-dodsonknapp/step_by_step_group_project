@@ -745,6 +745,21 @@ def seed_supplies():
         supply="Pocket hole jig, or something to make sure the dowels are going in straight",
     )
 
+    data_crystals1=Supply(
+        projectId=20,
+        supply="Computer",
+    )
+
+    data_crystals2=Supply(
+        projectId=20,
+        supply="3D printer",
+    )
+
+    data_crystals3=Supply(
+        projectId=20,
+        supply="Power Drill",
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -890,6 +905,9 @@ def seed_supplies():
     db.session.add(bike_mount8)
     db.session.add(bike_mount9)
     db.session.add(bike_mount10)
+    db.session.add(data_crystals1)
+    db.session.add(data_crystals2)
+    db.session.add(data_crystals3)
 
     
     db.session.commit()

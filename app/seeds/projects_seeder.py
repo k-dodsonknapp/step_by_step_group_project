@@ -239,6 +239,22 @@ def seed_project():
         category="Workshop",
     )
 
+    data_crystals=Project(
+        userId=4,
+        title="Data Crystals: 3D Data Visualizations From Open Data",
+        titleImage="https://content.instructables.com/ORIG/F1G/ONSR/HTPUP3BW/F1GONSRHTPUP3BW.jpg?auto=webp&frame=1&width=1024&fit=bounds&md=799f225ed8f23b854d1a2bcf21145512",
+        overview="""
+        One of my projects while a resident artist at Autodesk has been to create "Data Crystals" —  3D prints that I algorithmically generate using data as input. I design these 3D data visualizations for aesthetics over legibility and they show off what can be done with code and 3D printing.
+
+        I've finished the first three and have several more in production. This batch is derived from San Francisco Open Data sets.
+
+        This Instructable will give an overview of my creative and technical process for making these and I hope will encourage others to think about creative data visualization techniques.
+
+        At some point, I will likely share my code, but right now this project is too fresh and the code is too rough for public consumption. 
+        """,
+        category="Workshop",
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -258,6 +274,7 @@ def seed_project():
     db.session.add(blossom)
     db.session.add(torus)
     db.session.add(bike_mount)
+    db.session.add(data_crystals)
 
     db.session.commit()
 

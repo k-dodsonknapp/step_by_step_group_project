@@ -1457,6 +1457,152 @@ def seed_instructions():
         videoUrl="",
     )
 
+    data_crystals1=Instruction(
+        projectId=20,
+        stepOrder=1,
+        stepTitle="Find the Dataset", 
+        instructions="""
+        There are many types of data I would like to represent. It's easy to think of fun and useful possibilities such as: people's favorite lottery numbers,  income levels for every single household in San Francisco and every single shipwreck in history.
+
+        However, in most cases the data that I want is simply unavailable, so instead, I work with what I can get.
+
+        What is now becoming accessible is loads of data from city governments — San Francisco leads the way with its Open Data Portal with an API powered by Socrata. Since people have a daily relationship with their urban environment and connect to data patterns that reflect the city they live in, this municipal data can be compelling.
+
+        For the first 3 Data Crystals, I chose from the SF Open Data site: construction permit data, incidents of crime and SF Civic Art Collection. 
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F9N/4S7R/HTPUP3GZ/F9N4S7RHTPUP3GZ.jpg?auto=webp&frame=1&crop=3:2&width=600&fit=bounds&md=6416ed66755b7dcac9d9ed2b3d3ca2b3",
+        videoUrl="",
+    )
+
+    data_crystals2=Instruction(
+        projectId=20,
+        stepOrder=2,
+        stepTitle="Extract and Parse", 
+        instructions="""
+        You can download many of these SF data datasets in a CSV file format.
+
+        I wrote utility code in Java, which goes through each dataset  and converts the CSV to a JSON format, keeping just the fields I want. At a minimum, I'm looking for some way to map (x, y, z) coordinates. These contain geo-spatial locations, which I translate to (x, y) values. The z-value is usually time.
+
+        I can also extract a dimension value — such as the number of units in a construction permit — and hence the "size" of each datum.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F6G/T55E/HTQN6AXF/F6GT55EHTQN6AXF.jpg?auto=webp&frame=1&crop=2:3&width=369&fit=bounds&md=358b4809406113cfc7a30eef147e3bc6",
+        videoUrl="",
+    )
+
+    data_crystals3=Instruction(
+        projectId=20,
+        stepOrder=3,
+        stepTitle="What Does Data Look Like?", 
+        instructions="""
+        Remember these are 3D prints and have a physical presence and so have a material form. The question I am trying to answer is: What does data look like?
+
+        In the case of open data, I experimented with many shapes and came up with simple cubes, aligned on the same orientation. The white ones (VeroWhite resin) seemed to resonate both in my mind and those of colleagues when I showed it to them.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FIL/OILG/HTQN6AXN/FILOILGHTQN6AXN.jpg?auto=webp&frame=1&width=406&height=1024&fit=bounds&md=0439dbd8648e5aea1e8a014fb6a64c7d",
+        videoUrl="",
+    )
+
+    data_crystals4=Instruction(
+        projectId=20,
+        stepOrder=4,
+        stepTitle="Map Into 3D Space", 
+        instructions="""
+        Using the Processing program, along with the ModelBuilder libraries by Marius Watz, I map the 3D data onto the screen, so I can see what it looks like in its "raw" state.
+
+        The first image is the construction permit data — as you can see there is a lot of building in the southern part of the city, such as the Mission District. The lone dot is Candlestick Park, which is to be converted into housing units.
+
+        The second one is the SF Civic Art Collection data. Many art pieces are located in the same places such as City Hall, hence the vertical columns. And that column on it's own...that's the San Francisco Airport.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FYJ/4LZK/HTQN6AZ4/FYJ4LZKHTQN6AZ4.jpg?auto=webp&frame=1&crop=3:2&width=600&fit=bounds&md=77275f95f9f2d9f1ee6e7557c6ee7f4d",
+        videoUrl="",
+    )
+
+    data_crystals5=Instruction(
+        projectId=20,
+        stepOrder=5,
+        stepTitle="Do Many, Many Samples", 
+        instructions="""
+        This took weeks and weeks of programming and printing and going back and forth before I settled on viable technique. I played with different forms. I tested clustering patterns for both looks and for structural considerations. I showed samples to friends.
+
+        I kept returning to my central question of what does data look like as a guide and tweaked my code to give a better form to the data.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FO2/YML2/HTPUP3L4/FO2YML2HTPUP3L4.jpg?auto=webp&frame=1&width=908&height=1024&fit=bounds&md=0a62aa50e2aad800e9d3171920a037d0",
+        videoUrl="",
+    )
+
+    data_crystals6=Instruction(
+        projectId=20,
+        stepOrder=6,
+        stepTitle="Run Clustering Algorithms", 
+        instructions="""
+        Finally, once I massaged and reworked the data, I ran a clustering algorithm, which essentially bunches the cubes together into one cohesive structure.
+
+        The cubes have to stick together. Every single one needs to be accounted for. I use a combination of a gravity attractor, a spherical searcher and a Brownian motion generator. Each "crystal" takes a different amount of time to properly cluster.
+
+        The video depicts the construction permit data, which only takes 2 minutes. However, the crime data has something like 35,000 data points and takes about 5 hours to properly cluster.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FMH/PEJN/HTPUP3L0/FMHPEJNHTPUP3L0.jpg?auto=webp&frame=1&width=292&fit=bounds&md=2c705954858c045f9539c226b33d367a",
+        videoUrl="",
+    )
+
+    data_crystals7=Instruction(
+        projectId=20,
+        stepOrder=7,
+        stepTitle="Patch for Structural Integrity", 
+        instructions="""
+        After running the algorithms, I extract the model as an STL file and inspect it closely for structural defects.
+
+        Using a combination of MeshLab (good for quick inspection) and 123D Design (good for adding material), I fix up any weak structural points. Usually there is no more than two spots of question, but the last thing I want is for the Data Crystal to break because it is too fragile.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FPX/BW8O/HTPUP3JE/FPXBW8OHTPUP3JE.jpg?auto=webp&frame=1&crop=3:2&width=600&height=1024&fit=bounds&md=d557f8ba9181d3d551d3c400fe8ddbc8",
+        videoUrl="",
+    )
+
+    data_crystals8=Instruction(
+        projectId=20,
+        stepOrder=8,
+        stepTitle="3D Print and Clean", 
+        instructions="""
+        I run these prints out on an Objet500 Connex3 printer, which leaves behind this form, a cocoon-like support material.
+
+        With all the nuances and contours of the Data Crystal, there is a lot of cleaning required. I soak it in water overnight, I pick away at it with dental tools and I use a high-pressure water jet to blast out the support gunk.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FTO/F8OJ/HTPUP3I8/FTOF8OJHTPUP3I8.jpg?auto=webp&frame=1&width=917&height=1024&fit=bounds&md=f8ba56a59be249fc5c5a769beb8dcaf5",
+        videoUrl="",
+    )
+
+    data_crystals9=Instruction(
+        projectId=20,
+        stepOrder=9,
+        stepTitle="Mount on Wood", 
+        instructions="""
+        Once fully cleaned, the data sculptures are ready for finishing work. Using 1/16" stainless wire, I mounted each of the 3D prints onto an exotic hardwood stand to give it a compelling presentation.
+
+        I carefully drilled into the base of the 3D sculpture, which has to be done by hand and then I press-fit it onto the wire. I did the holes for the base on a drill press. 
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F2O/OO9C/HTQN8IHJ/F2OOO9CHTQN8IHJ.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=4675534ab5a92fbde710fe1d4961ab77",
+        videoUrl="",
+    )
+
+
+    data_crystals10=Instruction(
+        projectId=20,
+        stepOrder=10,
+        stepTitle="Done!", 
+        instructions="""
+        These are some of the final Data Crystals (in order of images):
+        - SF Civic Art Collection
+        - Development Pipeline (a.k.a. construction permits)
+        - Incidents of Crime (over a 3 month period).
+
+        I hope this was inspiring and an alternate approach to Data Visualization
+        For more Data Crystals and other projects, you can find me here: @kildall or www.kildall.com/blog
+        Scott Kildall
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FWM/MGUF/HTQN6BG6/FWMMGUFHTQN6BG6.jpg?auto=webp&frame=1&width=810&fit=bounds&md=a88b2266a963a85a0fd5f61be5d2a70a",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -1570,6 +1716,16 @@ def seed_instructions():
     db.session.add(bike_mount5)
     db.session.add(bike_mount6)
     db.session.add(bike_mount7)
+    db.session.add(data_crystals1)
+    db.session.add(data_crystals2)
+    db.session.add(data_crystals3)
+    db.session.add(data_crystals4)
+    db.session.add(data_crystals5)
+    db.session.add(data_crystals6)
+    db.session.add(data_crystals7)
+    db.session.add(data_crystals8)
+    db.session.add(data_crystals9)
+    db.session.add(data_crystals10)
     
     db.session.commit()
 
