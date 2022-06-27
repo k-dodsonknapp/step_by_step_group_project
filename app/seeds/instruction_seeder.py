@@ -1603,6 +1603,49 @@ def seed_instructions():
         videoUrl="",
     )
 
+    mpcnc_controller1=Instruction(
+        projectId=21,
+        stepOrder=1,
+        stepTitle="Assembly", 
+        instructions="""
+        The receiver is mounted under the CNC. All the parts fit into the enclosures as in the images here.
+
+        When I get 5 minutes, I will look around for the code on the transmitter and receiver and upload it.
+
+        The graphics were all designed in Photoshop and then the individual pages for the remote designed.
+
+        Nextion screens are fine, but their programming interface is appalling. You need to learn smart ways to work around it's issues.
+
+        There are various screens:
+
+        Boot screen (V1 Logo)
+        Direct command page. Enter your own direct G or M codes
+        Control page. Move the head around as required in increments of 0.01 to 100mm
+        Setup page. Request data and checks from the CNC (such and end stop test, voltages etc)
+        Data page. Shows spindle RPM, X, Y and Z position in large text
+        Tap controller. Move the CNC head rapidly to any position on the CNC by tapping the screen.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FKZ/C7RW/L4MRAN4E/FKZC7RWL4MRAN4E.jpg?auto=webp&frame=1&width=859&height=1024&fit=bounds&md=06f3bec8513f14aa0cb25c68f3459f9f",
+        videoUrl="",
+    )
+
+    mpcnc_controller2=Instruction(
+        projectId=21,
+        stepOrder=2,
+        stepTitle="Finished Item", 
+        instructions="""
+        Makes life far easier, especially the tap to move controller.
+
+        I also added a Bluetooth receiver and that enabled me to write a controller app for my Samsung S7 using MIT App inventor 2.
+
+        Have a look at it in action.
+
+        https://www.youtube.com/watch?v=NiKWD2kOsvA
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FCB/ZFFI/L4MRAN4A/FCBZFFIL4MRAN4A.jpg?auto=webp&frame=1&crop=3:2&width=900&height=1024&fit=bounds&md=0ad11d24345a2ec788a28fab1c125d6d",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -1726,6 +1769,8 @@ def seed_instructions():
     db.session.add(data_crystals8)
     db.session.add(data_crystals9)
     db.session.add(data_crystals10)
+    db.session.add(mpcnc_controller1)
+    db.session.add(mpcnc_controller2)
     
     db.session.commit()
 

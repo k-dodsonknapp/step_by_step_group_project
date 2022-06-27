@@ -255,6 +255,16 @@ def seed_project():
         category="Workshop",
     )
 
+    mpcnc_controller=Project(
+        userId=3,
+        title="Wireless MPCNC Controller (3d Printed CNC System)",
+        titleImage="https://content.instructables.com/ORIG/FMT/3TVC/L4MRAN41/FMT3TVCL4MRAN41.jpg?auto=webp&frame=1&crop=3:2&width=918&height=1024&fit=bounds&md=c9e814e7041e69074571ca97911e796d",
+        overview="""
+        This is my wireless remote for my 3d printed CNC machine (MPCNC).
+        """,
+        category="Circuits",
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -275,6 +285,7 @@ def seed_project():
     db.session.add(torus)
     db.session.add(bike_mount)
     db.session.add(data_crystals)
+    db.session.add(mpcnc_controller)
 
     db.session.commit()
 

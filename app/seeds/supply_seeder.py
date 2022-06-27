@@ -760,6 +760,41 @@ def seed_supplies():
         supply="Power Drill",
     )
 
+    mpcnc_controller1=Supply(
+        projectId=21,
+        supply='Nextion 4.3" Screen',
+    )
+
+    mpcnc_controller2=Supply(
+        projectId=21,
+        supply="3d printed the screen module",
+    )
+
+    mpcnc_controller3=Supply(
+        projectId=21,
+        supply="Transmitter",
+    )
+
+    mpcnc_controller4=Supply(
+        projectId=21,
+        supply="A pair of NRF24LO1 modules",
+    )
+
+    mpcnc_controller5=Supply(
+        projectId=21,
+        supply="Power transistor",
+    )
+
+    mpcnc_controller6=Supply(
+        projectId=21,
+        supply="8 pin Picaxe IC",
+    )
+
+    mpcnc_controller7=Supply(
+        projectId=21,
+        supply='A small 0.96" OLED',
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -908,6 +943,13 @@ def seed_supplies():
     db.session.add(data_crystals1)
     db.session.add(data_crystals2)
     db.session.add(data_crystals3)
+    db.session.add(mpcnc_controller1)
+    db.session.add(mpcnc_controller2)
+    db.session.add(mpcnc_controller3)
+    db.session.add(mpcnc_controller4)
+    db.session.add(mpcnc_controller5)
+    db.session.add(mpcnc_controller6)
+    db.session.add(mpcnc_controller7)
 
     
     db.session.commit()
