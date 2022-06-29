@@ -2173,6 +2173,87 @@ def seed_instructions():
         videoUrl="",
     )
 
+    gearbox1=Instruction(
+        projectId=28,
+        stepOrder=1,
+        stepTitle="Print Plastic Parts", 
+        instructions="""
+        Download models from https://www.thingiverse.com/thing:5414478 and print them.
+
+        For the wheel, I would recommend specifying 3mm for walls to make it as strong as possible. The box walls should be at least 2mm (3-4 mm would be better).
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FFT/XJIZ/L4JW6TVZ/FFTXJIZL4JW6TVZ.jpg?auto=webp&frame=1&width=839&height=1024&fit=bounds&md=01c323fef643388b2978964bb8c9b504",
+        videoUrl="",
+    )
+
+    gearbox2=Instruction(
+        projectId=28,
+        stepOrder=2,
+        stepTitle="Wheel Reinforcement (optional)", 
+        instructions="""
+        In order to make the wheel stronger, you can reinforce it with nails.
+
+        Cut off 12 nail tails in 5-6 mm length and put them into special slots inside the wheel.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F0F/YXI5/L4JW6VLA/F0FYXI5L4JW6VLA.png?auto=webp&frame=1&width=352&fit=bounds&md=19547b4210171a6c964c7ed3aeaff77e",
+        videoUrl="",
+    )
+
+    gearbox3=Instruction(
+        projectId=28,
+        stepOrder=3,
+        stepTitle="Gear Teeth", 
+        instructions="""
+        Nails are used as gear teeth. Teeth hook the worm and rotate the wheel.
+
+        Prepare 20 nail shanks in 12-13 mm without tips.
+
+        Insert all teeth into the wheel.
+
+        Use a file to avoid burrs on the teeth.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FGZ/1H18/L4JW6VW6/FGZ1H18L4JW6VW6.png?auto=webp&frame=1&width=533&height=1024&fit=bounds&md=877831499494e5ea9121c431686fa4b6",
+        videoUrl="",
+    )
+
+    gearbox4=Instruction(
+        projectId=28,
+        stepOrder=4,
+        stepTitle="Prepare the Worm", 
+        instructions="""
+        Confirmat screw is used as a worm. The tail of the screw has to be round (without thread) to be placed inside a washer 15x3 mm. Use a file to avoid thread on the screw tail.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F5V/LK8T/L4JW6XCU/F5VLK8TL4JW6XCU.png?auto=webp&frame=1&fit=bounds&md=0b7644a513a3c43531d3bc0ae293571c",
+        videoUrl="",
+    )
+
+    gearbox5=Instruction(
+        projectId=28,
+        stepOrder=5,
+        stepTitle="Assembly", 
+        instructions="""
+        Put washers 1 and 2 into the box
+        Lubricate the wheel
+        Insert the wheel
+        Lubricate the confirmat screew
+        Screw the confirmat in
+        Put the washer 3 into the box
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FIG/CFPG/L4LBLIUU/FIGCFPGL4LBLIUU.png?auto=webp&frame=1&width=486&fit=bounds&md=6c1df73990fff69fd35c90f371227ff3",
+        videoUrl="",
+    )
+
+    gearbox6=Instruction(
+        projectId=28,
+        stepOrder=6,
+        stepTitle="Test", 
+        instructions="""
+        Here you can see my test of the gearbox by my screwdriver.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FSP/KSV2/L4JW6S6M/FSPKSV2L4JW6S6M.png?auto=webp&frame=1&width=495&height=1024&fit=bounds&md=c5697069283e9374ca7a984c3bf3a426",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -2336,6 +2417,12 @@ def seed_instructions():
     db.session.add(smores1)
     db.session.add(smores2)
     db.session.add(smores3)
+    db.session.add(gearbox1)
+    db.session.add(gearbox2)
+    db.session.add(gearbox3)
+    db.session.add(gearbox4)
+    db.session.add(gearbox5)
+    db.session.add(gearbox6)
     
     db.session.commit()
 
