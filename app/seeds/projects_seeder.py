@@ -312,6 +312,16 @@ def seed_project():
         category="Craft",
     )
 
+    zentrierwinkel=Project(
+        userId=4,
+        title="Zentrierwinkel",
+        titleImage="https://content.instructables.com/ORIG/FCW/U7PE/L3EGD014/FCWU7PEL3EGD014.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=abd6b128a78d67a20b9c2bcfb75883cb",
+        overview="""
+        Heute zeige ich dir, wie man einen Zentrierwinkel einfach selber bauen kann. Ein Zentrierwinkel hilft dir dabei, den Mittelpunkt runder Objekte zu bestimmen. Was du zum Bauen dieses Mittelpunktfinders brauchst, siehst du gleich.
+        """,
+        category="Teachers",
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -337,6 +347,7 @@ def seed_project():
     db.session.add(poop_bag)
     db.session.add(cup_carrier)
     db.session.add(cardboard)
+    db.session.add(zentrierwinkel)
 
     db.session.commit()
 
