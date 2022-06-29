@@ -1030,6 +1030,51 @@ def seed_supplies():
         supply='Lots of boxes! And an industrial tape dispenser.',
     )
 
+    zentrierwinkel1=Supply(
+        projectId=26,
+        supply='Werkbank mit Einspannvorrichtung',
+    )
+
+    zentrierwinkel2=Supply(
+        projectId=26,
+        supply='Rechteckleiste aus Kiefer (5x20x900mm)',
+    )
+
+    zentrierwinkel3=Supply(
+        projectId=26,
+        supply='Anschlagwinkel',
+    )
+
+    zentrierwinkel4=Supply(
+        projectId=26,
+        supply='spitzer Bleistift (mittlerer Härtegrad HB)',
+    )
+
+    zentrierwinkel5=Supply(
+        projectId=26,
+        supply='Gehrungsschneidlade',
+    )
+
+    zentrierwinkel6=Supply(
+        projectId=26,
+        supply='Japansäge',
+    )
+
+    zentrierwinkel7=Supply(
+        projectId=26,
+        supply='(Express) Holzleim',
+    )
+
+    zentrierwinkel8=Supply(
+        projectId=26,
+        supply='Schraubzwinge',
+    )
+
+    zentrierwinkel9=Supply(
+        projectId=26,
+        supply='Schleifpapier',
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -1232,6 +1277,15 @@ def seed_supplies():
     db.session.add(cup_carrier11)
     db.session.add(cup_carrier12)
     db.session.add(cardboard1)
+    db.session.add(zentrierwinkel1)
+    db.session.add(zentrierwinkel2)
+    db.session.add(zentrierwinkel3)
+    db.session.add(zentrierwinkel4)
+    db.session.add(zentrierwinkel5)
+    db.session.add(zentrierwinkel6)
+    db.session.add(zentrierwinkel7)
+    db.session.add(zentrierwinkel8)
+    db.session.add(zentrierwinkel9)
 
     
     db.session.commit()
