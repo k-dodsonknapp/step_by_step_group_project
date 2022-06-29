@@ -99,7 +99,8 @@
 #project-overview {
     display: flex;
     justify-content: center;
-    width: 700px;
+    text-align: left;
+    width: 695px;
     font-size: 18px;
     font-weight: 300;
     line-height: 25px;

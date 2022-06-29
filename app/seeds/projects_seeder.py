@@ -301,6 +301,16 @@ def seed_project():
         category="Living",
     )
 
+    cardboard=Project(
+        userId=5,
+        title="Cardboard Castle",
+        titleImage="https://content.instructables.com/ORIG/FNC/1PQE/L41BGOIL/FNC1PQEL41BGOIL.jpg?auto=webp&frame=1&width=800&height=1024&fit=bounds&md=a99f3f3694457fb7646de8b28b6d6d63",
+        overview="""
+        Collect as many cardboard boxes as possible!
+        I end up getting the majority of mine off Facebook marketplace and my local Harvey Norman store also gave me some of the large fridge boxes.
+        """,
+        category="Craft",
+    )
 
     db.session.add(bird_house)
     db.session.add(casino_clock)
@@ -326,6 +336,7 @@ def seed_project():
     db.session.add(garage_door)
     db.session.add(poop_bag)
     db.session.add(cup_carrier)
+    db.session.add(cardboard)
 
     db.session.commit()
 

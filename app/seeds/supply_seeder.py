@@ -1025,6 +1025,11 @@ def seed_supplies():
         supply='1 sheet of Neoprene, a synthetic rubber, in a color of choice. Kalina chose green or blue.',
     )
 
+    cardboard1=Supply(
+        projectId=24,
+        supply='Lots of boxes! And an industrial tape dispenser.',
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -1226,6 +1231,7 @@ def seed_supplies():
     db.session.add(cup_carrier10)
     db.session.add(cup_carrier11)
     db.session.add(cup_carrier12)
+    db.session.add(cardboard1)
 
     
     db.session.commit()
