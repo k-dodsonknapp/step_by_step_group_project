@@ -332,6 +332,16 @@ def seed_project():
         category="Cooking",
     )
 
+    gearbox=Project(
+        userId=2,
+        title="Strong Worm Gearbox on 3d Printer",
+        titleImage="https://content.instructables.com/ORIG/FCK/VAQK/L4JW6OVM/FCKVAQKL4JW6OVM.png?auto=webp&frame=1&width=495&height=1024&fit=bounds&md=04c295ca844a720317eebfe3a5e47ff7",
+        overview="""
+        Strong Worm Gearbox on 3d Printer
+        """,
+        category="Workshop",
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -359,6 +369,7 @@ def seed_project():
     db.session.add(cardboard)
     db.session.add(zentrierwinkel)
     db.session.add(smores)
+    db.session.add(gearbox)
 
     db.session.commit()
 
