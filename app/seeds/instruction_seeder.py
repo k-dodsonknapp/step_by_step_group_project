@@ -1979,7 +1979,7 @@ def seed_instructions():
     cardboard6=Instruction(
         projectId=25,
         stepOrder=6,
-        stepTitle="I taped two fridge boxes on top of each other, to make a tower and then cut a door either side of the bottom so that as you go down the slide you slide through a 'tunnel'. I also added another smaller box at the end to make the tunnel a little longer.", 
+        stepTitle="Slide Through Tunnel", 
         instructions="""
         I taped two fridge boxes on top of each other, to make a tower and then cut a door either side of the bottom so that as you go down the slide you slide through a 'tunnel'. I also added another smaller box at the end to make the tunnel a little longer.
         """,

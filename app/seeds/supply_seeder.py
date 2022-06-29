@@ -1026,7 +1026,7 @@ def seed_supplies():
     )
 
     cardboard1=Supply(
-        projectId=24,
+        projectId=25,
         supply='Lots of boxes! And an industrial tape dispenser.',
     )
 
