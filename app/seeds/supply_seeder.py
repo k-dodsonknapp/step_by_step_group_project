@@ -1124,6 +1124,41 @@ def seed_supplies():
         projectId=27,
         supply='wood or metal skewers',
     )
+    
+    gearbox1=Supply(
+        projectId=28,
+        supply='Confirmat Screw 6x50 mm',
+    )
+
+    gearbox2=Supply(
+        projectId=28,
+        supply='1 pcs D outer 15mm, D inner 3 mm (washer)',
+    )
+
+    gearbox3=Supply(
+        projectId=28,
+        supply='2 pcs D outer 15mm, D inner 6 mm (washer)',
+    )
+
+    gearbox4=Supply(
+        projectId=28,
+        supply='Nails 32 pcs D 2 mm, length at least 20mm',
+    )
+
+    gearbox5=Supply(
+        projectId=28,
+        supply='Long Nut M6',
+    )
+
+    gearbox6=Supply(
+        projectId=28,
+        supply='Plastic PLA/PETG/ABS... ~ 50g',
+    )
+
+    gearbox7=Supply(
+        projectId=28,
+        supply='Lubricant',
+    )
 
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
@@ -1346,6 +1381,13 @@ def seed_supplies():
     db.session.add(smores8)
     db.session.add(smores9)
     db.session.add(smores10)
+    db.session.add(gearbox1)
+    db.session.add(gearbox2)
+    db.session.add(gearbox3)
+    db.session.add(gearbox4)
+    db.session.add(gearbox5)
+    db.session.add(gearbox6)
+    db.session.add(gearbox=7)
     
     db.session.commit()
 
