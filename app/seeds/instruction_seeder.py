@@ -1830,6 +1830,97 @@ def seed_instructions():
         videoUrl="",
     )
 
+    cup_carrier1=Instruction(
+        projectId=24,
+        stepOrder=1,
+        stepTitle="3D Print Components", 
+        instructions="""
+        Print the enclosed .stl files.
+
+        The Coffee cup Carrier exists out of two components: a platform and a handle. The components have been sliced with Ultimaker Cura software and I have printed my copies with an Ultimaker 2+ 3D printer. I’ve printed both parts with following settings:
+
+        Layer height: 02 mm
+        Infill density: 15%
+        Print speed: 60 mm/s
+        Build Plate Adhesion: skirt
+        To 3D print, I’ve positioned the components as shown on the pictures.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FNN/V8GT/L4H1A98E/FNNV8GTL4H1A98E.jpg?auto=webp&frame=1&fit=bounds&md=249b3134ed8f9e1fa958e54b1de12468",
+        videoUrl="",
+    )
+
+    cup_carrier2=Instruction(
+        projectId=23,
+        stepOrder=2,
+        stepTitle="Clean the Printed Components", 
+        instructions="""
+        Ones the parts have been 3D printed, remove the brim from the components. Clean up the edges with a sharp knife to remove all left over parts of the skirt or brim.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FM3/1V09/L4H1AADP/FM31V09L4H1AADP.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=13a259af9359db324feb4a8057d8f5d0",
+        videoUrl="",
+    )
+
+    cup_carrier3=Instruction(
+        projectId=23,
+        stepOrder=4,
+        stepTitle="The Ribbon", 
+        instructions="""
+        Cut the ribbon at a length of 25 cm. Decide on the position of the button and mark that point on the ribbon. I’ve opted to put it at about 1,5 cm of the ribbon edges.
+
+        Put the ribbon through the ribbon conductor of the handle and close the loop by hammering the button through the ribbon edges as shown on the button packaging.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F3E/FYRG/L4H1AAGE/F3EFYRGL4H1AAGE.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=5773dd214f5c1264c3ed1d68452a7a42",
+        videoUrl="",
+    )
+
+    cup_carrier4=Instruction(
+        projectId=23,
+        stepOrder=4,
+        stepTitle="The Velcro", 
+        instructions="""
+        Cut 4 x a piece of 3,5 cm of the sticky velcro hook. Stick a velcro hook on each of the 3 velcro conductors of the handle.
+
+        Cut a 40 cm piece of sewing velcro loop. Attach 1 side to one of the velcro hooks placed in one of the conductors. Stick the last piece of the velcro hook on the back side of the part of the velcro loop which is stuck on the velcro hook of a conductor (see images below)
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FGH/KPPC/L4H1AAJ5/FGHKPPCL4H1AAJ5.jpg?auto=webp&frame=1&width=800&height=1024&fit=bounds&md=4593492ea45b634d8ea9b2d6691b5493",
+        videoUrl="",
+    )
+
+    cup_carrier5=Instruction(
+        projectId=23,
+        stepOrder=5,
+        stepTitle="Screw the Components Together", 
+        instructions="""
+        Slide the handle in the holder of the platform and tie both components together with the screw and nut. 
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FSF/6DQW/L4H1AANQ/FSF6DQWL4H1AANQ.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=37df953c9d985a2c4a95c5c3c7779a40",
+        videoUrl="",
+    )
+
+    cup_carrier6=Instruction(
+        projectId=23,
+        stepOrder=4,
+        stepTitle="Cut the Neoprene to Use As a Non-skid", 
+        instructions="""
+        Draw a circle of 11 cm in the sheet Neoprene. I started by drawing a circle of 11 cm on a piece of paper and cut it out so I could use it as a pattern. If you prefer, you could also draw a circle directly on the Neoprene. Cut the circle out with a pair of scissors.
+
+        Put the Neoprene circle on the platform.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F2P/Z0ZA/L4H1AAPJ/F2PZ0ZAL4H1AAPJ.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=b7e83b3d92600ce0063179a0cfcf9fad",
+        videoUrl="",
+    )
+
+    cup_carrier7=Instruction(
+        projectId=23,
+        stepOrder=4,
+        stepTitle="The End Result", 
+        instructions="""
+        As I’m a novice in Fusion 360, I needed a lot of help to bring this process to an end. Following video’s helped and inspired:
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FG7/Z4LZ/L4H1AAUI/FG7Z4LZL4H1AAUI.jpg?auto=webp&frame=1&width=800&height=1024&fit=bounds&md=ea3adff0efede4d1f2d754f69d2581bd",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -1966,6 +2057,13 @@ def seed_instructions():
     db.session.add(poop_bag2)
     db.session.add(poop_bag3)
     db.session.add(poop_bag4)
+    db.session.add(cup_carrier1)
+    db.session.add(cup_carrier2)
+    db.session.add(cup_carrier3)
+    db.session.add(cup_carrier4)
+    db.session.add(cup_carrier5)
+    db.session.add(cup_carrier6)
+    db.session.add(cup_carrier7)
     
     db.session.commit()
 
