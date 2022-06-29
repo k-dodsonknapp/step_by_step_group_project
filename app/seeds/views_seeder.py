@@ -131,6 +131,7 @@ def seed_views():
     db.session.add(project20)
     db.session.add(project21)
     db.session.add(project22)
+    db.session.add(project23)
 
 
     db.session.commit()
