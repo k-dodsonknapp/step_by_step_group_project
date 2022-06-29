@@ -322,6 +322,16 @@ def seed_project():
         category="Teachers",
     )
 
+    smores=Project(
+        userId=3,
+        title="HOMEMADE S’MORES ICE CREAM",
+        titleImage="https://content.instructables.com/ORIG/FIN/DUZL/L4MR0XIO/FINDUZLL4MR0XIO.jpg?auto=webp&frame=1&width=875&height=1024&fit=bounds&md=652db637f3dfc662539d4cec102de5d8",
+        overview="""
+        This ice cream came out delicious. It is creamy and sweet with all the real flavors of s’mores. I used Ghirardelli milk chocolate caramel squares, crushed graham crackers and toasted mini marshmallows. I really wanted to get that charred marshmallow flavor into each bite, it’s the best part. It worked!
+        """,
+        category="Cooking",
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -348,6 +358,7 @@ def seed_project():
     db.session.add(cup_carrier)
     db.session.add(cardboard)
     db.session.add(zentrierwinkel)
+    db.session.add(smores)
 
     db.session.commit()
 
