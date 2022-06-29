@@ -2132,6 +2132,47 @@ def seed_instructions():
         videoUrl="",
     )
 
+    smores1=Instruction(
+        projectId=27,
+        stepOrder=1,
+        stepTitle="Directions", 
+        instructions="""
+        1. Light the chaffing fuel can and toast the mini marshmallows. You can toast about 5-6 at a time. Remove from stick and place onto parchment paper to let cool.
+
+        2. Crush the graham crackers into small pieces.
+
+        3. Cut the chocolate squares into small pieces. Set aside. (Note: if using squares with caramel, place in the freezer for about 5 minutes. When you cut the chocolate, the caramel will stay in the chocolate).
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FOX/0P2W/L4MR0XFL/FOX0P2WL4MR0XFL.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=e2341b079378bfdfcb51cfb46b5d2b77",
+        videoUrl="",
+    )
+
+    smores2=Instruction(
+        projectId=27,
+        stepOrder=2,
+        stepTitle="Directions (cont.)", 
+        instructions="""
+        4. Whip the heavy cream, in stand mixer or with hand mixer until stiff peaks have formed. Add marshmallow crème, sweetened condensed milk and vanilla extract and mix well. Do Not Overmix.
+
+        5. Fold in the toasted mini marshmallows, crushed graham crackers and chocolate pieces into the cream mixture.
+
+        6. Transfer into a freezer safe container and freeze for about 8 hours before serving.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FD1/AACL/L4MR0XHZ/FD1AACLL4MR0XHZ.jpg?auto=webp&frame=1&width=242&height=1024&fit=bounds&md=957e886583aa5037e5416988b62c574d",
+        videoUrl="",
+    )
+
+    smores3=Instruction(
+        projectId=27,
+        stepOrder=3,
+        stepTitle="ENJOY!", 
+        instructions="""
+        Serve ice cream in a cone or bowl and enjoy this perfect summer treat!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FRF/3CWP/L4MR0XFK/FRF3CWPL4MR0XFK.jpg?auto=webp&frame=1&width=800&height=1024&fit=bounds&md=07949ab002f41979db051caa41cdc722",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -2292,6 +2333,9 @@ def seed_instructions():
     db.session.add(zentrierwinkel6)
     db.session.add(zentrierwinkel7)
     db.session.add(zentrierwinkel8)
+    db.session.add(smores1)
+    db.session.add(smores2)
+    db.session.add(smores3)
     
     db.session.commit()
 
