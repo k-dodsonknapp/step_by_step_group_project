@@ -875,6 +875,96 @@ def seed_supplies():
         supply='1 battery cap (male DC plug)',
     )
 
+    poop_bag1=Supply(
+        projectId=23,
+        supply='Leather of your choice 3 - 4 oz (1.2 - 1.6 mm is my recommendation).',
+    )
+
+    poop_bag2=Supply(
+        projectId=23,
+        supply='In this project i use Conceria Puccini "BISANZIO" (3 oz - 1.2 mm).',
+    )
+
+    poop_bag3=Supply(
+        projectId=23,
+        supply='Carabiner hook 11 x 53 mm.',
+    )
+
+    poop_bag4=Supply(
+        projectId=23,
+        supply='Cutter',
+    )
+
+    poop_bag5=Supply(
+        projectId=23,
+        supply='Ruler',
+    )
+
+    poop_bag6=Supply(
+        projectId=23,
+        supply='Hammer',
+    )
+
+    poop_bag7=Supply(
+        projectId=23,
+        supply='Round punch (1 mm)',
+    )
+
+    poop_bag8=Supply(
+        projectId=23,
+        supply='Round punch (3,5 mm)',
+    )
+
+    poop_bag9=Supply(
+        projectId=23,
+        supply='Round punch (10 mm)',
+    )
+
+    poop_bag10=Supply(
+        projectId=23,
+        supply='Wood slicker',
+    )
+
+    poop_bag11=Supply(
+        projectId=23,
+        supply='2x needles',
+    )
+
+    poop_bag12=Supply(
+        projectId=23,
+        supply='Sew thread',
+    )
+
+    poop_bag13=Supply(
+        projectId=23,
+        supply='Tokonole leather finish',
+    )
+
+    poop_bag14=Supply(
+        projectId=23,
+        supply='Leather balm (Protect leather and gives the leather a fresh look)',
+    )
+
+    poop_bag15=Supply(
+        projectId=23,
+        supply='Rotary tool (for example: Dremel) or sandpaper',
+    )
+
+    poop_bag16=Supply(
+        projectId=23,
+        supply='Edge beveler',
+    )
+
+    poop_bag17=Supply(
+        projectId=23,
+        supply='Lighter',
+    )
+
+    poop_bag18=Supply(
+        projectId=23,
+        supply='Snaps and handpress',
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -1046,6 +1136,24 @@ def seed_supplies():
     db.session.add(garage_door14)
     db.session.add(garage_door15)
     db.session.add(garage_door16)
+    db.session.add(poop_bag1)
+    db.session.add(poop_bag2)
+    db.session.add(poop_bag3)
+    db.session.add(poop_bag4)
+    db.session.add(poop_bag5)
+    db.session.add(poop_bag6)
+    db.session.add(poop_bag7)
+    db.session.add(poop_bag8)
+    db.session.add(poop_bag9)
+    db.session.add(poop_bag10)
+    db.session.add(poop_bag11)
+    db.session.add(poop_bag12)
+    db.session.add(poop_bag13)
+    db.session.add(poop_bag14)
+    db.session.add(poop_bag15)
+    db.session.add(poop_bag16)
+    db.session.add(poop_bag17)
+    db.session.add(poop_bag18)
 
     
     db.session.commit()

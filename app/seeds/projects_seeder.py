@@ -275,15 +275,15 @@ def seed_project():
         category="Circuits",
     )
 
-    # =Project(
-    #     userId=1,
-    #     title="",
-    #     titleImage="",
-    #     overview="""
-
-    #     """,
-    #     category="",
-    # )
+    poop_bag=Project(
+        userId=1,
+        title="Leather Dog Poop Bag Holder / Dispenser",
+        titleImage="https://content.instructables.com/ORIG/FDD/PP0I/L4TW9314/FDDPP0IL4TW9314.jpg?auto=webp&frame=1&width=800&height=1024&fit=bounds&md=ca9b3c7eb00cbcd727277bfb4e2509b2",
+        overview="""
+        In this project i wanted to find a stylish and practical solution for dog waste/poop bags. And this is it, a very cool project where you can use your leather scraps. If you are new in leathercraft, this project is for you my friend. This holder/dispenser can accommodate a roll in size of 3 cm x 6 cm (1,1811 inch x 2,3622 inch). With a carabiner hook you can attach the holder on your jeans, pents or your dog leash. By the way, leather is very robust and sustainable material. I LOVE working with leather so much. Okay, let us make one :)
+        """,
+        category="Craft",
+    )
 
     db.session.add(bird_house)
     db.session.add(casino_clock)
@@ -307,6 +307,7 @@ def seed_project():
     db.session.add(data_crystals)
     db.session.add(mpcnc_controller)
     db.session.add(garage_door)
+    db.session.add(poop_bag)
 
     db.session.commit()
 
