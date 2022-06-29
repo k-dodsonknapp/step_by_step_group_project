@@ -2021,6 +2021,117 @@ def seed_instructions():
         videoUrl="",
     )
 
+    zentrierwinkel1=Instruction(
+        projectId=26,
+        stepOrder=1,
+        stepTitle="Längenmarkierung", 
+        instructions="""
+        Du brauchst vier Leistenstücke:
+
+        1 Leistenstück (Länge = 10 cm)
+        2 Leistenstücke (Länge = 12 cm)
+        1 Leistenstück (Länge = 20 cm)
+        Zeichne die Länge auf deiner Rechteckleiste ein und verlängere den Strich mit dem Anschlagwinkel.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FLG/YSNA/L3A62TBG/FLGYSNAL3A62TBG.jpg?auto=webp&frame=1&fit=bounds&md=39dcacab4d47afa793ae3e31ecc6d12f",
+        videoUrl="",
+    )
+
+    zentrierwinkel2=Instruction(
+        projectId=26,
+        stepOrder=2,
+        stepTitle="Abschneiden Der Leistenstücke", 
+        instructions="""
+        Spanne die Sägelade mithilfe der Einspannvorrichtung deiner Werkbank ein. Beachte: Die Oberkante der Sägelade soll mit der Werkbankplatte bündig abschließen.
+
+        Lege die Rechteckleiste flach in die Sägelade. Die Markierung auf der Leiste muss beim Sägen genau unter den Sägezähnen der Japansäge liegen. Zieh die Säge zu dir, um dein erstes Leistenstück abzuschneiden. Gehe genau so vor, um die restlichen Stücke abzuschneiden.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FFA/QRLS/L3A62RUM/FFAQRLSL3A62RUM.jpg?auto=webp&frame=1&width=565&height=1024&fit=bounds&md=ef627d05f6966e6de34d5ce03b95a047",
+        videoUrl="",
+    )
+
+    zentrierwinkel3=Instruction(
+        projectId=26,
+        stepOrder=3,
+        stepTitle="Verbinden Der Beiden Mittellangen Leistenstücke", 
+        instructions="""
+        Verwende für diesen Schritt die beiden Leistenstücke mit der Länge von 12 cm, Holzleim und einen Anschlagwinkel.
+
+        Gib etwas Leim auf das Ende eines Leistenstücks und lege das zweite Leistenstück im rechten Winkel darauf. Die Kanten der beiden Leistenstücke müssen bündig abschließen. Nutze den Anschlagwinkel, um den Winkel zu überprüfen!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F71/6UPC/L3BLHWY6/F716UPCL3BLHWY6.jpg?auto=webp&frame=1&fit=bounds&md=8fc587257bfa65524d329b9dd8df80c1",
+        videoUrl="",
+    )
+
+    zentrierwinkel4=Instruction(
+        projectId=26,
+        stepOrder=4,
+        stepTitle="Zusammenleimen Der Mittellangen Leistenstücke", 
+        instructions="""
+        Leime die beiden Leistenstücke zusammen. Verwende dazu eine Schraubzwinge.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FK5/481L/L3A62RUP/FK5481LL3A62RUP.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=409ee696bd292fec5baeec529971ce75",
+        videoUrl="",
+    )
+
+    zentrierwinkel5=Instruction(
+        projectId=26,
+        stepOrder=5,
+        stepTitle="", 
+        instructions="""
+        """,
+        photoUrl="",
+        videoUrl="",
+    )
+
+    zentrierwinkel5=Instruction(
+        projectId=26,
+        stepOrder=5,
+        stepTitle="Anbringen Des Kurzen Leistenstücks", 
+        instructions="""
+        Für diesen Schritt brauchst du das kürzeste Leistenstück.
+
+        Gib etwas Leim auf das unten liegende Leistenstück und setze das kürzeste Leistenstück darauf. Verwende zum Zusammenleimen eine Schraubzwinge.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FT0/L6RK/L3A62RUD/FT0L6RKL3A62RUD.jpg?auto=webp&frame=1&width=223&height=1024&fit=bounds&md=37d01737d2aa8165b9083d5b872d1a49",
+        videoUrl="",
+    )
+
+    zentrierwinkel6=Instruction(
+        projectId=26,
+        stepOrder=6,
+        stepTitle="Abschneiden Im 45°-Winkel", 
+        instructions="""
+        Für den nächsten Schritt brauchst du das längste Leistenstück.
+
+        Lege das Leistenstück flach in die Sägelade. Verwende diesmal die 45°-Sägeführung. Die obere Ecke des Leistenstücks muss genau mit dem Schlitz der Sägeführung abschließen. Schneide mit der Säge ab.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F2T/IAXK/L3BLI6BE/F2TIAXKL3BLI6BE.jpg?auto=webp&frame=1&width=245&height=1024&fit=bounds&md=ccd1a5666a79639cd5a5b5bc1be0fab8",
+        videoUrl="",
+    )
+
+    zentrierwinkel7=Instruction(
+        projectId=26,
+        stepOrder=7,
+        stepTitle="Anbringen Des Längsten Leistenstücks", 
+        instructions="""
+        Verwende etwas Leim und bringe das längste Leistenstück an. Kontrolliere, ob du das Leistenstück im 45°-Winkel angebracht hast. Nimm dazu den Anschlagwinkel zu Hilfe. Auf dem letzten Bild siehst du, wie das geht.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FTO/MIZB/L3BLI6ZJ/FTOMIZBL3BLI6ZJ.jpg?auto=webp&frame=1&width=384&height=1024&fit=bounds&md=edcbafa0b980d7a19f7702716627c70b",
+        videoUrl="",
+    )
+
+    zentrierwinkel8=Instruction(
+        projectId=26,
+        stepOrder=8,
+        stepTitle="Schleifen", 
+        instructions="""
+        Verwende Schleifpapier, um unebene Kanten zu glätten.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F8S/6KGJ/L3EGCVON/F8S6KGJL3EGCVON.jpg?auto=webp&frame=1&width=670&fit=bounds&md=a8f3108f76b0d06097ff5d2898959f40",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -2173,6 +2284,14 @@ def seed_instructions():
     db.session.add(cardboard7)
     db.session.add(cardboard8)
     db.session.add(cardboard9)
+    db.session.add(zentrierwinkel1)
+    db.session.add(zentrierwinkel2)
+    db.session.add(zentrierwinkel3)
+    db.session.add(zentrierwinkel4)
+    db.session.add(zentrierwinkel5)
+    db.session.add(zentrierwinkel6)
+    db.session.add(zentrierwinkel7)
+    db.session.add(zentrierwinkel8)
     
     db.session.commit()
 
