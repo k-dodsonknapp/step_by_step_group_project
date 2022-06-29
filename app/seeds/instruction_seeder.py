@@ -1921,6 +1921,106 @@ def seed_instructions():
         videoUrl="",
     )
 
+    cardboard1=Instruction(
+        projectId=25,
+        stepOrder=1,
+        stepTitle="Assemble Boxes", 
+        instructions="""
+        The boxes were all stored flat packed, so the night before commencing the project assembled all the boxes and stored them under the patio.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FSS/FUDS/L41BGIYE/FSSFUDSL41BGIYE.jpg?auto=webp&frame=1&crop=3:2&width=635&height=1024&fit=bounds&md=3e677d5e5b4b91f6d473bf14983406b2",
+        videoUrl="",
+    )
+
+    cardboard2=Instruction(
+        projectId=25,
+        stepOrder=2,
+        stepTitle="Commence Construction of Outer Walls", 
+        instructions="""
+        Decide how large you want to go with the calculated amount of boxes you have. Then start with the outside walls. I have allowed for a door where I will be building a drawbridge a little bit later on in the project.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FZ3/0PX9/L41BGIYZ/FZ30PX9L41BGIYZ.jpg?auto=webp&frame=1&crop=3:2&width=400&height=1024&fit=bounds&md=9e966a6173873e38edb3756ed558b70e",
+        videoUrl="",
+    )
+
+    cardboard3=Instruction(
+        projectId=25,
+        stepOrder=3,
+        stepTitle="Continue Building Up", 
+        instructions="""
+        Continue building the outside walls till you teach a desired height.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FQR/13GZ/L41BGIZO/FQR13GZL41BGIZO.jpg?auto=webp&frame=1&crop=3:2&width=400&height=1024&fit=bounds&md=3288c3816ba8352a418ea7bc986d4fe5",
+        videoUrl="",
+    )
+
+    cardboard4=Instruction(
+        projectId=25,
+        stepOrder=4,
+        stepTitle="Securing As You Build", 
+        instructions="""
+        I'm using an industrial tape dispenser with over a dozen roles of tape in supply. And also used a few tent pegs to secure the bottom layer to the lawn.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F72/2KGW/L41BGJVI/F722KGWL41BGJVI.jpg?auto=webp&frame=1&crop=3:2&width=400&height=1024&fit=bounds&md=fb156403bfabe753311d8e9d259ba265",
+        videoUrl="",
+    )
+
+    cardboard5=Instruction(
+        projectId=25,
+        stepOrder=5,
+        stepTitle="Internal Rooms", 
+        instructions="""
+        With all the external walls complete it's time to use up the remaining boxes and build internal rooms to your own desire.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FVK/WHVD/L41BGJVX/FVKWHVDL41BGJVX.jpg?auto=webp&frame=1&crop=3:2&width=900&height=1024&fit=bounds&md=d5468400580fd3a99b00b5115f411011",
+        videoUrl="",
+    )
+
+    cardboard6=Instruction(
+        projectId=25,
+        stepOrder=6,
+        stepTitle="I taped two fridge boxes on top of each other, to make a tower and then cut a door either side of the bottom so that as you go down the slide you slide through a 'tunnel'. I also added another smaller box at the end to make the tunnel a little longer.", 
+        instructions="""
+        I taped two fridge boxes on top of each other, to make a tower and then cut a door either side of the bottom so that as you go down the slide you slide through a 'tunnel'. I also added another smaller box at the end to make the tunnel a little longer.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F7G/T2HK/L41BGKTP/F7GT2HKL41BGKTP.jpg?auto=webp&frame=1&crop=3:2&width=300&height=1024&fit=bounds&md=4d1f9ab9aaae1887cab8e8a1ed30a021",
+        videoUrl="",
+    )
+
+    cardboard7=Instruction(
+        projectId=25,
+        stepOrder=7,
+        stepTitle="Functioning Drawbridge", 
+        instructions="""
+        Almost finished the project, with the final step of building a functioning drawbridge. I taped several pieces of cardboard together so that they were thicker and more structurally sound. And also put some reinforcing on the edges. Then used tent pegs to secure the bottom to create a hinge.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FYX/VLXK/L41BGLLM/FYXVLXKL41BGLLM.jpg?auto=webp&frame=1&crop=3:2&width=600&height=1024&fit=bounds&md=d16e60aaeba7e1a1df372bb335896dfb",
+        videoUrl="",
+    )
+
+    cardboard8=Instruction(
+        projectId=25,
+        stepOrder=8,
+        stepTitle="Adding Rope", 
+        instructions="""
+        Securely tape some cardboard rolls to underside of the entrance to allow the rope to slide through and then secure the rope at the end of the drawbridge.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F0B/9I7Q/L41BGMU6/F0B9I7QL41BGMU6.jpg?auto=webp&frame=1&crop=3:2&width=300&height=1024&fit=bounds&md=5b8208c15d84ebe94ce10189bf53d713",
+        videoUrl="",
+    )
+
+    cardboard9=Instruction(
+        projectId=25,
+        stepOrder=9,
+        stepTitle="Playtime!", 
+        instructions="""
+        Now that the kids have at it and enjoy!
+        Feel free to check out the video to see more on the build process or clarification if needed!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FHR/SIE5/L41BGNGN/FHRSIE5L41BGNGN.jpg?auto=webp&frame=1&crop=3:2&width=600&height=1024&fit=bounds&md=2da5d248496897762b8fd896a42eaf92",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
