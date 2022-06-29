@@ -1850,7 +1850,7 @@ def seed_instructions():
     )
 
     cup_carrier2=Instruction(
-        projectId=23,
+        projectId=24,
         stepOrder=2,
         stepTitle="Clean the Printed Components", 
         instructions="""
@@ -1861,7 +1861,7 @@ def seed_instructions():
     )
 
     cup_carrier3=Instruction(
-        projectId=23,
+        projectId=24,
         stepOrder=4,
         stepTitle="The Ribbon", 
         instructions="""
@@ -1874,7 +1874,7 @@ def seed_instructions():
     )
 
     cup_carrier4=Instruction(
-        projectId=23,
+        projectId=24,
         stepOrder=4,
         stepTitle="The Velcro", 
         instructions="""
@@ -1887,7 +1887,7 @@ def seed_instructions():
     )
 
     cup_carrier5=Instruction(
-        projectId=23,
+        projectId=24,
         stepOrder=5,
         stepTitle="Screw the Components Together", 
         instructions="""
@@ -1898,8 +1898,8 @@ def seed_instructions():
     )
 
     cup_carrier6=Instruction(
-        projectId=23,
-        stepOrder=4,
+        projectId=24,
+        stepOrder=6,
         stepTitle="Cut the Neoprene to Use As a Non-skid", 
         instructions="""
         Draw a circle of 11 cm in the sheet Neoprene. I started by drawing a circle of 11 cm on a piece of paper and cut it out so I could use it as a pattern. If you prefer, you could also draw a circle directly on the Neoprene. Cut the circle out with a pair of scissors.
@@ -1911,8 +1911,8 @@ def seed_instructions():
     )
 
     cup_carrier7=Instruction(
-        projectId=23,
-        stepOrder=4,
+        projectId=24,
+        stepOrder=7,
         stepTitle="The End Result", 
         instructions="""
         As I’m a novice in Fusion 360, I needed a lot of help to bring this process to an end. Following video’s helped and inspired:
