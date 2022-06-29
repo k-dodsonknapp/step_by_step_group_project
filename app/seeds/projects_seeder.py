@@ -335,7 +335,7 @@ def seed_project():
     gearbox=Project(
         userId=2,
         title="Strong Worm Gearbox on 3d Printer",
-        titleImage="https://content.instructables.com/ORIG/FCK/VAQK/L4JW6OVM/FCKVAQKL4JW6OVM.png?auto=webp&frame=1&width=495&height=1024&fit=bounds&md=04c295ca844a720317eebfe3a5e47ff7",
+        titleImage="https://content.instructables.com/ORIG/FXC/S43T/L4LBLIVL/FXCS43TL4LBLIVL.png?auto=webp&frame=1&width=397&fit=bounds&md=055d5d209eed3bc3116e3f862865518c",
         overview="""
         Strong Worm Gearbox on 3d Printer
         """,

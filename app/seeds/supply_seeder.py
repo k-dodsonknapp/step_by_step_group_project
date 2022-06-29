@@ -1387,7 +1387,7 @@ def seed_supplies():
     db.session.add(gearbox4)
     db.session.add(gearbox5)
     db.session.add(gearbox6)
-    db.session.add(gearbox=7)
+    db.session.add(gearbox7)
     
     db.session.commit()
 
