@@ -324,6 +324,7 @@ def seed_project():
     db.session.add(data_crystals)
     db.session.add(mpcnc_controller)
     db.session.add(garage_door)
+    db.session.add(poop_bag)
     db.session.add(cup_carrier)
 
     db.session.commit()
