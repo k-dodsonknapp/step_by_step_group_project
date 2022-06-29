@@ -285,6 +285,23 @@ def seed_project():
         category="Craft",
     )
 
+    cup_carrier=Project(
+        userId=6,
+        title="D4E1 - Coffee Cup Carrier",
+        titleImage="https://content.instructables.com/ORIG/FQX/PSFF/L4H1A92I/FQXPSFFL4H1A92I.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=f7f4d34996de50b46226aee24b0acf40",
+        overview="""
+        As part of the Postgraduate education Makerskills for Occupational Therapists at Howest University College, Kortrijk (Belgium) the Coffee cup Carrier has been developed for and together with K, a young woman with Cerebral Palsy.
+
+        This condition not only impacts K’s strength and proprioception of the upper left limb, it also impacts her balance and gait. Consequently, when K likes to grab a cup of coffee, she tends to spill coffee especially when stairs are involved. When walking up or down the stairs, K needs her right hand to hold on to the banister which forces her to carry the coffee cup in the left hand. Due to the tremor of the left hand and the diminished proprioception, she is bound to spill coffee. To avoid handburn or sliding over the spilt coffee, she needs to ask others to carry her coffee cup. However, as a strong an independent young woman, she would like to carry her coffee cup herself. That is why we created this Coffee cup Carrier inspired on the Spillnot designs of Steve.Dickie and Dave88 found on Thingiverse.
+
+        To meet K's demand for portability, the Coffee cup Carrrier is composed out of two parts in 3D print: a platform to put the drink on and an upright handle with ribbon to carry the whole. Both parts are held together by a screw with nut. As the working of the Spillnot breaks when you would coincidently bump into an obstacle, for example a wall or a banister, we introduced a non-skid layer on the platform and a velcro to tie the cup or glass to the handle. The non-skid prevents the cup from sliding over the platform and the velcro secures the carrier that the glass or cup won’t fall off.
+
+        It is a simple design which easily can be made by anyone with access to a 3D printer and this building plan. Have fun with it and feel free to adjust elements according to your own situation.
+        """,
+        category="Living",
+    )
+
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -307,7 +324,7 @@ def seed_project():
     db.session.add(data_crystals)
     db.session.add(mpcnc_controller)
     db.session.add(garage_door)
-    db.session.add(poop_bag)
+    db.session.add(cup_carrier)
 
     db.session.commit()
 

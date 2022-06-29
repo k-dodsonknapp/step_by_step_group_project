@@ -965,6 +965,66 @@ def seed_supplies():
         supply='Snaps and handpress',
     )
 
+    cup_carrier1=Supply(
+        projectId=24,
+        supply='Fusion 360, open-source Autodesk program',
+    )
+
+    cup_carrier2=Supply(
+        projectId=24,
+        supply='3D printer with PLA filament and its slicer (Ultimaker 2+ and Cura have been used here)',
+    )
+
+    cup_carrier3=Supply(
+        projectId=24,
+        supply='Pair of scissors',
+    )
+
+    cup_carrier4=Supply(
+        projectId=24,
+        supply='Sharp knife and green cutting mat',
+    )
+
+    cup_carrier5=Supply(
+        projectId=24,
+        supply='Ruler',
+    )
+
+    cup_carrier6=Supply(
+        projectId=24,
+        supply='2,5 x 40 cm sewing velcro loop and',
+    )
+
+    cup_carrier7=Supply(
+        projectId=24,
+        supply='2,5 x 15 sticky velcro hook',
+    )
+
+    cup_carrier8=Supply(
+        projectId=24,
+        supply='Ribbon 3 x 25 cm, we used leather look in function of solidity',
+    )
+
+    cup_carrier9=Supply(
+        projectId=24,
+        supply='Screw and nut: 5M x 50mm',
+    )
+
+    cup_carrier10=Supply(
+        projectId=24,
+        supply='Screwdriver fitting to the screw',
+    )
+
+    cup_carrier11=Supply(
+        projectId=24,
+        supply='Metal button as used for a jeans',
+    )
+
+    cup_carrier12=Supply(
+        projectId=24,
+        supply='1 sheet of Neoprene, a synthetic rubber, in a color of choice. Kalina chose green or blue.',
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -1154,6 +1214,18 @@ def seed_supplies():
     db.session.add(poop_bag16)
     db.session.add(poop_bag17)
     db.session.add(poop_bag18)
+    db.session.add(cup_carrier1)
+    db.session.add(cup_carrier2)
+    db.session.add(cup_carrier3)
+    db.session.add(cup_carrier4)
+    db.session.add(cup_carrier5)
+    db.session.add(cup_carrier6)
+    db.session.add(cup_carrier7)
+    db.session.add(cup_carrier8)
+    db.session.add(cup_carrier9)
+    db.session.add(cup_carrier10)
+    db.session.add(cup_carrier11)
+    db.session.add(cup_carrier12)
 
     
     db.session.commit()
