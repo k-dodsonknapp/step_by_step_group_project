@@ -2164,6 +2164,15 @@ def seed_instructions():
     db.session.add(cup_carrier5)
     db.session.add(cup_carrier6)
     db.session.add(cup_carrier7)
+    db.session.add(cardboard1)
+    db.session.add(cardboard2)
+    db.session.add(cardboard3)
+    db.session.add(cardboard4)
+    db.session.add(cardboard5)
+    db.session.add(cardboard6)
+    db.session.add(cardboard7)
+    db.session.add(cardboard8)
+    db.session.add(cardboard9)
     
     db.session.commit()
 
