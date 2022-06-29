@@ -6,12 +6,20 @@ import { getAllProjects } from "../../store/project";
 import './projectExplore.css';
 import { getView } from "../../store/views";
 import ViewCount from "../ViewCount";
+import ProjectCard from "../ProjectCard";
 
 
 const ProjectExplore = () => {
 
     const dispatch = useDispatch();
-    const projects = useSelector(state => Object?.values(state?.projects));
+    // const projects = useSelector(state => Object?.values(state?.projects));
+    const circuits = useSelector(state => Object.values(state.projects).filter(project => project.category === "Circuits"))
+    const workshop = useSelector(state => Object.values(state.projects).filter(project => project.category === "Workshop"))
+    const craft = useSelector(state => Object.values(state.projects).filter(project => project.category === "Craft"))
+    const cooking = useSelector(state => Object.values(state.projects).filter(project => project.category === "Cooking"))
+    const living = useSelector(state => Object.values(state.projects).filter(project => project.category === "Living"))
+    const outside = useSelector(state => Object.values(state.projects).filter(project => project.category === "Outside"))
+    const teachers = useSelector(state => Object.values(state.projects).filter(project => project.category === "Teachers"))
     const views = useSelector(state => state.views.views);
     const explore = "Explore >";
 
@@ -47,41 +55,69 @@ const ProjectExplore = () => {
                 </div>
             </div>
             <ul>
-                <div id="explore-sign">
+                {/* <div id="explore-sign">
                     <h2>{explore}</h2>
+                </div> */}
+                <h2>{"Circuits >"}</h2>
+                <div id="explore-sign">
+                    <ProjectCard projects={circuits} views={views} />
                 </div>
-                {projects?.map(project => (
-                    <div key={project.id} className="allProjectsMap">
-                        <li className="eachProject">
-                            <a href={`/projects/${project?.id}`}>
-                                <div className="projectImage">
-                                    <img src={`${project?.titleImage}`} alt="" />
-                                </div>
-                            </a>
-                            <div className="info-container">
-                                <div className="title-by">
-                                    <div>
-                                        <p>{project?.title} by <NavLink to={`/users/${project?.userId}`}>
-                                            {project?.username}
-                                        </NavLink> in <NavLink to={`/category/${project?.category}`}>
-                                                {project?.category}
-                                            </NavLink>
-                                        </p>
-                                    </div>
-                                    <div className="likes-views">
-                                        <ViewCount views={views} project={project} />
-                                        {/* {views.map(view => (
-                                            view.viewCount
-                                        ))
+                <h2>{"Workshop >"}</h2>
+                <div id="explore-sign">
+                    <ProjectCard projects={workshop} views={views} />
+                </div>
+                <h2>{"Craft >"}</h2>
+                <div id="explore-sign">
+                    <ProjectCard projects={craft} views={views} />
+                </div>
+                <h2>{"Cooking >"}</h2>
+                <div id="explore-sign">
+                    <ProjectCard projects={cooking} views={views} />
+                </div>
+                <h2>{"Living >"}</h2>
+                <div id="explore-sign">
+                    <ProjectCard projects={living} views={views} />
+                </div>
+                <h2>{"Outside >"}</h2>
+                <div id="explore-sign">
+                    <ProjectCard projects={outside} views={views} />
+                </div>
+                <h2>{"Teachers >"}</h2>
+                <div id="explore-sign">
+                    <ProjectCard projects={teachers} views={views} />
+                </div>
+                {/* {projects?.map(project => ( */}
+                {/* // <div key={project.id} className="allProjectsMap">
+                    //     <li className="eachProject">
+                    //         <a href={`/projects/${project?.id}`}>
+                    //             <div className="projectImage">
+                    //                 <img src={`${project?.titleImage}`} alt="" />
+                    //             </div>
+                    //         </a>
+                    //         <div className="info-container">
+                    //             <div className="title-by">
+                    //                 <div>
+                    //                     <p>{project?.title} by <NavLink to={`/users/${project?.userId}`}>
+                    //                         {project?.username}
+                    //                     </NavLink> in <NavLink to={`/category/${project?.category}`}>
+                    //                             {project?.category}
+                    //                     </NavLink>
+                    //                     </p>
+                    //                 </div>
+                    //                 <div className="likes-views">
+                    //                     <ViewCount views={views} project={project} />
+                    //                     {/* {views.map(view => (
+                    //                         view.viewCount
+                    //                     ))
 
-                                        }
-                                        <p>❤ 5  👁 105</p> */}
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </div>
-                ))}
+                    //                     }
+                    //                     <p>❤ 5  👁 105</p> 
+                    //                 </div>
+                    //             </div>
+                    //         </div>
+                    //     </li>
+                 // </div> */}
+                {/* ))}  */}
             </ul>
         </div >
     )

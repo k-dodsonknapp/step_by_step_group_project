@@ -275,6 +275,16 @@ def seed_project():
         category="Circuits",
     )
 
+    # =Project(
+    #     userId=1,
+    #     title="",
+    #     titleImage="",
+    #     overview="""
+
+    #     """,
+    #     category="",
+    # )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
