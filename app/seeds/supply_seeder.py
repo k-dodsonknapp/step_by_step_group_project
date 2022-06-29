@@ -1075,6 +1075,56 @@ def seed_supplies():
         supply='Schleifpapier',
     )
 
+    smores1=Supply(
+        projectId=27,
+        supply='2 cups heavy whipping cream',
+    )
+
+    smores2=Supply(
+        projectId=27,
+        supply='7.5 ounces marshmallow crème – one container',
+    )
+
+    smores3=Supply(
+        projectId=27,
+        supply='7 ounces sweetened condensed milk',
+    )
+
+    smores4=Supply(
+        projectId=27,
+        supply='½ cup mini marshmallows – toasted',
+    )
+
+    smores5=Supply(
+        projectId=27,
+        supply='4 sheets gram crackers crushed',
+    )
+
+    smores6=Supply(
+        projectId=27,
+        supply='6 pieces Chirardelli chocolate caramel squares cut into small pieces',
+    )
+
+    smores7=Supply(
+        projectId=27,
+        supply='1 tablespoon pure vanilla extract',
+    )
+
+    smores8=Supply(
+        projectId=27,
+        supply='Stand or Hand Mixer',
+    )
+
+    smores9=Supply(
+        projectId=27,
+        supply='Sterno or other chafing fuel can',
+    )
+
+    smores10=Supply(
+        projectId=27,
+        supply='wood or metal skewers',
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -1286,7 +1336,16 @@ def seed_supplies():
     db.session.add(zentrierwinkel7)
     db.session.add(zentrierwinkel8)
     db.session.add(zentrierwinkel9)
-
+    db.session.add(smores1)
+    db.session.add(smores2)
+    db.session.add(smores3)
+    db.session.add(smores4)
+    db.session.add(smores5)
+    db.session.add(smores6)
+    db.session.add(smores7)
+    db.session.add(smores8)
+    db.session.add(smores9)
+    db.session.add(smores10)
     
     db.session.commit()
 
