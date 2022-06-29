@@ -1762,6 +1762,74 @@ def seed_instructions():
         videoUrl="",
     )
 
+    poop_bag1=Instruction(
+        projectId=23,
+        stepOrder=1,
+        stepTitle="Print, Punching Holes, Tracing Out the Pattern and Cut Out the Leather Pieces", 
+        instructions="""
+        Download free attached pattern, print them out. Punch the holes at first and cut the pattern out. Transfer the pattern on each leather piece with the scratch awl tool. Use the ruler and cutter to cut the leather pieces out.
+
+        You can also use the crepe tape technique or as i do use the glue dots.
+
+        Use the following printer setting:
+
+        Size: 100%
+
+        Paper size European: DIN A4
+
+        Paper size USA: US Letter
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FDQ/2SCL/L4TW93S6/FDQ2SCLL4TW93S6.jpg?auto=webp&frame=1&width=533&height=1024&fit=bounds&md=db92861a76eaba47328dbcff58967502",
+        videoUrl="",
+    )
+
+    poop_bag2=Instruction(
+        projectId=23,
+        stepOrder=2,
+        stepTitle="Sanding, Bevel and Finishing the Edges", 
+        instructions="""
+        For smooth edges use sandpaper or rotary tool (for example: Dremel).
+
+        I am using OKA Factory Edge Beveler Size No. 1 to round off the edges.
+
+        Burnish the edges. Use tokonole leather finish and the wood slicker to burnishing the edges. You can use water as well. You can find HERE a very useful tutorial from "Corter Leather".
+
+        NOTE: Repeat sanding and burnishing one more time for a better results. Use different types of sandpaper (First round: 400, second round: 1200).
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FJL/E5Q5/L4TW94PZ/FJLE5Q5L4TW94PZ.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=be900367049e13260f45bc981b283167",
+        videoUrl="",
+    )
+
+    poop_bag3=Instruction(
+        projectId=23,
+        stepOrder=3,
+        stepTitle="Handpress and Sewing", 
+        instructions="""
+        Attach snaps first. On top i am punching the hole for the snap and attach it at the end, because i can make changes to the position of this snap.
+
+        I am sewing the side with the carabiner hook at first. For sewing i use the saddle stitch technique WITHOUT a stitching pony. HERE you can learn from "Corter Leather" how to do that.
+
+        There are two ways to sew the side walls:
+
+        Method No. 1 - Sewn the side walls inwards.
+        Method No. 2 - Sewn the side walls outwards.
+        In this project i am using Method No. 2.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FPA/WG38/L4TW95WC/FPAWG38L4TW95WC.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=4c19ce111684a31d3621e9959fafa657",
+        videoUrl="",
+    )
+
+    poop_bag4=Instruction(
+        projectId=23,
+        stepOrder=4,
+        stepTitle="The Finished Product", 
+        instructions="""
+        We are done! You made it! I would be glad to see your Leather Dog Poop Bag Holder/Dispenser :)
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FG5/9QMB/L4TW9448/FG59QMBL4TW9448.jpg?auto=webp&frame=1&width=800&height=1024&fit=bounds&md=03ca6b1484f9217394a0655d1e46cc7f",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -1894,6 +1962,10 @@ def seed_instructions():
     db.session.add(garage_door5)
     db.session.add(garage_door6)
     db.session.add(garage_door7)
+    db.session.add(poop_bag1)
+    db.session.add(poop_bag2)
+    db.session.add(poop_bag3)
+    db.session.add(poop_bag4)
     
     db.session.commit()
 
