@@ -342,6 +342,24 @@ def seed_project():
         category="Workshop",
     )
 
+    """
+    I’ve been into playing retro games l
+    ately and thought it 
+    would be cool to build an arcade stick (al
+    so called a “fight stick”) for use with RetroPie. 
+    I had some leftover IKEA oak butcher block from
+     a kitchen project 
+    and figured it would be a g
+    reat material to us
+    e for this.
+     I love the look and the fe
+     el of it and at 1 1/8-inch thick,
+      it’s super sturdy and soli
+      d. 
+     Also, it’s easy to treat with m
+     ineral oil to make it look nice.
+    """
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
