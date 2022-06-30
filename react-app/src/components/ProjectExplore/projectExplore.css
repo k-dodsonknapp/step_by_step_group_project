@@ -2,28 +2,19 @@
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
-    margin-bottom: 250px;
+    margin-bottom: 50px;
 }
-
-/* .allProjectsMap {
-    float: left;
-    width: 306px;
-    height: 306px;
-    transition: border 0.25s, box-shadow 0.25s, -webkit-box-shadow 0.25s;
-} */
 
 ul h2 {
     display: flex;
     margin-left: 125px;
     margin-bottom: 15px;
-    /* border: 1px solid red; */
 }
 
 .project-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
     padding: 0;
 }
 
