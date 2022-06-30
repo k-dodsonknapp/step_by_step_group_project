@@ -21,13 +21,19 @@ function ProjectCard({ projects, views }) {
                                 <div>
                                     <p className='title-card'>
                                         <span className='title-card-span'>
-                                            {project?.title} 
-                                            by
-                                            <NavLink to={`/users/${project?.userId}`}>
-                                                {project?.username}
-                                            </NavLink>
+                                            <span className='project-title-span'>
+                                                {project?.title}
+                                            </span>
+                                            <span className='by-span'>
+                                                by
+                                            </span>
+                                                <NavLink to={`/users/${project?.userId}`} className='user-link'>
+                                                    {project?.username}
+                                                </NavLink>
+                                            <span className='in-span'>
                                             in
-                                            <NavLink to={`/category/${project?.category}`}>
+                                            </span>
+                                            <NavLink to={`/category/${project?.category}`} className="category-link">
                                                 {project?.category}
                                             </NavLink>
                                         </span>
@@ -36,13 +42,7 @@ function ProjectCard({ projects, views }) {
                                     </p>
                                 </div>
                                 <div className="likes-views">
-                                    <ViewCount views={views} project={project} />
-                                    {/* {views.map(view => (
-                                view.viewCount
-                    ))
-
-                }
-                    <p>❤ 5  👁 105</p> */}
+                                    <ViewCount views={views} project={project}/>
                                 </div>
                             </div>
                         </div>
