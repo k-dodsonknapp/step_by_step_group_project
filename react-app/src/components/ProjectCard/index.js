@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import ViewCount from '../ViewCount'
+import "./projectCard.css"
 
 function ProjectCard({ projects, views }) {
 
@@ -18,11 +19,20 @@ function ProjectCard({ projects, views }) {
                         <div className="info-container">
                             <div className="title-by">
                                 <div>
-                                    <p>{project?.title} by <NavLink to={`/users/${project?.userId}`}>
-                                        {project?.username}
-                                    </NavLink> in <NavLink to={`/category/${project?.category}`}>
-                                            {project?.category}
-                                        </NavLink>
+                                    <p className='title-card'>
+                                        <span className='title-card-span'>
+                                            {project?.title} 
+                                            by
+                                            <NavLink to={`/users/${project?.userId}`}>
+                                                {project?.username}
+                                            </NavLink>
+                                            in
+                                            <NavLink to={`/category/${project?.category}`}>
+                                                {project?.category}
+                                            </NavLink>
+                                        </span>
+
+
                                     </p>
                                 </div>
                                 <div className="likes-views">

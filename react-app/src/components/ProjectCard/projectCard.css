@@ -1,0 +1,124 @@
+ .allProjectsMap {
+    float: left;
+    width: 305px;
+    border-radius: 4px 4px 0 0;
+    /* height: 306px; */
+    transition: border 5s, box-shadow 5s, -webkit-box-shadow 5s;
+    border: 1px solid #ddd;
+    /* transition: border 4s, box-shadow 0.25s */
+    width: auto;
+} 
+
+.title-card-span {
+    height: 45px;
+    font-weight: 500;
+}
+
+.allProjectsMap {
+
+}
+
+.eachProject {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    list-style: none;
+    /* border: 1px solid gray; */
+    border-radius: 4px 4px;
+    /* margin: 0px 10px 0px 10px; */
+    /* height: px; */
+}
+
+.eachProject {
+
+}
+
+.eachProject:hover{
+    box-shadow: 0 2px 0 rgb(0 0 0 / 15%);
+    transition: border 0.35s, box-shadow 0.25s, -webkit-box-shadow 0.35s;
+}
+
+/* .title-by {
+    font-weight: 300;
+    font-size: 14px;
+} */
+
+.title-by {
+
+}
+
+.title-by > p {
+    /* margin: 0; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+}
+
+.title-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    height: 50px;
+    padding: 10px 13px;
+}
+
+/* .info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+} */
+
+.likes-views {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #F6F6F6;
+    border-top: 1px solid #e7e7e7;
+    height: 15px;
+    padding: 7px 8px 8px;
+    border-radius: 0px 0px 4px 4px;
+    width: 289px;
+}
+
+.likes-views {
+
+}
+
+/* .likes-views p {
+    margin: 0;
+} */
+
+.likes-views p {
+    margin: 0;
+}
+
+/* .projectImage{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+} */
+
+.projectImage {
+    margin: 0;
+}
+
+/* .projectImage > img{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 285px;
+    height: 200px;
+    border-radius: 4px 4px 0 0;
+} */
+
+.projectImage > img {
+    width: 305px;
+    height: 255px;
+    border-radius: 4px 4px 0 0;
+    margin: 0px;
+}

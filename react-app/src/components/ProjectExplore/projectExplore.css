@@ -5,82 +5,84 @@
     margin-bottom: 250px;
 }
 
-.allProjectsMap {
-
+/* .allProjectsMap {
     float: left;
     width: 306px;
     height: 306px;
     transition: border 0.25s, box-shadow 0.25s, -webkit-box-shadow 0.25s;
+} */
+
+ul h2 {
+    display: flex;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    /* border: 1px solid red; */
 }
 
-.eachProject {
+/* .eachProject {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     list-style: none;
-    /* border: 2px solid orangered; */
-    /* transition: border 0.25s, box-shadow 0.25s, -webkit-box-shadow 0.25s; */
-    /* margin: 20px; */
     border: 1px solid gray;
     border-radius: 4px 4px;
     margin: 0px 10px 0px 10px;
     height: 275px;
-}
+} */
 
-.eachProject:hover{
+/* .eachProject:hover{
     box-shadow: 0 2px 0 rgb(0 0 0 / 15%);
     transition: border 0.35s, box-shadow 0.25s, -webkit-box-shadow 0.35s;
-}
+} */
 
-.title-by {
-    /* text-overflow: ellipsis; */
+/* .title-by {
     font-weight: 300;
     font-size: 14px;
-}
+} */
 
-.title-by > p {
+/* .title-by > p {
     margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+} */
 
-.info-container {
+/* .info-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-}
+} */
 
-.likes-views {
+/* .likes-views {
     display: flex;
     justify-content: flex-end;
     background-color: #F6F6F6;
-}
+} */
 
-.likes-views p {
+/* .likes-views p {
     margin: 0;
-}
+} */
 
-.projectImage{
+/* .projectImage{
     display: flex;
     justify-content: flex-start;
     margin: 0;
     padding: 0;
-}
+} */
 
 .projectImage > img{
     /* border: 1px solid blue; */
     /* margin: 20px; */
     /* position: absolute; */
-    top: 0;
+    /* top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 0; */
     /* margin: auto; */
     /* width: max-content; */
-    width: 285px;
+    /* width: 285px;
     height: 200px;
-    border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0; */
 
     /* max-width: 100%; */
     /* max-height: 100% */
@@ -89,6 +91,7 @@
 /* li .likes-views{
     position: absolute;
 } */
+
 .content-container {
     font-family: 'myriad-pro-condensed",Helvetica,Arial,sans-serif';
     display: flex;
