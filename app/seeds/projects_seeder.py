@@ -343,9 +343,6 @@ def seed_project():
     )
 
     db.session.add(bird_house)
-    db.session.add(bird_house)
-    db.session.add(bird_house)
-    db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
     db.session.add(skillet_burger)
