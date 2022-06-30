@@ -58,31 +58,45 @@ const ProjectExplore = () => {
                 {/* <div id="explore-sign">
                     <h2>{explore}</h2>
                 </div> */}
-                <h2>{"Circuits >"}</h2>
+                <h2>
+                    {"Circuits >"}
+                </h2>
                 <div id="explore-sign">
                     <ProjectCard projects={circuits} views={views} />
                 </div>
-                <h2>{"Workshop >"}</h2>
+                <h2>
+                    {"Workshop >"}
+                </h2>
                 <div id="explore-sign">
                     <ProjectCard projects={workshop} views={views} />
                 </div>
-                <h2>{"Craft >"}</h2>
+                <h2>
+                    {"Craft >"}
+                </h2>
                 <div id="explore-sign">
                     <ProjectCard projects={craft} views={views} />
                 </div>
-                <h2>{"Cooking >"}</h2>
+                <h2>
+                    {"Cooking >"}
+                </h2>
                 <div id="explore-sign">
                     <ProjectCard projects={cooking} views={views} />
                 </div>
-                <h2>{"Living >"}</h2>
+                <h2>
+                    {"Living >"}
+                </h2>
                 <div id="explore-sign">
                     <ProjectCard projects={living} views={views} />
                 </div>
-                <h2>{"Outside >"}</h2>
+                <h2>
+                    {"Outside >"}
+                </h2>
                 <div id="explore-sign">
                     <ProjectCard projects={outside} views={views} />
                 </div>
-                <h2>{"Teachers >"}</h2>
+                <h2>
+                    {"Teachers >"}
+                </h2>
                 <div id="explore-sign">
                     <ProjectCard projects={teachers} views={views} />
                 </div>
