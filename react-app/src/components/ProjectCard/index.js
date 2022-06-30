@@ -37,8 +37,6 @@ function ProjectCard({ projects, views }) {
                                                 {project?.category}
                                             </NavLink>
                                         </span>
-
-
                                     </p>
                                 </div>
                                 <div className="likes-views">
