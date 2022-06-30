@@ -54,7 +54,7 @@ const ProjectExplore = () => {
                     </p>
                 </div>
             </div>
-            <ul>
+            <ul className="project-list">
                 {/* <div id="explore-sign">
                     <h2>{explore}</h2>
                 </div> */}

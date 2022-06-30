@@ -14,9 +14,17 @@
 
 ul h2 {
     display: flex;
-    margin-left: 10px;
-    margin-bottom: 10px;
+    margin-left: 125px;
+    margin-bottom: 15px;
     /* border: 1px solid red; */
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 0;
 }
 
 /* .eachProject {
@@ -133,10 +141,13 @@ ul h2 {
     height: 500px;
     border: 1px solid red; */
     display: grid;
-    gap: 0.5rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    max-width: 500px;
-    min-width: 200px;
+    grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
+    margin: 0px 125px 50px 125px;
+    /* max-width: 500px; */
+    /* min-width: 200px; */
+    /* justify-content: center; */
+    /* align-items: center; */
+
 }
 
 #place p {

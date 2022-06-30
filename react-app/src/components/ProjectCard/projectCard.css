@@ -1,12 +1,13 @@
  .allProjectsMap {
     float: left;
-    width: 305px;
+    width: 305px !important;
     border-radius: 4px 4px 4px 4px;
     /* height: 306px; */
     transition: border 5s, box-shadow 5s, -webkit-box-shadow 5s;
     border: 1px solid #ddd;
     /* transition: border 4s, box-shadow 0.25s */
     width: auto;
+    /* margin: 15px; */
 } 
 
 .title-card-span {
