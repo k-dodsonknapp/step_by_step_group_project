@@ -2298,6 +2298,50 @@ def seed_instructions():
         videoUrl="",
     )
 
+    garden_tables1=Instruction(
+        projectId=29,
+        stepOrder=1,
+        stepTitle="", 
+        instructions="""
+
+        """,
+        photoUrl="",
+        videoUrl="",
+    )
+
+    garden_tables1=Instruction(
+        projectId=29,
+        stepOrder=1,
+        stepTitle="", 
+        instructions="""
+
+        """,
+        photoUrl="",
+        videoUrl="",
+    )
+
+    garden_tables1=Instruction(
+        projectId=29,
+        stepOrder=1,
+        stepTitle="", 
+        instructions="""
+
+        """,
+        photoUrl="",
+        videoUrl="",
+    )
+
+    garden_tables1=Instruction(
+        projectId=29,
+        stepOrder=1,
+        stepTitle="", 
+        instructions="""
+
+        """,
+        photoUrl="",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
