@@ -342,6 +342,15 @@ def seed_project():
         category="Workshop",
     )
 
+    garden_tables=Project(
+        userId=1,
+        title="",
+        titleImage="https://content.instructables.com/ORIG/F2J/BSBL/L3IQWXY3/F2JBSBLL3IQWXY3.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=94de97b15c3f680ca04bd6c5d9c8847e",
+        overview="""
+
+        """,
+        category="Outside",
+    )
 
     db.session.add(bird_house)
     db.session.add(casino_clock)
