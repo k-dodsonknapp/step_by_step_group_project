@@ -1,4 +1,4 @@
-from app.models import db, Supply
+from app.models import db, Supply, project
 
 def seed_supplies():
     bird_house_supply1 = Supply(
@@ -1158,6 +1158,26 @@ def seed_supplies():
     gearbox7=Supply(
         projectId=28,
         supply='Lubricant',
+    )
+
+    garden_tables1=Suppy(
+        projectId=29,
+        supply="Pallets",
+    )
+
+    garden_tables2=Suppy(
+        projectId=29,
+        supply="Clamps",
+    )
+
+    garden_tables3=Suppy(
+        projectId=29,
+        supply="Straight Edge",
+    )
+
+    garden_tables2=Suppy(
+        projectId=29,
+        supply="Skill Saw",
     )
 
     db.session.add(bird_house_supply1)

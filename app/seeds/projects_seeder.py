@@ -380,6 +380,7 @@ def seed_project():
     db.session.add(zentrierwinkel)
     db.session.add(smores)
     db.session.add(gearbox)
+    db.session.add(garden_tables)
 
     db.session.commit()
 
