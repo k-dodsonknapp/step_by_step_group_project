@@ -1200,6 +1200,21 @@ def seed_supplies():
         supply="Screws",
     )
 
+    garden_tables9=Suppy(
+        projectId=29,
+        supply="Carpenter Square",
+    )
+
+    garden_tables10=Suppy(
+        projectId=29,
+        supply="Sawhorses",
+    )
+
+    garden_tables11=Suppy(
+        projectId=29,
+        supply="Hammer",
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
