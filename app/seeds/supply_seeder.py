@@ -1215,6 +1215,12 @@ def seed_supplies():
         supply="Hammer",
     )
 
+    garden_tables12=Suppy(
+        projectId=29,
+        supply="Crowbar",
+    )
+
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -1443,6 +1449,18 @@ def seed_supplies():
     db.session.add(gearbox5)
     db.session.add(gearbox6)
     db.session.add(gearbox7)
+    db.session.add(garden_tables1)
+    db.session.add(garden_tables2)
+    db.session.add(garden_tables3)
+    db.session.add(garden_tables4)
+    db.session.add(garden_tables5)
+    db.session.add(garden_tables6)
+    db.session.add(garden_tables7)
+    db.session.add(garden_tables8)
+    db.session.add(garden_tables9)
+    db.session.add(garden_tables10)
+    db.session.add(garden_tables11)
+    db.session.add(garden_tables12)
     
     db.session.commit()
 
