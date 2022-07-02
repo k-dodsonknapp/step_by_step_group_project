@@ -1175,9 +1175,29 @@ def seed_supplies():
         supply="Straight Edge",
     )
 
-    garden_tables2=Suppy(
+    garden_tables4=Suppy(
         projectId=29,
         supply="Skill Saw",
+    )
+
+    garden_tables5=Suppy(
+        projectId=29,
+        supply="Table Saw",
+    )
+
+    garden_tables6=Suppy(
+        projectId=29,
+        supply="Chop Saw",
+    )
+
+    garden_tables7=Suppy(
+        projectId=29,
+        supply="Screw Driver",
+    )
+
+    garden_tables8=Suppy(
+        projectId=29,
+        supply="Screws",
     )
 
     db.session.add(bird_house_supply1)
