@@ -344,10 +344,10 @@ def seed_project():
 
     garden_tables=Project(
         userId=1,
-        title="",
+        title="Quick and Easy Garden Tables From Old Pallets",
         titleImage="https://content.instructables.com/ORIG/F2J/BSBL/L3IQWXY3/F2JBSBLL3IQWXY3.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=94de97b15c3f680ca04bd6c5d9c8847e",
         overview="""
-
+        I needed some side-table height tables for a garden party where guests will have buffet plates they can rest on their laps but will need a table nearby for drinks. I also wanted these tables to be (1) free; (2) usable after the event; and (3) from repurposed materials. I had been saving a couple of pallets from a delivery years ago, so I decided to work with them.
         """,
         category="Outside",
     )
