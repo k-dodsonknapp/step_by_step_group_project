@@ -1160,62 +1160,62 @@ def seed_supplies():
         supply='Lubricant',
     )
 
-    garden_tables1=Suppy(
+    garden_tables1=Supply(
         projectId=29,
         supply="Pallets",
     )
 
-    garden_tables2=Suppy(
+    garden_tables2=Supply(
         projectId=29,
         supply="Clamps",
     )
 
-    garden_tables3=Suppy(
+    garden_tables3=Supply(
         projectId=29,
         supply="Straight Edge",
     )
 
-    garden_tables4=Suppy(
+    garden_tables4=Supply(
         projectId=29,
         supply="Skill Saw",
     )
 
-    garden_tables5=Suppy(
+    garden_tables5=Supply(
         projectId=29,
         supply="Table Saw",
     )
 
-    garden_tables6=Suppy(
+    garden_tables6=Supply(
         projectId=29,
         supply="Chop Saw",
     )
 
-    garden_tables7=Suppy(
+    garden_tables7=Supply(
         projectId=29,
         supply="Screw Driver",
     )
 
-    garden_tables8=Suppy(
+    garden_tables8=Supply(
         projectId=29,
         supply="Screws",
     )
 
-    garden_tables9=Suppy(
+    garden_tables9=Supply(
         projectId=29,
         supply="Carpenter Square",
     )
 
-    garden_tables10=Suppy(
+    garden_tables10=Supply(
         projectId=29,
         supply="Sawhorses",
     )
 
-    garden_tables11=Suppy(
+    garden_tables11=Supply(
         projectId=29,
         supply="Hammer",
     )
 
-    garden_tables12=Suppy(
+    garden_tables12=Supply(
         projectId=29,
         supply="Crowbar",
     )
