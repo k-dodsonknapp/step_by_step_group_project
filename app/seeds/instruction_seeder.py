@@ -2447,6 +2447,117 @@ def seed_instructions():
         videoUrl="",
     )
 
+    fortune_cookie1=Instruction(
+        projectId=31,
+        stepOrder=1,
+        stepTitle="Mixing the Polymer Clay", 
+        instructions="""
+        Mix together orange and yellow polymer clay, which should give you a bright orange that's similar to the color of a fortune cookie. In my case, I thought the resulting shade was a wee bit too neon, so I added some beige polymer clay until the brightness of the orange was toned down slightly.
+
+        For my earrings, the final ratio of clay was approximately 1:1:0.5, with the 0.5 being the beige. In hindsight, after seeing the earrings next to a real fortune cookie, I probably should have added a little more yellow to the mixture.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F5T/H5SC/L4SGSMVS/F5TH5SCL4SGSMVS.jpg?auto=webp&frame=1&width=800&height=1024&fit=bounds&md=cdb200cea7592862fff91d58a9804f82",
+        videoUrl="",
+    )
+
+    fortune_cookie2=Instruction(
+        projectId=31,
+        stepOrder=2,
+        stepTitle="Roll out Clay", 
+        instructions="""
+        Roll out the polymer clay so that it is 1 to 2 millimeters thick.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F73/UP40/L4SGSN89/F73UP40L4SGSN89.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=ec276d7d260a980addb3411eed32acaa",
+        videoUrl="",
+    )
+
+    fortune_cookie3=Instruction(
+        projectId=31,
+        stepOrder=3,
+        stepTitle="Cut the Circles", 
+        instructions="""
+        Cut two 2-inch circles and remove the excess clay.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FQJ/Q75R/L4SGSNC2/FQJQ75RL4SGSNC2.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=4e8ae0332f87765735ce728eb0f46caf",
+        videoUrl="",
+    )
+
+    fortune_cookie4=Instruction(
+        projectId=31,
+        stepOrder=4,
+        stepTitle="Fold the Fortune Cookies", 
+        instructions="""
+        Take one of your polymer clay circles and carefully fold it in half, but do not pinch the crease flat, just loosely hold the folded edges together with your hand.
+
+        Gently hold the folded side of the circle in your left hand between your middle finger and thumb. As you slowly bring your middle finger and thumb together, use your index finger to push the center outwards. Try your best not to flatten the bubble as you bring the tips of the cookie together.
+
+        Repeat the above steps to create a second fortune cookie.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FWN/WOLO/L4SGSNF1/FWNWOLOL4SGSNF1.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=91534451d5c7dc5ccd3b120584320b7c",
+        videoUrl="",
+    )
+
+    fortune_cookie5=Instruction(
+        projectId=31,
+        stepOrder=5,
+        stepTitle="Add Holes", 
+        instructions="""
+        Use a toothpick or jewelry eyepin to poke a hole in the top of the cookies where the tips meet. Make sure that the holes are far enough from the edges to decrease the chances of the holes cracking and breaking during daily wearings.
+
+        Leave the toothpick (or ear wire) in place until after you've baked the fortune cookie (Step 8).
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FH0/CDPE/L4SGSNGE/FH0CDPEL4SGSNGE.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=2eb8116a0b648bf9e8dd16d22297b174",
+        videoUrl="",
+    )
+
+    fortune_cookie6=Instruction(
+        projectId=31,
+        stepOrder=6,
+        stepTitle="Add Texture and Coloring", 
+        instructions="""
+        Take a cleaned mascara brush (or toothbrush) and gently scrape it along the edges of the polymer clay cookies to give it some texture.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FWF/9HK2/L4SGSNH5/FWF9HK2L4SGSNH5.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=d514a82ccc4ba8904f2f4b93ad106720",
+        videoUrl="",
+    )
+
+    fortune_cookie7=Instruction(
+        projectId=31,
+        stepOrder=7,
+        stepTitle="Add Coloring", 
+        instructions="""
+        Use an Xacto knife to scrape off some brown and/or burnt orange pastels, and use a soft bristled paintbrush to add the pastels to the roughened edges of the cookies.
+
+        The combined texture from Step 6 and subtle color of the pastels will give your cookies the appearance of having been baked.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FTP/ERYK/L4SGSNH7/FTPERYKL4SGSNH7.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=84eb30e30a7cf2dc78b9f85f6bf3220e",
+        videoUrl="",
+    )
+
+    fortune_cookie8=Instruction(
+        projectId=31,
+        stepOrder=8,
+        stepTitle="Bake", 
+        instructions="""
+        Leave the toothpicks (or eyepins) inserted in your cookies, and bake the polymer clay for 15 minutes at 275°F (or according to the instructions on your brand of polymer clay). Let the clay cool before moving onto the next step.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FYO/E6PY/L4SGSNMS/FYOE6PYL4SGSNMS.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=a03142d7cf5658fa50330136cd8fee9f",
+        videoUrl="",
+    )
+
+    fortune_cookie9=Instruction(
+        projectId=31,
+        stepOrder=9,
+        stepTitle="Add Jewelry Findings", 
+        instructions="""
+        Use some jewelry pliers to bend an eyepin so that it starts to look like a clothes hanger (first picture), and then poke it through the holes of one of your cookies. Wrap the leftover wire around the post of the eyepin, and repeat the process with the other cookie.
+
+        Attach an ear wire to each of the eyepins, and -- boom! -- your earrings are done!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FG6/OE42/L4SGSNW8/FG6OE42L4SGSNW8.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=2c0f349cb547a8b56780d998147ab307",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -2631,6 +2742,15 @@ def seed_instructions():
     db.session.add(gummy_bears5)
     db.session.add(gummy_bears6)
     db.session.add(gummy_bears7)
+    db.session.add(fortune_cookie1)
+    db.session.add(fortune_cookie2)
+    db.session.add(fortune_cookie3)
+    db.session.add(fortune_cookie4)
+    db.session.add(fortune_cookie5)
+    db.session.add(fortune_cookie6)
+    db.session.add(fortune_cookie7)
+    db.session.add(fortune_cookie8)
+    db.session.add(fortune_cookie9)
     
     db.session.commit()
 
