@@ -47,7 +47,7 @@ function ProjectCard({ projects, views }) {
                     </li>
                 </div>
 
-            ))}
+            )).reverse()}
         </>
     )
 }
