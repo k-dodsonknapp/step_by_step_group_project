@@ -2279,66 +2279,68 @@ def seed_instructions():
     garden_tables3=Instruction(
         projectId=29,
         stepOrder=3,
-        stepTitle="", 
+        stepTitle="Repeat This Process Next to the Other Interior Joist", 
         instructions="""
-
+        Clamp your straight edge and do the same cut, leaving you with an "empty" center bay on one side.
         """,
-        photoUrl="",
+        photoUrl="https://content.instructables.com/ORIG/FVK/Z0UH/L3IQWEBI/FVKZ0UHL3IQWEBI.jpg?auto=webp&frame=1&width=525&height=1024&fit=bounds&md=537b1f8f10466e35ac0e9af41d3b35b5",
         videoUrl="",
     )
 
-    garden_tables1=Instruction(
+    garden_tables4=Instruction(
         projectId=29,
-        stepOrder=1,
-        stepTitle="", 
+        stepOrder=4,
+        stepTitle="Flip Your Pallet Over and Repeat the Process", 
         instructions="""
-
+        Once you repeat that process, you will have two long rectangles consisting of two joists and the original course of pallets. Save the sawn out pieces! They will form the legs of your table.
         """,
-        photoUrl="",
+        photoUrl="https://content.instructables.com/ORIG/FCF/479M/L3IQVY22/FCF479ML3IQVY22.jpg?auto=webp&frame=1&width=525&height=1024&fit=bounds&md=6856edc666966c6ecaba9fed827f8f2a",
         videoUrl="",
     )
 
-    garden_tables1=Instruction(
+    garden_tables5=Instruction(
         projectId=29,
-        stepOrder=1,
-        stepTitle="", 
+        stepOrder=5,
+        stepTitle="Saw Through the End Joists to Create Your Square-ish Tables", 
         instructions="""
+        Turn one of your long rectangles on its side and clamp it to sawhorses or steady it otherwise. Assess the planks on each side to determine how you can saw through the 2x4 to end up with roughly the same sized tables. On my first pallet, the planks were staggered such that I could clamp a carpenter square to the 2x4 and saw through it adjacent to the center-most planks, similar to the earlier steps when cutting through the planks. Then I flipped it over, clamped it down, and sawed through the other 2x4.
 
+        With the second pallet, however, the planks were identical on each side, so I had to remove the center plank on each then follow the same process for sawing through the 2x4s.
         """,
-        photoUrl="",
+        photoUrl="https://content.instructables.com/ORIG/F9S/UID1/L3IQVY23/F9SUID1L3IQVY23.jpg?auto=webp&frame=1&width=525&height=1024&fit=bounds&md=9a3afff29f5e87724530412cdb471ac5",
         videoUrl="",
     )
 
-    garden_tables1=Instruction(
+    garden_tables6=Instruction(
         projectId=29,
-        stepOrder=1,
-        stepTitle="", 
+        stepOrder=6,
+        stepTitle="Add the Legs", 
         instructions="""
-
+        Flip your square-ish pallet on its side, place one of the sawn pieces of pallet into place as a leg, and screw it down. In most cases, you will need only one screw, because you can push the leg snug up against other pallet pieces.
         """,
-        photoUrl="",
+        photoUrl="https://content.instructables.com/ORIG/FAB/0NX5/L3IQVY3P/FAB0NX5L3IQVY3P.jpg?auto=webp&frame=1&width=525&height=1024&fit=bounds&md=c0f026c179f12e7f9d53dc8486fc19b0",
         videoUrl="",
     )
 
-    garden_tables1=Instruction(
+    garden_tables7=Instruction(
         projectId=29,
-        stepOrder=1,
-        stepTitle="", 
+        stepOrder=7,
+        stepTitle="Assess the Height and Table Top", 
         instructions="""
-
+        I found that the sawn planks as table legs provided the perfect height for a garden side-table. If you want something taller you can either add a thick table top of some kind or use other wood for the legs. You will end up with gaps in the table top. I solved this problem by dumpster diving at my local big box for broken pallets. (Most DIY centers contract to return used pallets, but if the pallets get damaged in some way they go into a dumpster to be hauled away as trash.) Once home with my dumpster treasures, I used my table saw to rip these planks to sizes that would fit neatly in the gaps.
         """,
-        photoUrl="",
+        photoUrl="https://content.instructables.com/ORIG/FNS/M7ME/L3IQWH2C/FNSM7MEL3IQWH2C.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=28969c99ff0a862f854c7e184463ef40",
         videoUrl="",
     )
 
-    garden_tables1=Instruction(
+    garden_tables8=Instruction(
         projectId=29,
-        stepOrder=1,
-        stepTitle="", 
+        stepOrder=8,
+        stepTitle="Enjoy Your Free Garden Tables From Repurposed Pallets", 
         instructions="""
-
+        You will end up with eight tables. How easy was that? And give yourself a pat on the back for keeping stuff out of the landfill!
         """,
-        photoUrl="",
+        photoUrl="https://content.instructables.com/ORIG/FCX/51G1/L3IQVY5D/FCX51G1L3IQVY5D.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=a72780b0ff0f42bb6a2a4bb6c9b5cade",
         videoUrl="",
     )
 
