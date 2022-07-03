@@ -2558,6 +2558,111 @@ def seed_instructions():
         videoUrl="",
     )
 
+    planter1=Instruction(
+        projectId=32,
+        stepOrder=1,
+        stepTitle="Cut the Wooden Bars", 
+        instructions="""
+        I used some 4mm gamari wood beads here for making the back plate. Then I marked about 7 inch each and cut several pieces of them. Because a single planter won't look as good as several planters together.
+
+        Then I sanded and made them smooth.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FBM/YAIX/L38QMGDS/FBMYAIXL38QMGDS.jpg?auto=webp&frame=1&width=400&fit=bounds&md=3bcbf21db61b0b470c7df515b52a31d3",
+        videoUrl="",
+    )
+
+    planter2=Instruction(
+        projectId=32,
+        stepOrder=2,
+        stepTitle=" Mark & Drill Tube Holes", 
+        instructions="""
+        Next I used 15mm thick wood pieces for making the Tube holders. Then I marked the center and drilled holes with 16mm drill bits. Because we are going to use 15mm Test Tubes here.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FKR/FBS1/L38QMGEF/FKRFBS1L38QMGEF.jpg?auto=webp&frame=1&width=400&fit=bounds&md=81829f8510a995956fe4a118ca7cc50a",
+        videoUrl="",
+    )
+
+    planter3=Instruction(
+        projectId=32,
+        stepOrder=3,
+        stepTitle="Cut and Sand Tube Holders", 
+        instructions="""
+        Next, cut the wood pieces and made them smooth by sanding every edges and the hole too.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FO6/214N/L38QMGFH/FO6214NL38QMGFH.jpg?auto=webp&frame=1&width=800&fit=bounds&md=a11753b02ee438f38e862b3a0867c052",
+        videoUrl="",
+    )
+
+    planter4=Instruction(
+        projectId=32,
+        stepOrder=4,
+        stepTitle="Final Pieces to Join", 
+        instructions="""
+        Now, here I have made a few planter pieces and they are ready to join together.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FHY/M578/L38QMGGR/FHYM578L38QMGGR.jpg?auto=webp&frame=1&width=600&fit=bounds&md=d0cc7c762af3d5fc06238bbd7963961f",
+        videoUrl="",
+    )
+
+    planter5=Instruction(
+        projectId=32,
+        stepOrder=5,
+        stepTitle="Fix Tube Holder to the Back", 
+        instructions="""
+        In this step, I used some regular wood glue to join both the pieces together. Also I hammered a couple of nails in the back to give some extra protection, so that it may never get loose in future.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FPF/R0N3/L38QMGOE/FPFR0N3L38QMGOE.jpg?auto=webp&frame=1&width=400&fit=bounds&md=5a782752768f7d4174da56e4cfccca0d",
+        videoUrl="",
+    )
+
+    planter6=Instruction(
+        projectId=32,
+        stepOrder=6,
+        stepTitle="After Dried", 
+        instructions="""
+        So, after the wood glue dried up, the planters looks something like these.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FL8/6UD9/L38QMGW4/FL86UD9L38QMGW4.jpg?auto=webp&frame=1&width=400&fit=bounds&md=650c1c24437ad49f27d1f127ccc91a11",
+        videoUrl="",
+    )
+
+    planter7=Instruction(
+        projectId=32,
+        stepOrder=7,
+        stepTitle="Apply Coating Agent", 
+        instructions="""
+        Next, I used some Varnish as a coating agent and applied all over the areas. It suddenly enhances the look, gives a shiny texture and also protects the wood in long run.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FGV/MW0O/L38QMGXH/FGVMW0OL38QMGXH.jpg?auto=webp&frame=1&width=400&fit=bounds&md=2b64460a221963215f9ab523992ea082",
+        videoUrl="",
+    )
+
+    planter9=Instruction(
+        projectId=32,
+        stepOrder=9,
+        stepTitle="Final Product", 
+        instructions="""
+        Here is our final finished product of wooden wall planter for holding test tubes. This is a preview of our planters before mounting to the wall.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F6N/MBTH/L38QMGW5/F6NMBTHL38QMGW5.jpg?auto=webp&frame=1&width=800&fit=bounds&md=b0268c573aa052001950ecc746846bbb",
+        videoUrl="",
+    )
+
+    planter10=Instruction(
+        projectId=32,
+        stepOrder=10,
+        stepTitle="Attach to Wall", 
+        instructions="""
+        Next, I used some double sided tape and added to the back plate of our planters.
+
+        Then I attached them to the wall in a random manners like, in unequal heights and in equal distances.
+
+        Thus it looks really beautiful and attractive to any visitor that notices it.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FFN/VWUE/L3BLK91I/FFNVWUEL3BLK91I.jpg?auto=webp&frame=1&width=600&fit=bounds&md=a67e317914644046acaa57ce734236e1",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
