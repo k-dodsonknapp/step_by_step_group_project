@@ -2637,9 +2637,9 @@ def seed_instructions():
         videoUrl="",
     )
 
-    planter9=Instruction(
+    planter8=Instruction(
         projectId=32,
-        stepOrder=9,
+        stepOrder=8,
         stepTitle="Final Product", 
         instructions="""
         Here is our final finished product of wooden wall planter for holding test tubes. This is a preview of our planters before mounting to the wall.
@@ -2648,9 +2648,9 @@ def seed_instructions():
         videoUrl="",
     )
 
-    planter10=Instruction(
+    planter9=Instruction(
         projectId=32,
-        stepOrder=10,
+        stepOrder=9,
         stepTitle="Attach to Wall", 
         instructions="""
         Next, I used some double sided tape and added to the back plate of our planters.
@@ -2660,6 +2660,23 @@ def seed_instructions():
         Thus it looks really beautiful and attractive to any visitor that notices it.
         """,
         photoUrl="https://content.instructables.com/ORIG/FFN/VWUE/L3BLK91I/FFNVWUEL3BLK91I.jpg?auto=webp&frame=1&width=600&fit=bounds&md=a67e317914644046acaa57ce734236e1",
+        videoUrl="",
+    )
+
+    planter10=Instruction(
+        projectId=32,
+        stepOrder=10,
+        stepTitle="Test Tube Wall Planter", 
+        instructions="""
+        So, this wooden test tube wall planter is a very pretty and easy to makeHome Decor item that can suddenly enhances the look of your wall.
+
+        It is very much suitable for bedrooms, offices, drawing rooms, restaurants, waiting rooms or any public places.
+
+        Comment below, where else you use this planters.
+
+        Also, comment any doubt or suggestion, I would love to hear those.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FH0/EGPL/L34GE8ZD/FH0EGPLL34GE8ZD.jpg?auto=webp&frame=1&width=600&fit=bounds&md=44568079e48d807922c0bd110d44b8a8",
         videoUrl="",
     )
 
@@ -2856,6 +2873,16 @@ def seed_instructions():
     db.session.add(fortune_cookie7)
     db.session.add(fortune_cookie8)
     db.session.add(fortune_cookie9)
+    db.session.add(planter1)
+    db.session.add(planter2)
+    db.session.add(planter3)
+    db.session.add(planter4)
+    db.session.add(planter5)
+    db.session.add(planter6)
+    db.session.add(planter7)
+    db.session.add(planter8)
+    db.session.add(planter9)
+    db.session.add(planter10)
     
     db.session.commit()
 
