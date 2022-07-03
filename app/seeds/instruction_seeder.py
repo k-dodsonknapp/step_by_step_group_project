@@ -2624,6 +2624,13 @@ def seed_instructions():
     db.session.add(garden_tables6)
     db.session.add(garden_tables7)
     db.session.add(garden_tables8)
+    db.session.add(gummy_bears1)
+    db.session.add(gummy_bears2)
+    db.session.add(gummy_bears3)
+    db.session.add(gummy_bears4)
+    db.session.add(gummy_bears5)
+    db.session.add(gummy_bears6)
+    db.session.add(gummy_bears7)
     
     db.session.commit()
 
