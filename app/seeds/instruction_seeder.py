@@ -2257,28 +2257,28 @@ def seed_instructions():
     garden_tables1=Instruction(
         projectId=29,
         stepOrder=1,
-        stepTitle="", 
+        stepTitle="Assess Your Pallets", 
         instructions="""
-
+        Pallets vary a bit in design, but they all pretty much consist of four joists roughly the size of 2x4s, with 2 joists forming the outside "walls" of the pallet and the other two spaced evenly to create three "bays" of roughly equal widths. On these joists are nailed the planks that flesh out the pallet. You are going to eliminate the center bay by sawing through the planks right at the outside edges of the center joists, then inspect the layout of the planks on each side of the pallet to assess how to form your little square-ish tables. You can figure out the specifics after you cut out the center bays if you like, but it's good just to get a sense of the whole project before you saw.
         """,
-        photoUrl="",
+        photoUrl="https://content.instructables.com/ORIG/FIT/45EY/L3IQW01Y/FIT45EYL3IQW01Y.jpg?auto=webp&frame=1&width=627&height=1024&fit=bounds&md=b1c04399abc3521b75bb450e8ebdd0c6",
         videoUrl="",
     )
 
-    garden_tables1=Instruction(
+    garden_tables2=Instruction(
         projectId=29,
-        stepOrder=1,
-        stepTitle="", 
+        stepOrder=2,
+        stepTitle="Clamp Your Straight Edge and Saw Through the Course of Planks", 
         instructions="""
-
+        Clamp a straight edge onto your pallet so that the blade of your skill saw will cut through the course of planks just on the edge of one of the interior joists.
         """,
-        photoUrl="",
+        photoUrl="https://content.instructables.com/ORIG/FRI/DAB0/L3IQVY0F/FRIDAB0L3IQVY0F.jpg?auto=webp&frame=1&width=525&height=1024&fit=bounds&md=e2388363c572b5a4cbaf8265183125b1",
         videoUrl="",
     )
 
-    garden_tables1=Instruction(
+    garden_tables3=Instruction(
         projectId=29,
-        stepOrder=1,
+        stepOrder=3,
         stepTitle="", 
         instructions="""
 
