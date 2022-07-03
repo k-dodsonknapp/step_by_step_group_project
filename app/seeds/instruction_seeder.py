@@ -2513,6 +2513,14 @@ def seed_instructions():
     db.session.add(gearbox4)
     db.session.add(gearbox5)
     db.session.add(gearbox6)
+    db.session.add(garden_tables1)
+    db.session.add(garden_tables2)
+    db.session.add(garden_tables3)
+    db.session.add(garden_tables4)
+    db.session.add(garden_tables5)
+    db.session.add(garden_tables6)
+    db.session.add(garden_tables7)
+    db.session.add(garden_tables8)
     
     db.session.commit()
 
