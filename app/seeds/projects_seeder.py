@@ -376,6 +376,22 @@ def seed_project():
         category="Craft",
     )
 
+    planter=Project(
+        userId=4,
+        title="Wooden Test Tube Wall Planter",
+        titleImage="https://content.instructables.com/ORIG/FW6/GD10/L34GE8TX/FW6GD10L34GE8TX.jpg?auto=webp&frame=1&width=600&fit=bounds&md=763c7994ab874f7b07f36aa21a7030ae",
+        overview="""
+        Indoor wall planting are very rare and organized way to provide decoration, that's why I built this Wooden Test Tube Wall Planter or you can say a plant propagation system that can carry a single tube for holding the plants.
+
+        Many studies say that Indoor planting is a great way to decorate your home at the time it improves the air quality of your room. But a single plant won't make a difference, the bigger the leaf the better. Because, a person spends most of his time inside a room or office or like that. So, it is very much important to breath a quality air as much possible. And an indoor planting may help you achieve a circulated pure air.
+
+        Also, wall planting can decorate your room in a different way as well it can move your space from the desk to the wall. Most of the plantings are done on tabletops or in plant pots, but wall pots are not generally seen everywhere.
+
+        So, I've made a simple way to get some indoor plants and organize them in a very decorating way to improve you home. So, let's see the making now.
+        """,
+        category="Living",
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -407,6 +423,7 @@ def seed_project():
     db.session.add(garden_tables)
     db.session.add(gummy_bears)
     db.session.add(fortune_cookie)
+    db.session.add(planter)
 
     db.session.commit()
 
