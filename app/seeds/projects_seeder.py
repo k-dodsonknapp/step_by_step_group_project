@@ -352,6 +352,16 @@ def seed_project():
         category="Outside",
     )
 
+    gummy_bears=Project(
+        userId=1,
+        title="Gummi Bear Science",
+        titleImage="https://content.instructables.com/ORIG/FGF/2XDO/L42QW0FA/FGF2XDOL42QW0FA.jpg?auto=webp&frame=1&width=700&height=1024&fit=bounds&md=d743cfcb7f56e084029f3b76964c0c94",
+        overview="""
+        Welcome...to Gummi Bear Science Corner! We are going to explore osmosis by way of gummi bear growth.
+        """,
+        category="Teachers",
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -381,6 +391,7 @@ def seed_project():
     db.session.add(smores)
     db.session.add(gearbox)
     db.session.add(garden_tables)
+    db.session.add(gummy_bears)
 
     db.session.commit()
 
