@@ -1355,6 +1355,81 @@ def seed_supplies():
         supply="(2) Toothpicks (Not pictured)",
     )
 
+    planter1=Supply(
+        projectId=32,
+        supply="Hacksaw",
+    )
+
+    planter2=Supply(
+        projectId=32,
+        supply="Drill Machine",
+    )
+
+    planter3=Supply(
+        projectId=32,
+        supply="Drill Bit (16mm hole cutting bit)",
+    )
+
+    planter4=Supply(
+        projectId=32,
+        supply="Sandpaper",
+    )
+
+    planter5=Supply(
+        projectId=32,
+        supply="Ruler",
+    )
+
+    planter6=Supply(
+        projectId=32,
+        supply="Cutter",
+    )
+
+    planter7=Supply(
+        projectId=32,
+        supply="Curving Tools",
+    )
+
+    planter8=Supply(
+        projectId=32,
+        supply="Hammer",
+    )
+
+    planter9=Supply(
+        projectId=32,
+        supply="Nails",
+    )
+
+    planter10=Supply(
+        projectId=32,
+        supply="Test Tubes",
+    )
+
+    planter11=Supply(
+        projectId=32,
+        supply="Wooden Beads (4mm thick)",
+    )
+
+    planter12=Supply(
+        projectId=32,
+        supply="Wood Pieces (15mm thick)",
+    )
+
+    planter13=Supply(
+        projectId=32,
+        supply="Wood Glue",
+    )
+
+    planter14=Supply(
+        projectId=32,
+        supply="Double Sided Tape",
+    )
+
+    planter15=Supply(
+        projectId=32,
+        supply="Varnish & Brush",
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
@@ -1622,6 +1697,21 @@ def seed_supplies():
     db.session.add(fortune_cookie11)
     db.session.add(fortune_cookie12)
     db.session.add(fortune_cookie13)
+    db.session.add(planter1)
+    db.session.add(planter2)
+    db.session.add(planter3)
+    db.session.add(planter4)
+    db.session.add(planter5)
+    db.session.add(planter6)
+    db.session.add(planter7)
+    db.session.add(planter8)
+    db.session.add(planter9)
+    db.session.add(planter10)
+    db.session.add(planter11)
+    db.session.add(planter12)
+    db.session.add(planter13)
+    db.session.add(planter14)
+    db.session.add(planter15)
     
     db.session.commit()
 
