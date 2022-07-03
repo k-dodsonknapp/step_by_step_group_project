@@ -353,7 +353,7 @@ def seed_project():
     )
 
     gummy_bears=Project(
-        userId=1,
+        userId=6,
         title="Gummi Bear Science",
         titleImage="https://content.instructables.com/ORIG/FGF/2XDO/L42QW0FA/FGF2XDOL42QW0FA.jpg?auto=webp&frame=1&width=700&height=1024&fit=bounds&md=d743cfcb7f56e084029f3b76964c0c94",
         overview="""

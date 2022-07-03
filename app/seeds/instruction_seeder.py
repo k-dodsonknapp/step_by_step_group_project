@@ -2344,6 +2344,109 @@ def seed_instructions():
         videoUrl="",
     )
 
+    gummy_bears1=Instruction(
+        projectId=30,
+        stepOrder=1,
+        stepTitle="Prep Your Muffin Tin", 
+        instructions="""
+        For each solid you selected add 1/3c* of water to a glass measuring cup. Heat the water so that it is warm but not boiling. This will help your solids dissolve.
+        Measure out 1/3c of water for each solid and add to a muffin cup for each solid, stir in one solid per muffin cup of warm water. When mixing solids, continue adding until it no longer dissolves when stirred, I added in 1/4tbs. increments.
+        Repeat with each remaining liquid you are using, if using any oils measure them last as they are the hardest to clean out of your measuring cup.
+        You should now have a muffin tin with a different substance in every cup.
+        *my muffin tin cups hold 1/3c comfortably, adjust to a measurement that works for your pan and leaves you a little room to add.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FPT/TNKI/L42QYN8T/FPTTNKIL42QYN8T.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=936f6007430903cf54881706bd658ba5",
+        videoUrl="",
+    )
+
+    gummy_bears2=Instruction(
+        projectId=30,
+        stepOrder=2,
+        stepTitle="The Bears", 
+        instructions="""
+        To prevent any variation due to color I sorted out all the yellow bears and found the 12 closest in size.
+        This is now the time to make predictions of what will happen to each bear. (skip to the last step for some information on the science if you would like some more educated guesses)
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FCI/RUN0/L42QYN94/FCIRUN0L42QYN94.jpg?auto=webp&frame=1&width=700&height=1024&fit=bounds&md=78e8776418a6c1a49c6ce869d075a844",
+        videoUrl="",
+    )
+
+    gummy_bears3=Instruction(
+        projectId=30,
+        stepOrder=3,
+        stepTitle="Bear Soup", 
+        instructions="""
+        Add one bear to each muffin cup. Watch for any changes that may happen right away, the baking powder was particularly interesting for me.
+        Let sit for a few hours.
+        My official end time was 6 hours but I also wanted to see how long it would take for any to fully dissolve.
+        I would not plan any longer than 8 hours, as quite a few of my bears were not looking too great by then, and after 10 a couple were gone completely.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F67/71D4/L42QYN9G/F6771D4L42QYN9G.jpg?auto=webp&frame=1&width=700&height=1024&fit=bounds&md=7b4ab8683f901d96b869a53ac8707eed",
+        videoUrl="",
+    )
+
+    gummy_bears4=Instruction(
+        projectId=30,
+        stepOrder=8,
+        stepTitle="Observe", 
+        instructions="""
+        Check on your bears each hour if possible and note changes.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FV5/JIBP/L42QW0E4/FV5JIBPL42QW0E4.jpg?auto=webp&frame=1&width=900&height=1024&fit=bounds&md=576001811ccc91653c536c8a3a25a0b5",
+        videoUrl="",
+    )
+
+    gummy_bears5=Instruction(
+        projectId=30,
+        stepOrder=8,
+        stepTitle='The "Why" of Water', 
+        instructions="""
+        The short answer...Osmosis! Osmosis is "a process by which molecules of a solvent tend to pass through a semipermeable membrane from a less concentrated solution into a more concentrated one"*
+
+        What this means is that some of our gummi bears grew because the water around them had a lower concentration of sugar, than the water inside the gummi bear. The gelatin in the gummi bears acts as our semipermeable layer, that allows the water to move in or out of the gummi bear.
+
+        Some of our gummi bears also shrank for the same reason. The salt water bear had a lower concentration of salt inside it than the water around it, therefor all the water in the gummi bear left, in an attempt to even out the levels of salt. Since gummi bears are small and don't have much water the salt level did not even out before the bear ran out of water, leaving a pretty hard bear.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FU9/Q7EY/L42QYNHR/FU9Q7EYL42QYNHR.jpg?auto=webp&frame=1&width=350&height=1024&fit=bounds&md=898166f9ded5feb4dbc84dbb3932b9ab",
+        videoUrl="",
+    )
+
+    gummy_bears6=Instruction(
+        projectId=30,
+        stepOrder=6,
+        stepTitle="What About the Rest?", 
+        instructions="""
+        Some of our non-water cups had very different results.
+
+        The vinegar will break apart the bear, this is because of the acidity of vinegar. Vinegar generally has a ph of 2 or 3 (acidic), while gelatin has a ph closer to 9 (slightly basic). When an acid and a base mix, they don't tend to get along. In our case, since the vinegar is much more acidic than the gelatin is basic, the vinegar will break down the gelatin in an attempt to neutralize. As the vinegar works through the gummi bear it will lose its features and become more blob shaped before eventually dissolving into the vinegar.
+
+        Another interesting happenstance, is the canola oil. The gummi bear did not change at all in the canola oil. The oil was not able to move through the gelatin and would also not have wanted to mix with the water in the gummi bear.
+
+        The Gatorade bear grew, much like the other water based substances but was also the only bear to undergo a large color change. Becoming fully saturated with red coloring.
+
+        Another interesting result was the baking soda bear. This bear seemed to lose all it's color while also growing a significant amount. I am not sure the science behind the color loss but am very intrigued if anyone could comment some insight.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FUV/B25Z/L42QW0FP/FUVB25ZL42QW0FP.jpg?auto=webp&frame=1&width=700&height=1024&fit=bounds&md=ac8108f58ae2bb42fbfa0d7f908d1c31",
+        videoUrl="",
+    )
+
+    gummy_bears7=Instruction(
+        projectId=30,
+        stepOrder=7,
+        stepTitle="End Results", 
+        instructions="""
+        These are the results after around 10 hours of submersion. Two bears did dissolve completely, the water bear* and the vinegar bear. One bear gained some red color. One bear came out looking very salty. And many a bear grew to a puffy new size, with the Milk and Brown Sugar Bears seeming to grow the most.
+
+        Looking back...
+
+        In hind sight I should've used a ruler to measure each bear instead of only comparing to the original bear. In addition I should have placed my muffin tin further from any potential variables that could sway my results.
+
+        *A potential cause of the water bear melting was the use of the oven, that bear sitting nearest the vent. This was unintentional but may have skewed my results. Alternatively, maybe my tap water is a bit acidic. We may never know.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FA1/ISNJ/L42QYNC5/FA1ISNJL42QYNC5.jpg?auto=webp&frame=1&width=700&height=1024&fit=bounds&md=ca2fdc68dd9e51d6a544143835fb5591",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
