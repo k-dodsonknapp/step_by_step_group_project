@@ -8,7 +8,7 @@ function ProjectCard({ projects, views }) {
 
     return (
         <>
-            {projects.map(project => (
+            {projects.map((project, index) => index < 5 &&(
                 <div key={project.id} className="allProjectsMap">
                     <li className="eachProject">
                         <a href={`/projects/${project?.id}`}>

@@ -362,6 +362,20 @@ def seed_project():
         category="Teachers",
     )
 
+    fortune_cookie=Project(
+        userId=5,
+        title="Fortune Cookie Earrings",
+        titleImage="https://content.instructables.com/ORIG/FA6/7C8G/L4R1DZ02/FA67C8GL4R1DZ02.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=2d4127d1d428ec935faa3bc9f0374525",
+        overview="""
+        For some reason a lot of my craft projects and Instructables seem to be inspired by food. Not sure what that says about me, but I'm back with another addition to my list of food-themed projects.
+
+        So how did these earrings come into existence? Well, one night after indulging on way too many crab rangoons, I found myself staring at an unopened fortune cookie, simultaneously scolding myself for eating too much and wondering if I had enough room for the dessert. As the food coma began to hit, my mind began to wander and my internal debate faded into oblivion as this thought crossed my mind: Fortune cookie earrings would be hella cute.
+
+        And so, I got to work making my earrings, and the fortune cookie was left in tact (so I could save it for the photoshoot with my finished earrings).
+        """,
+        category="Craft",
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -392,6 +406,7 @@ def seed_project():
     db.session.add(gearbox)
     db.session.add(garden_tables)
     db.session.add(gummy_bears)
+    db.session.add(fortune_cookie)
 
     db.session.commit()
 
