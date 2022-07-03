@@ -1290,6 +1290,71 @@ def seed_supplies():
         supply="Cabonated Water",
     )
 
+    fortune_cookie1=Supply(
+        projectId=31,
+        supply="Polymer Clay (Beige)",
+    )
+
+    fortune_cookie2=Supply(
+        projectId=31,
+        supply="Polymer Clay (Orange)",
+    )
+
+    fortune_cookie3=Supply(
+        projectId=31,
+        supply="Polymer Clay (Yellow)",
+    )
+
+    fortune_cookie4=Supply(
+        projectId=31,
+        supply="Chalk pastels in brown and/or burnt orange",
+    )
+
+    fortune_cookie5=Supply(
+        projectId=31,
+        supply="Xacto knife",
+    )
+
+    fortune_cookie6=Supply(
+        projectId=31,
+        supply="Soft bristled paintbrush",
+    )
+
+    fortune_cookie7=Supply(
+        projectId=31,
+        supply="Roller or pasta machine",
+    )
+
+    fortune_cookie8=Supply(
+        projectId=31,
+        supply="Jewelry pliers",
+    )
+
+    fortune_cookie9=Supply(
+        projectId=31,
+        supply="Circle cookie cutter with a 2-inch diameter",
+    )
+
+    fortune_cookie10=Supply(
+        projectId=31,
+        supply="(2) Ear wires",
+    )
+
+    fortune_cookie11=Supply(
+        projectId=31,
+        supply="(2) 70mm Eyepins",
+    )
+
+    fortune_cookie12=Supply(
+        projectId=31,
+        supply="Old mascara brush or toothbrush",
+    )
+
+    fortune_cookie13=Supply(
+        projectId=31,
+        supply="(2) Toothpicks (Not pictured)",
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
