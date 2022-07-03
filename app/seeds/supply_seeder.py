@@ -1220,6 +1220,75 @@ def seed_supplies():
         supply="Crowbar",
     )
 
+    gummy_bear1=Supply(
+        projectId=30,
+        supply="Gummi Bears",
+    )
+
+    gummy_bear2=Supply(
+        projectId=30,
+        supply="A Muffin Pan",
+    )
+
+    gummy_bear3=Supply(
+        projectId=30,
+        supply="Water",
+    )
+
+    gummy_bear4=Supply(
+        projectId=30,
+        supply="Water",
+    )
+
+    gummy_bear5=Supply(
+        projectId=30,
+        supply="Salt",
+    )
+
+    gummy_bear6=Supply(
+        projectId=30,
+        supply="Sugar",
+    )
+
+    gummy_bear7=Supply(
+        projectId=30,
+        supply="Brown Sugar",
+    )
+
+    gummy_bear8=Supply(
+        projectId=30,
+        supply="Milk",
+    )
+
+    gummy_bear9=Supply(
+        projectId=30,
+        supply="Baking Powder",
+    )
+
+    gummy_bear10=Supply(
+        projectId=30,
+        supply="Baking Soda",
+    )
+
+    gummy_bear11=Supply(
+        projectId=30,
+        supply="Gatorade Powder",
+    )
+
+    gummy_bear12=Supply(
+        projectId=30,
+        supply="Vinegar",
+    )
+
+    gummy_bear13=Supply(
+        projectId=30,
+        supply="Canola Oil",
+    )
+
+    gummy_bear14=Supply(
+        projectId=30,
+        supply="Cabonated Water",
+    )
 
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
