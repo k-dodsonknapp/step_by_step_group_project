@@ -2680,6 +2680,53 @@ def seed_instructions():
         videoUrl="",
     )
 
+    mirror1=Instruction(
+        projectId=33,
+        stepOrder=1,
+        stepTitle="Measure and Cut", 
+        instructions="""
+        You know the old adage...measure twice, cut once! If you do it right, most standard bathroom mirrors can be entirely framed with just two pieces of 8' trim (including the one I linked in the previous step). Measure from the outside to the outside of the mirror and then cut the outside of the angle to that length. My standard mirror size was 30" wide by 36" tall.
+
+        The first cut will be simply to mitre the trim. Naturally, when making a square frame, the easiest way is to set the mitre cut to 45 degrees. This also gives you straight seems (straight with respect to the corners of the mirror). There is one thing to remember when cutting the trim...it can only be cut ONE WAY. Unlike a 2x4 or similar piece of wood, the trim is thinner on one side than the other, meaning you cannot simply flip the piece of trim over. You will want the thin side on the INSIDE of the mirror so you will need to mitre the trim using BOTH mitre directions of 45 degrees. See the pictures demonstrating this with a power mitre saw.
+
+        Once you make the first, cut you will have the 45 degree edge. Measure from the very point of that edge and mark where the point on the other side would be. Rotate your direction of cut, and mitre the opposite side. Now you will have one piece of the frame.
+
+        At this point, you will note on your remaining trim, the angle is opposite of what is needed. You will need to perform another mitre cut to the opposite 45 degrees, essentially cutting off a triangle piece of trim. From there, simply measure, change to the opposite mitre angle, and cut again. At this point, you should have two pieces of cut trim that form have a frame as pictured!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FHL/31UF/JWESUJ31/FHL31UFJWESUJ31.jpg?auto=webp&frame=1&width=525&height=1024&fit=bounds&md=243374827107025c001c7271f57a8736",
+        videoUrl="",
+    )
+
+    mirror2=Instruction(
+        projectId=33,
+        stepOrder=2,
+        stepTitle="(Optional) Sand Space for Mirror Clamps", 
+        instructions="""
+        My mirrors, and many standard builder mirrors have small clamps holding them to the wall (see picture). In order for our frame to lay flat on the mirror you will need to cut out a small space for those clamps. I used a Dremel with the sanding attachment (as pictured in the first step) to accomplish this.
+
+        Simply measure from the edge of the mirrors where those clamps are (they are not necessarily in the same spaces with respect to the edge of the mirror on either side so be sure to measure them all), and mark the back of the trim. Then use your Dremel (or hand sander) to route out a space. See the included picture of the space routed out for the clamps. Most of the mirrors will have four clamps, two on top and two on bottom so you should only have to perform this action on the top and bottom pieces of the frame.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F20/YONE/JWESUJ75/F20YONEJWESUJ75.jpg?auto=webp&frame=1&width=525&height=1024&fit=bounds&md=374aae2b549e2e33ab2c2c6702463a86",
+        videoUrl="",
+    )
+
+    mirror3=Instruction(
+        projectId=33,
+        stepOrder=3,
+        stepTitle="Attach Frame to Mirror!", 
+        instructions="""
+        This is it...last step! Now that you have your frame pieces cut, its time to attach them to your mirror. Grab your level, liquid nails (in the caulk gun) and painters tape! Spread the liquid nails on the backside of the frame pieces in a wave pattern as pictured. Then, using the level, place the bottom piece of the frame on the mirror and ensure the bottom edge of the frame aligns with the bottom edge of the mirror. You can double check with the level.
+
+        Once you get that in place (the liquid nails should gently hold in place) wrap a piece or two of the painters tape as shown. Then, place the two sides, being careful to align them with the corners of the bottom piece as pictured. Finally, place the top piece.
+
+        NOTE: The liquid nails does not dry immediately but it does start to set within 10 minutes or so. I left my tape on for a few hours to ensure it was set.
+
+        That's it for the cheap, easy, DIY mirror frame!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F1S/EJLS/JWESUJ64/F1SEJLSJWESUJ64.jpg?auto=webp&frame=1&width=205&height=1024&fit=bounds&md=3f21254b9fad4e6293a772f684b15822",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
