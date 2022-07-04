@@ -1430,6 +1430,41 @@ def seed_supplies():
         supply="Varnish & Brush",
     )
 
+    mirror1=Supply(
+        projectId=33,
+        supply="",
+    )
+
+    mirror1=Supply(
+        projectId=33,
+        supply="",
+    )
+
+    mirror1=Supply(
+        projectId=33,
+        supply="",
+    )
+
+    mirror1=Supply(
+        projectId=33,
+        supply="",
+    )
+
+    mirror1=Supply(
+        projectId=33,
+        supply="",
+    )
+
+    mirror1=Supply(
+        projectId=33,
+        supply="",
+    )
+
+    mirror1=Supply(
+        projectId=33,
+        supply="",
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
