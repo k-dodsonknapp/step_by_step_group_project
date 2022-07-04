@@ -5,6 +5,7 @@ import { deleteOneProject, getOneProject } from "../../store/project";
 import { addOneComment, deleteOneComment, updateOneComment } from "../../store/comments";
 import "./Projects.css";
 import { getOneView, updateView } from "../../store/views";
+import UserPhoto from "../UserPhoto";
 // import { BsDot } from 'react-icons/bs';
 
 const ProjectDetails = () => {
@@ -16,6 +17,7 @@ const ProjectDetails = () => {
   console.log(project)
   let view = useSelector(state => state?.views?.view)
   const user = useSelector((state) => state?.session?.user);
+  console.log(user, "user")
   const session = useSelector(state => state?.session);
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
@@ -220,7 +222,10 @@ const ProjectDetails = () => {
               <div className="comments" >
                 <div className="user">
                   <div className="user-container">
-                    <div className="userImg"></div>
+                    <div className="userImg">
+                      {/* {comment?.userId} */}
+                      <UserPhoto userId={comment?.userId} />
+                    </div>
                     <div className="username">
                       {comment?.username}
                     </div>
@@ -245,6 +250,8 @@ const ProjectDetails = () => {
                       <form className="comment-form" >
                         <div className="edit-container">
                           <div className="prf-image">
+                            {/* hello */}
+                            <img id="createCommnetUserPhoto" src={user.userPhoto}></img>
                           </div>
                           <div className="edit-comment">
                             <textarea
@@ -298,7 +305,7 @@ const ProjectDetails = () => {
               <form className="comment-form" onSubmit={handleComment}>
                 <div className="edit-container">
                   <div className="prf-image">
-
+                  <img id="createCommnetUserPhoto" src={user.userPhoto}></img>
                   </div>
                   <div className="edit-comment">
                     <textarea

@@ -78,9 +78,15 @@ const Navigation = () => {
             <div className='profile-following-div'>
               <button id='profile-quickmenu' onClick={openMenu}>
                 {user && (
-                <img src={user.userPhoto} alt=''></img>
+                  <img src={user.userPhoto} alt=''></img>
                 )}
               </button>
+              {user && (
+                <button id='greeting' onClick={openMenu}> Hello {user.username}!</button>
+              )}
+              {!user && (
+                <button id='greeting' onClick={openMenu} style={{marginRight : "130px"}}> Login</button>
+              )}
             </div>
           </div>
           <div className="lower-nav">
@@ -139,11 +145,13 @@ const Navigation = () => {
                 </li>
               </div>
             </NavLink> */}
-            <div className='dropdown-btns'>
-              <li>
-                <LogoutButton />
-              </li>
-            </div>
+            {user && (
+              <div className='dropdown-btns'>
+                <li>
+                  <LogoutButton />
+                </li>
+              </div>
+            )}
           </div>
         </ul>
       )}

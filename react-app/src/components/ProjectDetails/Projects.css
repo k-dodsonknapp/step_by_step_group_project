@@ -5,6 +5,25 @@
     text-align: center;
 }
 
+#comment-user-photo{
+    /* width: fit-content; */
+  /* height: -moz-fit-content; */
+  /* height: fit-content; */
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#createCommnetUserPhoto {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    cursor: pointer;
+}
+
 .username-category {
     font-weight: 700;
     padding: 0px 5px;
@@ -258,7 +277,7 @@
     justify-content: center;
     width: 630px;
     height: 200px;
-    border: 1px solid red;
+    border: 1px solid rgba(128, 128, 128, 0.39);
     border-radius: 6px;
     background-color: #f6f6f6 ;
 }
@@ -306,7 +325,7 @@
 .prf-image {
     height: 45px;
     width: 50px;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     border-radius: 50%;
     margin-left: 20px;
     margin-top: 20px;
