@@ -1465,6 +1465,36 @@ def seed_supplies():
         supply="Dremel with sanding attachment",
     )
 
+    airplane1=Supply(
+        projectId=34,
+        supply="1 Piece of 8 by 10.5 inch graph paper",
+    )
+
+    airplane2=Supply(
+        projectId=34,
+        supply="Scissors",
+    )
+
+    airplane3=Supply(
+        projectId=34,
+        supply="Ruler",
+    )
+
+    airplane4=Supply(
+        projectId=34,
+        supply="Tape",
+    )
+
+    airplane5=Supply(
+        projectId=34,
+        supply="Pencil",
+    )
+
+    airplane6=Supply(
+        projectId=34,
+        supply="Stapler",
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
