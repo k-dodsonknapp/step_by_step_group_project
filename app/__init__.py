@@ -14,6 +14,7 @@ from .api.search_routes import search_routes
 from .api.image_route import image_routes
 from .api.instructions import instruction_routes
 from .api.views import views_routes
+from .api.favorite import favorite_routes
 
 from .seeds import seed_commands
 
@@ -43,6 +44,7 @@ app.register_blueprint(search_routes, url_prefix='/api/search')
 app.register_blueprint(image_routes, url_prefix='/api/images')
 app.register_blueprint(instruction_routes, url_prefix='/api/instructions')
 app.register_blueprint(views_routes, url_prefix='/api/views')
+app.register_blueprint(favorite_routes, url_prefix='/api/favorite')
 db.init_app(app)
 Migrate(app, db)
 
