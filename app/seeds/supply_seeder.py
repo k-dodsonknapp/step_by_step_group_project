@@ -1845,6 +1845,17 @@ def seed_supplies():
     db.session.add(airplane4)
     db.session.add(airplane5)
     db.session.add(airplane6)
+    db.session.add(garden_box1)
+    db.session.add(garden_box2)
+    db.session.add(garden_box3)
+    db.session.add(garden_box4)
+    db.session.add(garden_box5)
+    db.session.add(garden_box6)
+    db.session.add(garden_box7)
+    db.session.add(garden_box8)
+    db.session.add(garden_box9)
+    db.session.add(garden_box10)
+    db.session.add(garden_box11)
     
     db.session.commit()
 
