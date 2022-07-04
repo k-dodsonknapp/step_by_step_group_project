@@ -1784,6 +1784,12 @@ def seed_supplies():
     db.session.add(mirror5)
     db.session.add(mirror6)
     db.session.add(mirror7)
+    db.session.add(airplane1)
+    db.session.add(airplane2)
+    db.session.add(airplane3)
+    db.session.add(airplane4)
+    db.session.add(airplane5)
+    db.session.add(airplane6)
     
     db.session.commit()
 
