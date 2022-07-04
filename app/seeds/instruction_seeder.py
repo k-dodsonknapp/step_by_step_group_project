@@ -2989,6 +2989,10 @@ def seed_instructions():
     db.session.add(mirror1)
     db.session.add(mirror2)
     db.session.add(mirror3)
+    db.session.add(airplane1)
+    db.session.add(airplane2)
+    db.session.add(airplane3)
+    db.session.add(airplane4)
     
     db.session.commit()
 
