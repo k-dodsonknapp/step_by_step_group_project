@@ -1432,37 +1432,37 @@ def seed_supplies():
 
     mirror1=Supply(
         projectId=33,
-        supply="",
+        supply="Trim / Moulding",
     )
 
-    mirror1=Supply(
+    mirror2=Supply(
         projectId=33,
-        supply="",
+        supply="Liquid Nails All Surface",
     )
 
-    mirror1=Supply(
+    mirror3=Supply(
         projectId=33,
-        supply="",
+        supply="Caulk Gun",
     )
 
-    mirror1=Supply(
+    mirror4=Supply(
         projectId=33,
-        supply="",
+        supply="Mitre Saw",
     )
 
-    mirror1=Supply(
+    mirror5=Supply(
         projectId=33,
-        supply="",
+        supply="A level",
     )
 
-    mirror1=Supply(
+    mirror6=Supply(
         projectId=33,
-        supply="",
+        supply="Painter's Tape",
     )
 
-    mirror1=Supply(
+    mirror7=Supply(
         projectId=33,
-        supply="",
+        supply="Dremel with sanding attachment",
     )
 
     db.session.add(bird_house_supply1)
@@ -1747,6 +1747,13 @@ def seed_supplies():
     db.session.add(planter13)
     db.session.add(planter14)
     db.session.add(planter15)
+    db.session.add(mirror1)
+    db.session.add(mirror2)
+    db.session.add(mirror3)
+    db.session.add(mirror4)
+    db.session.add(mirror5)
+    db.session.add(mirror6)
+    db.session.add(mirror7)
     
     db.session.commit()
 
