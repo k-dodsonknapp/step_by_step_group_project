@@ -392,6 +392,16 @@ def seed_project():
         category="Living",
     )
 
+    mirror=Project(
+        userId=4,
+        title="Cheap, Easy, Anyone Can DIY Mirror Frame!",
+        titleImage="https://content.instructables.com/ORIG/F4N/IPA4/JWESUQOL/F4NIPA4JWESUQOL.jpg?auto=webp&frame=1&width=882&height=1024&fit=bounds&md=b011042ea973f9e1eaa5793125ab303e",
+        overview="""
+        Ok so there are about a thousand different tutorials online for DIY mirror frames so naturally, I decided to write a quick Instructable for mine. My house had the standard builder mirrors and I wanted to jazz them up a bit without spending a fortune. I wanted to write this up mainly because this project is so simple ANYONE can make these frames with no experience, about $15, and a couple of hours. 
+        """,
+        category="Living",
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -424,6 +434,7 @@ def seed_project():
     db.session.add(gummy_bears)
     db.session.add(fortune_cookie)
     db.session.add(planter)
+    db.session.add(mirror)
 
     db.session.commit()
 
