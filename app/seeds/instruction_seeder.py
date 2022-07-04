@@ -2854,6 +2854,135 @@ def seed_instructions():
         videoUrl="",
     )
 
+    rc_airplane1=Instruction(
+        projectId=36,
+        stepOrder=1,
+        stepTitle="Fuselage", 
+        instructions="""
+        For the fuselage, checkout above image or you can make your own fuselage by taking different measurements ratio and sizes.
+        Cut two layers of fuselage ( Image1) and join them by making interior structure as shown above in image's (image2).
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FCS/OFJV/KZ9ULQTS/FCSOFJVKZ9ULQTS.jpg?auto=webp&frame=1&crop=3:2&width=501&height=1024&fit=bounds&md=f328a8b0b66a09a4084d12810e07e32c",
+        videoUrl="",
+    )
+
+    rc_airplane2=Instruction(
+        projectId=36,
+        stepOrder=2,
+        stepTitle="Vertical Stab & Horizontal Stab", 
+        instructions="""
+        Now we will work on the tail section, For the reference you can see the measurements of my design.
+        Its your choice how you want to give looks to your airplane.
+        For more clarification look at above images.
+        Once done, Tape it.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FUW/QUF7/KZ9ULQ1T/FUWQUF7KZ9ULQ1T.png?auto=webp&frame=1&crop=3:2&width=900&fit=bounds&md=f7bc20a45ea6913eba5669e24e71fabb",
+        videoUrl="",
+    )
+
+    rc_airplane3=Instruction(
+        projectId=36,
+        stepOrder=3,
+        stepTitle="Assembling Step 1 & Step 2", 
+        instructions="""
+        Now we will assemble the fuselage and the stabilizers.
+        Make a cut at the end of the fuselage for inserting the horizontal stabilizer.
+        Do the same for vertical stabilizer make a cut at the horizontal center and stick the vertical stab.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FNP/CYXP/KZ9ULR38/FNPCYXPKZ9ULR38.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=e89a282d189595f19d3db8cb67e70f43",
+        videoUrl="",
+    )
+
+    rc_airplane4=Instruction(
+        projectId=36,
+        stepOrder=4,
+        stepTitle="Motor Mounting", 
+        instructions="""
+        Now take a plywood piece and mount the motor on it and then stick the plywood at leading edge just remember motor should be downwards; as the angle matters the thrust will generate downwards so that lift can be achieved.
+        Once done, stick more plywood at the corners for more strength as shown above in the images.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F82/1DWV/KZ9ULS0K/F821DWVKZ9ULS0K.jpg?auto=webp&frame=1&width=525&height=1024&fit=bounds&md=116161c55cbe759a45d3990806ee4e7b",
+        videoUrl="",
+    )
+
+    rc_airplane5=Instruction(
+        projectId=36,
+        stepOrder=5,
+        stepTitle="Landing Gear", 
+        instructions="""
+        Now take a thicker steel rod and bend it as shown in above image.
+        Now attach the tires with the lower part and see if it's moving or not.
+        Many people say that landing gears just add more Weight to their planes and they are not useful so yes its kind of true but I personally recommend this because sometimes its too difficult to manage both the transmitter and the plane it's completely optional :)
+        Once done, stick the landing gears to the bottom part of the plane.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FZ7/91LH/KZ9ULUCS/FZ791LHKZ9ULUCS.jpg?auto=webp&frame=1&width=247&height=1024&fit=bounds&md=2197fa40601be104ae40405ab9e0f273",
+        videoUrl="",
+    )
+
+    rc_airplane6=Instruction(
+        projectId=36,
+        stepOrder=6,
+        stepTitle="Wing", 
+        instructions="""
+        This is the most important part and this will decide your airplane characteristics.
+        For making the wing take a thin steel rod and some strips of foam and stick them on the doted lines image1.
+        Now apply some heat and fold the wing from the dark line as shown in image 1.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F48/F1O6/KZ9ULV8N/F48F1O6KZ9ULV8N.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=fac0f94d8d8e0f662cd55814d5821a2b",
+        videoUrl="",
+    )
+
+    rc_airplane7=Instruction(
+        projectId=36,
+        stepOrder=7,
+        stepTitle="Electronics'", 
+        instructions="""
+        Now we will be installing all electronics such as ESC ,servos and the battery.
+        Install servos for the elevator, rudder and ailerons.
+        Install the servos and control assembly to each control surface keeping in mind the neutral positions of each control surfaces.
+
+        Connect ESC to the motor and connect all other connection to the receiver such as -
+
+        Channel1 - ailerons
+        Channel2 - elevator
+        Channel3 - throttle
+        Channel4 - rudder
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F61/WX8O/KZ9ULY6V/F61WX8OKZ9ULY6V.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=23c36f756c95d3ca857aabfccae670b8",
+        videoUrl="",
+    )
+
+    rc_airplane8=Instruction(
+        projectId=36,
+        stepOrder=8,
+        stepTitle=" Putting Everything Together", 
+        instructions="""
+        Check all the control surfaces before fight and make sure that they are working properly.
+        Check CG of the plane before flight.
+        Make sure your all electronics are working properly.
+        You can add different touches to your plane so that it looks amazing I personally love simple and classic planes.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FL5/M3Q4/KZ9ULZFB/FL5M3Q4KZ9ULZFB.jpg?auto=webp&frame=1&width=490&height=1024&fit=bounds&md=169d45eb3836d53627141a6aece0c17b",
+        videoUrl="",
+    )
+
+    rc_airplane9=Instruction(
+        projectId=36,
+        stepOrder=9,
+        stepTitle="Done", 
+        instructions="""
+        Congratulations guys ! we made it.
+
+        I hope you enjoyed
+
+        Thanks for watching : )
+
+        GOOD LUCK FOR YOUR FIRST MAIDEN FLIGHT !!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FAW/A3GM/KZ9UM0AA/FAWA3GMKZ9UM0AA.jpg?auto=webp&frame=1&crop=3:2&width=600&height=1024&fit=bounds&md=91a0236dfde24e987fafb559dafce5ec",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
@@ -3069,6 +3198,15 @@ def seed_instructions():
     db.session.add(garden_box3)
     db.session.add(garden_box4)
     db.session.add(garden_box5)
+    db.session.add(rc_airplane1)
+    db.session.add(rc_airplane2)
+    db.session.add(rc_airplane3)
+    db.session.add(rc_airplane4)
+    db.session.add(rc_airplane5)
+    db.session.add(rc_airplane6)
+    db.session.add(rc_airplane7)
+    db.session.add(rc_airplane8)
+    db.session.add(rc_airplane9)
     
     db.session.commit()
 
