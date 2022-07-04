@@ -393,11 +393,27 @@ def seed_project():
     )
 
     mirror=Project(
-        userId=4,
+        userId=3,
         title="Cheap, Easy, Anyone Can DIY Mirror Frame!",
         titleImage="https://content.instructables.com/ORIG/F4N/IPA4/JWESUQOL/F4NIPA4JWESUQOL.jpg?auto=webp&frame=1&width=882&height=1024&fit=bounds&md=b011042ea973f9e1eaa5793125ab303e",
         overview="""
         Ok so there are about a thousand different tutorials online for DIY mirror frames so naturally, I decided to write a quick Instructable for mine. My house had the standard builder mirrors and I wanted to jazz them up a bit without spending a fortune. I wanted to write this up mainly because this project is so simple ANYONE can make these frames with no experience, about $15, and a couple of hours. 
+        """,
+        category="Living",
+    )
+
+    airplane=Project(
+        userId=2,
+        title="How to Make the Reaper Paper Airplane",
+        titleImage="https://content.instructables.com/ORIG/F53/CS58/J12O18NU/F53CS58J12O18NU.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=d673ef4bdd1ba9b86081c827d21faa83",
+        overview="""
+        Fast, long range and uniquely shaped, the Reaper is a miniature "drone cruiser" paper airplane possessing an unconventional pairing of canards and forward swept wings. The aircraft's layout is somewhat reminiscent of the radical but unbuilt Convair XB-53.
+
+        After the success of the SkyDragonfly, I decided to develop a more advanced cruiser featuring canards. To that end, I decided to use swept wings. To address balance, the wings were swept forward to make the centers of lift and gravity workable. The shape of the canards was drawn from previous canard aircraft like the popular Fang.
+
+        Testing showed the Reaper to be a stable and quick aircraft. Despite its unconventional shape, the aircraft proved to be very docile and accommodating. With these good handling traits and satisfactory performance, the Reaper was approved for publication.
+
+        TAA USAF Designation: D443-1
         """,
         category="Living",
     )
@@ -435,6 +451,7 @@ def seed_project():
     db.session.add(fortune_cookie)
     db.session.add(planter)
     db.session.add(mirror)
+    db.session.add(airplane)
 
     db.session.commit()
 
