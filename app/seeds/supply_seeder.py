@@ -1495,6 +1495,61 @@ def seed_supplies():
         supply="Stapler",
     )
 
+    garden_box1=Supply(
+        projectId=35,
+        supply="Wooden Rhombus Bar 21x68mm",
+    )
+
+    garden_box2=Supply(
+        projectId=35,
+        supply="Larch tree (or what is available in your area)",
+    )
+
+    garden_box3=Supply(
+        projectId=35,
+        supply="Board size according to desired bed size",
+    )
+
+    garden_box4=Supply(
+        projectId=35,
+        supply="Bracket sheets to install the boards to the sides",
+    )
+
+    garden_box5=Supply(
+        projectId=35,
+        supply="100x100mm larch wood bars",
+    )
+
+    garden_box6=Supply(
+        projectId=35,
+        supply="Dimpled sheet to protect the inner sides from moisture",
+    )
+
+    garden_box7=Supply(
+        projectId=35,
+        supply="Stables or nails",
+    )
+
+    garden_box8=Supply(
+        projectId=35,
+        supply="Chicken wire",
+    )
+
+    garden_box9=Supply(
+        projectId=35,
+        supply='"Garden Fairy" I used a template from etsy.com',
+    )
+
+    garden_box10=Supply(
+        projectId=35,
+        supply="Screws to connect bars and boards to corner posts",
+    )
+
+    garden_box11=Supply(
+        projectId=35,
+        supply="Wood stain",
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
