@@ -2783,6 +2783,77 @@ def seed_instructions():
         videoUrl="",
     )
 
+    garden_box1=Instruction(
+        projectId=35,
+        stepOrder=1,
+        stepTitle="Cutting and Pre Assembly", 
+        instructions="""
+        Cut all boards and bars and posts to the desired length, 
+        Pre assemble the front and back sides as seen on the picture
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F7R/CMWM/L49W2AOJ/F7RCMWML49W2AOJ.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=e10197678df240b6300ce74086b42d63",
+        videoUrl="",
+    )
+
+    garden_box2=Instruction(
+        projectId=35,
+        stepOrder=2,
+        stepTitle="Assembly of All 4 Sides", 
+        instructions="""
+        Assemble all 4 sides, 
+        Connect to the corner posts, 
+        Install dimpled sheet and chicken wire inside the bed
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FZO/B8NT/L49W2B30/FZOB8NTL49W2B30.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=25afa306651e3d3f372ce1ff28339643",
+        videoUrl="",
+    )
+
+    garden_box3=Instruction(
+        projectId=35,
+        stepOrder=3,
+        stepTitle="Top Cover and Filling", 
+        instructions="""
+        Install the boards on the top by using sheet brackets for example, 
+        Paint all sides and the top with wood stain, 
+        Fill the bed with all sorts of green waste and lots of soil
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FWY/2TUJ/L49W2862/FWY2TUJL49W2862.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=f0f4dd94b4a433ce214940e783b7159a",
+        videoUrl="",
+    )
+
+    garden_box4=Instruction(
+        projectId=35,
+        stepOrder=4,
+        stepTitle="Decoartion", 
+        instructions="""
+        The decoration element can make a real difference and turns any raised bed into an eye catcher
+
+        Choose a decorative template e.g. from etsy.com
+        Fairy svg | Etsy DE
+        cut with fretwork tool
+        If it is a complex shape as my "Garden Fairy" ask someone with a CNC Mill to cut it for you
+        paint in a nice colour
+        install to the bed
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FJO/1L2X/L49W2864/FJO1L2XL49W2864.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=884bb3efe2b579e5d6178ccc7e92263d",
+        videoUrl="",
+    )
+
+    garden_box5=Instruction(
+        projectId=35,
+        stepOrder=5,
+        stepTitle="Finished", 
+        instructions="""
+        No raised garden bed looks like the other.
+
+        I hope to give you some inspiration for your own project!
+
+        Enjoy the work and the result. Good luck.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FON/H93U/L49W2DCB/FONH93UL49W2DCB.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=11bc55e6318ca3d24b0ade6eabae1a82",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
