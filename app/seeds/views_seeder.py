@@ -209,6 +209,7 @@ def seed_views():
     db.session.add(project33)
     db.session.add(project34)
     db.session.add(project35)
+    db.session.add(project36)
 
     db.session.commit()
 
