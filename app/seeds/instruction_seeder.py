@@ -2727,6 +2727,62 @@ def seed_instructions():
         videoUrl="",
     )
 
+    airplane1=Instruction(
+        projectId=34,
+        stepOrder=1,
+        stepTitle="Begin Construction", 
+        instructions="""
+        First, begin by folding your your graph paper in half (excluding three boxes on the perforated side). Once the paper has been folded appropriately, make two marks--13 full boxes apart (allow for a further box back behind the airframe). Use a ruler to make a straight line with the length of 13 boxes directly up 1 row of boxes from the two marks you just made. Then make the canards, vertical stabilizer, spars and counterweight as shown. To avoid confusion, one line you will cut along has been omitted from the photograph; it will be explained on the next step.
+
+        After the fuselage is made, take another sheet of paper that is folded in half along the lines of boxes. Mark out the wing as shown and directed in the photograph's notes (1 box of constant chord at the root; a leading edge sweep forward of 1 box of chord expanding every 4 boxes outward from the constant chord box; and a trailing edge sweep of 3 box of decay along the 5 boxes outward from the center). This will complete the wings.
+
+        Solid lines indicate places to cut. Dotted lines indicate fold lines.
+
+        Note: 1 box = 0.25 inches
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F02/YPJX/J12O172E/F02YPJXJ12O172E.jpg?auto=webp&frame=1&width=600&height=1024&fit=bounds&md=49453a35746c50f11a338d0e770fd8d9",
+        videoUrl="",
+    )
+
+    airplane2=Instruction(
+        projectId=34,
+        stepOrder=2,
+        stepTitle="Making the Fuselage; Stapling", 
+        instructions="""
+        Cut out your fuselage and cut away the bits of the canards beyond the horizontal solid line. Then fold the counterweights into place. Cut away one of the vertical stabilizers as shown in the fifth photograph.
+
+        Fold along the dotted horizontal lines then tape where indicated. After making the necessary taping, cut away the portion of the rear fuselage below the diagonal line. Then apply one staple in the area of the counterweight. Secure the rear ventral portion with tape as shown to complete the step.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/FUL/XS42/J12O17SU/FULXS42J12O17SU.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=3a101109cc77b658b56bacfa1d9bd394",
+        videoUrl="",
+    )
+
+    airplane3=Instruction(
+        projectId=34,
+        stepOrder=3,
+        stepTitle="Applying the Wings", 
+        instructions="""
+        Cut out your Reaper's wings and lay them beneath the fuselage as shown. Apply tape where designated to secure them to the spars. Apply tape to the LERX joint where noted. This will complete the aircraft.
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F8C/ONN8/J12O18N6/F8CONN8J12O18N6.jpg?auto=webp&frame=1&width=400&height=1024&fit=bounds&md=3dca8b98c0d2bf87cd59b25847d2bd31",
+        videoUrl="",
+    )
+
+    airplane4=Instruction(
+        projectId=34,
+        stepOrder=4,
+        stepTitle="Flight", 
+        instructions="""
+        Despite its unusual shape, the Reaper flies quite conventionally and behaves predictably. With proper trimming, the aircraft should fly where it is pointed.
+
+        Launches should be done at moderate speed at neutral or slightly positive or negative attitudes. Test flights should be conducted to see if any trimming needs to be done. If the aircraft dives, add camber to canards by bending their leading and trailing edges downward slightly on each side.
+
+        Additional applicable surfaces include elevators (as canard trim), ailerons, flaps, air brakes and a trimmable rudder. Enjoy!
+        """,
+        photoUrl="https://content.instructables.com/ORIG/F53/CS58/J12O18NU/F53CS58J12O18NU.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=d673ef4bdd1ba9b86081c827d21faa83",
+        videoUrl="",
+    )
+
     db.session.add(bird_project1)
     db.session.add(bird_project2)
     db.session.add(bird_project3)
