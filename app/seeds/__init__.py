@@ -1,4 +1,5 @@
 from flask.cli import AppGroup
+from app.seeds.favorite import seed_favorites, undo_favorites
 from app.seeds.instruction_seeder import seed_instructions, undo_instructions
 from app.seeds.supply_seeder import seed_supplies, undo_supplies
 from app.seeds.comment_seeder import seed_comments, undo_comments
@@ -22,6 +23,7 @@ def seed():
     seed_supplies()
     seed_comments()
     seed_views()
+    seed_favorites()
 
 
 
@@ -35,3 +37,4 @@ def undo():
     undo_supplies()
     undo_comments()
     undo_views()
+    undo_favorites()

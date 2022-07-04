@@ -5,11 +5,11 @@ def seed_favorites():
         projectId=1,
         userId=1,
     )
-    
+
     db.session.add(project1_favorite)
 
     db.session.commit()
 
-def undo_supplies():
+def undo_favorites():
     db.session.execute('TRUNCATE favorites RESTART IDENTITY CASCADE;')
     db.session.commit()
