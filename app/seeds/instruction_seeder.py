@@ -3064,6 +3064,11 @@ def seed_instructions():
     db.session.add(airplane2)
     db.session.add(airplane3)
     db.session.add(airplane4)
+    db.session.add(garden_box1)
+    db.session.add(garden_box2)
+    db.session.add(garden_box3)
+    db.session.add(garden_box4)
+    db.session.add(garden_box5)
     
     db.session.commit()
 
