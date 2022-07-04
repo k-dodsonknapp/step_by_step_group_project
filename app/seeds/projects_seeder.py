@@ -418,6 +418,20 @@ def seed_project():
         category="Living",
     )
 
+    garden_box=Project(
+        userId=1,
+        title="Raised Garden Bed With an Decorative Eye Catcher",
+        titleImage="https://content.instructables.com/ORIG/FAX/Y7N2/L49W2EG4/FAXY7N2L49W2EG4.jpg?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=53440dd7c343e2c5bdd1cc6988f38a9d",
+        overview="""
+        A raised garden bed is very practically for different reasons. Of course it is back-friendly, but also helps your plants to grow rapidly to a rich harvest.
+
+        Putting up a raised bed in your backyard, you may want to give it a nice look as well.
+
+        I show you how I did that.
+        """,
+        category="Outside",
+    )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
@@ -452,6 +466,7 @@ def seed_project():
     db.session.add(planter)
     db.session.add(mirror)
     db.session.add(airplane)
+    db.session.add(garden_box)
 
     db.session.commit()
 
