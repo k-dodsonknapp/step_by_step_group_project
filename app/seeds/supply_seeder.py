@@ -1550,6 +1550,81 @@ def seed_supplies():
         supply="Wood stain",
     )
 
+    rc_airplane1=Supply(
+        projectId=36,
+        supply="Foam board or depron sheet",
+    )
+
+    rc_airplane2=Supply(
+        projectId=36,
+        supply="Scissor & cutter's",
+    )
+
+    rc_airplane3=Supply(
+        projectId=36,
+        supply="Control horns",
+    )
+
+    rc_airplane4=Supply(
+        projectId=36,
+        supply="Rubber wheels or some old toy car wheels",
+    )
+
+    rc_airplane5=Supply(
+        projectId=36,
+        supply="Glue gun",
+    )
+
+    rc_airplane6=Supply(
+        projectId=36,
+        supply="Packaging tapes",
+    )
+
+    rc_airplane7=Supply(
+        projectId=36,
+        supply="Metal Wires",
+    )
+
+    rc_airplane8=Supply(
+        projectId=36,
+        supply="Plywood for landing gear",
+    )
+
+    rc_airplane9=Supply(
+        projectId=36,
+        supply="RC Transmitter & Receiver",
+    )
+
+    rc_airplane10=Supply(
+        projectId=36,
+        supply="1045 propeller",
+    )
+
+    rc_airplane11=Supply(
+        projectId=36,
+        supply="RC Brushless motor",
+    )
+
+    rc_airplane12=Supply(
+        projectId=36,
+        supply="Lipopolymer Battery 2200 mAh",
+    )
+
+    rc_airplane13=Supply(
+        projectId=36,
+        supply="10g servos",
+    )
+
+    rc_airplane14=Supply(
+        projectId=36,
+        supply="Servos extension and Y harness extensions",
+    )
+
+    rc_airplane15=Supply(
+        projectId=36,
+        supply="ESC ( Electronic speed controller)",
+    )
+
     db.session.add(bird_house_supply1)
     db.session.add(bird_house_supply2)
     db.session.add(bird_house_supply3)
