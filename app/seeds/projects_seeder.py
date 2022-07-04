@@ -432,15 +432,24 @@ def seed_project():
         category="Outside",
     )
 
-    # =Project(
-    #     userId=1,
-    #     title="",
-    #     titleImage="",
-    #     overview="""
+    rc_airplane=Project(
+        userId=1,
+        title="How to Make a Homemade RC Airplane Under 200$",
+        titleImage="https://content.instructables.com/ORIG/FWS/XLCQ/KZ9UM0ZF/FWSXLCQKZ9UM0ZF.jpg?auto=webp&frame=1&crop=3:2&width=400&height=1024&fit=bounds&md=8f817457c4d33f0257aa005984f80de8",
+        overview="""
+        If you are a beginner, intermediate or a pro in RC aeromodelling, it really doesn't matter because if you love RC planes like me and enjoy flying them, then you are at your right destination. Because in today's Instrutable I will be guiding you how to make your own RC airplane which looks amazing and I will be sharing some of my own experiences and tricks that will help you to get your dream plane !
 
-    #     """,
-    #     category="Teachers",
-    # )
+        Before we move on you may want to know these basic terminology of RC aircrafts -
+
+        Accurate measurements
+        Understanding the electronics'
+        Aircraft specification
+        There are more but these 3 are enough and just remember them while making and it will help you very much :)
+
+        Also I will be sharing my design so that you can look at it for reference...
+        """,
+        category="Teachers",
+    )
 
     db.session.add(bird_house)
     db.session.add(casino_clock)
@@ -477,6 +486,7 @@ def seed_project():
     db.session.add(mirror)
     db.session.add(airplane)
     db.session.add(garden_box)
+    db.session.add(rc_airplane)
 
     db.session.commit()
 
