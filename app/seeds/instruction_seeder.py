@@ -2930,6 +2930,9 @@ def seed_instructions():
     db.session.add(planter8)
     db.session.add(planter9)
     db.session.add(planter10)
+    db.session.add(mirror1)
+    db.session.add(mirror2)
+    db.session.add(mirror3)
     
     db.session.commit()
 
