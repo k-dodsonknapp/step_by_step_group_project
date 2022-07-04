@@ -432,6 +432,16 @@ def seed_project():
         category="Outside",
     )
 
+    # =Project(
+    #     userId=1,
+    #     title="",
+    #     titleImage="",
+    #     overview="""
+
+    #     """,
+    #     category="Teachers",
+    # )
+
     db.session.add(bird_house)
     db.session.add(casino_clock)
     db.session.add(one_board_mug)
