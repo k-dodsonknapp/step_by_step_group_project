@@ -65,7 +65,7 @@ const SearchResults = () => {
             setSearchKeyWord(e.target.value);
           }}
         />
-        <button className='search-btn'type="submit">Search Button</button>
+        <button className='search-btn' type="submit">Search Button</button>
       </form>
     </div>
   );
