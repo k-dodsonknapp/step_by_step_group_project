@@ -40,6 +40,7 @@
     color: #b64360;
     background-color: #f0f0f0;
     border: 1px solid rgb(177, 177, 177);
+    cursor: pointer;
 }
 
 .favorite_span {
