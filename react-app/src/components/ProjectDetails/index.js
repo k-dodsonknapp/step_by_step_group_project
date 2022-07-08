@@ -16,12 +16,12 @@ const ProjectDetails = () => {
   const { projectId } = useParams();
   const project = useSelector((state) => state?.projects[+projectId]);
   const favorites = useSelector((state) => state?.favorites);
-  console.log(favorites.favorite, "favorites");
   let view = useSelector(state => state?.views?.view)
   const user = useSelector((state) => state?.session?.user);
   console.log(user, "user")
   const session = useSelector(state => state?.session);
   console.log("session", session)
+  console.log(favorites.favorite, "favorites");
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
   // const [newComment] = useState(0);
@@ -33,6 +33,7 @@ const ProjectDetails = () => {
   const [textColor, setTextColor] = useState('#bbb');
   const [favoriteComment, setFavoriteComment] = useState(true);
   const [favoriteLength, setFavoriteLength] = useState(0);
+  const [favoritess, setFavoritess] = useState(false);
 
   console.log(favoriteLength, "favoriteLength")
 
@@ -226,6 +227,14 @@ const ProjectDetails = () => {
     dispatch(getPostFavorites(+projectId));
   }, [dispatch]);
 
+  // useEffect(() => {
+  //   if (favorites.favorite.find(favorite => favorite.projectId === +projectId && favorite.userId === user?.id)) {
+  //     setFavoritess(true)
+  //   } else {
+  //     setFavoritess(false)
+  //   }
+  // }, [favorites.favorite])
+
   const handleLogin = (e) => {
     history.push('/login');
   };
@@ -260,7 +269,7 @@ const ProjectDetails = () => {
           </div>
           <div className="project-image-container">
             <div className="favorite_btn_div">
-              <button className="favorite_btn" onClick={favorite}><span className="heart_span" style={favorites.favorite.length ? { color: '#b64360' } : { color: "black" }}>❤</span> <span className="favorite_span">Favorite</span></button>
+              <button className="favorite_btn" onClick={favorite}><span className="heart_span" style={favoritess ? { color: '#b64360' } :{ color: "black" } || !favorites.favorite }>❤</span> <span className="favorite_span">Favorite</span></button>
             </div>
             <img
               className="project-images"
