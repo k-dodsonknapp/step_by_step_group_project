@@ -5,12 +5,14 @@ import projectReducer from './project';
 import reducer from './session';
 import commentReducer from './comments';
 import viewReducer from './views';
+import favoritesReducer from './favortie';
 
 const rootReducer = combineReducers({
   session: reducer,
   projects: projectReducer,
   comments: commentReducer,
-  views: viewReducer
+  views: viewReducer,
+  favorites: favoritesReducer,
 });
 
 let enhancer;

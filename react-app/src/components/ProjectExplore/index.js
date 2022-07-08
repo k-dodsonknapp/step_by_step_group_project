@@ -7,6 +7,7 @@ import './projectExplore.css';
 import { getView } from "../../store/views";
 import ViewCount from "../ViewCount";
 import ProjectCard from "../ProjectCard";
+import { getAllFavorites } from "../../store/favortie";
 
 
 const ProjectExplore = () => {
@@ -21,11 +22,14 @@ const ProjectExplore = () => {
     const outside = useSelector(state => Object.values(state.projects).filter(project => project.category === "Outside"))
     const teachers = useSelector(state => Object.values(state.projects).filter(project => project.category === "Teachers"))
     const views = useSelector(state => state.views.views);
+    const favorties = useSelector(state => state?.favorites)
+    console.log(favorties, "favorites")
     const explore = "Explore >";
 
     useEffect(() => {
         dispatch(getAllProjects());
         dispatch(getView());
+        dispatch(getAllFavorites())
     }, [dispatch]);
 
 

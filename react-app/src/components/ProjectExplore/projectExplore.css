@@ -11,6 +11,16 @@ ul h2 {
     margin-bottom: 15px;
 }
 
+#favorite-views {
+    display: flex;
+
+}
+
+#favorite-count {
+    display: flex;
+    margin-right: 10px;
+}
+
 .project-list {
     display: flex;
     flex-direction: column;

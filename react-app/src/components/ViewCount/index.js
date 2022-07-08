@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getView } from '../../store/views';
+import FavoriteCount from '../FavoriteCount';
 
 function ViewCount({ project }) {
 
@@ -17,8 +18,11 @@ function ViewCount({ project }) {
 
     return (
         <div>
-            <p>
-                ❤ 5  👁 {projectViews?.viewCount}
+            <p id='favorite-views'>
+                <FavoriteCount project={project} />
+                <div>
+                    👁 {projectViews?.viewCount}
+                </div>
             </p>
         </div>
     )
