@@ -260,7 +260,7 @@ return (
         </div>
         <div className="project-image-container">
           <div className="favorite_btn_div">
-            <button className="favorite_btn" onClick={favorite}><span className="heart_span" style={{color:textColor}}>❤</span> <span className="favorite_span">Favorite</span></button>
+            <button className="favorite_btn" onClick={favorite}><span className="heart_span" style={favorites.favorite.length ? {color:'#b64360'} : {color: "black"}}>❤</span> <span className="favorite_span">Favorite</span></button>
           </div>
           <img
             className="project-images"
