@@ -53,7 +53,7 @@ export const addPostFavorite = (favoriteObj) => async (dispatch) => {
     }
 }
 
-const DELETE_FAVORITE = '/api/favorites/delete';
+const DELETE_FAVORITE = '/api/favorite/delete';
 
 const deleteFavorite = (favorite) => ({
     type: DELETE_FAVORITE,
@@ -61,21 +61,22 @@ const deleteFavorite = (favorite) => ({
 });
 
 export const deletePostFavorite = (favorite) => async (dispatch) => {
-    const response = await fetch(DELETE_FAVORITE, {
+    console.log("delete favorite", favorite);
+    const response = await fetch('/api/favorite/delete', {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(favorite)
     });
-    const favorite = await response.json();
+    const favorites = await response.json();
     if (response.ok) {
-        dispatch(deleteFavorite(favorite));
-        return favorite;
+        dispatch(deleteFavorite(favorites));
+        return favorites;
     }
 }
 
-export default function favoritesReducer (state = [], action) {
+export default function favoritesReducer(state = [], action) {
     let newState;
     switch (action.type) {
         case GET_FAVORITES:
@@ -83,10 +84,17 @@ export default function favoritesReducer (state = [], action) {
         case GET_ALL_FAVORITES:
             return action.favorites;
         case ADD_FAVORITE:
-            console.log("WWWWWW",action);
-            return { ...state, action };
+            console.log("WWWWWW", action);
+            newState = { ...state };
+
+            newState = { ...newState, [action.favorite.id]: action.favorite };
+            return newState;
         case DELETE_FAVORITE:
-            return state.filter(favorite => favorite.id !== action.favorite.id);
+            newState = {...state}
+            console.log(newState.favorite, "newState");
+            delete newState[action.favorite.id];
+            return newState;
+            // return state.filter(favorite => favorite.id !== action.favorite.id);
         default:
             return state;
     }

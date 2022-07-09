@@ -22,6 +22,8 @@ const ProjectDetails = () => {
   const session = useSelector(state => state?.session);
   console.log("session", session)
   console.log(favorites.favorite, "favorites");
+  const [projectFavorites, setProjectFavorites] = useState(favorites?.favorite);
+  console.log(projectFavorites, "projectFavorites");
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
   // const [newComment] = useState(0);
@@ -34,22 +36,15 @@ const ProjectDetails = () => {
   const [favoriteComment, setFavoriteComment] = useState(true);
   const [favoriteLength, setFavoriteLength] = useState(0);
   const [favoritess, setFavoritess] = useState(false);
+  const [userFavorite, setUserFavorite] = useState(false);
+  console.log(userFavorite, "userFavorite");
 
   console.log(favoriteLength, "favoriteLength")
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    let payload;
-    if (favorites.favorite !== undefined) {
-      // setFavoriteLength(favorites.favorite.length)
-      payload = favorites.favorite.find(favorite => favorite.projectId === +projectId && favorite.userId === user.id)
-      setFavoriteLength(favorites.favorite.length)
-    }
-    if (favorites.favorite && payload) {
-      setFavoriteComment(false);
-      setTextColor(setFavoriteComment ? '#b64360' : '#bbb');
-    }
   }, []);
+
 
   useEffect(() => {
     if (favorites.favorite) {
@@ -65,7 +60,7 @@ const ProjectDetails = () => {
     dispatch(updateView(addView));
     dispatch(getOneView(+projectId));
     dispatch(getOneProject(projectId));
-    dispatch(getOneProject(+projectId));
+    // dispatch(getOneProject(+projectId));
   }, [dispatch, projectId]);
 
   const saveEditComment = async (e) => {
@@ -175,13 +170,28 @@ const ProjectDetails = () => {
 
 
   const favorite = async (e) => {
-
-    console.log("ASDFASDF")
+    // console.log("ASDFASDF")
     e.preventDefault();
-    if (user) {
-      const payload = favorites.favorite.find(favorite => favorite.projectId === +projectId && favorite.userId === user.id)
+    // let payload;
+    // if (favorites?.favorite) {
+    let payload = favorites?.favorite?.find(favorite => favorite?.projectId === +projectId && favorite?.userId === user?.id)
+    console.log(payload, "payload")
+    // }
+    if (session.user) {
       // console.log(payload, "NNNN")
-      if (!payload) {
+      if (userFavorite) {
+        console.log(payload, "NNNN")
+        setFavoriteComment(true);
+        setTextColor(setFavoriteComment ? '#bbb' : '#b64360');
+        favorites.favorite.length--
+        dispatch(deletePostFavorite(payload));
+        // dispatch(getOneProject(+projectId));
+        dispatch(getPostFavorites(+projectId));
+        setFavoriteLength(favorites?.favorite?.length)
+        setFavoritess(false);
+        // return alert("You've already favorited this project")
+      }
+      if (!userFavorite) {
         setFavoriteComment(false);
         setTextColor(setFavoriteComment ? '#b64360' : '#bbb');
         const fav = {
@@ -190,50 +200,39 @@ const ProjectDetails = () => {
         };
         dispatch(addPostFavorite(fav));
         dispatch(getOneProject(+projectId));
+        setFavoritess(true);
         setFavoriteLength(favorites?.favorite?.length)
         favorites.favorite.length++
         console.log(favoriteLength, "FAVORITE LENGTH")
-      } else {
-        return alert("You've already favorited this project")
       }
     } else {
       return alert("You must be logged in to favorite a project");
     }
-    // dispatch(getPostFavorites(+projectId));
-
-    // console.log(payload,"PAYLOAD")
-    // if (favorites?.favorite?.includes(projectId)) {
-    //   await dispatch(deleteOneProject(payload));
-    // } else {
-    //   await dispatch(addPostFavorite(+projectId));
-    // }
-
-
-    // const unfavorite = async (e) => {
-    //   e.preventDefault();
-    //   const payload = {
-    //     "projectId": +projectId,
-    //     "userId": user?.id,
-    //   };
-    //   await dispatch(getPostFavorites(+projectId));
-    //   if (favorites?.favorite.includes(projectId)) {
-    //     await dispatch(deletePostFavorite(payload));
-    //   } else {
-    //     await dispatch(getOneProject(+projectId));
-    //   }
   }
+
+  useEffect(() => {
+    if (favorites.favorite) {
+      const favorite = favorites?.favorite.find(favorite => favorite?.userId === session?.user?.id);
+      if (favorite) {
+        setUserFavorite(true);
+      }
+    }
+  }, [favorite]);
 
   useEffect(() => {
     dispatch(getPostFavorites(+projectId));
   }, [dispatch]);
 
   // useEffect(() => {
-  //   if (favorites.favorite.find(favorite => favorite.projectId === +projectId && favorite.userId === user?.id)) {
-  //     setFavoritess(true)
-  //   } else {
-  //     setFavoritess(false)
+  //   let idk;
+  //   if (favorites?.favorite) {
+  //     idk = favorites?.favorite?.find(favorite => favorite?.userId === user?.id)
+  //     console.log(idk, "idk")
   //   }
-  // }, [favorites.favorite])
+  //   if (idk) {
+  //     setFavoritess(true)
+  //   }
+  // }, [favorites])
 
   const handleLogin = (e) => {
     history.push('/login');
@@ -269,7 +268,7 @@ const ProjectDetails = () => {
           </div>
           <div className="project-image-container">
             <div className="favorite_btn_div">
-              <button className="favorite_btn" onClick={favorite}><span className="heart_span" style={favoritess ? { color: '#b64360' } :{ color: "black" } || !favorites.favorite }>❤</span> <span className="favorite_span">Favorite</span></button>
+              <button className="favorite_btn" onClick={favorite}><span className="heart_span" style={favoritess ? { color: '#b64360' } : { color: "black" } || !favorites.favorite}>❤</span> <span className="favorite_span">Favorite</span></button>
             </div>
             <img
               className="project-images"
