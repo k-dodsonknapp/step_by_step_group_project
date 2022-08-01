@@ -43,7 +43,7 @@ const ProjectDetails = () => {
       // setFavoriteLength(favorites?.favorite?.length)
     }
     dispatch(getPostFavorites(+projectId));
-  }, [dispatch,projectId, favorites.favorite])
+  }, [dispatch,projectId])
 
   useEffect(() => {
     const addView = {
@@ -200,9 +200,9 @@ const ProjectDetails = () => {
     }
   }, [dispatch, favorites?.favorite, session?.user?.id]);
 
-  useEffect(() => {
-    dispatch(getPostFavorites(+projectId));
-  }, [dispatch, projectId]);
+  // useEffect(() => {
+  //   dispatch(getPostFavorites(+projectId));
+  // }, [dispatch, projectId]);
 
 
   const handleLogin = (e) => {
