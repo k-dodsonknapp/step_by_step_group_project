@@ -180,6 +180,8 @@ const ProjectDetails = () => {
     if (session.user) {
       // console.log(payload, "NNNN")
       if (userFavorite) {
+        // const favoriteCookie = {
+
         console.log(payload, "NNNN")
         setFavoriteComment(true);
         setTextColor(setFavoriteComment ? '#bbb' : '#b64360');
@@ -217,7 +219,7 @@ const ProjectDetails = () => {
         setUserFavorite(true);
       }
     }
-  }, [favorite]);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getPostFavorites(+projectId));
@@ -256,7 +258,7 @@ const ProjectDetails = () => {
               {/* <button>
                 ❤
               </button> */}
-              <span>❤ {favorites.favorite.length}</span>
+              <span className="favorite-count">❤ {favorites.favorite.length}</span>
               <span>👁 {view?.viewCount}</span>
             </p>
             {session?.user?.id === project?.owner?.id && (

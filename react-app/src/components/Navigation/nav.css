@@ -35,7 +35,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 80px;
+    margin-right: 10px;
     color: #cccccc;
     font-size: 18px;
     cursor: pointer;
@@ -115,12 +115,12 @@ li > a {
     position: absolute;
     z-index: 1;
     /* top: 100%; */
-    left: 85%;
+    left: 83.5%;
     border: 1px solid rgba(0,0,0,.2);
     border-radius: 6px;
     box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
-    height: auto;
-    width: 200px;
+    height: 250px;
+    width: 225px;
 
 }
 
@@ -152,7 +152,7 @@ li > a {
     width: 40px;
     height: 40px;
     /* margin-right: 15px; */
-    padding-right: 50px;
+    padding-right: 64px;
     border: 1px solid #555555;
     background-color: #555555;
     cursor: pointer;

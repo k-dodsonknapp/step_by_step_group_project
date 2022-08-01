@@ -76,14 +76,14 @@ const Navigation = () => {
               </li>
             </div>
             <div className='profile-following-div'>
+                {user && (
+                  <button id='greeting' onClick={openMenu}> Hello {user.username}!</button>
+                )}
               <button id='profile-quickmenu' onClick={openMenu}>
                 {user && (
                   <img src={user.userPhoto} alt=''></img>
                 )}
               </button>
-              {user && (
-                <button id='greeting' onClick={openMenu}> Hello {user.username}!</button>
-              )}
               {!user && (
                 <button id='greeting' onClick={openMenu} style={{marginRight : "130px"}}> Login</button>
               )}
