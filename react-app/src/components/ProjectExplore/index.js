@@ -1,11 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProjects } from "../../store/project";
 import './projectExplore.css';
 import { getView } from "../../store/views";
-import ViewCount from "../ViewCount";
 import ProjectCard from "../ProjectCard";
 import { getAllFavorites } from "../../store/favortie";
 
@@ -13,7 +11,6 @@ import { getAllFavorites } from "../../store/favortie";
 const ProjectExplore = () => {
 
     const dispatch = useDispatch();
-    // const projects = useSelector(state => Object?.values(state?.projects));
     const circuits = useSelector(state => Object.values(state.projects).filter(project => project.category === "Circuits"))
     const workshop = useSelector(state => Object.values(state.projects).filter(project => project.category === "Workshop"))
     const craft = useSelector(state => Object.values(state.projects).filter(project => project.category === "Craft"))
@@ -24,7 +21,6 @@ const ProjectExplore = () => {
     const views = useSelector(state => state.views.views);
     const favorties = useSelector(state => state?.favorites)
     console.log(favorties, "favorites")
-    const explore = "Explore >";
 
     useEffect(() => {
         dispatch(getAllProjects());
