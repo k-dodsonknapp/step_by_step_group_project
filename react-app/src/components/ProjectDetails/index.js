@@ -18,15 +18,10 @@ const ProjectDetails = () => {
   const favorites = useSelector((state) => state?.favorites);
   let view = useSelector(state => state?.views?.view)
   const user = useSelector((state) => state?.session?.user);
-  console.log(user, "user")
   const session = useSelector(state => state?.session);
-  console.log("session", session)
-  console.log(favorites.favorite, "favorites");
-  const [projectFavorites, setProjectFavorites] = useState(favorites?.favorite);
-  console.log(projectFavorites, "projectFavorites");
+  // const [projectFavorites, setProjectFavorites] = useState(favorites?.favorite);
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
-  // const [newComment] = useState(0);
   const [commentId, setCommentId] = useState(0);
   const [showComment, setShowComment] = useState(true);
   const [showPostCommentBtn, setShowPostCommentBtn] = useState(true);
@@ -37,9 +32,6 @@ const ProjectDetails = () => {
   const [favoriteLength, setFavoriteLength] = useState(0);
   const [favoritess, setFavoritess] = useState(false);
   const [userFavorite, setUserFavorite] = useState(false);
-  console.log(userFavorite, "userFavorite");
-
-  console.log(favoriteLength, "favoriteLength")
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -115,7 +107,6 @@ const ProjectDetails = () => {
   };
 
   const handleDeleteComment = async (e) => {
-    console.log(e)
     e.preventDefault();
     await dispatch(deleteOneComment(e.target.id));
     dispatch(getOneProject(projectId));
@@ -170,28 +161,17 @@ const ProjectDetails = () => {
 
 
   const favorite = async (e) => {
-    // console.log("ASDFASDF")
     e.preventDefault();
-    // let payload;
-    // if (favorites?.favorite) {
     let payload = favorites?.favorite?.find(favorite => favorite?.projectId === +projectId && favorite?.userId === user?.id)
-    console.log(payload, "payload")
-    // }
     if (session.user) {
-      // console.log(payload, "NNNN")
       if (userFavorite) {
-        // const favoriteCookie = {
-
-        console.log(payload, "NNNN")
         setFavoriteComment(true);
         setTextColor(setFavoriteComment ? '#bbb' : '#b64360');
         favorites.favorite.length--
         dispatch(deletePostFavorite(payload));
-        // dispatch(getOneProject(+projectId));
         dispatch(getPostFavorites(+projectId));
         setFavoriteLength(favorites?.favorite?.length)
         setFavoritess(false);
-        // return alert("You've already favorited this project")
       }
       if (!userFavorite) {
         setFavoriteComment(false);
@@ -205,7 +185,6 @@ const ProjectDetails = () => {
         setFavoritess(true);
         setFavoriteLength(favorites?.favorite?.length)
         favorites.favorite.length++
-        console.log(favoriteLength, "FAVORITE LENGTH")
       }
     } else {
       return alert("You must be logged in to favorite a project");
@@ -225,16 +204,6 @@ const ProjectDetails = () => {
     dispatch(getPostFavorites(+projectId));
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   let idk;
-  //   if (favorites?.favorite) {
-  //     idk = favorites?.favorite?.find(favorite => favorite?.userId === user?.id)
-  //     console.log(idk, "idk")
-  //   }
-  //   if (idk) {
-  //     setFavoritess(true)
-  //   }
-  // }, [favorites])
 
   const handleLogin = (e) => {
     history.push('/login');
@@ -249,7 +218,6 @@ const ProjectDetails = () => {
       {project && (
         <div id="project-container">
           <div className="title">{project?.title}</div>
-          {/* <button className="favorite_btn"><span className="heart_span">❤</span> <span className="favorite_span">Favorite</span></button> */}
           <div id="project-details">
             By
             <span className="username-category">{project?.owner?.username}</span>
