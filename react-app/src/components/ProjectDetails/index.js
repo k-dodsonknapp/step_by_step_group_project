@@ -27,9 +27,9 @@ const ProjectDetails = () => {
   const [showPostCommentBtn, setShowPostCommentBtn] = useState(true);
   const [body, setBody] = useState('');
   const [editBody, setEditBody] = useState('');
-  const [textColor, setTextColor] = useState('#bbb');
-  const [favoriteComment, setFavoriteComment] = useState(true);
-  const [favoriteLength, setFavoriteLength] = useState(0);
+  // const [textColor, setTextColor] = useState('#bbb');
+  // const [favoriteComment, setFavoriteComment] = useState(true);
+  // const [favoriteLength, setFavoriteLength] = useState(0);
   const [favoritess, setFavoritess] = useState(false);
   const [userFavorite, setUserFavorite] = useState(false);
 
@@ -40,10 +40,10 @@ const ProjectDetails = () => {
 
   useEffect(() => {
     if (favorites.favorite) {
-      setFavoriteLength(favorites?.favorite?.length)
+      // setFavoriteLength(favorites?.favorite?.length)
     }
     dispatch(getPostFavorites(+projectId));
-  }, [dispatch])
+  }, [dispatch,projectId, favorites.favorite])
 
   useEffect(() => {
     const addView = {
@@ -165,17 +165,17 @@ const ProjectDetails = () => {
     let payload = favorites?.favorite?.find(favorite => favorite?.projectId === +projectId && favorite?.userId === user?.id)
     if (session.user) {
       if (userFavorite) {
-        setFavoriteComment(true);
-        setTextColor(setFavoriteComment ? '#bbb' : '#b64360');
+        // setFavoriteComment(true);
+        // setTextColor(setFavoriteComment ? '#bbb' : '#b64360');
         favorites.favorite.length--
         dispatch(deletePostFavorite(payload));
         dispatch(getPostFavorites(+projectId));
-        setFavoriteLength(favorites?.favorite?.length)
+        // setFavoriteLength(favorites?.favorite?.length)
         setFavoritess(false);
       }
       if (!userFavorite) {
-        setFavoriteComment(false);
-        setTextColor(setFavoriteComment ? '#b64360' : '#bbb');
+        // setFavoriteComment(false);
+        // setTextColor(setFavoriteComment ? '#b64360' : '#bbb');
         const fav = {
           "projectId": +projectId,
           "userId": +user?.id,
@@ -183,7 +183,7 @@ const ProjectDetails = () => {
         dispatch(addPostFavorite(fav));
         dispatch(getOneProject(+projectId));
         setFavoritess(true);
-        setFavoriteLength(favorites?.favorite?.length)
+        // setFavoriteLength(favorites?.favorite?.length)
         favorites.favorite.length++
       }
     } else {
@@ -198,11 +198,11 @@ const ProjectDetails = () => {
         setUserFavorite(true);
       }
     }
-  }, [dispatch]);
+  }, [dispatch, favorites?.favorite, session?.user?.id]);
 
   useEffect(() => {
     dispatch(getPostFavorites(+projectId));
-  }, [dispatch]);
+  }, [dispatch, projectId]);
 
 
   const handleLogin = (e) => {
@@ -223,9 +223,6 @@ const ProjectDetails = () => {
             <span className="username-category">{project?.owner?.username}</span>
             in<span className="username-category">{project?.category}</span>
             <p>
-              {/* <button>
-                ❤
-              </button> */}
               <span className="favorite-count">❤ {favorites.favorite.length}</span>
               <span>👁 {view?.viewCount}</span>
             </p>
@@ -285,7 +282,6 @@ const ProjectDetails = () => {
                 <div className="user">
                   <div className="user-container">
                     <div className="userImg">
-                      {/* {comment?.userId} */}
                       <UserPhoto userId={comment?.userId} />
                     </div>
                     <div className="username">
@@ -313,7 +309,7 @@ const ProjectDetails = () => {
                         <div className="edit-container">
                           <div className="prf-image">
                             {/* hello */}
-                            <img id="createCommnetUserPhoto" src={user.userPhoto}></img>
+                            <img id="createCommnetUserPhoto" src={user.userPhoto} alt={""}></img>
                           </div>
                           <div className="edit-comment">
                             <textarea
@@ -367,7 +363,7 @@ const ProjectDetails = () => {
               <form className="comment-form" onSubmit={handleComment}>
                 <div className="edit-container">
                   <div className="prf-image">
-                    <img id="createCommnetUserPhoto" src={user.userPhoto}></img>
+                    <img id="createCommnetUserPhoto" src={user.userPhoto} alt={""}></img>
                   </div>
                   <div className="edit-comment">
                     <textarea
