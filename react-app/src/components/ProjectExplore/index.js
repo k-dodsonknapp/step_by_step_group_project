@@ -27,6 +27,8 @@ const ProjectExplore = () => {
     const [carouselItem1, setCarouselItem1] = useState(projects)
     const [carouselItem2, setCarouselItem2] = useState(projects)
     const [carouselItem3, setCarouselItem3] = useState(projects)
+    const [carouselItem4, setCarouselItem4] = useState(projects)
+    const [carouselItem5, setCarouselItem5] = useState(projects)
     // console.log(carouselItem1)
 
     useEffect(() => {
@@ -36,6 +38,8 @@ const ProjectExplore = () => {
         setCarouselItem1(projects[getRandomInt(numOfProjects)])
         setCarouselItem2(projects[getRandomInt(numOfProjects)])
         setCarouselItem3(projects[getRandomInt(numOfProjects)])
+        setCarouselItem4(projects[getRandomInt(numOfProjects)])
+        setCarouselItem5(projects[getRandomInt(numOfProjects)])
     }, [numOfProjects])
 
     // console.log(numOfProjects)
@@ -72,6 +76,20 @@ const ProjectExplore = () => {
                         <NavLink className="link" to={`/projects/${carouselItem3?.id}`} >{carouselItem3?.title} </NavLink>
                     </h1>
                     <h4 className='carousel-project-username'>By: {carouselItem3?.username} </h4>
+                </CarouselItem>
+                <CarouselItem carouselItem4={carouselItem4}>
+                    <img className="carousel-img" src={carouselItem4?.titleImage}></img>
+                    <h1 className='carousel-project-title'>
+                        <NavLink className="link" to={`/projects/${carouselItem4?.id}`} >{carouselItem4?.title} </NavLink>
+                    </h1>
+                    <h4 className='carousel-project-username'>By: {carouselItem4?.username} </h4>
+                </CarouselItem>
+                <CarouselItem carouselItem5={carouselItem5}>
+                    <img className="carousel-img" src={carouselItem5?.titleImage}></img>
+                    <h1 className='carousel-project-title'>
+                        <NavLink className="link" to={`/projects/${carouselItem5?.id}`} >{carouselItem5?.title} </NavLink>
+                    </h1>
+                    <h4 className='carousel-project-username'>By: {carouselItem5?.username} </h4>
                 </CarouselItem>
             </Carousel>
             {/* </div> */}
