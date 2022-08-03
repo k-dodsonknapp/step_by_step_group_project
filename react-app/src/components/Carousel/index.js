@@ -2,34 +2,10 @@ import React, { useEffect, useState } from 'react';
 import "./Carousel.css"
 
 export const CarouselItem = ({ children, width, carouselItem }) => {
-    console.log(children)
-    // const [fadeProp, setFadeProp] = useState({
-    //     fade: "fade-in"
-    // });
-
-    // useEffect(() => {
-    //     const timeout = setInterval(() => {
-    //         if (fadeProp.fade === "fade-in"){
-    //             setFadeProp({
-    //                 fade:"fade-out"
-    //             })
-    //         }else {
-    //             setFadeProp({
-    //                 fade:"fade-in"
-    //             })
-    //         }
-    //     }, 5000);
-    //     return () => {
-
-    //     }
-    // }, [fadeProp])
 
     return (
         <div className='carousel-item' style={{ width: width }}>
             {children}
-            {/* <div >
-            <h2 className='carousel-project-title'>asdfasdfasdfasdfasdfa{carouselItem?.title} </h2> */}
-            {/* </div> */}
         </div>
     )
 }

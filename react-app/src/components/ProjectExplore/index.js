@@ -49,19 +49,13 @@ const ProjectExplore = () => {
 
     return (
         <div className="explorePage">
-            {/* <div className="slideshow-container"> */}
-            {/* <img src="https://media.istockphoto.com/photos/colorful-background-of-pastel-powder-explosionrainbow-color-dust-on-picture-id1180542165?k=20&m=1180542165&s=612x612&w=0&h=43hlhk8qdGYP4V-u3AAxD3kPDRIzHjMNWpr-VdBQ2Js=" alt=""></img> */}
             <Carousel>
                 <CarouselItem carouselItem={carouselItem1}>
-                    {/* <div className="name"> */}
-
                     <img className="carousel-img" src={carouselItem1?.titleImage}></img>
                     <h1 className='carousel-project-title'>
                         <NavLink className="link" to={`/projects/${carouselItem1?.id}`} >{carouselItem1?.title} </NavLink>
                     </h1>                    
                     <h4 className='carousel-project-username'>By: {carouselItem1?.username} </h4>
-                    {/* </div> */}
-
                 </CarouselItem>
                 <CarouselItem carouselItem2={carouselItem2}>
                     <img className="carousel-img" src={carouselItem2?.titleImage}></img>
@@ -78,7 +72,6 @@ const ProjectExplore = () => {
                     <h4 className='carousel-project-username'>By: {carouselItem3?.username} </h4>
                 </CarouselItem>
             </Carousel>
-            {/* </div> */}
             <div className="content-container">
                 <div className="content">
                     <h2>Instructions STEP-BY-STEP</h2>

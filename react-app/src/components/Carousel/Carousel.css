@@ -35,16 +35,37 @@
 }
 
 .carousel-project-title {
+    font-family: 'Times New Roman', Times, serif;
     position: absolute;
     top: 85%;
     /* z-index: 1; */
     text-decoration: none;
+    /* background-color: rgba(128, 128, 128, 0.103); */
+    text-shadow:
+    0.04em 0 gray,
+    0 0.04em gray,
+    -0.04em 0 gray,
+    0 -0.04em gray,
+    -0.04em -0.04em gray,
+    -0.04em 0.04em gray,
+    0.04em -0.04em gray,
+    0.04em 0.04em gray;
 }
 
 .carousel-project-username {
+    font-family: 'Times New Roman', Times, serif;
     position: absolute;
     top: 90%;
     margin-top: 10px;
+    text-shadow:
+    0.04em 0 gray,
+    0 0.04em gray,
+    -0.04em 0 gray,
+    0 -0.04em gray,
+    -0.04em -0.04em gray,
+    -0.04em 0.04em gray,
+    0.04em -0.04em gray,
+    0.04em 0.04em gray;
 }
 .name{
     position: relative;
