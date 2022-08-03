@@ -11,13 +11,13 @@ const SearchResults = () => {
   const history = useHistory();
   const [searchKeyWord, setSearchKeyWord] = useState("");
   // const [projects, setProjects] = useState();
-  const [errors, setErrors] = useState([]);
+  let [errors, setErrors] = useState("Let's make...");
 
   const errSearch = () => {
-    const searchErrors = [];
+    let searchErrors = '';
 
     if (searchKeyWord < 3) {
-      searchErrors.push("Please enter a search")
+      searchErrors = "Please enter a search"
     }
     setErrors(searchErrors);
     return searchErrors;
@@ -51,23 +51,25 @@ const SearchResults = () => {
   // }
 
   return (
+    <>
     <div>
       <form title="Search Form" onSubmit={clickToSearch}>
-        {errors && errors.map(err => (
-          <p key={err}>{err}</p>
-        ))}
         <input
           className="search-field"
           type="text"
-          placeholder="Let's Make..."
+          placeholder={errors}
           value={searchKeyWord}
           onChange={(e) => {
             setSearchKeyWord(e.target.value);
           }}
-        />
+          />
         <button className='search-btn' type="submit">Search Button</button>
       </form>
     </div>
+      {/* {errors && errors.map(err => (
+        <p key={err}>{err}</p>
+        ))} */}
+        </>
   );
 };
 

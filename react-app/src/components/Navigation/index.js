@@ -105,16 +105,16 @@ const Navigation = () => {
             <div className='right-lower'>
               {session.user && (
                 <div>
-                  <NavLink to="/create">PUBLISH</NavLink>
+                  <NavLink className="lower-nav-sign-up" to="/create">PUBLISH</NavLink>
                 </div>
               )}
               {!session.user && (
                 <>
-                  <NavLink to="/login">LOGIN</NavLink>
-                  <NavLink to="/sign-up">SIGN-UP</NavLink>
+                  <NavLink className='lower-nav-login' to="/login">LOGIN</NavLink>
+                  <NavLink className="lower-nav-sign-up" to="/sign-up">SIGN-UP</NavLink>
                 </>
               )}
-              <div>
+              <div className='search-input'>
                 <SearchResults />
               </div>
             </div>

@@ -49,6 +49,8 @@ const ProjectExplore = () => {
 
     return (
         <div className="explorePage">
+            {/* <div className="carousel-div"> */}
+
             <Carousel>
                 <CarouselItem carouselItem={carouselItem1}>
                     <img className="carousel-img" src={carouselItem1?.titleImage}></img>
@@ -72,6 +74,7 @@ const ProjectExplore = () => {
                     <h4 className='carousel-project-username'>By: {carouselItem3?.username} </h4>
                 </CarouselItem>
             </Carousel>
+            {/* </div> */}
             <div className="content-container">
                 <div className="content">
                     <h2>Instructions STEP-BY-STEP</h2>

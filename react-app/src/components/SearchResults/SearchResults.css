@@ -4,6 +4,7 @@
     border: 1px solid rgb(173, 173, 173);
     margin-right: 10px;
     padding-left: 10px;
+    z-index: 5;
 }
 
 .search-btn {
@@ -14,9 +15,13 @@
     background-color: #faac18;
     color: white;
     font-size: 16px;
+    z-index: 5;
 }
 
 .search-btn:hover {
     text-decoration: underline;
     cursor: pointer;
+    z-index: 5;
 }
+
+
