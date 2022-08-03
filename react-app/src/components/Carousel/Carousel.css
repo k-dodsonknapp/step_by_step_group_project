@@ -13,16 +13,49 @@
     margin: 100px 0px 0px 0px;
     align-items: center;
     justify-content: center;
-    height: 475px;
-    background-color: green;
+    height: 550px;
+    /* background-color: green; */
     color: #fff;
 }
 
-.fade-in {
+.carousel-img{
+    height: 550px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: rgb(129, 124, 124);
+    text-decoration: underline;
+}
+
+.carousel-project-title {
+    position: absolute;
+    top: 85%;
+    /* z-index: 1; */
+    color: rgb(129, 124, 124);
+    text-decoration: none;
+}
+
+.carousel-project-username {
+    position: absolute;
+    top: 90%;
+    margin-top: 10px;
+}
+.name{
+    position: relative;
+}
+
+/* .fade-in {
     transition:  opacity 1s ease;
 }
 
 .fade-out {
     opacity: 0;
     transition: opacity 1s ease;
-}
+} */

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProjects } from "../../store/project";
@@ -7,6 +7,7 @@ import { getView } from "../../store/views";
 import ProjectCard from "../ProjectCard";
 import { getAllFavorites } from "../../store/favortie";
 import Carousel, { CarouselItem } from "../Carousel";
+import { NavLink } from "react-router-dom";
 
 
 const ProjectExplore = () => {
@@ -20,7 +21,24 @@ const ProjectExplore = () => {
     const outside = useSelector(state => Object.values(state.projects).filter(project => project.category === "Outside"))
     const teachers = useSelector(state => Object.values(state.projects).filter(project => project.category === "Teachers"))
     const views = useSelector(state => state.views.views);
-    const favorties = useSelector(state => state?.favorites)
+    // const favorties = useSelector(state => state?.favorites)
+    const projects = useSelector(state => Object.values(state.projects))
+    const numOfProjects = projects.length - 1;
+    const [carouselItem1, setCarouselItem1] = useState(projects)
+    const [carouselItem2, setCarouselItem2] = useState(projects)
+    const [carouselItem3, setCarouselItem3] = useState(projects)
+    // console.log(carouselItem1)
+
+    useEffect(() => {
+        const getRandomInt = (numOfProjects => {
+            return Math.floor(Math.random() * numOfProjects);
+        })
+        setCarouselItem1(projects[getRandomInt(numOfProjects)])
+        setCarouselItem2(projects[getRandomInt(numOfProjects)])
+        setCarouselItem3(projects[getRandomInt(numOfProjects)])
+    }, [numOfProjects])
+
+    // console.log(numOfProjects)
 
     useEffect(() => {
         dispatch(getAllProjects());
@@ -32,11 +50,33 @@ const ProjectExplore = () => {
     return (
         <div className="explorePage">
             {/* <div className="slideshow-container"> */}
-                {/* <img src="https://media.istockphoto.com/photos/colorful-background-of-pastel-powder-explosionrainbow-color-dust-on-picture-id1180542165?k=20&m=1180542165&s=612x612&w=0&h=43hlhk8qdGYP4V-u3AAxD3kPDRIzHjMNWpr-VdBQ2Js=" alt=""></img> */}
+            {/* <img src="https://media.istockphoto.com/photos/colorful-background-of-pastel-powder-explosionrainbow-color-dust-on-picture-id1180542165?k=20&m=1180542165&s=612x612&w=0&h=43hlhk8qdGYP4V-u3AAxD3kPDRIzHjMNWpr-VdBQ2Js=" alt=""></img> */}
             <Carousel>
-                <CarouselItem>Item 1</CarouselItem>
-                <CarouselItem>Item 2</CarouselItem>
-                <CarouselItem>Item 3</CarouselItem>
+                <CarouselItem carouselItem={carouselItem1}>
+                    {/* <div className="name"> */}
+
+                    <img className="carousel-img" src={carouselItem1?.titleImage}></img>
+                    <h1 className='carousel-project-title'>
+                        <NavLink className="link" to={`/projects/${carouselItem1?.id}`} >{carouselItem1?.title} </NavLink>
+                    </h1>                    
+                    <h4 className='carousel-project-username'>By: {carouselItem1?.username} </h4>
+                    {/* </div> */}
+
+                </CarouselItem>
+                <CarouselItem carouselItem2={carouselItem2}>
+                    <img className="carousel-img" src={carouselItem2?.titleImage}></img>
+                    <h1 className='carousel-project-title'>
+                        <NavLink className="link" to={`/projects/${carouselItem2?.id}`} >{carouselItem2?.title} </NavLink>
+                    </h1>
+                    <h4 className='carousel-project-username'>By: {carouselItem2?.username} </h4>
+                </CarouselItem>
+                <CarouselItem carouselItem3={carouselItem3}>
+                    <img className="carousel-img" src={carouselItem3?.titleImage}></img>
+                    <h1 className='carousel-project-title'>
+                        <NavLink className="link" to={`/projects/${carouselItem3?.id}`} >{carouselItem3?.title} </NavLink>
+                    </h1>
+                    <h4 className='carousel-project-username'>By: {carouselItem3?.username} </h4>
+                </CarouselItem>
             </Carousel>
             {/* </div> */}
             <div className="content-container">

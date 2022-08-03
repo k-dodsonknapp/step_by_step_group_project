@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import "./Carousel.css"
 
-export const CarouselItem = ({ children, width }) => {
-
+export const CarouselItem = ({ children, width, carouselItem }) => {
+    console.log(children)
     // const [fadeProp, setFadeProp] = useState({
     //     fade: "fade-in"
     // });
@@ -26,9 +26,10 @@ export const CarouselItem = ({ children, width }) => {
 
     return (
         <div className='carousel-item' style={{ width: width }}>
-            {/* <div className={fadeProp.fade}> */}
-                {children}
-                {/* </div> */}
+            {children}
+            {/* <div >
+            <h2 className='carousel-project-title'>asdfasdfasdfasdfasdfa{carouselItem?.title} </h2> */}
+            {/* </div> */}
         </div>
     )
 }
