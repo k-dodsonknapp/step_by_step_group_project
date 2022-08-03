@@ -2,9 +2,33 @@ import React, { useEffect, useState } from 'react';
 import "./Carousel.css"
 
 export const CarouselItem = ({ children, width }) => {
+
+    // const [fadeProp, setFadeProp] = useState({
+    //     fade: "fade-in"
+    // });
+
+    // useEffect(() => {
+    //     const timeout = setInterval(() => {
+    //         if (fadeProp.fade === "fade-in"){
+    //             setFadeProp({
+    //                 fade:"fade-out"
+    //             })
+    //         }else {
+    //             setFadeProp({
+    //                 fade:"fade-in"
+    //             })
+    //         }
+    //     }, 5000);
+    //     return () => {
+
+    //     }
+    // }, [fadeProp])
+
     return (
         <div className='carousel-item' style={{ width: width }}>
-            {children}
+            {/* <div className={fadeProp.fade}> */}
+                {children}
+                {/* </div> */}
         </div>
     )
 }
@@ -35,40 +59,13 @@ function Carousel({ children }) {
 
     return (
         <div className='carousel'>
-                    {/* <button
-                        onClick={() => {
-                            updateIndex(activeIndex - 1);
-                        }}>
-                        Prev
-                    </button> */}
             <div className='inner' style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
                 <div>
-
                     {React.Children.map(children, (child, index) => {
                         return React.cloneElement(child, { width: "100%" });
                     })}
                 </div>
             </div>
-                    {/* <button
-                        onClick={() => {
-                            updateIndex(activeIndex + 1);
-                        }}>
-                        Next
-                    </button> */}
-            {/* <div className='indicators'>
-                <button
-                    onClick={() => {
-                        updateIndex(activeIndex - 1);
-                    }}>
-                    Prev
-                </button>
-                <button
-                    onClick={() => {
-                        updateIndex(activeIndex + 1);
-                    }}>
-                    Next
-                </button>
-            </div> */}
         </div>
     )
 }
