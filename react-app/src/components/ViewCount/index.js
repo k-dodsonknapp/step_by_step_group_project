@@ -18,12 +18,12 @@ function ViewCount({ project }) {
 
     return (
         <div>
-            <p id='favorite-views'>
+            <div id='favorite-views'>
                 <FavoriteCount project={project} />
                 <div>
                     👁 {projectViews?.viewCount}
                 </div>
-            </p>
+            </div>
         </div>
     )
 }
