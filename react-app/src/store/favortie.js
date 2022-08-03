@@ -38,7 +38,6 @@ const addFavorite = (favorite) => ({
 });
 
 export const addPostFavorite = (favoriteObj) => async (dispatch) => {
-    // console.log(favoriteObj, "favoriteObj");
     const response = await fetch('/api/favorite/add', {
         method: 'POST',
         headers: {
@@ -61,7 +60,6 @@ const deleteFavorite = (favorite) => ({
 });
 
 export const deletePostFavorite = (favorite) => async (dispatch) => {
-    // console.log("delete favorite", favorite);
     const response = await fetch('/api/favorite/delete', {
         method: 'DELETE',
         headers: {
@@ -84,17 +82,14 @@ export default function favoritesReducer(state = [], action) {
         case GET_ALL_FAVORITES:
             return action.favorites;
         case ADD_FAVORITE:
-            // console.log("WWWWWW", action);
             newState = { ...state };
 
             newState = { ...newState, [action.favorite.id]: action.favorite };
             return newState;
         case DELETE_FAVORITE:
             newState = {...state}
-            // console.log(newState.favorite, "newState");
             delete newState[action.favorite.id];
             return newState;
-            // return state.filter(favorite => favorite.id !== action.favorite.id);
         default:
             return state;
     }

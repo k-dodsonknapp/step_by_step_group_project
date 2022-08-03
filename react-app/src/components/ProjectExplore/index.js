@@ -21,7 +21,6 @@ const ProjectExplore = () => {
     const outside = useSelector(state => Object.values(state.projects).filter(project => project.category === "Outside"))
     const teachers = useSelector(state => Object.values(state.projects).filter(project => project.category === "Teachers"))
     const views = useSelector(state => state.views.views);
-    // const favorties = useSelector(state => state?.favorites)
     const projects = useSelector(state => Object.values(state.projects))
     const numOfProjects = projects.length - 1;
     const [carouselItem1, setCarouselItem1] = useState(projects)
@@ -29,7 +28,6 @@ const ProjectExplore = () => {
     const [carouselItem3, setCarouselItem3] = useState(projects)
     const [carouselItem4, setCarouselItem4] = useState(projects)
     const [carouselItem5, setCarouselItem5] = useState(projects)
-    // console.log(carouselItem1)
 
     useEffect(() => {
         const getRandomInt = (numOfProjects => {
@@ -41,8 +39,6 @@ const ProjectExplore = () => {
         setCarouselItem4(projects[getRandomInt(numOfProjects)])
         setCarouselItem5(projects[getRandomInt(numOfProjects)])
     }, [numOfProjects])
-
-    // console.log(numOfProjects)
 
     useEffect(() => {
         dispatch(getAllProjects());

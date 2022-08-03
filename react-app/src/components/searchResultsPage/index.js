@@ -1,19 +1,12 @@
-// import "./SearchResults.css";
+
 import React from "react";
 import { useSelector } from "react-redux";
-// import { useHistory } from "react-router-dom";
-// import { search } from "../../store/project";
-// import { useDispatch } from "react-redux";
 import './SearchResultsPage.css'
 import SearchResults from "../SearchResults";
 
 const SearchRes = () => {
-  // const [searchKeyWord, setSearchKeyWord] = useState("");
-  // const dispatch = useDispatch();
-  // const history = useHistory();
-  const projects = useSelector((state) => Object.values(state.projects));
 
-  console.log(projects);
+  const projects = useSelector((state) => Object.values(state.projects));
 
   return (
     <div id='search-page'>
