@@ -7,7 +7,6 @@ function FavoriteCount({ project }) {
     const dispatch = useDispatch();
     const favorites = useSelector(state => state?.favorites?.favorite).filter(favorite => favorite?.projectId === project?.id)
     const [favoriteCount, setFavoriteCount] = useState(0)
-    console.log(favoriteCount)
 
     useEffect(() => {
         dispatch(getAllFavorites())
