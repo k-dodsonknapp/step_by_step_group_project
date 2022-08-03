@@ -6,6 +6,7 @@ import './projectExplore.css';
 import { getView } from "../../store/views";
 import ProjectCard from "../ProjectCard";
 import { getAllFavorites } from "../../store/favortie";
+import Carousel, { CarouselItem } from "../Carousel";
 
 
 const ProjectExplore = () => {
@@ -20,7 +21,6 @@ const ProjectExplore = () => {
     const teachers = useSelector(state => Object.values(state.projects).filter(project => project.category === "Teachers"))
     const views = useSelector(state => state.views.views);
     const favorties = useSelector(state => state?.favorites)
-    console.log(favorties, "favorites")
 
     useEffect(() => {
         dispatch(getAllProjects());
@@ -31,9 +31,14 @@ const ProjectExplore = () => {
 
     return (
         <div className="explorePage">
-            <div className="slideshow-container">
-                <img src="https://media.istockphoto.com/photos/colorful-background-of-pastel-powder-explosionrainbow-color-dust-on-picture-id1180542165?k=20&m=1180542165&s=612x612&w=0&h=43hlhk8qdGYP4V-u3AAxD3kPDRIzHjMNWpr-VdBQ2Js=" alt=""></img>
-            </div>
+            {/* <div className="slideshow-container"> */}
+                {/* <img src="https://media.istockphoto.com/photos/colorful-background-of-pastel-powder-explosionrainbow-color-dust-on-picture-id1180542165?k=20&m=1180542165&s=612x612&w=0&h=43hlhk8qdGYP4V-u3AAxD3kPDRIzHjMNWpr-VdBQ2Js=" alt=""></img> */}
+            <Carousel>
+                <CarouselItem>Item 1</CarouselItem>
+                <CarouselItem>Item 2</CarouselItem>
+                <CarouselItem>Item 3</CarouselItem>
+            </Carousel>
+            {/* </div> */}
             <div className="content-container">
                 <div className="content">
                     <h2>Instructions STEP-BY-STEP</h2>
