@@ -66,7 +66,6 @@ const CreateProject = () => {
 
             const data = await dispatch(addOneProject(project))
             const projectId = data.projectId
-            // console.log(projectId)
             const newView = {
                 projectId: projectId,
                 viewCount: 0
