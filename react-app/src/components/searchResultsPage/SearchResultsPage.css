@@ -3,7 +3,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 470px;
+    
 }
+
 #search-results-container {
     margin-top: 40px;
     width: 1000px
