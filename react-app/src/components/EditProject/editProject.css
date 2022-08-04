@@ -63,3 +63,18 @@
     border: 2px solid black;
     /* padding-bottom: 20px; */
 }
+
+.add-supply-btn-div {
+    display: flex;
+    justify-content: center;
+}
+
+
+.edit-supply-cat {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(186, 186, 186);
+    margin: 10px;
+    width: 80%;
+    border-radius: 4px;
+}

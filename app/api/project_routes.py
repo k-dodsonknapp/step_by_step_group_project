@@ -47,6 +47,7 @@ def update_project(id):
     data = request.json
     instructions = data['instructions']
     supplies = data['supplies']
+    print("SUPPLIESSSSSSSSSSS", data)
 
     project = Project.query.get(id)
     project.title = data['title']

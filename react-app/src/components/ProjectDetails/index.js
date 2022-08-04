@@ -29,9 +29,11 @@ const ProjectDetails = () => {
   const [editBody, setEditBody] = useState('');
   // const [textColor, setTextColor] = useState('#bbb');
   // const [favoriteComment, setFavoriteComment] = useState(true);
-  // const [favoriteLength, setFavoriteLength] = useState(0);
+  let [favoriteLength, setFavoriteLength] = useState(0);
   const [favoritess, setFavoritess] = useState(false);
   const [userFavorite, setUserFavorite] = useState(false);
+
+  console.log(project?.supplies)
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -163,17 +165,18 @@ const ProjectDetails = () => {
   const favorite = async (e) => {
     e.preventDefault();
     let payload = favorites?.favorite?.find(favorite => favorite?.projectId === +projectId && favorite?.userId === user?.id)
-    if (session.user) {
-      if (userFavorite) {
+    if (session?.user) {
+      if (payload) {
         // setFavoriteComment(true);
         // setTextColor(setFavoriteComment ? '#bbb' : '#b64360');
-        favorites.favorite.length--
+        if (favorites?.favorite?.length > 0){
+          setFavoriteLength( favoriteLength -= 1)
+        }
         dispatch(deletePostFavorite(payload));
         dispatch(getPostFavorites(+projectId));
         // setFavoriteLength(favorites?.favorite?.length)
         setFavoritess(false);
-      }
-      if (!userFavorite) {
+      } else {
         // setFavoriteComment(false);
         // setTextColor(setFavoriteComment ? '#b64360' : '#bbb');
         const fav = {
@@ -192,7 +195,7 @@ const ProjectDetails = () => {
   }
 
   useEffect(() => {
-    if (favorites.favorite) {
+    if (favorites?.favorite) {
       const favorite = favorites?.favorite.find(favorite => favorite?.userId === session?.user?.id);
       if (favorite) {
         setUserFavorite(true);
@@ -223,7 +226,7 @@ const ProjectDetails = () => {
             <span className="username-category">{project?.owner?.username}</span>
             in<span className="username-category">{project?.category}</span>
             <p>
-              <span className="favorite-count">❤ {favorites.favorite.length}</span>
+              <span className="favorite-count">❤ {favorites?.favorite?.length}</span>
               <span>👁 {view?.viewCount}</span>
             </p>
             {session?.user?.id === project?.owner?.id && (

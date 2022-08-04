@@ -1,10 +1,15 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-function EachSupply({ supply, index, supplies, setSupplies }) {
-    const [editedSupply, setEditedSupply] = useState(supplies[index].supply)
-
-    supplies[index].supply = editedSupply
-    setSupplies(editedSupply)
+function EachSupply({ supply, index, projectSupplies, setProjectSupplies }) {
+    // console.log(supply)
+    // console.log(index)
+    // console.log(setSupplies)
+    const [editedSupply, setEditedSupply] = useState(supply.supply)
+    console.log()
+    projectSupplies[index].supply = editedSupply
+    setProjectSupplies(projectSupplies)
+    // supplies[index].supply = editedSupply
+    // setSupplies(supply.supply = editedSupply)
 
     return (
         <div>

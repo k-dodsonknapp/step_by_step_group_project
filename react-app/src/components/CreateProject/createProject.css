@@ -53,6 +53,24 @@
     cursor: pointer;
 }
 
+
+.add-supply {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    border: none;
+    padding: 9px 11px;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    background-color: #faac18;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    width: 30%;
+}
+
 /* .uploadPictureInput button {
 
 } */
@@ -105,6 +123,16 @@ input[type=file]::file-selector-button {
 
 .title-img-cat {
     display: flex;
+    /* flex-direction: column; */
+    border: 1px solid rgb(186, 186, 186);
+    margin: 10px;
+    width: 80%;
+    border-radius: 4px;
+}
+
+.supply-cat {
+    display: flex;
+    flex-direction: column;
     border: 1px solid rgb(186, 186, 186);
     margin: 10px;
     width: 80%;
@@ -264,12 +292,11 @@ select > option {
     font-weight: 600;
     font-size: 16px;
     margin: 4px 0px;
+    border: 1px solid rgb(235, 235, 235);
 }
 
 .supply-input input:hover {
     border: 1px solid rgb(186, 186, 186);
-    padding: 8px 11px;
-    margin: 3px 0px;
 }
 
 .step-input label {

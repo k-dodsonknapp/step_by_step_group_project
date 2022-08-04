@@ -12,17 +12,21 @@ const CreateProject = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
+    const [newProjectId, setNewProjectId] = useState()
+
     const [showErrors] = useState(false)
     const [errors, setErrors] = useState([])
     const [title, setTitle] = useState('')
     const [overview, setOverview] = useState('')
     const [category, setCategory] = useState('')
 
-    const [showSupplyErrors] = useState(false)
+    const [showSupplyErrors, setShowSupplyErrors] = useState(false)
     const [supplyErrors, setSupplyErrors] = useState([])
     const [supplies, setSupplies] = useState([])
     const [supply, setSupply] = useState('')
     const [amount] = useState(0)
+
+    console.log(supplyErrors)
 
     const [showInstructionErrors, setShowInstructionErrors] = useState(false)
     const [instructionErrors, setInstructionErrors] = useState([])
@@ -30,20 +34,23 @@ const CreateProject = () => {
     const [stepOrder, setStepOrder] = useState(1)
     const [stepTitle, setStepTitle] = useState('')
     const [stepInstructions, setStepInstructions] = useState('')
-    const [photoUrl, setPhotoUrl] = useState('')
+    const [photoUrl, setPhotoUrl] = useState('https://www.elmhurst.edu/wp-content/uploads/2018/12/5-skills-project-management-degree-elmhurst-college-infographic-thumb.jpg')
     const [videoUrl, setVideoUrl] = useState('')
 
     const [imagePreview, setImagePreview] = useState('https://www.elmhurst.edu/wp-content/uploads/2018/12/5-skills-project-management-degree-elmhurst-college-infographic-thumb.jpg')
 
-    useEffect(() => {
-        const newSupply = { supply, amount }
-        setSupplies([newSupply])
-    }, [supply, amount])
+    // useEffect(() => {
+    //     // const newSupply = { supply, amount }
+    //     setSupplies([...supplies, supply])
+    // }, [setSupply])
 
     const handleProjectSubmit = async (e) => {
         e.preventDefault()
         // addAnotherStep(e)
+        setSupplies([...supplies, supply])
+        // addSupply()
         if (instructionErrors.length === 0) {
+
             const newInstruction = {
                 stepOrder,
                 stepTitle,
@@ -65,13 +72,18 @@ const CreateProject = () => {
             }
 
             const data = await dispatch(addOneProject(project))
-            const projectId = data.projectId
+            // console.log(data)
+            const projectId = data?.projectId
+
             const newView = {
                 projectId: projectId,
                 viewCount: 0
             }
             dispatch(addNewProjectView(newView))
             history.push(`/projects/${projectId}`)
+
+            // setNewProjectId(projectId)
+
         } else {
             setShowInstructionErrors(true)
         }
@@ -91,7 +103,7 @@ const CreateProject = () => {
     useEffect(() => {
         const inFuncErrors = []
         if (supply.length < 3) {
-            inFuncErrors.push('Please provide a longer supply name')
+            inFuncErrors.push('Please provide a supply name')
         }
         setSupplyErrors(inFuncErrors)
     }, [supply, showSupplyErrors])
@@ -109,7 +121,7 @@ const CreateProject = () => {
 
 
     const addAnotherStep = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         if (instructionErrors.length === 0) {
             const newInstruction = {
                 stepOrder,
@@ -122,11 +134,27 @@ const CreateProject = () => {
             setStepOrder(stepOrder + 1)
             setStepTitle('')
             setStepInstructions('')
-            setPhotoUrl('')
+            setPhotoUrl('https://www.elmhurst.edu/wp-content/uploads/2018/12/5-skills-project-management-degree-elmhurst-college-infographic-thumb.jpg')
             setVideoUrl('')
             setShowInstructionErrors(false)
         } else {
             setShowInstructionErrors(true)
+        }
+    }
+
+    const addSupply = (e) => {
+        e.preventDefault();
+        if (supplyErrors.length === 0) {
+            const newSupply = {
+                supply,
+                amount
+            }
+            // console.log("newSupply", newSupply)
+            setSupplies([...supplies, newSupply])
+            setSupply('')
+            setShowSupplyErrors(false)
+        } else {
+            setShowSupplyErrors(true)
         }
     }
 
@@ -193,19 +221,44 @@ const CreateProject = () => {
                             <div>
                             </div>
                         </div>
-                        <div className="title-img-cat">
+                        <div className="supply-cat">
+                            {supplies.map(sup => (
+                                <div key={sup.id} className="supply-input">
+                                    {/* <label>Supplies</label>  */}
+                                    <input
+                                        disabled={true}
+                                        placeholder="List a supply"
+                                        type='text'
+                                        name='supply'
+                                        value={sup.supply}
+                                        required
+                                        onChange={(e) => setSupply(e.target.value)}
+                                    ></input>
+                                </div>
+                            ))}
+                            {/* <button className="submitt-comment" onClick={addSupply}>add supply</button> */}
                             <div className="supply-input">
-                                <label>Supplies</label>
+                                <label>Supply</label>
                                 <input
-                                    placeholder="List all supplies needed for this project"
+                                    placeholder="Add supplies needed for this project"
                                     type='text'
                                     name='supply'
                                     value={supply}
-                                    required
+                                    // required
                                     onChange={(e) => setSupply(e.target.value)}
                                 ></input>
+                            {showSupplyErrors &&
+                                <>
+                                    <ul>
+                                        {supplyErrors.map(error => (
+                                            <li>{error}</li>
+                                        ))}
+                                    </ul>
+                                </>
+                            }
                             </div>
                         </div>
+                        <button className="submitt-comment" onClick={addSupply}>Add Supply</button>
 
                         {instructions.map(instruction => (
                             <div key={instruction.id} className="title-img-catt">
@@ -234,8 +287,8 @@ const CreateProject = () => {
                                             onChange={(e) => setStepInstructions(e.target.value)}
                                         ></textarea>
                                     </div>
-                                    <div className="step-input">
-                                    </div>
+                                    {/* <div className="step-input">
+                                    </div> */}
                                 </div>
                             </div>
                         ))}
@@ -268,6 +321,15 @@ const CreateProject = () => {
                                 <div className="step-photo">
                                     <UploadPicture className="step-photo" setTitleImagee={setPhotoUrl} />
                                 </div>
+                    {showInstructionErrors &&
+                        <>
+                            <ul>
+                                {instructionErrors.map(error => (
+                                    <li>{error}</li>
+                                ))}
+                            </ul>
+                        </>
+                    }
                             </div>
                         </div>
                         <div className="create-btns">
@@ -290,7 +352,7 @@ const CreateProject = () => {
                     </ul>
                 </>
             }
-            {showSupplyErrors &&
+            {/* {showSupplyErrors &&
                 <>
                     <ul>
                         {supplyErrors.map(error => (
@@ -298,16 +360,7 @@ const CreateProject = () => {
                         ))}
                     </ul>
                 </>
-            }
-            {showInstructionErrors &&
-                <>
-                    <ul>
-                        {instructionErrors.map(error => (
-                            <li>{error}</li>
-                        ))}
-                    </ul>
-                </>
-            }
+            } */}
         </div>
     )
 }

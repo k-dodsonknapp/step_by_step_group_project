@@ -4,22 +4,24 @@ import { useHistory, useParams } from "react-router-dom";
 import { getOneProject, updateOnePost } from "../../store/project"
 import EachSupply from "../EachSupply";
 import EditInstructions from "../EditInstructions";
+import Supplies from "../Supplies";
+import UploadPicture from "../UploadPicture";
 import "./editProject.css"
 
 function EditProject() {
-    const userId = useSelector(state => state.session.user["id"]);
+    const userId = useSelector(state => state?.session?.user["id"]);
     let { projectId } = useParams();
     projectId = parseInt(projectId)
-    const project = useSelector(state => state.projects[projectId])
+    const project = useSelector(state => state?.projects[projectId]);
+    // console.log(project?.supplies)
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const [title, setTitle] = useState(project.title);
-    const [titleImage, setTitleImage] = useState(project.titleImage);
-    const [category, setCategory] = useState(project.category);
-    const [overview, setOverview] = useState(project.overview);
-
-    let [setSupplies] = useState(project.supplies);
+    const [title, setTitle] = useState(project?.title);
+    const [titleImage, setTitleImage] = useState(project?.titleImage);
+    const [category, setCategory] = useState(project?.category);
+    const [overview, setOverview] = useState(project?.overview);
+    const [projectSupplies, setProjectSupplies] = useState(project?.supplies)
 
     // project instructions
     const [instructions, setInstructions] = useState(project?.instructions);
@@ -38,12 +40,15 @@ function EditProject() {
             "overview": overview,
             "category": category,
             "instructions": instructions,
-            "supplies": project.supplies
+            "supplies": projectSupplies
         }
+        console.log(editedProject)
         await dispatch(updateOnePost(editedProject))
         await dispatch(getOneProject(projectId))
         history.push(`/projects/${projectId}`)
-    }
+    };
+
+
 
     return (
         <div className="editPage">
@@ -84,12 +89,13 @@ function EditProject() {
                                 </div>
                                 <div className="label-input">
                                     <label>Image:</label>
-                                    <input
+                                    {/* <input
                                         type="text"
                                         name="titleImage"
                                         value={titleImage}
                                         onChange={e => setTitleImage(e.target.value)}
-                                    />
+                                    /> */}
+                                    <UploadPicture setTitleImagee={setTitleImage} />
                                 </div>
                             </div>
                         </div>
@@ -104,14 +110,18 @@ function EditProject() {
                                 />
                             </div>
                         </div>
-                        <div className="title-img-cat">
+                        <div className="edit-supply-cat">
                             <div className="supply-input">
                                 <label>Supplies:</label>
-                                {project?.supplies?.map((supply, i) => (
-                                    <EachSupply supply={supply} index={i} supplies={project?.supplies} setSupplies={setSupplies} />
-                                ))}
+                                <Supplies
+                                    setProjectSupplies={setProjectSupplies}
+                                    project={project}
+                                    projectSupplies={projectSupplies}
+
+                                />
                             </div>
                         </div>
+
                         {project?.instructions?.map((instruction, i) => (
                             <EditInstructions
                                 instructions={project?.instructions}
