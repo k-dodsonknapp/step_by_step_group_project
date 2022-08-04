@@ -8,7 +8,7 @@
 
 .inner {
     white-space: nowrap;
-    transition: transform 0.3s;
+    transition: transform 10s;
     /* height: 550px; */
     z-index: 1;
 }

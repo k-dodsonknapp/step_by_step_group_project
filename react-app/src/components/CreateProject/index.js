@@ -247,15 +247,15 @@ const CreateProject = () => {
                                     // required
                                     onChange={(e) => setSupply(e.target.value)}
                                 ></input>
-                            {showSupplyErrors &&
-                                <>
-                                    <ul>
-                                        {supplyErrors.map(error => (
-                                            <li>{error}</li>
-                                        ))}
-                                    </ul>
-                                </>
-                            }
+                                {showSupplyErrors &&
+                                    <>
+                                        <ul>
+                                            {supplyErrors.map(error => (
+                                                <li>{error}</li>
+                                            ))}
+                                        </ul>
+                                    </>
+                                }
                             </div>
                         </div>
                         <button className="submitt-comment" onClick={addSupply}>Add Supply</button>
@@ -321,15 +321,15 @@ const CreateProject = () => {
                                 <div className="step-photo">
                                     <UploadPicture className="step-photo" setTitleImagee={setPhotoUrl} />
                                 </div>
-                    {showInstructionErrors &&
-                        <>
-                            <ul>
-                                {instructionErrors.map(error => (
-                                    <li>{error}</li>
-                                ))}
-                            </ul>
-                        </>
-                    }
+                                {showInstructionErrors &&
+                                    <>
+                                        <ul>
+                                            {instructionErrors.map(error => (
+                                                <li>{error}</li>
+                                            ))}
+                                        </ul>
+                                    </>
+                                }
                             </div>
                         </div>
                         <div className="create-btns">
