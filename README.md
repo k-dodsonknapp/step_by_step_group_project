@@ -4,6 +4,8 @@ This is a clone of the website instructables, where you can post your own projec
 
 Live site: https://step-by-stepapp.herokuapp.com/
 
+![Screenshot (232)](https://github.com/k-dodsonknapp/step_by_step_group_project/blob/main/Screenshot%20(258).png)
+
 ## Getting started
 
 To view and use this application, you can either navigate to the live site(https://step-by-step-app.herokuapp.com/) and login as a new or demo user, or download the project locally:
