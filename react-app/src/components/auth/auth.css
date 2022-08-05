@@ -230,6 +230,7 @@
     background-image: url("https://www.instructables.com/assets/img/mobile/create/mobile-create-whyjoin1.png") ;
     background-repeat:space;
     object-fit: cover;
-    margin: none;
+    /* margin: none; */
+    margin-top: 80px;
     height: 761px;
 }
