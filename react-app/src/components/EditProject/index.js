@@ -96,7 +96,7 @@ function EditProject() {
                                         value={titleImage}
                                         onChange={e => setTitleImage(e.target.value)}
                                     /> */}
-                                    <UploadPicture setTitleImagee={setTitleImage} />
+                                    <UploadPicture className={"uploadPictureInput"} setTitleImagee={setTitleImage} />
                                 </div>
                             </div>
                         </div>

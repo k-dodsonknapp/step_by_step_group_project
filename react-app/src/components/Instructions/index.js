@@ -89,7 +89,7 @@ function Instructions({ instructions, project, setInstructions }) {
                     </div>
                     <h4 className="photo-header">Click to choose a photo</h4>
                     <div className="step-photo">
-                        <UploadPicture className="step-photo" setTitleImagee={setPhotoUrl} />
+                        <UploadPicture className={"uploadPictureInput"} setTitleImagee={setPhotoUrl} />
                     </div>
                     {showInstructionErrors &&
                         <>
