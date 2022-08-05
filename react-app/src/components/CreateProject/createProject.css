@@ -40,6 +40,17 @@
     height: 75px;
 }
 
+.edit-submit-project {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 10px;
+}
+
+.edit-submit-project button{
+    margin: 10px 20px;
+}
+
 .submitt-comment {
     height: 35px;
     border: none;

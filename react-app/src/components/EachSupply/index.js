@@ -5,7 +5,7 @@ function EachSupply({ supply, index, projectSupplies, setProjectSupplies }) {
     // console.log(index)
     // console.log(setSupplies)
     const [editedSupply, setEditedSupply] = useState(supply.supply)
-    console.log()
+    // console.log()
     projectSupplies[index].supply = editedSupply
     setProjectSupplies(projectSupplies)
     // supplies[index].supply = editedSupply

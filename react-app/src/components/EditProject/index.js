@@ -4,6 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { getOneProject, updateOnePost } from "../../store/project"
 import EachSupply from "../EachSupply";
 import EditInstructions from "../EditInstructions";
+import Instructions from "../Instructions";
 import Supplies from "../Supplies";
 import UploadPicture from "../UploadPicture";
 import "./editProject.css"
@@ -121,14 +122,21 @@ function EditProject() {
                                 />
                             </div>
                         </div>
-
-                        {project?.instructions?.map((instruction, i) => (
+                        <Instructions
+                            instructions={instructions}
+                            project={project}
+                            setInstructions={setInstructions}
+                        />
+                        {/* {project?.instructions?.map((instruction, i) => (
                             <EditInstructions
                                 instructions={project?.instructions}
                                 setInstructions={setInstructions}
                                 instruction={instruction}
                                 index={i} />
-                        ))}
+                        ))} */}
+                        {/* <div className="submit-project">
+                            <button className="submitt-comment" type='submit'>Submit your Project</button>
+                        </div> */}
                     </div>
                 </form>
                 <div style={{ height: "100px" }}></div>

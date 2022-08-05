@@ -1,23 +1,24 @@
 .loginformContainer {
     display: flex;
-    /* min-height: 64vmin; */
-    height: 67vh;
-    background-color: rgba(15, 15, 15, 0.199) ;
+    height: 68vh;
+    background-color: rgba(0, 0, 0, 0.705);
     backdrop-filter: blur(5px);
-    margin-left: 50px;
-    width: 350px;
+    width: 500px;
     justify-content: center;
-    margin-top: 89px;
-    margin-bottom: 0;
-    padding-top: 5%;
 }
 
-.loginInput,.signupInput{
+.loginformContainer form {
+    width: 500px;
+}
+
+.loginInput, .signupInput{
+    display: flex;
+    justify-content: center;
     padding: 9px 11px;
     border-radius: 5px;
     box-shadow: 0px 0px 2px 1px grey;
-    width: 100%;
-    margin: 10px 10px 10px -10px;
+    width: 90%;
+    /* margin: 10px 10px 10px -10px; */
     border: none;
     height: 20px;
 }
@@ -65,18 +66,19 @@
 
 .loginSignupText {
     font-family: Arial, Helvetica, sans-serif;
-    color:black
+    color:rgb(238, 227, 227)
 }
 .loginSignupText > a {
-    color:black
+    color:rgb(245, 241, 241)
 }
 .loginformContainer > form > div > label {
     font-family: Arial, Helvetica, sans-serif;
-    color: black
+    color: rgb(197, 196, 196)
 }
 
 .signupInput{
-    margin: 2px 10px 2px -10px;
+    display: flex;
+    /* margin: 2px 10px 2px -10px; */
 }
 
 #signupButton, #demoButton {
@@ -95,4 +97,14 @@
     width: 90%;
     cursor: pointer;
     /* margin-left: 30px; */
+}
+
+.loginPage {
+    display: flex;
+    margin-top: 89px;
+    justify-content: center;
+    background-image: url("https://www.instructables.com/assets/img/mobile/create/mobile-create-whyjoin1.png") ;
+    background-repeat:space;
+    object-fit: cover;
+
 }
