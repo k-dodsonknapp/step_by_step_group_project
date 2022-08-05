@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import "./auth.css"
 
-const DemoButton = () => {
+const DemoButton = ({className}) => {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch()
   const handleDemo = async (e) => {
@@ -19,7 +19,7 @@ const DemoButton = () => {
     return <Redirect to='/' />;
   };
 
-  return <button className='demo-user' onClick={handleDemo}>Demo User</button>;
+  return <button className={!className ? 'demo-user' : className} onClick={handleDemo}>Demo User</button>;
 };
 
 

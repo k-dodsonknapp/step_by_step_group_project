@@ -77,8 +77,9 @@ margin-top: 89px;
             ))}
           </div>
           <div className='newUser-input'>
-            <label>User Name</label>
+            <label>Username</label>
             <input
+              placeholder='What do we call you?'
               type='text'
               name='username'
               className="signupInput"
@@ -89,6 +90,7 @@ margin-top: 89px;
           <div className='newUser-input'>
             <label>Email</label>
             <input
+              placeholder='Where can we reach you?'
               type='text'
               name='email'
               className="signupInput"
@@ -99,6 +101,7 @@ margin-top: 89px;
           <div className='newUser-input'>
             <label>Password</label>
             <input
+            placeholder='How will we know it is you?'
               type='password'
               name='password'
               className="signupInput"
@@ -109,7 +112,8 @@ margin-top: 89px;
           <div className='newUser-input'>
             <label>Repeat Password</label>
             <input
-              type='password'
+            placeholder='Again, how will we know it is you?'
+            type='password'
               name='repeat_password'
               className="signupInput"
               onChange={updateRepeatPassword}
@@ -119,11 +123,11 @@ margin-top: 89px;
           </div>
           <div className='newUser-input'>
             <label>User Photo</label>
-            <UploadPicture setTitleImagee={setUserPhoto} />
+            <UploadPicture className={"addPhoto"} setTitleImagee={setUserPhoto} />
           </div>
           <div className='signupBtns'>
             <button className='loginButton' type='submit'>Sign Up</button>
-            <DemoButton />
+            <DemoButton className={"new-user-demo"} />
           </div>
         </form>
       </div>

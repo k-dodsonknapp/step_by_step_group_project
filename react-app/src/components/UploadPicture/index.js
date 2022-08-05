@@ -3,7 +3,7 @@ import React, { useState } from "react";
 // import "../CreatePost/createPost.css"
 
 
-const UploadPicture = ({ setTitleImagee }) => {
+const UploadPicture = ({ className, setTitleImagee }) => {
     // const history = useHistory(); // so that we can redirect after the image upload is successful
     const [image, setImage] = useState(null);
     const [imageLoading, setImageLoading] = useState(false);
@@ -40,7 +40,7 @@ const UploadPicture = ({ setTitleImagee }) => {
     }
 
     return (
-        <div className="uploadPictureInput">
+        <div className={!className ? "uploadPictureInput" : className}>
             <input
                 type="file"
                 accept="image/*"
