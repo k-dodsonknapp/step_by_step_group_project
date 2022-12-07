@@ -27,6 +27,7 @@ def seed():
         db.session.execute(f"TRUNCATE table {SCHEMA}.views RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.favorites RESTART IDENTITY CASCADE;")
         # Add a truncate command here for every table that will be seeded.
+        # 
         db.session.commit()
     seed_users()
     # Add other seed functions here
