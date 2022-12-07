@@ -9,14 +9,11 @@ instruction_routes = Blueprint('instructions', __name__)
 def update_instructions(id):
     data = request.json
     # projectId = data['projectId'] 
-    print("LLLLLLLLLLLL", data)
 
     instructions = Instruction.query.filter(Instruction.id == id).all()
     for instruction in instructions:
         db.session.delete(instruction)
     
-    print("KKKKKKKKKK", instructions)
-
     # for instruction in data:
     #     row = Instruction(
     #         projectId=instruction['projectId'],

@@ -34,7 +34,6 @@ def create_views():
 @views_routes.route('/add', methods=["PUT"])
 def update_views():
     data = request.json
-    print("DDSFSDAFSDFASDF", data["projectId"]["projectId"])
     projectId = data["projectId"]["projectId"]
 
     view = Views.query.filter(projectId == Views.projectId).first()

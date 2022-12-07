@@ -19,7 +19,6 @@ def get_one_projects_favorites(id):
 @favorite_routes.route('/add', methods=["POST"])
 def add_favorite():
     data = request.json
-    print(data, "asdfasdfasdf")
 
     userId = data["userId"]
     projectId = data["projectId"]

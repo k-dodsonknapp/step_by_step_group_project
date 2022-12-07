@@ -33,7 +33,6 @@ const ProjectDetails = () => {
   const [favoritess, setFavoritess] = useState(false);
   const [userFavorite, setUserFavorite] = useState(false);
 
-  console.log(project?.supplies)
 
   useEffect(() => {
     window.scrollTo(0, 0);

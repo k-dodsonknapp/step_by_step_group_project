@@ -14,7 +14,6 @@ function EditProject() {
     let { projectId } = useParams();
     projectId = parseInt(projectId)
     const project = useSelector(state => state?.projects[projectId]);
-    // console.log(project?.supplies)
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -43,7 +42,6 @@ function EditProject() {
             "instructions": instructions,
             "supplies": projectSupplies
         }
-        console.log(editedProject)
         await dispatch(updateOnePost(editedProject))
         await dispatch(getOneProject(projectId))
         history.push(`/projects/${projectId}`)

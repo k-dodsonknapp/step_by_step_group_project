@@ -12,7 +12,7 @@ const CreateProject = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const [newProjectId, setNewProjectId] = useState()
+    // const [newProjectId, setNewProjectId] = useState()
 
     const [showErrors] = useState(false)
     const [errors, setErrors] = useState([])
@@ -25,8 +25,6 @@ const CreateProject = () => {
     const [supplies, setSupplies] = useState([])
     const [supply, setSupply] = useState('')
     const [amount] = useState(0)
-
-    console.log(supplyErrors)
 
     const [showInstructionErrors, setShowInstructionErrors] = useState(false)
     const [instructionErrors, setInstructionErrors] = useState([])
@@ -72,7 +70,6 @@ const CreateProject = () => {
             }
 
             const data = await dispatch(addOneProject(project))
-            // console.log(data)
             const projectId = data?.projectId
 
             const newView = {
@@ -82,7 +79,6 @@ const CreateProject = () => {
             dispatch(addNewProjectView(newView))
             history.push(`/projects/${projectId}`)
 
-            // setNewProjectId(projectId)
 
         } else {
             setShowInstructionErrors(true)
@@ -149,7 +145,6 @@ const CreateProject = () => {
                 supply,
                 amount
             }
-            // console.log("newSupply", newSupply)
             setSupplies([...supplies, newSupply])
             setSupply('')
             setShowSupplyErrors(false)
