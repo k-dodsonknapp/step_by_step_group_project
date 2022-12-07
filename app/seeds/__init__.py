@@ -23,7 +23,6 @@ def seed():
         # Add a truncate command here for every table that will be seeded.
         db.session.commit()
     seed_users()
-    seed_users()
     # Add other seed functions here
     seed_project()
     seed_instructions()

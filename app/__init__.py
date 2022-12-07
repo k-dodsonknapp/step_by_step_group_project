@@ -16,6 +16,14 @@ from .api.instructions import instruction_routes
 from .api.views import views_routes
 from .api.favorite import favorite_routes
 
+from app.seeds.comment_seeder import seed_comments
+from app.seeds.favorite import seed_favorites
+from app.seeds.instruction_seeder import seed_instructions
+from app.seeds.projects_seeder import seed_project
+from app.seeds.supply_seeder import seed_supplies
+from app.seeds.users import seed_users
+from app.seeds.views_seeder import seed_views
+
 from .seeds import seed_commands
 
 from .config import Config
@@ -46,6 +54,28 @@ app.register_blueprint(instruction_routes, url_prefix='/api/instructions')
 app.register_blueprint(views_routes, url_prefix='/api/views')
 app.register_blueprint(favorite_routes, url_prefix='/api/favorite')
 db.init_app(app)
+
+# drop all tables, create tables, and seed all             
+# def seed():
+#     """Seed all database functions"""
+#     seed_users()
+#     seed_project()
+#     seed_comments()
+#     seed_supplies()
+#     seed_favorites()
+#     seed_instructions()
+#     seed_views()
+
+
+# with app.app_context():
+#             db.drop_all()
+#             db.create_all()
+#             app.logger.info('Initialized the database!')
+#             # print("========>", db.session.query(User, username='Demo'))
+#             # if not db.session.query(User):
+#             seed()
+#             app.logger.info('seeded database!')
+
 Migrate(app, db)
 
 # Application Security
