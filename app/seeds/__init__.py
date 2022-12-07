@@ -18,12 +18,12 @@ seed_commands = AppGroup('seed')
 @seed_commands.command('all')
 def seed():
     if environment == 'production':
+        undo_views()
         undo_projects()
         undo_favorites()
         undo_comments()
         undo_instructions()
         undo_supplies()
-        undo_views()
         undo_users()
     # Before seeding, truncate all tables prefixed with schema name
         # db.session.execute(f"TRUNCATE table {SCHEMA}.project RESTART IDENTITY CASCADE;")
@@ -57,5 +57,5 @@ def undo():
     undo_instructions()
     undo_supplies()
     undo_comments()
-    undo_views()
     undo_favorites()
+    undo_views()
