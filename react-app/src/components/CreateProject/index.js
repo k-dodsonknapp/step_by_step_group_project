@@ -12,7 +12,7 @@ const CreateProject = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const [newProjectId, setNewProjectId] = useState()
+    // const [newProjectId, setNewProjectId] = useState()
 
     const [showErrors] = useState(false)
     const [errors, setErrors] = useState([])
