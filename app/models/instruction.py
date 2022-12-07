@@ -1,10 +1,12 @@
-from app.models.db import db
+from app.models.db import db, environment, SCHEMA, add_prefix_for_prod
 
 class Instruction(db.Model):
     __tablename__ = 'instructions'
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    projectId = db.Column(db.Integer, db.ForeignKey('projects.id'), nullable=False)
+    projectId = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('projects.id')), nullable=False)
     stepOrder = db.Column(db.Integer, nullable=False)
     stepTitle = db.Column(db.String(100))
     instructions = db.Column(db.Text)

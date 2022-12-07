@@ -26,7 +26,6 @@ def project(id):
     owner = User.query.filter(User.id == project['userId']).first()
     supplies = Supply.query.filter(Supply.projectId == id).all()
     instructions = Instruction.query.filter(Instruction.projectId == id).all()
-    print(instructions, "INSTRUCTIONS!!!!!!")
     comments = Comment.query.filter(Comment.projectId == id).all()
 
     return {'project': {
@@ -47,7 +46,6 @@ def update_project(id):
     data = request.json
     instructions = data['instructions']
     supplies = data['supplies']
-    print("SUPPLIESSSSSSSSSSS", data)
 
     project = Project.query.get(id)
     project.title = data['title']
@@ -113,7 +111,6 @@ def create_project():
     data = request.json
     instructions = data['instructions']
     supplies = data['supplies']
-    print("JJJJJJJJJ", supplies)
 
     project = Project(userId=data['userId'],
                       title=data['title'],

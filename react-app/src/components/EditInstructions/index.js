@@ -3,7 +3,6 @@ import UploadPicture from "../UploadPicture";
 
 
 function EditInstructions({ instructions, setInstructions, instruction, index}) {
-    // console.log(instructions)
     const [editedStepTitle, setEditedStepTitle] = useState(instructions[index]?.stepTitle)
     const [editedInstruction, setEditedInstruction] = useState(instructions[index]?.instructions)
     const [editedPhotoUrl, setEditedPhotoUrl] = useState(instructions[index].photoUrl)

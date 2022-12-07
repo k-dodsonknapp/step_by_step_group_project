@@ -4,13 +4,11 @@ import EachSupply from '../EachSupply'
 function Supplies({ setProjectSupplies, project, projectSupplies }) {
 
 
-    // console.log(projectSupplies)
     const [supply, setSupply] = useState("");
     const [projectId, setProjectId] = useState(projectSupplies[0].projectId)
     const [oldProjectSupplies, setOldProjectSupplies] = useState(projectSupplies)
     const [supplyErrors, setSupplyErrors] = useState([]);
     const [showSupplyErrors, setShowSupplyErrors] = useState(false);
-    console.log(oldProjectSupplies)
     const [amount, setAmount] = useState(null);
 
     useEffect(() => {
@@ -32,7 +30,6 @@ function Supplies({ setProjectSupplies, project, projectSupplies }) {
                 projectId
             };
             setProjectSupplies([...projectSupplies, newwSupply])
-            console.log(projectSupplies)
             setSupply("");
             setShowSupplyErrors(false)
         } else {

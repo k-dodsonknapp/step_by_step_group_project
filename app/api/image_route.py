@@ -15,15 +15,12 @@ def upload_image():
 
     image = request.files["image"]
 
-    print("$$$$$$$$$$$$$", image)
-
     if not allowed_file(image.filename):
         return {"errors": "file type not permitted"}, 400
     
     image.filename = get_unique_filename(image.filename)
 
     upload = upload_file_to_s3(image)
-    print(upload)
 
     if "url" not in upload:
         # if the dictionary doesn't have a url key
@@ -32,7 +29,6 @@ def upload_image():
         return upload, 400
 
     url = upload["url"]
-    print("PPPPPPP", url)
     # flask_login allows us to get the current user from the request
     # new_image = Image(user=current_user, url=url)
     # db.session.add(new_image)

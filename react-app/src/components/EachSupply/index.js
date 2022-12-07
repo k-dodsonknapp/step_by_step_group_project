@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react"
 
 function EachSupply({ supply, index, projectSupplies, setProjectSupplies }) {
-    // console.log(supply)
-    // console.log(index)
-    // console.log(setSupplies)
+
     const [editedSupply, setEditedSupply] = useState(supply.supply)
-    // console.log()
     projectSupplies[index].supply = editedSupply
     setProjectSupplies(projectSupplies)
     // supplies[index].supply = editedSupply

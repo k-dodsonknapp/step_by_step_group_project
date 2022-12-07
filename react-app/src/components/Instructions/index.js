@@ -38,7 +38,6 @@ function Instructions({ instructions, project, setInstructions }) {
                 photoUrl,
                 videoUrl
             }
-            console.log(instructions)
 
             setInstructions([...instructions, newInstruction])
             setStepOrder(stepOrder + 1)
