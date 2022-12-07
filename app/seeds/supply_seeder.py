@@ -1,4 +1,7 @@
 from app.models import db, Supply, project
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
 
 def seed_supplies():
     bird_house_supply1 = Supply(
@@ -1950,5 +1953,9 @@ def seed_supplies():
     db.session.commit()
 
 def undo_supplies():
-    db.session.execute('TRUNCATE supplies RESTART IDENTITY CASCADE;')
+    if environment == "production":
+        db.session.execute(f"TRUNCATE table {SCHEMA}.supplies RESTART IDENTITY CASCADE;")
+    else:
+        db.session.execute("DELETE FROM supplies")
+
     db.session.commit()

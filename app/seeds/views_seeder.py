@@ -1,4 +1,7 @@
 from app.models import db, Views
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
 
 def seed_views():
     project1=Views(
@@ -214,5 +217,9 @@ def seed_views():
     db.session.commit()
 
 def undo_views():
-    db.session.execute('TRUNCATE views RESTART IDENTITY CASCADE;')
+    if environment == "production":
+        db.session.execute(f"TRUNCATE table {SCHEMA}.views RESTART IDENTITY CASCADE;")
+    else:
+        db.session.execute("DELETE FROM views")
+
     db.session.commit()

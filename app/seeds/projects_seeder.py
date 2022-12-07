@@ -1,6 +1,8 @@
 from unicodedata import category
 from app.models import db, Project
-
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
 
 # demo projects
 def seed_project():
@@ -490,7 +492,11 @@ def seed_project():
 
     db.session.commit()
 
-def undo_project():
-    db.session.execute('TRUNCATE projects RESTART IDENTITY CASCADE;')
+def undo_projects():
+    if environment == "production":
+        db.session.execute(f"TRUNCATE table {SCHEMA}.projects RESTART IDENTITY CASCADE;")
+    else:
+        db.session.execute("DELETE FROM projects")
+
     db.session.commit()
 

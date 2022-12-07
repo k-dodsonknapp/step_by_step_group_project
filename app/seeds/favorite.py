@@ -1,4 +1,7 @@
 from app.models import db, Favorite
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
 
 def seed_favorites():
     project1_favorite = Favorite(
@@ -17,5 +20,9 @@ def seed_favorites():
     db.session.commit()
 
 def undo_favorites():
-    db.session.execute('TRUNCATE favorites RESTART IDENTITY CASCADE;')
+    if environment == "production":
+        db.session.execute(f"TRUNCATE table {SCHEMA}.favorites RESTART IDENTITY CASCADE;")
+    else:
+        db.session.execute("DELETE FROM favorites")
+
     db.session.commit()

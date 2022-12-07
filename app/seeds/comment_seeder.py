@@ -1,4 +1,7 @@
 from app.models import db, Comment
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
 
 def seed_comments():
     bird_house_comment1= Comment(
@@ -146,5 +149,9 @@ def seed_comments():
 
 
 def undo_comments():
-    db.session.execute('TRUNCATE comments RESTART IDENTITY CASCADE')
+    if environment == "production":
+        db.session.execute(f"TRUNCATE table {SCHEMA}.comments RESTART IDENTITY CASCADE;")
+    else:
+        db.session.execute("DELETE FROM comments")
+
     db.session.commit()
