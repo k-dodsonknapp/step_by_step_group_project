@@ -15,7 +15,6 @@ environment = os.getenv("FLASK_ENV")
 SCHEMA = os.environ.get("SCHEMA")
 # ...
 
-
 # revision identifiers, used by Alembic.
 revision = '18bd3614021e'
 down_revision = 'b779058089f5'
@@ -30,7 +29,7 @@ def upgrade():
         # ... logic to create tables
 
     if environment == "production":
-        op.execute(f"ALTER TABLE <table_name> SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
         #  add an ALTER TABLE command here for each table created in the file
 
 

@@ -26,7 +26,7 @@ def upgrade():
     # ### end Alembic commands ###
     # ... logic to create tables
     if environment == "production":
-        op.execute(f"ALTER TABLE <table_name> SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE supplies SET SCHEMA {SCHEMA};")
         #  add an ALTER TABLE command here for each table created in the file
 
 

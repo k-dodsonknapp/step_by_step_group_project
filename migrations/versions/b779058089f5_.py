@@ -27,7 +27,7 @@ def upgrade():
         # ... logic to create tables
 
     if environment == "production":
-        op.execute(f"ALTER TABLE <table_name> SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE comments SET SCHEMA {SCHEMA};")
         #  add an ALTER TABLE command here for each table created in the file
 
 
