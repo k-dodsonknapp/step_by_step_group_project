@@ -14,11 +14,12 @@ const removeUser = () => ({
 const initialState = { user: null };
 
 export const authenticate = () => async (dispatch) => {
-  const response = await fetch('/api/auth/', {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/`, {
     headers: {
       'Content-Type': 'application/json'
     }
   });
+  console.log(response)
   if (response.ok) {
     const data = await response.json();
     if (data.errors) {
@@ -28,16 +29,24 @@ export const authenticate = () => async (dispatch) => {
   };
 };
 
+// function getCSRFToken() {
+//   const name = 'csrf_token=';
+//   const decodedCookie = decodeURIComponent(document.cookie);
+//   const ca = decodedCookie.split(';');
+//   for (let i = 0; i < ca.length; i++) {
+//       let c = ca[i];
+//       while (c.charAt(0) === ' ') c = c.substring(1);
+//       if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
+//   }
+//   return "";
+// }
+
 export const login = (email, password) => async (dispatch) => {
-  const response = await fetch('/api/auth/login', {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/login`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      email,
-      password, 
-    })
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password }),
+    credentials: 'include',
   });
   
   

@@ -5,11 +5,11 @@ function Supplies({ setProjectSupplies, project, projectSupplies }) {
 
 
     const [supply, setSupply] = useState("");
-    const [projectId, setProjectId] = useState(projectSupplies[0].projectId)
-    const [oldProjectSupplies, setOldProjectSupplies] = useState(projectSupplies)
+    // const [projectId, setProjectId] = useState(projectSupplies[0].projectId)
+    // const [oldProjectSupplies, setOldProjectSupplies] = useState(projectSupplies)
     const [supplyErrors, setSupplyErrors] = useState([]);
     const [showSupplyErrors, setShowSupplyErrors] = useState(false);
-    const [amount, setAmount] = useState(null);
+    // const [amount, setAmount] = useState(null);
 
     useEffect(() => {
         const inFuncErrors = []
@@ -26,8 +26,8 @@ function Supplies({ setProjectSupplies, project, projectSupplies }) {
 
             const newwSupply = {
                 supply,
-                amount,
-                projectId
+                amount: null,
+                projectId: projectSupplies[0].projectId
             };
             setProjectSupplies([...projectSupplies, newwSupply])
             setSupply("");

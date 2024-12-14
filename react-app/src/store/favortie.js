@@ -6,7 +6,7 @@ const getFavorites = (favorites) => ({
 })
 
 export const getPostFavorites = (id) => async (dispatch) => {
-    const response = await fetch(`/api/favorite/${id}`);
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/favorite/${id}`);
     const favorites = await response.json();
     if (response.ok) {
         dispatch(getFavorites(favorites));
@@ -22,7 +22,7 @@ const allFavorites = (favorites) => ({
 })
 
 export const getAllFavorites = () => async (dispatch) => {
-    const response = await fetch(`/api/favorite/`);
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/favorite/`);
     const favorites = await response.json();
     if (response.ok) {
         dispatch(allFavorites(favorites));
@@ -38,7 +38,7 @@ const addFavorite = (favorite) => ({
 });
 
 export const addPostFavorite = (favoriteObj) => async (dispatch) => {
-    const response = await fetch('/api/favorite/add', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/favorite/add`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ const deleteFavorite = (favorite) => ({
 });
 
 export const deletePostFavorite = (favorite) => async (dispatch) => {
-    const response = await fetch('/api/favorite/delete', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/favorite/delete`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'

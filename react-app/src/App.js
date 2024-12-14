@@ -40,24 +40,21 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList />
-        </ProtectedRoute>
         <Route path='/' exact={true} >
           <ProjectExplore />
         </Route>
+        <ProtectedRoute path='/users' exact={true} >
+          <UsersList />
+        </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-
         <Route path='/projects/:projectId' exact={true} >
           <ProjectDetails />
         </Route>
-
         <Route path='/howto/:searchkeyword' exact={true} >
           <SearchRes/>
         </Route>
-
         <ProtectedRoute path='/projects/:projectId/edit' exact={true} >
           <EditProject />
         </ProtectedRoute>

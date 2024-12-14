@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getOneProject, updateOnePost } from "../../store/project"
-import EachSupply from "../EachSupply";
-import EditInstructions from "../EditInstructions";
+// import EachSupply from "../EachSupply";
+// import EditInstructions from "../EditInstructions";
 import Instructions from "../Instructions";
 import Supplies from "../Supplies";
 import UploadPicture from "../UploadPicture";

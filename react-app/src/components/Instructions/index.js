@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import EditInstructions from '../EditInstructions';
 import UploadPicture from '../UploadPicture';
 
-function Instructions({ instructions, project, setInstructions }) {
+function Instructions({ instructions, setInstructions }) {
 
 
     // const [sortedInstructions, setSortedInstructions] = useState(instructions.sort((a, b) => a.stepOrder - b.stepOrder))
@@ -15,7 +15,7 @@ function Instructions({ instructions, project, setInstructions }) {
     const [photoUrl, setPhotoUrl] = useState('https://www.elmhurst.edu/wp-content/uploads/2018/12/5-skills-project-management-degree-elmhurst-college-infographic-thumb.jpg')
     const [videoUrl, setVideoUrl] = useState('')
 
-    const [imagePreview, setImagePreview] = useState('https://www.elmhurst.edu/wp-content/uploads/2018/12/5-skills-project-management-degree-elmhurst-college-infographic-thumb.jpg')
+    // const [imagePreview, setImagePreview] = useState('https://www.elmhurst.edu/wp-content/uploads/2018/12/5-skills-project-management-degree-elmhurst-college-infographic-thumb.jpg')
 
     useEffect(() => {
         const inFuncErrors = []

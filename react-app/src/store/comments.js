@@ -24,7 +24,7 @@ const deleteComment = (comment) => ({
 });
 
 export const getAllComments = (projectId) => async (dispatch) => {
-  const response = await fetch(`/api/projects/${projectId}/comments`);
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/projects/${projectId}/comments`);
   if (response.ok) {
     const data = await response.json();
     if (data.errors) {
@@ -36,13 +36,16 @@ export const getAllComments = (projectId) => async (dispatch) => {
 };
 
 export const addOneComment = (comment) => async (dispatch) => {
-  const response = await fetch(`/api/comments/new`, {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/comments/new`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      'X-CSRFToken': 'csrfToken'
     },
     body: JSON.stringify(comment),
+    credentials: 'include', // Ensures cookies are sent
   });
+
   if (response.ok) {
     const data = await response.json();
     dispatch(addComment(data.comment));
@@ -51,7 +54,7 @@ export const addOneComment = (comment) => async (dispatch) => {
 };
 
 export const updateOneComment = ({commentId, comment}) => async (dispatch) => {
-  const response = await fetch(`/api/comments/${commentId}`, {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/comments/${commentId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -65,7 +68,7 @@ export const updateOneComment = ({commentId, comment}) => async (dispatch) => {
   };
 };
 export const deleteOneComment = (id) => async (dispatch) => {
-  const res = await fetch(`/api/comments/${id}`, {
+  const res = await fetch(`${process.env.REACT_APP_API_URL}/api/comments/${id}`, {
     method: "DELETE",
   });
   if (res.ok) {

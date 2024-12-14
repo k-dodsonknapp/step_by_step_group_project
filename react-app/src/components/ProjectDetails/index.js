@@ -4,7 +4,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { deleteOneProject, getOneProject } from "../../store/project";
 import { addOneComment, deleteOneComment, updateOneComment } from "../../store/comments";
 import "./Projects.css";
-import { getOneView, updateView } from "../../store/views";
+import { updateView } from "../../store/views";
 import UserPhoto from "../UserPhoto";
 import { addPostFavorite, deletePostFavorite, getPostFavorites } from "../../store/favortie";
 // import { BsDot } from 'react-icons/bs';
@@ -31,7 +31,7 @@ const ProjectDetails = () => {
   // const [favoriteComment, setFavoriteComment] = useState(true);
   let [favoriteLength, setFavoriteLength] = useState(0);
   const [favoritess, setFavoritess] = useState(false);
-  const [userFavorite, setUserFavorite] = useState(false);
+  // const [userFavorite, setUserFavorite] = useState(false);
 
 
   useEffect(() => {
@@ -44,14 +44,15 @@ const ProjectDetails = () => {
       // setFavoriteLength(favorites?.favorite?.length)
     }
     dispatch(getPostFavorites(+projectId));
-  }, [dispatch,projectId])
+  }, [dispatch,projectId, favorites.favorite])
 
   useEffect(() => {
     const addView = {
       "projectId": +projectId
     };
+    console.log(addView)
     dispatch(updateView(addView));
-    dispatch(getOneView(+projectId));
+    // dispatch(getOneView(+projectId));
     dispatch(getOneProject(projectId));
     // dispatch(getOneProject(+projectId));
   }, [dispatch, projectId]);
@@ -197,7 +198,7 @@ const ProjectDetails = () => {
     if (favorites?.favorite) {
       const favorite = favorites?.favorite.find(favorite => favorite?.userId === session?.user?.id);
       if (favorite) {
-        setUserFavorite(true);
+        // setUserFavorite(true);
       }
     }
   }, [dispatch, favorites?.favorite, session?.user?.id]);

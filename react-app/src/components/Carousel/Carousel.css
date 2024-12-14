@@ -19,15 +19,15 @@
     margin: 100px 0px 0px 0px;
     align-items: center;
     justify-content: center;
-    height: 550px;
+    height: 700px;
     /* background-color: green; */
     color: #fff;
 }
 
 .carousel-img{
-    height: 550px;
+    height: 700px;
     width: 100%;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .link {

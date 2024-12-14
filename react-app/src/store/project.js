@@ -4,6 +4,7 @@ const ADD_PROJECTS = "/projects/new";
 const UPDATE_PROJECTS = "/projects/update";
 const DELETE_PROJECTS = "/projects/delete";
 const SEARCH_RESULTS = "/howto/search";
+// const ADD_VIEW = "/projects/add/views";
 
 const getProjects = (projects) => ({
   type: GET_PROJECTS,
@@ -36,31 +37,31 @@ const searchResult = (results) => ({
 });
 
 export const getAllProjects = () => async (dispatch) => {
-  const response = await fetch("/api/projects/");
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/projects/`);
   if (response.ok) {
     const data = await response.json();
     if (data.errors) {
       return;
-    };
+    }
     dispatch(getProjects(data));
     return data;
-  };
+  }
 };
 
 export const getOneProject = (projectId) => async (dispatch) => {
-  const response = await fetch(`/api/projects/${projectId}`);
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/projects/${projectId}`);
   if (response.ok) {
     const data = await response.json();
     if (data.errors) {
       return;
-    };
+    }
     dispatch(getProject(data));
     return data;
-  };
+  }
 };
 
 export const addOneProject = (data) => async (dispatch) => {
-  const response = await fetch("/api/projects/new", {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/projects/new`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -75,7 +76,7 @@ export const addOneProject = (data) => async (dispatch) => {
 };
 
 export const updateOnePost = (data) => async (dispatch) => {
-  const response = await fetch(`/api/projects/${data.id}`, {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/projects/${data.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -90,7 +91,7 @@ export const updateOnePost = (data) => async (dispatch) => {
 };
 
 export const deleteOneProject = (projectId) => async (dispatch) => {
-  const response = await fetch(`/api/projects/${projectId}`, {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/projects/${projectId}`, {
     method: "DELETE",
   });
   if (response.ok) {
@@ -100,13 +101,39 @@ export const deleteOneProject = (projectId) => async (dispatch) => {
 };
 
 export const search = (search) => async (dispatch) => {
-  const response = await fetch(`/api/search/${search}`);
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/api/search/${search}`);
   if (response.ok) {
     const data = await response.json();
     dispatch(searchResult(data));
     return data;
   }
 };
+
+// const updateProjectView = (view) => ({
+//   type: ADD_VIEW,
+//   payload: view,
+// });
+
+// export const updateView = (projectId) => async (dispatch) => {
+//   const res = await fetch(`${process.env.REACT_APP_API_URL}/api/projects/add/views`, {
+//     method: "PUT",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({
+//       projectId: projectId,
+//       // views: 2,
+//     }),
+//     credentials: 'include', 
+//   });
+//   // console.log("Response status:", res.status);
+//   // console.log("Response text:", await res.text());
+//   if (res.ok) {
+//     const data = await res.json();
+//     dispatch(updateProjectView(data));
+//     return data;
+//   }
+// };
 
 const initialState = {};
 
@@ -150,8 +177,11 @@ export default function projectReducer(state = initialState, action) {
         (project) => (newState[project.id] = project)
       );
       return newState;
-
+    // case ADD_VIEW:
+    //   newState = { ...state };
+    //   console.log(newState)
+    //   return state;
     default:
       return state;
-  };
-};
+  }
+}

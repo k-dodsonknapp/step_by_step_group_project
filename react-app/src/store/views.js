@@ -9,7 +9,7 @@ const getSingleProjectView = (view) => ({
 });
 
 export const getOneView = (id) => async (dispatch) => {
-    const res = await fetch(`/api/views/${id}`);
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/views/${id}`);
     if (res.ok) {
         const data = await res.json();
         if (data.errors) {
@@ -26,7 +26,7 @@ const getProjectView = (view) => ({
 });
 
 export const getView = () => async (dispatch) => {
-    const res = await fetch(`/api/views/`);
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/views/`);
     if (res.ok) {
         const data = await res.json();
         if (data.errors) {
@@ -43,7 +43,7 @@ const newProjectView = (view) => ({
 });
 
 export const addNewProjectView = (view) => async (dispatch) => {
-    const res = await fetch(`/api/views/new`, {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/views/new`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -65,14 +65,16 @@ const updateProjectView = (view) => ({
 });
 
 export const updateView = (projectId, viewCount) => async (dispatch) => {
-    const res = await fetch(`/api/views/add`, {
+    console.log(projectId)
+    console.log(viewCount)
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/views/add`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
             "projectId": projectId,
-            "viewCount": viewCount
+            "views": viewCount
         }),
     });
     if (res.ok) {

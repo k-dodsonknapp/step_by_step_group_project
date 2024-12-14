@@ -6,7 +6,7 @@ const updateInstructions = (instructions) => ({
 });
 
 export const editInstructions = (projectId) => async (dispatch) => {
-    const res = await fetch(`/api/instructions/${projectId}/update`, {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/instructions/${projectId}/update`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
