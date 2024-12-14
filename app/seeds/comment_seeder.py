@@ -1,5 +1,8 @@
-from app.models import db, Comment
+from app.models.db import db
+from app.models.comment import Comment
 import os
+
+
 environment = os.getenv("FLASK_ENV")
 SCHEMA = os.environ.get("SCHEMA")
 

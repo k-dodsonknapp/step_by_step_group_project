@@ -1,13 +1,10 @@
 from flask import Blueprint, request
-# from app.models import db, Image
-from flask_login import current_user, login_required
 from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
 
-image_routes = Blueprint("images", __name__)
+image_bp = Blueprint("images", __name__)
 
-
-@image_routes.route("", methods=["POST"])
+@image_bp.route("", methods=["POST"])
 # @login_required
 def upload_image():
     if "image" not in request.files:

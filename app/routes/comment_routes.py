@@ -1,13 +1,11 @@
-from crypt import methods
 from flask import Blueprint, request
-from app.models import db, Comment
-from app.models.project import Project
+from app.models.db import db
+from app.models.comment import Comment
 
 
-comment_routes = Blueprint('comments', __name__)
+comment_bp = Blueprint('comments', __name__)
 
-
-@comment_routes.route('/new', methods=['POST'])
+@comment_bp.route('/new', methods=['POST'])
 def create_comment():
     data = request.json
 
@@ -21,8 +19,7 @@ def create_comment():
 
     return {'comment': comment.to_dict()}
 
-
-@comment_routes.route('/<int:id>', methods=['DELETE'])
+@comment_bp.route('/<int:id>', methods=['DELETE'])
 def delete_comment(id):
 
     comment = Comment.query.get(id)
@@ -31,8 +28,7 @@ def delete_comment(id):
 
     return {'message': 'success'}
 
-
-@comment_routes.route('/<int:id>', methods=['PUT'])
+@comment_bp.route('/<int:id>', methods=['PUT'])
 def edit_comment(id):
     data = request.json
 

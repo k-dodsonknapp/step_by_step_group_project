@@ -1,11 +1,12 @@
 from flask import Blueprint
-from app.models import Supply, Project, Instruction
+from app.models.supply import Supply
+from app.models.project import Project
+from app.models.instruction import Instruction
 
 
-search_routes = Blueprint('search', __name__)
+search_bp = Blueprint('search', __name__)
 
-
-@search_routes.route('/<searchKeyWord>')
+@search_bp.route('/<searchKeyWord>')
 def searchResults(searchKeyWord):
     project_by_name = Project.query.filter(Project.title.ilike(f'%{searchKeyWord}%')).all()
     name_list = [recipe.to_dict() for recipe in project_by_name]

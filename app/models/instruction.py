@@ -16,7 +16,6 @@ class Instruction(db.Model):
     project = db.relationship('Project', back_populates='instruction')
 
 
-
     def to_dict(self):
         return {
             'id': self.id,

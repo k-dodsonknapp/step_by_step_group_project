@@ -1,23 +1,22 @@
-from turtle import back
-from .db import db, environment, SCHEMA
+from app.models.db import db, environment, SCHEMA, add_prefix_for_prod
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-
+from sqlalchemy import Column, Integer, String, ForeignKey, Text
+from sqlalchemy.orm import relationship
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
 
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(40), nullable=False, unique=True)
-    email = db.Column(db.String(255), nullable=False, unique=True)
-    hashed_password = db.Column(db.String(255), nullable=False)
-    userPhoto = db.Column(db.Text)
+    id = Column(Integer, primary_key=True)
+    username = Column(String(40), nullable=False, unique=True)
+    email = Column(String(255), nullable=False, unique=True)
+    hashed_password = Column(String(255), nullable=False)
+    userPhoto = Column(Text)
 
-    project = db.relationship('Project', back_populates='user')
-    comment = db.relationship('Comment', back_populates='user')
-    favorite = db.relationship('Favorite', back_populates='user')
+    project = relationship('Project', back_populates='user')
+    comments = relationship('Comment', back_populates='user')
 
     @property
     def password(self):
@@ -37,3 +36,7 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'userPhoto': self.userPhoto,
         }
+
+# Import models at the end to avoid circular dependencies
+from .project import Project
+from .comment import Comment

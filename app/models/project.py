@@ -1,23 +1,25 @@
 from app.models.db import db, environment, SCHEMA, add_prefix_for_prod
+from sqlalchemy import Column, Integer, String, Text, ForeignKey
+from sqlalchemy.orm import relationship
 
 class Project(db.Model):
     __tablename__ = 'projects'
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
 
-    id = db.Column(db.Integer, primary_key=True)
-    userId = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
-    title = db.Column(db.String(100), nullable=False)
-    titleImage = db.Column(db.Text, nullable=False)
-    overview = db.Column(db.Text, nullable=False)
-    category = db.Column(db.String(50), nullable=False)
+    id = Column(Integer, primary_key=True)
+    userId = Column(Integer, ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
+    title = Column(String(100), nullable=False)
+    titleImage = Column(Text, nullable=False)
+    overview = Column(Text, nullable=False)
+    category = Column(String(50), nullable=False)
+    views = Column(Integer, default=0)
+    favorites = Column(Integer, default=0)
 
-    user = db.relationship('User', back_populates='project')
-    instruction = db.relationship('Instruction', back_populates='project')
-    supply = db.relationship('Supply', back_populates='project')
-    comment = db.relationship('Comment', back_populates='project')
-    views = db.relationship('Views', back_populates='project')
-    favorite = db.relationship("Favorite", back_populates="project")
+    user = relationship('User', back_populates='project')
+    instruction = relationship('Instruction', back_populates='project')
+    supply = relationship('Supply', back_populates='project')
+    comments = relationship('Comment', back_populates='project')
 
 
     def to_dict(self):
@@ -27,5 +29,7 @@ class Project(db.Model):
             'title': self.title,
             'titleImage': self.titleImage,
             'overview': self.overview,
-            'category': self.category
+            'category': self.category,
+            'views': self.views,
+            'favorites': self.favorites,
         }

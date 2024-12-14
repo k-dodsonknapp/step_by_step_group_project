@@ -1,116 +1,78 @@
 import os
-from flask import Flask, render_template, request, session, redirect
 from flask_cors import CORS
+from flask import Flask, request, redirect
+from flask_wtf.csrf import generate_csrf
 from flask_migrate import Migrate
-from flask_wtf.csrf import CSRFProtect, generate_csrf
 from flask_login import LoginManager
+from flask_wtf.csrf import CSRFProtect
 
-from .models import db, User
-from .api.user_routes import user_routes
-from .api.auth_routes import auth_routes
-from .api.project_routes import project_routes
-from .api.comment_routes import comment_routes
-from .api.search_routes import search_routes
-from .api.image_route import image_routes
-from .api.instructions import instruction_routes
-from .api.views import views_routes
-from .api.favorite import favorite_routes
-
-from app.seeds.comment_seeder import seed_comments
-from app.seeds.favorite import seed_favorites
-from app.seeds.instruction_seeder import seed_instructions
-from app.seeds.projects_seeder import seed_project
-from app.seeds.supply_seeder import seed_supplies
-from app.seeds.users import seed_users
-from app.seeds.views_seeder import seed_views
-
-from .seeds import seed_commands
-
+from app.models.user import User
+from app.models.db import db
 from .config import Config
-
-app = Flask(__name__, static_folder='../react-app/build', static_url_path='/')
-
-# Setup login manager
-login = LoginManager(app)
-login.login_view = 'auth.unauthorized'
+from app.seeds import seed_commands
+from app.routes.routes import register_routes
 
 
-@login.user_loader
-def load_user(id):
-    return User.query.get(int(id))
+migrate = Migrate()
+login_manager = LoginManager()
+csrf = CSRFProtect()
 
+from dotenv import load_dotenv
 
-# Tell flask about our seed commands
-app.cli.add_command(seed_commands)
+load_dotenv()
 
-app.config.from_object(Config)
-app.register_blueprint(user_routes, url_prefix='/api/users')
-app.register_blueprint(auth_routes, url_prefix='/api/auth')
-app.register_blueprint(project_routes, url_prefix='/api/projects')
-app.register_blueprint(comment_routes, url_prefix='/api/comments')
-app.register_blueprint(search_routes, url_prefix='/api/search')
-app.register_blueprint(image_routes, url_prefix='/api/images')
-app.register_blueprint(instruction_routes, url_prefix='/api/instructions')
-app.register_blueprint(views_routes, url_prefix='/api/views')
-app.register_blueprint(favorite_routes, url_prefix='/api/favorite')
-db.init_app(app)
+def create_app(config_class=Config):
+    static_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../react-app/build")
+    app = Flask(__name__, static_folder=static_folder, static_url_path='/')
+    # app = Flask(__name__)
+    CORS(app, supports_credentials=True, resources={r"/api/*": {"origins": f"{os.getenv('CORS_ORIGIN')}"}})
+    app.config.from_object(config_class)
+    app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
-# drop all tables, create tables, and seed all             
-# def seed():
-#     """Seed all database functions"""
-#     seed_users()
-#     seed_project()
-#     seed_comments()
-#     seed_supplies()
-#     seed_favorites()
-#     seed_instructions()
-#     seed_views()
+    db.init_app(app)
+    migrate.init_app(app, db)
+    login_manager.init_app(app)
 
+    # Conditional CSRF Protection
+    if os.environ.get('FLASK_ENV') != 'development':
+        csrf.init_app(app)
+    else:
+        print("CSRF protection is disabled in development mode.")
 
-# with app.app_context():
-#             db.drop_all()
-#             db.create_all()
-#             app.logger.info('Initialized the database!')
-#             # print("========>", db.session.query(User, username='Demo'))
-#             # if not db.session.query(User):
-#             seed()
-#             app.logger.info('seeded database!')
+    with app.app_context():
+        db.create_all()  # Ensure tables are created
+    import logging
+    logging.basicConfig(level=logging.DEBUG)
 
-Migrate(app, db)
+    app.cli.add_command(seed_commands)
 
-# Application Security
-CORS(app)
+    login_manager.login_view = 'auth.unauthorized'
 
+    @login_manager.user_loader
+    def load_user(id):
+        return User.query.get(int(id))
+    
+    register_routes(app)
 
-# Since we are deploying with Docker and Flask,
-# we won't be using a buildpack when we deploy to Heroku.
-# Therefore, we need to make sure that in production any
-# request made over http is redirected to https.
-# Well.........
-@app.before_request
-def https_redirect():
-    if os.environ.get('FLASK_ENV') == 'production':
-        if request.headers.get('X-Forwarded-Proto') == 'http':
-            url = request.url.replace('http://', 'https://', 1)
-            code = 301
-            return redirect(url, code=code)
+    # Handle redirect to HTTPS in production
+    @app.before_request
+    def https_redirect():
+        if os.environ.get('FLASK_ENV') == 'production':
+            if request.headers.get('X-Forwarded-Proto') == 'http':
+                url = request.url.replace('http://', 'https://', 1)
+                return redirect(url, code=301)
 
-
-@app.after_request
-def inject_csrf_token(response):
-    response.set_cookie(
-        'csrf_token',
-        generate_csrf(),
-        secure=True if os.environ.get('FLASK_ENV') == 'production' else False,
-        samesite='Strict' if os.environ.get(
-            'FLASK_ENV') == 'production' else None,
-        httponly=True)
-    return response
-
-
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def react_root(path):
-    if path == 'favicon.ico':
-        return app.send_static_file('favicon.ico')
-    return app.send_static_file('index.html')
+    # Inject CSRF token for security
+    @app.after_request
+    def inject_csrf_token(response):
+        response.set_cookie(
+            'csrf_token',
+            generate_csrf(),
+            secure=True if os.environ.get('FLASK_ENV') == 'production' else False,
+            samesite='Strict' if os.environ.get('FLASK_ENV') == 'production' else None,
+            httponly=True
+        )
+        
+        return response
+    
+    return app

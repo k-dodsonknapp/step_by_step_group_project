@@ -1,5 +1,8 @@
-from app.models import db, User
+from app.models.db import db
+from app.models.user import User
 import os
+
+
 environment = os.getenv("FLASK_ENV")
 SCHEMA = os.environ.get("SCHEMA")
 
@@ -68,4 +71,5 @@ def undo_users():
     else:
         db.session.execute("DELETE FROM users")
 
+    db.session.execute("SELECT setval(pg_get_serial_sequence('users', 'id'), 1, false);")
     db.session.commit()

@@ -1,15 +1,19 @@
 from dis import Instruction
 from flask import Blueprint, request
-from sqlalchemy import insert, update
-from app.models import db, Project, Instruction, Supply, Comment, User, Views
-from app.forms.project_form import ProjectForm
+from app.models.db import db
+from app.models.project import Project
+from app.models.supply import Supply
+from app.models.comment import Comment
+from app.models.user import User
+from app.models.instruction import Instruction
 
-project_routes = Blueprint('projects', __name__)
 
+project_bp = Blueprint('projects', __name__)
 
-@project_routes.route('/')
+@project_bp.route('/')
 def projects():
-    projects = Project.query.all()
+    projects = db.session.query(Project).all()
+    db.session.remove()
     list = [project.to_dict() for project in projects]
 
     for project in list:
@@ -20,7 +24,7 @@ def projects():
     return {"projects": list}
 
 
-@project_routes.route('/<int:id>')
+@project_bp.route('/<int:id>')
 def project(id):
     project = Project.query.get(id).to_dict()
     owner = User.query.filter(User.id == project['userId']).first()
@@ -41,7 +45,7 @@ def project(id):
     }}
 
 
-@project_routes.route('/<int:id>', methods=['PUT'])
+@project_bp.route('/<int:id>', methods=['PUT'])
 def update_project(id):
     data = request.json
     instructions = data['instructions']
@@ -81,7 +85,7 @@ def update_project(id):
 
     return {'message': 'success'}
 
-@project_routes.route('/<int:id>', methods=['DELETE'])
+@project_bp.route('/<int:id>', methods=['DELETE'])
 def delete_project(id):
 
     projectInstructions = Instruction.query.filter(Instruction.projectId == id).all()
@@ -106,7 +110,7 @@ def delete_project(id):
     return {'message': 'success'}
 
 
-@project_routes.route('/new', methods=['POST'])
+@project_bp.route('/new', methods=['POST'])
 def create_project():
     data = request.json
     instructions = data['instructions']
@@ -143,7 +147,20 @@ def create_project():
     return { 'projectId': projectId }
 
 
-@project_routes.route('/<category>')
+@project_bp.route('/<category>')
 def projects_by_category(category):
     projects = Project.query.filter(Project.category == category)
     return {'projects': [project.to_dict() for project in projects]}
+
+
+# @project_bp.route('/add/views', methods=["PUT"])
+# def update_views():
+#     data = request.json
+#     print("VIEWS", data)
+#     projectId = data["projectId"]["projectId"]
+
+#     project = Project.query.filter(projectId == Project.projectId).first()
+#     project.views += 1
+#     db.session.commit()
+
+#     return {}

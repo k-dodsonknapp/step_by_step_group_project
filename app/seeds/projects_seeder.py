@@ -1,6 +1,9 @@
 from unicodedata import category
-from app.models import db, Project
+from app.models.db import db
+from app.models.project import Project
 import os
+
+
 environment = os.getenv("FLASK_ENV")
 SCHEMA = os.environ.get("SCHEMA")
 
@@ -11,7 +14,9 @@ def seed_project():
         title="How to build a bird house.", 
         titleImage="https://images.unsplash.com/photo-1590238750866-f99d3febe496?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmlyZCUyMGhvdXNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80", 
         overview="This is how to construct a bird house!",
-        category="Crafts"
+        category="Crafts",
+        favorites=0,
+        views=0,
     )
 
     casino_clock= Project(
@@ -25,7 +30,9 @@ def seed_project():
                     Funny motion : by arranging cards randomly, you can enjoy busy motion of flaps 
                     WiFi time acquisition : current time is acquired via WiFi using ntp
                 """,
-        category="Circuits"
+        category="Circuits",
+        favorites=0,
+        views=0,
     )
 
     one_board_mug= Project(
@@ -33,7 +40,9 @@ def seed_project():
         title="One Board Mug", 
         titleImage="https://content.instructables.com/ORIG/FST/TDM1/KZBA18KY/FSTTDM1KZBA18KY.jpg?auto=webp&frame=1&width=612&height=1024&fit=bounds&md=eb345ed6f0c79b14398aa15b45a9edb5", 
         overview="Create a fun and unique drinking vessel from one board of pine.",
-        category="Workshop"
+        category="Workshop",
+        favorites=0,
+        views=0,
     )
 
     skillet_burger= Project(
@@ -66,7 +75,9 @@ def seed_project():
                     1/2 cup BBQ Sauce
                     1/4 cup Pickle Juice
                 """,
-        category="Cooking"
+        category="Cooking",
+        favorites=0,
+        views=0,
     )
 
     james_webb_clock= Project(
@@ -78,7 +89,9 @@ def seed_project():
 
                     If you are interested in the 25 years of engineering that went into building the James Webb Telescope I would recommend watching this episode of Real Engineering
                 """,
-        category="Living"
+        category="Living",
+        favorites=0,
+        views=0,
     )
 
     slowmo_birds= Project(
@@ -88,7 +101,9 @@ def seed_project():
         overview="""
                     With a simple set-up, you can produce excellent photographs of birds in flight--from the comfort of your house! Birds are attractive targets for wildlife photographers. They are aesthetically pleasing, ubiquitous, and charismatic. But once one has mastered the "bird on a stick" photo, a photographer may feel challenged to produce more interesting photos. Bird in flight (BIF) photos are dramatic, but much harder to get. Some degree of chance is usually required, and a long time in the field. The method demonstrated here is relatively simple and allows one to take BIF images in the dead of winter, when birds are most drawn to feeders. Meanwhile, the photographer is warm and cozy.
                 """,
-        category="Outside"
+        category="Outside",
+        favorites=0,
+        views=0,
     )
 
     dragonfly= Project(
@@ -98,7 +113,9 @@ def seed_project():
         overview="""
                     Do you hear about bamboo dragonflies? I played it in my childhood, which kids' hands can make with a stick and long blade fixed on the top of the shaft. Kids can spin the pole with their hands to let it fly high in the air, which looks like a dragonfly. It is a fascinating toy to play with among kids' outdoor activities. This time I made it with Autodesk Tinkercad and the 3D printer.
                 """,
-        category="Teachers"
+        category="Teachers",
+        favorites=0,
+        views=0,
     )
 
     arcade_stick = Project (
@@ -110,7 +127,9 @@ def seed_project():
         I had some leftover IKEA oak butcher block from a kitchen project and figured it would be a great material to use for this. 
         I love the look and the feel of it and at 1 1/8-inch thick, it’s super sturdy and solid. Also, it’s easy to treat with mineral oil to make it look nice.
         """,
-        category="Circuits"
+        category="Circuits",
+        favorites=0,
+        views=0,
     )
 
     minecraft_torch = Project (
@@ -122,7 +141,9 @@ def seed_project():
 
         If you are brand new to building paper circuits check out our guide to Getting Started with Paper Circuits to learn the basics.
         """,
-        category="Circuits"
+        category="Circuits",
+        favorites=0,
+        views=0,
     )
 
     giant_matches=Project(
@@ -135,6 +156,8 @@ def seed_project():
         So, without any further ado, let's make some giant matches with a nice box to go with them, to answer those burning questions.
         """,
         category="Outside",
+        favorites=0,
+        views=0,
     )
 
     bike_lamp=Project(
@@ -151,6 +174,8 @@ def seed_project():
         After seeing the light it's time to get on with a design.
         """,
         category="Outside",
+        favorites=0,
+        views=0,
     )
 
     rainbow=Project(
@@ -163,6 +188,8 @@ def seed_project():
         *Be aware that the reflectiveness works best in direct sunlight, but can also work with other lights.
         """,
         category="Workshop",
+        favorites=0,
+        views=0,
     )
 
     frankenstein=Project(
@@ -172,9 +199,11 @@ def seed_project():
         overview="""
         The game operation is a standard in my electrical circuit curriculum. I love the language connection as the students get butterflies in their stomach trying to avoid the shrill buzzer that indicates the circuit has been completed.  It is also the perfect introduction to  Frankenstein ER. The room is dimmed, mangled monster heads are delivered to teams to repair, to rebuild, to advance them from interns to doctors that can build their own Frankenstien to protect their candy stash.  
 
-        Teaching circuits always lights up my day and I am always looking for projects that connect learning to seasonal events.  Years ago, I saw a monster snatch game in Make magazine (https://makezine.com/projects/monster-candy-game/).  It was a great idea but too complicated and expensive for an elementary classroom.  So I modified it to an easy, fun and project that produces monster size learning and is a seasonal favorite that rewards the player with the chance to get a piece of candy for understanding the parts of a circuit.
+        Teaching circuits always lights up my day and I am always looking for projects that connect learning to seasonal events.  Years ago, I saw a monster snatch game in Make magazine (https://makezine.com/projects/monster-candy-game/).  It was a great idea but too complicated and expensive for an elementary classroom.  So I modified it to an easy, fun and project that produces monster size learning and is a seasonal favorites that rewards the player with the chance to get a piece of candy for understanding the parts of a circuit.
         """,
         category="Teachers",
+        favorites=0,
+        views=0,
     )
 
     ice_cream=Project(
@@ -185,6 +214,8 @@ def seed_project():
         I scream! You scream! We all scream for Ice Cream! Everyone loves ice cream, but have you ever thought of adding It with some chocolate and peanuts. Just thinking of that makes me hungry for dipped ice cream. This is why you have to try this recipe.
         """,
         category="Cooking",
+        favorites=0,
+        views=0,
     )
 
     hot_chocolate=Project(
@@ -195,6 +226,8 @@ def seed_project():
         French Hot Chocolate is the perfect beverage to sip on after being out on a cold winter day, but not only is it delicious and warm but it is very easy to make.
         """,
         category="Cooking",
+        favorites=0,
+        views=0,
     )
 
     cocoa_bombs=Project(
@@ -205,6 +238,8 @@ def seed_project():
         I made this recipe because I feel like it is always so hard to make hot cocoa, but with this recipe, you can just plop one in the milk and stir for a little bit then you have yourself a nice little cup of fast and easy hot cocoa. This is the second instructable I have created. I love doing Instructables. It is such a fun way to express your creativity.
         """,
         category="Cooking",
+        favorites=0,
+        views=0,
     )
 
     blossom=Project(
@@ -215,6 +250,8 @@ def seed_project():
         Hello everyone! I'm so excited to share this upcycled craft with all of you. We're using just a few materials, and what is so exciting about this is that I had all of my materials on hand. If you were to have to purchase materials, I purchased my paint at my local Walmart for $0.50 each, and my craft foam was $1.25 at my local Dollar Tree. You can also find your floral at Dollar Tree, or any craft store at a discounted price.
         """,
         category="Craft",
+        favorites=0,
+        views=0,
     )
 
     torus=Project(
@@ -225,6 +262,8 @@ def seed_project():
         In this image I created a cardboard sculpture. The geometric shape I wanted to use was the torus so the main focus of this sculpture was how to make a tours by using carboard. And as stated in the title I presented this original handmade sculpture as an example on what is capable if one were to create a torus out of carboard.
         """,
         category="Craft",
+        favorites=0,
+        views=0,
     )
 
     bike_mount=Project(
@@ -239,6 +278,8 @@ def seed_project():
         This was a fun project and it works really well. I use it consistently. The Process of figuring out how to make the hands was great and would consider making some coat hangers that are similar.
         """,
         category="Workshop",
+        favorites=0,
+        views=0,
     )
 
     data_crystals=Project(
@@ -255,6 +296,8 @@ def seed_project():
         At some point, I will likely share my code, but right now this project is too fresh and the code is too rough for public consumption. 
         """,
         category="Workshop",
+        favorites=0,
+        views=0,
     )
 
     mpcnc_controller=Project(
@@ -265,6 +308,8 @@ def seed_project():
         This is my wireless remote for my 3d printed CNC machine (MPCNC).
         """,
         category="Circuits",
+        favorites=0,
+        views=0,
     )
 
     garage_door=Project(
@@ -275,6 +320,8 @@ def seed_project():
         This is a EASY arduino project that you could create to impress your teacher and friends. This project is an IR sensor-controlled garage door. It uses 2 Servo motor's to move the garage door into an opened and closed orentation. The inferred sensor (IR) is effective and long range with a range of 1-5 meters. This project is great When paired with an arduino car project.
         """,
         category="Circuits",
+        favorites=0,
+        views=0,
     )
 
     poop_bag=Project(
@@ -285,6 +332,8 @@ def seed_project():
         In this project i wanted to find a stylish and practical solution for dog waste/poop bags. And this is it, a very cool project where you can use your leather scraps. If you are new in leathercraft, this project is for you my friend. This holder/dispenser can accommodate a roll in size of 3 cm x 6 cm (1,1811 inch x 2,3622 inch). With a carabiner hook you can attach the holder on your jeans, pents or your dog leash. By the way, leather is very robust and sustainable material. I LOVE working with leather so much. Okay, let us make one :)
         """,
         category="Craft",
+        favorites=0,
+        views=0,
     )
 
     cup_carrier=Project(
@@ -301,6 +350,8 @@ def seed_project():
         It is a simple design which easily can be made by anyone with access to a 3D printer and this building plan. Have fun with it and feel free to adjust elements according to your own situation.
         """,
         category="Living",
+        favorites=0,
+        views=0,
     )
 
     cardboard=Project(
@@ -312,6 +363,8 @@ def seed_project():
         I end up getting the majority of mine off Facebook marketplace and my local Harvey Norman store also gave me some of the large fridge boxes.
         """,
         category="Craft",
+        favorites=0,
+        views=0,
     )
 
     zentrierwinkel=Project(
@@ -322,6 +375,8 @@ def seed_project():
         Heute zeige ich dir, wie man einen Zentrierwinkel einfach selber bauen kann. Ein Zentrierwinkel hilft dir dabei, den Mittelpunkt runder Objekte zu bestimmen. Was du zum Bauen dieses Mittelpunktfinders brauchst, siehst du gleich.
         """,
         category="Teachers",
+        favorites=0,
+        views=0,
     )
 
     smores=Project(
@@ -332,6 +387,8 @@ def seed_project():
         This ice cream came out delicious. It is creamy and sweet with all the real flavors of s’mores. I used Ghirardelli milk chocolate caramel squares, crushed graham crackers and toasted mini marshmallows. I really wanted to get that charred marshmallow flavor into each bite, it’s the best part. It worked!
         """,
         category="Cooking",
+        favorites=0,
+        views=0,
     )
 
     gearbox=Project(
@@ -342,6 +399,8 @@ def seed_project():
         Strong Worm Gearbox on 3d Printer
         """,
         category="Workshop",
+        favorites=0,
+        views=0,
     )
 
     garden_tables=Project(
@@ -352,6 +411,8 @@ def seed_project():
         I needed some side-table height tables for a garden party where guests will have buffet plates they can rest on their laps but will need a table nearby for drinks. I also wanted these tables to be (1) free; (2) usable after the event; and (3) from repurposed materials. I had been saving a couple of pallets from a delivery years ago, so I decided to work with them.
         """,
         category="Outside",
+        favorites=0,
+        views=0,
     )
 
     gummy_bears=Project(
@@ -362,6 +423,8 @@ def seed_project():
         Welcome...to Gummi Bear Science Corner! We are going to explore osmosis by way of gummi bear growth.
         """,
         category="Teachers",
+        favorites=0,
+        views=0,
     )
 
     fortune_cookie=Project(
@@ -376,6 +439,8 @@ def seed_project():
         And so, I got to work making my earrings, and the fortune cookie was left in tact (so I could save it for the photoshoot with my finished earrings).
         """,
         category="Craft",
+        favorites=0,
+        views=0,
     )
 
     planter=Project(
@@ -392,6 +457,8 @@ def seed_project():
         So, I've made a simple way to get some indoor plants and organize them in a very decorating way to improve you home. So, let's see the making now.
         """,
         category="Living",
+        favorites=0,
+        views=0,
     )
 
     mirror=Project(
@@ -402,6 +469,8 @@ def seed_project():
         Ok so there are about a thousand different tutorials online for DIY mirror frames so naturally, I decided to write a quick Instructable for mine. My house had the standard builder mirrors and I wanted to jazz them up a bit without spending a fortune. I wanted to write this up mainly because this project is so simple ANYONE can make these frames with no experience, about $15, and a couple of hours. 
         """,
         category="Living",
+        favorites=0,
+        views=0,
     )
 
     airplane=Project(
@@ -418,6 +487,8 @@ def seed_project():
         TAA USAF Designation: D443-1
         """,
         category="Living",
+        favorites=0,
+        views=0,
     )
 
     garden_box=Project(
@@ -432,6 +503,8 @@ def seed_project():
         I show you how I did that.
         """,
         category="Outside",
+        favorites=0,
+        views=0,
     )
 
     rc_airplane=Project(
@@ -451,6 +524,8 @@ def seed_project():
         Also I will be sharing my design so that you can look at it for reference...
         """,
         category="Teachers",
+        favorites=0,
+        views=0,
     )
 
     db.session.add(bird_house)
@@ -497,6 +572,7 @@ def undo_projects():
         db.session.execute(f"TRUNCATE table {SCHEMA}.projects RESTART IDENTITY CASCADE;")
     else:
         db.session.execute("DELETE FROM projects")
+    db.session.execute("SELECT setval(pg_get_serial_sequence('projects', 'id'), 1, false);")
 
     db.session.commit()
 

@@ -1,5 +1,8 @@
-from app.models import db, Supply, project
+from app.models.db import db
+from app.models.supply import Supply
 import os
+
+
 environment = os.getenv("FLASK_ENV")
 SCHEMA = os.environ.get("SCHEMA")
 

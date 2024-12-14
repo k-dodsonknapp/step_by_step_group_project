@@ -1,4 +1,5 @@
-from app.models import db, Instruction
+from app.models.db import db
+from app.models.instruction import Instruction
 import os
 environment = os.getenv("FLASK_ENV")
 SCHEMA = os.environ.get("SCHEMA")
