@@ -18,8 +18,11 @@ def projects():
 
     for project in list:
         id = project["userId"]
-        username = User.query.get(id).to_dict()["username"]
-        project["username"] = username
+        user = User.query.get(id)
+        print(user, 'USERINHERE')
+        print(user.userPhoto)
+    #     username = User.query.get(id).to_dict()["username"]
+    #     project["username"] = username
 
     return {"projects": list}
 

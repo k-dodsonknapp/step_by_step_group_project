@@ -9,7 +9,9 @@
 .uploadPictureInput {
     /* border: 1px solid red; */
     display: flex;
-    margin: 10px 0px;
+    align-items: center;
+    height: 250px;
+    /* margin: 10px 0px; */
 }
 
 .step-photo {

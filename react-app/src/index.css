@@ -3,3 +3,7 @@
     margin: 0px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
 }
+
+html, body, #root {
+    height: 100%;
+}

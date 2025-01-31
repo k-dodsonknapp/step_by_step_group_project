@@ -18,7 +18,7 @@ function ProjectCard({ projects, views }) {
                     <div className="projectImage">
                       <img
                         src={`${project?.titleImage}`}
-                        alt=""
+                        alt="Project title"
                         onError={(e) => (e.target.src = fallbackImage)}
                       />
                     </div>

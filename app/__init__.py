@@ -5,6 +5,7 @@ from flask_wtf.csrf import generate_csrf
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_wtf.csrf import CSRFProtect
+from datetime import timedelta
 
 from app.models.user import User
 from app.models.db import db
@@ -27,17 +28,24 @@ def create_app(config_class=Config):
     # app = Flask(__name__)
     CORS(app, supports_credentials=True, resources={r"/api/*": {"origins": f"{os.getenv('CORS_ORIGIN')}"}})
     app.config.from_object(config_class)
-    app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+    app.config.update(
+        SECRET_KEY=os.environ['SECRET_KEY'],
+        SESSION_COOKIE_SECURE=os.environ['FLASK_ENV'] != 'development',
+        # REMEMBER_COOKIE_SECURE=True,
+        # REMEMBER_COOKIE_HTTPONLY=True,
+        PERMANENT_SESSION_LIFETIME=timedelta(weeks=104)
+    )
 
     db.init_app(app)
     migrate.init_app(app, db)
     login_manager.init_app(app)
+    csrf.init_app(app)
 
-    # Conditional CSRF Protection
-    if os.environ.get('FLASK_ENV') != 'development':
-        csrf.init_app(app)
-    else:
-        print("CSRF protection is disabled in development mode.")
+    # # Conditional CSRF Protection
+    # if os.environ.get('FLASK_ENV') != 'development':
+    #     csrf.init_app(app)
+    # else:
+    #     print("CSRF protection is disabled in development mode.")
 
     with app.app_context():
         db.create_all()  # Ensure tables are created
@@ -70,9 +78,9 @@ def create_app(config_class=Config):
             generate_csrf(),
             secure=True if os.environ.get('FLASK_ENV') == 'production' else False,
             samesite='Strict' if os.environ.get('FLASK_ENV') == 'production' else None,
-            httponly=True
+            httponly=True if os.environ.get('FLASK_ENV') == 'production' else False,
         )
-        
+        print(response)
         return response
     
     return app

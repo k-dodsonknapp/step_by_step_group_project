@@ -4,6 +4,7 @@
     overflow: hidden;
     /* height: 550px; */
     z-index: 1;
+    margin-top: 28px;
 }
 
 .inner {

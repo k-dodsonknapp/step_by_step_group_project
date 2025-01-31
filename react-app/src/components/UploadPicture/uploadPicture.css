@@ -1,0 +1,73 @@
+.addProfilePhoto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.addProfilePhoto input>text {
+    display: flex;
+    justify-content: center;
+}
+
+.addProfilePhoto input:hover {
+    border: 1px solid rgb(116, 114, 114);
+}
+
+.addProfilePhoto button {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    padding: 6px 10px;
+    border-radius: 0px 6px 6px 0px;
+    color: rgb(116, 114, 114);
+    width: 114px;
+    height: 300px;
+}
+
+.addProfilePhoto button:hover {
+    text-decoration: underline;
+}
+
+.addProfilePhoto {
+    height: 250px;
+    margin-bottom: 20px;
+
+    .customFileUpload {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: red;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: #faac18;
+        box-shadow: 0rem 0rem .5rem .5rem #faac18;
+        cursor: pointer;
+    }
+
+    .image-preview-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 200px;
+
+        .custom-file-reupload {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            width: 90%;
+            padding: 10px 11px;
+            border-radius: 5px;
+            border: none;
+            height: 40px;
+            background-color: #faac18;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+}

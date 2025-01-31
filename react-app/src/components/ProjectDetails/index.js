@@ -8,6 +8,8 @@ import { updateView } from "../../store/views";
 import UserPhoto from "../UserPhoto";
 import { addPostFavorite, deletePostFavorite, getPostFavorites } from "../../store/favortie";
 // import { BsDot } from 'react-icons/bs';
+import fallbackImage from "../../assets/images/Screenshot-2024-12-03-214059.png";
+
 
 const ProjectDetails = () => {
 
@@ -244,6 +246,7 @@ const ProjectDetails = () => {
               className="project-images"
               src={project?.titleImage}
               alt="Completed project"
+              onError={(e) => (e.target.src = fallbackImage)}
             ></img>
           </div>
           <div id="overview-title">
@@ -271,6 +274,7 @@ const ProjectDetails = () => {
                   key={instruction?.id}
                   src={instruction?.photoUrl}
                   alt={`Step ${instruction?.stepOrder}`}
+                  onError={(e) => (e.target.src = fallbackImage)}
                 ></img>
               </div>
               <li className="instructions" key={instruction?.id}>
@@ -366,7 +370,7 @@ const ProjectDetails = () => {
               <form className="comment-form" onSubmit={handleComment}>
                 <div className="edit-container">
                   <div className="prf-image">
-                    <img id="createCommnetUserPhoto" src={user.userPhoto} alt={""}></img>
+                    <img id="createCommnetUserPhoto" src={`data:image/jpeg;base64,${user.userPhoto}`} alt={""}></img>
                   </div>
                   <div className="edit-comment">
                     <textarea
