@@ -1,54 +1,54 @@
-.carousel{
-    /* position: relative; */
-    /* top: 10px; */
-    overflow: hidden;
-    /* height: 550px; */
-    z-index: 1;
-    margin-top: 28px;
+.carousel {
+  /* position: relative; */
+  /* top: 10px; */
+  overflow: hidden;
+  /* height: 550px; */
+  z-index: 1;
+  margin-top: 28px;
 }
 
 .inner {
-    white-space: nowrap;
-    transition: transform 5s;
-    /* height: 550px; */
-    z-index: 1;
+  white-space: nowrap;
+  transition: transform 5s;
+  /* height: 550px; */
+  z-index: 1;
 }
 
 .carousel-item {
-    display: inline-flex;
-    /* width: 100%; */
-    margin: 100px 0px 0px 0px;
-    align-items: center;
-    justify-content: center;
-    height: 700px;
-    /* background-color: green; */
-    color: #fff;
+  display: inline-flex;
+  /* width: 100%; */
+  margin: 100px 0px 0px 0px;
+  align-items: center;
+  justify-content: center;
+  height: 700px;
+  /* background-color: green; */
+  color: #fff;
 }
 
-.carousel-img{
-    height: 700px;
-    width: 100%;
-    object-fit: fill;
+.carousel-img {
+  height: 700px;
+  width: 100%;
+  object-fit: fill;
 }
 
 .link {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .link:hover {
-    color: white;
-    text-decoration: underline;
+  color: white;
+  text-decoration: underline;
 }
 
 .carousel-project-title {
-    font-family: 'Times New Roman', Times, serif;
-    position: absolute;
-    top: 85%;
-    /* z-index: 1; */
-    text-decoration: none;
-    /* background-color: rgba(128, 128, 128, 0.103); */
-    text-shadow:
+  font-family: 'Times New Roman', Times, serif;
+  position: absolute;
+  top: 85%;
+  /* z-index: 1; */
+  text-decoration: none;
+  /* background-color: rgba(128, 128, 128, 0.103); */
+  text-shadow:
     0.04em 0 gray,
     0 0.04em gray,
     -0.04em 0 gray,
@@ -60,11 +60,11 @@
 }
 
 .carousel-project-username {
-    font-family: 'Times New Roman', Times, serif;
-    position: absolute;
-    top: 90%;
-    margin-top: 10px;
-    text-shadow:
+  font-family: 'Times New Roman', Times, serif;
+  position: absolute;
+  top: 90%;
+  margin-top: 10px;
+  text-shadow:
     0.04em 0 gray,
     0 0.04em gray,
     -0.04em 0 gray,
@@ -74,8 +74,9 @@
     0.04em -0.04em gray,
     0.04em 0.04em gray;
 }
-.name{
-    position: relative;
+
+.name {
+  position: relative;
 }
 
 /* .fade-in {

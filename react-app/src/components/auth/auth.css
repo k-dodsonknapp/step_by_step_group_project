@@ -1,218 +1,218 @@
 .loginformContainer {
-    display: flex;
-    /* justify-content: center !important; */
-    height: 90vh;
-    /* background-color: rgba(0, 0, 0, 0.705); */
-    /* backdrop-filter: blur(5px); */
-    width: 500px;
-    margin-top: 80px;
-    /* z-index: 5; */
-    border-radius: 6px;
+  display: flex;
+  /* justify-content: center !important; */
+  height: 90vh;
+  /* background-color: rgba(0, 0, 0, 0.705); */
+  /* backdrop-filter: blur(5px); */
+  width: 500px;
+  margin-top: 80px;
+  /* z-index: 5; */
+  border-radius: 6px;
 }
 
 .login-form-Container {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    align-items: center;
-    height: 350px;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    width: 500px;
-    border-radius: 6px;
-    top: 200px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  height: 350px;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  width: 500px;
+  border-radius: 6px;
+  top: 200px;
 }
 
-.login-form-Container > form > div > label {
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(197, 196, 196)
+.login-form-Container>form>div>label {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(197, 196, 196)
 }
 
 .login-form-Container form {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0px 20px;
-    width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px 20px;
+  width: 500px;
 }
 
 .loginformContainer form {
-    /* display: flex;
+  /* display: flex;
     margin-top: 20px;
     width: 500px; */
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center !important; */
-    height: 750px;
-    background-color: rgba(0, 0, 0, 0.705);
-    backdrop-filter: blur(5px);
-    width: 500px;
-    /* margin-top: 100px; */
-    /* z-index: 5; */
-    /* border-radius: 6px; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center !important; */
+  height: 750px;
+  background-color: rgba(0, 0, 0, 0.705);
+  backdrop-filter: blur(5px);
+  width: 500px;
+  /* margin-top: 100px; */
+  /* z-index: 5; */
+  /* border-radius: 6px; */
 }
 
 .login-errors {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    color: rgba(253, 52, 52, 0.952);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  color: rgba(253, 52, 52, 0.952);
 }
 
 .login-errors div {
-    margin: 5px;
+  margin: 5px;
 }
 
 .newUser-input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 10px 0px 0px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px 0px 0px;
 }
 
 .newUser-input label {
-    display: flex;
-    justify-content: flex-start;
-    width: 90%;
-    margin-bottom: 5px;
+  display: flex;
+  justify-content: flex-start;
+  width: 90%;
+  margin-bottom: 5px;
 }
 
-.loginInput, 
+.loginInput,
 .signupInput {
-    display: flex !important;
-    justify-content: center !important;
-    padding: 9px 11px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 2px 1px grey;
-    width: 85.5%;
-    border: none;
-    height: 20px;
+  display: flex !important;
+  justify-content: center !important;
+  padding: 9px 11px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px 1px grey;
+  width: 85.5%;
+  border: none;
+  height: 20px;
 }
 
 .loginInput:hover, .signupInput:hover {
-    box-shadow: 0px 0px 2px 1px rgba(255, 166, 0, 0.397);
+  box-shadow: 0px 0px 2px 1px rgba(255, 166, 0, 0.397);
 }
 
 .loginButton {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 90%;
-    padding: 10px 11px;
-    border-radius: 5px;
-    border: none;
-    height: 40px;
-    background-color: #faac18;
-    color: white;
-    font-size: 16px;
-    margin-bottom: 20px;
-    margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+  padding: 10px 11px;
+  border-radius: 5px;
+  border: none;
+  height: 40px;
+  background-color: #faac18;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 .signupBtns {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-left: 10px;
-    width: 95%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-left: 10px;
+  width: 95%;
 }
 
 .loginBtns {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .login-button {
-    padding-left: 30px;
-    display: flex;
-    justify-content: center;
+  padding-left: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .loginButton:hover {
-    cursor: pointer;
-    box-shadow: 0px 0px 2px 1px rgba(255, 166, 0, 0.397);
-    text-decoration: underline;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px 1px rgba(255, 166, 0, 0.397);
+  text-decoration: underline;
 }
 
 .loginSignupText {
-    font-family: Arial, Helvetica, sans-serif;
-    color:rgb(238, 227, 227)
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(238, 227, 227)
 }
 
-.loginSignupText > a {
-    color:rgb(245, 241, 241)
+.loginSignupText>a {
+  color: rgb(245, 241, 241)
 }
 
-.loginformContainer > form > div > label {
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(197, 196, 196)
+.loginformContainer>form>div>label {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(197, 196, 196)
 }
 
-.loginformContainer > form > div:first-of-type > label {
-    display: flex;
-    justify-content: center;
+.loginformContainer>form>div:first-of-type>label {
+  display: flex;
+  justify-content: center;
 }
 
-.signupInput{
-    display: flex;
+.signupInput {
+  display: flex;
 }
 
 #signupButton, #demoButton {
-    width: 100.874%;
+  width: 100.874%;
 }
 
 
 .demo-user {
-    padding: 9px 11px;
-    border-radius: 5px;
-    border: none;
-    height: 40px;
-    background-color: #faac18;
-    color: white;
-    font-size: 16px;
-    width: 90%;
-    cursor: pointer;
+  padding: 9px 11px;
+  border-radius: 5px;
+  border: none;
+  height: 40px;
+  background-color: #faac18;
+  color: white;
+  font-size: 16px;
+  width: 90%;
+  cursor: pointer;
 }
 
 .new-user-demo {
-    padding: 9px 11px;
-    border-radius: 5px;
-    border: none;
-    height: 40px;
-    background-color: #faac18;
-    color: white;
-    font-size: 16px;
-    width: 90%;
-    cursor: pointer;
+  padding: 9px 11px;
+  border-radius: 5px;
+  border: none;
+  height: 40px;
+  background-color: #faac18;
+  color: white;
+  font-size: 16px;
+  width: 90%;
+  cursor: pointer;
 }
 
-.new-user-demo:hover{
-    cursor: pointer;
-    box-shadow: 0px 0px 2px 1px rgba(255, 166, 0, 0.397);
-    text-decoration: underline;
+.new-user-demo:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 2px 1px rgba(255, 166, 0, 0.397);
+  text-decoration: underline;
 }
 
 .loginPage {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    background-image: url("https://www.instructables.com/assets/img/mobile/create/mobile-create-whyjoin1.png") ;
-    background-repeat:space;
-    object-fit: cover;
-    height: 85%;
-    top: 130px;
-    padding-bottom: 250px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-image: url("https://www.instructables.com/assets/img/mobile/create/mobile-create-whyjoin1.png");
+  background-repeat: space;
+  object-fit: cover;
+  height: 85%;
+  top: 130px;
+  padding-bottom: 250px;
 }
 
 .image-preview {
-    clip-path: circle();
-    width: 200px;
-    max-height: 250px;
+  clip-path: circle();
+  width: 200px;
+  max-height: 250px;
 }
