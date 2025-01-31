@@ -18,6 +18,8 @@ const Navigation = () => {
     setShowMenu(true);
   };
 
+  console.log(user)
+
   useEffect(() => {
     if (!showMenu) return;
 
@@ -81,7 +83,7 @@ const Navigation = () => {
                 )}
               <button id='profile-quickmenu' onClick={openMenu}>
                 {user && (
-                  <img src={user.userPhoto} alt=''></img>
+                  <img src={`data:image/jpeg;base64,${user.userPhoto}`} alt=''></img>
                 )}
               </button>
               {!user && (

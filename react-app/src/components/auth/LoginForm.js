@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import { login } from '../../store/session';
-import DemoButton from './DemoUser';
-import './auth.css';
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Redirect } from "react-router-dom";
+import { login } from "../../store/session";
+import DemoButton from "./DemoUser";
+import "./auth.css";
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const user = useSelector(state => state.session.user);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
 
   console.log(document.cookie);
@@ -19,7 +19,7 @@ const LoginForm = () => {
     const data = await dispatch(login(email, password));
     if (data) {
       setErrors(data);
-    };
+    }
   };
 
   const updateEmail = (e) => {
@@ -31,48 +31,49 @@ const LoginForm = () => {
   };
 
   if (user) {
-    return <Redirect to='/' />;
-  };
+    return <Redirect to="/" />;
+  }
 
   return (
     <div className="loginPage">
       <div className="login-form-Container">
         <form onSubmit={onLogin}>
-          <div className='login-errors'>
+          <div className="login-errors">
             {errors.map((error, ind) => (
               <div key={ind}>{error}</div>
             ))}
           </div>
-          <div className='newUser-input'>
-            <label htmlFor='email'>Email</label>
+          <div className="newUser-input">
+            <label htmlFor="email">Email</label>
             <input
-              name='email'
-              type='text'
+              name="email"
+              type="text"
               className="loginInput"
-              placeholder='Email'
+              placeholder="Email"
               value={email}
               onChange={updateEmail}
             />
           </div>
-          <div className='newUser-input'>
-            <label htmlFor='password'>Password</label>
+          <div className="newUser-input">
+            <label htmlFor="password">Password</label>
             <input
-              name='password'
-              type='password'
+              name="password"
+              type="password"
               className="loginInput"
-              placeholder='Password'
+              placeholder="Password"
               value={password}
               onChange={updatePassword}
             />
-            <div className='loginBtns'>
-              <button className="loginButton" type='submit'>Login</button>
-              <DemoButton className={"new-user-demo"} />
-            </div>
+          </div>
+          <div className="loginBtns">
+            <button className="loginButton" type="submit">
+              Login
+            </button>
+            <DemoButton className={"new-user-demo"} />
           </div>
         </form>
       </div>
     </div>
-
   );
 };
 

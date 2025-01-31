@@ -9,10 +9,12 @@ comment_bp = Blueprint('comments', __name__)
 def create_comment():
     data = request.json
 
-    comment = Comment(userId=data['userId'],
-                      projectId=data['projectId'],
-                      comment=data['comment'],
-                      username=data['username'])
+    comment = Comment(
+        userId=data['userId'],
+        projectId=data['projectId'],
+        comment=data['comment'],
+        username=data['username'],
+    )
 
     db.session.add(comment)
     db.session.commit()

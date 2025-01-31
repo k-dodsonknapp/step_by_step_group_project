@@ -1,9 +1,11 @@
 .navbar {
     /* background-color: red; */
     /* display: flex; */
+    position: absolute;
     background-color: #555;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     height: 40px;
+    width: 100%;
     /* justify-content: space-around; */
 }
 
@@ -13,10 +15,12 @@ body {
 }
 
 .navbar > nav {
-    /* position: absolute; */
+    position: absolute;
     background-color: #555;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     height: 40px;
+    width: 100%;
+    z-index: 3;
 }
 
 .navbar ul{
@@ -180,7 +184,7 @@ li > a {
     margin-top: 100px;
     padding-top: 35px;
     padding-left: 20px;
-    z-index: 5;
+    z-index: 9;
     background-color: #eee;
 }
 
