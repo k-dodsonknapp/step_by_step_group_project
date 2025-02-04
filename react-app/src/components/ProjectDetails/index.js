@@ -2,57 +2,61 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { deleteOneProject, getOneProject } from "../../store/project";
-import { addOneComment, deleteOneComment, updateOneComment } from "../../store/comments";
+import {
+  addOneComment,
+  deleteOneComment,
+  updateOneComment,
+} from "../../store/comments";
 import "./Projects.css";
 import { updateView } from "../../store/views";
 import UserPhoto from "../UserPhoto";
-import { addPostFavorite, deletePostFavorite, getPostFavorites } from "../../store/favortie";
+import {
+  addPostFavorite,
+  deletePostFavorite,
+  getPostFavorites,
+} from "../../store/favortie";
 // import { BsDot } from 'react-icons/bs';
 import fallbackImage from "../../assets/images/Screenshot-2024-12-03-214059.png";
 
-
 const ProjectDetails = () => {
-
   const dispatch = useDispatch();
   const history = useHistory();
   const { projectId } = useParams();
   const project = useSelector((state) => state?.projects[+projectId]);
   const favorites = useSelector((state) => state?.favorites);
-  let view = useSelector(state => state?.views?.view)
+  let view = useSelector((state) => state?.views?.view);
   const user = useSelector((state) => state?.session?.user);
-  const session = useSelector(state => state?.session);
+  const session = useSelector((state) => state?.session);
   // const [projectFavorites, setProjectFavorites] = useState(favorites?.favorite);
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [showCommentEditForm, setShowCommentEditForm] = useState(false);
   const [commentId, setCommentId] = useState(0);
   const [showComment, setShowComment] = useState(true);
   const [showPostCommentBtn, setShowPostCommentBtn] = useState(true);
-  const [body, setBody] = useState('');
-  const [editBody, setEditBody] = useState('');
+  const [body, setBody] = useState("");
+  const [editBody, setEditBody] = useState("");
   // const [textColor, setTextColor] = useState('#bbb');
   // const [favoriteComment, setFavoriteComment] = useState(true);
   let [favoriteLength, setFavoriteLength] = useState(0);
   const [favoritess, setFavoritess] = useState(false);
   // const [userFavorite, setUserFavorite] = useState(false);
 
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
 
   useEffect(() => {
     if (favorites.favorite) {
       // setFavoriteLength(favorites?.favorite?.length)
     }
     dispatch(getPostFavorites(+projectId));
-  }, [dispatch,projectId, favorites.favorite])
+  }, [dispatch, projectId, favorites.favorite]);
 
   useEffect(() => {
     const addView = {
-      "projectId": +projectId
+      projectId: +projectId,
     };
-    console.log(addView)
+    console.log(addView);
     dispatch(updateView(addView));
     // dispatch(getOneView(+projectId));
     dispatch(getOneProject(projectId));
@@ -62,8 +66,8 @@ const ProjectDetails = () => {
   const saveEditComment = async (e) => {
     e.preventDefault();
     const payload = {
-      "comment": editBody,
-      commentId
+      comment: editBody,
+      commentId,
     };
     await dispatch(updateOneComment(payload));
     if (showCommentEditForm === true) {
@@ -83,12 +87,12 @@ const ProjectDetails = () => {
     };
     await dispatch(addOneComment(newComment));
     await dispatch(getOneProject(projectId));
-    setBody('');
+    setBody("");
     setShowCommentForm(false);
 
     if (showPostCommentBtn === false) {
       setShowPostCommentBtn(true);
-    };
+    }
   };
 
   const cancel = (e) => {
@@ -106,8 +110,8 @@ const ProjectDetails = () => {
     e.preventDefault();
     const projectDelete = await dispatch(deleteOneProject(projectId));
     if (projectDelete) {
-      history.push('/');
-    };
+      history.push("/");
+    }
   };
 
   const handleDeleteComment = async (e) => {
@@ -122,8 +126,8 @@ const ProjectDetails = () => {
     const id = +e?.target?.id;
     const comments = project.comments;
     let comms = {};
-    comments.map(comment => {
-      return comms[comment.id] = comment
+    comments.map((comment) => {
+      return (comms[comment.id] = comment);
     });
     setEditBody(comms[commentId].comment);
     setCommentId(id);
@@ -133,24 +137,24 @@ const ProjectDetails = () => {
     } else {
       setShowCommentEditForm(false);
       setShowComment(true);
-    };
+    }
     if (showCommentForm === true) {
       setShowCommentForm(false);
       setShowPostCommentBtn(true);
-    };
+    }
   };
 
   const postComment = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (showCommentForm === false) {
       setShowCommentForm(true);
     } else {
       setShowCommentForm(false);
-    };
+    }
     setShowPostCommentBtn(false);
     if (showCommentEditForm === true) {
       setShowCommentEditForm(false);
-    };
+    }
   };
 
   const cancelNewComment = (e) => {
@@ -159,20 +163,22 @@ const ProjectDetails = () => {
       setShowCommentForm(false);
     } else {
       setShowCommentForm(true);
-    };
+    }
     setShowPostCommentBtn(true);
   };
 
-
   const favorite = async (e) => {
     e.preventDefault();
-    let payload = favorites?.favorite?.find(favorite => favorite?.projectId === +projectId && favorite?.userId === user?.id)
+    let payload = favorites?.favorite?.find(
+      (favorite) =>
+        favorite?.projectId === +projectId && favorite?.userId === user?.id
+    );
     if (session?.user) {
       if (payload) {
         // setFavoriteComment(true);
         // setTextColor(setFavoriteComment ? '#bbb' : '#b64360');
-        if (favorites?.favorite?.length > 0){
-          setFavoriteLength( favoriteLength -= 1)
+        if (favorites?.favorite?.length > 0) {
+          setFavoriteLength((favoriteLength -= 1));
         }
         dispatch(deletePostFavorite(payload));
         dispatch(getPostFavorites(+projectId));
@@ -182,23 +188,25 @@ const ProjectDetails = () => {
         // setFavoriteComment(false);
         // setTextColor(setFavoriteComment ? '#b64360' : '#bbb');
         const fav = {
-          "projectId": +projectId,
-          "userId": +user?.id,
+          projectId: +projectId,
+          userId: +user?.id,
         };
         dispatch(addPostFavorite(fav));
         dispatch(getOneProject(+projectId));
         setFavoritess(true);
         // setFavoriteLength(favorites?.favorite?.length)
-        favorites.favorite.length++
+        favorites.favorite.length++;
       }
     } else {
       return alert("You must be logged in to favorite a project");
     }
-  }
+  };
 
   useEffect(() => {
     if (favorites?.favorite) {
-      const favorite = favorites?.favorite.find(favorite => favorite?.userId === session?.user?.id);
+      const favorite = favorites?.favorite.find(
+        (favorite) => favorite?.userId === session?.user?.id
+      );
       if (favorite) {
         // setUserFavorite(true);
       }
@@ -209,13 +217,12 @@ const ProjectDetails = () => {
   //   dispatch(getPostFavorites(+projectId));
   // }, [dispatch, projectId]);
 
-
   const handleLogin = (e) => {
-    history.push('/login');
+    history.push("/login");
   };
 
   const handleSignUp = (e) => {
-    history.push('/sign-up');
+    history.push("/sign-up");
   };
 
   return (
@@ -225,22 +232,45 @@ const ProjectDetails = () => {
           <div className="title">{project?.title}</div>
           <div id="project-details">
             By
-            <span className="username-category">{project?.owner?.username}</span>
+            <span className="username-category">
+              {project?.owner?.username}
+            </span>
             in<span className="username-category">{project?.category}</span>
             <p>
-              <span className="favorite-count">❤ {favorites?.favorite?.length}</span>
+              <span className="favorite-count">
+                ❤ {favorites?.favorite?.length}
+              </span>
               <span>👁 {view?.viewCount}</span>
             </p>
             {session?.user?.id === project?.owner?.id && (
               <div className="btn-div">
-                <button className="submit-comment" onClick={handleEditProjectButton}>Edit</button>
-                <button className="submit-comment" onClick={handleDelete}>Delete</button>
+                <button
+                  className="submit-comment"
+                  onClick={handleEditProjectButton}
+                >
+                  Edit
+                </button>
+                <button className="submit-comment" onClick={handleDelete}>
+                  Delete
+                </button>
               </div>
             )}
           </div>
           <div className="project-image-container">
             <div className="favorite_btn_div">
-              <button className="favorite_btn" onClick={favorite}><span className="heart_span" style={favoritess ? { color: '#b64360' } : { color: "black" } || !favorites.favorite}>❤</span> <span className="favorite_span">Favorite</span></button>
+              <button className="favorite_btn" onClick={favorite}>
+                <span
+                  className="heart_span"
+                  style={
+                    favoritess
+                      ? { color: "#b64360" }
+                      : { color: "black" } || !favorites.favorite
+                  }
+                >
+                  ❤
+                </span>{" "}
+                <span className="favorite_span">Favorite</span>
+              </button>
             </div>
             <img
               className="project-images"
@@ -257,8 +287,9 @@ const ProjectDetails = () => {
             Supplies:
             {project?.supplies?.map((supply) => (
               <div key={supply?.id}>
-                <li className="supply-list" >
-                  <p>-</p>{supply?.supply}
+                <li className="supply-list">
+                  <p>-</p>
+                  {supply?.supply}
                 </li>
               </div>
             ))}
@@ -283,72 +314,92 @@ const ProjectDetails = () => {
             </div>
           ))}
           <h2 className="num-comments">{project?.comments?.length} Comments</h2>
-          {project?.comments?.map((comment) => (
-            <div key={comment?.id}>
-              <div className="comments" >
-                <div className="user">
-                  <div className="user-container">
-                    <div className="userImg">
-                      <UserPhoto userId={comment?.userId} />
+          {project?.comments
+            ?.map((comment) => (
+              <div key={comment?.id}>
+                <div className="comments">
+                  <div className="user">
+                    <div className="user-container">
+                      <div className="userImg">
+                        <UserPhoto userId={comment?.userId} />
+                      </div>
+                      <div className="username">{comment?.username}</div>
                     </div>
-                    <div className="username">
-                      {comment?.username}
-                    </div>
+                    {user?.id === comment?.userId && (
+                      <div className="comment-btn-container">
+                        <button
+                          className="submit-commentt"
+                          id={comment?.id}
+                          onClick={handleDeleteComment}
+                        >
+                          Delete
+                        </button>
+                        <button
+                          className="submit-commentt"
+                          id={comment?.id}
+                          onClick={handleShowEditForm(comment.id)}
+                        >
+                          Edit
+                        </button>
+                      </div>
+                    )}
                   </div>
-                  {user?.id === comment?.userId && (
-                    <div className="comment-btn-container">
-                      <button className="submit-commentt" id={comment?.id} onClick={handleDeleteComment}>Delete</button>
-                      <button className="submit-commentt" id={comment?.id} onClick={handleShowEditForm(comment.id)}>Edit</button>
-                    </div>
+                  {showComment && (
+                    <div className="comment">{comment?.comment}</div>
                   )}
                 </div>
-                {showComment && (
-                  <div className="comment">
-                    {comment?.comment}
-                  </div>
-                )}
-              </div>
-              {+comment?.id === +commentId && (
-                <div>
-                  {showCommentEditForm && (
-                    <div className="comment-">
-                      <form className="comment-form" >
-                        <div className="edit-container">
-                          <div className="prf-image">
-                            {/* hello */}
-                            <img id="createCommnetUserPhoto" src={user.userPhoto} alt={""}></img>
-                          </div>
-                          <div className="edit-comment">
-                            <textarea
-                              className="edit-input"
-                              type="text"
-                              value={editBody}
-                              onChange={e =>
-                                setEditBody(e?.target?.value)
-                              }
-                              required
-                            />
-                            <div className="btn-container">
-                              <button onClick={cancel} className="cancel-edit" type="submit">Cancel</button>
-                              <button onClick={saveEditComment} className="submit-comment" type="submit">Save</button>
+                {+comment?.id === +commentId && (
+                  <div>
+                    {showCommentEditForm && (
+                      <div className="comment-">
+                        <form className="comment-form">
+                          <div className="edit-container">
+                            <div className="prf-image">
+                              {/* hello */}
+                              <img
+                                id="createCommnetUserPhoto"
+                                src={user.userPhoto}
+                                alt={""}
+                              ></img>
+                            </div>
+                            <div className="edit-comment">
+                              <textarea
+                                className="edit-input"
+                                type="text"
+                                value={editBody}
+                                onChange={(e) => setEditBody(e?.target?.value)}
+                                required
+                              />
+                              <div className="btn-container">
+                                <button
+                                  onClick={cancel}
+                                  className="cancel-edit"
+                                  type="submit"
+                                >
+                                  Cancel
+                                </button>
+                                <button
+                                  onClick={saveEditComment}
+                                  className="submit-comment"
+                                  type="submit"
+                                >
+                                  Save
+                                </button>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </form>
-                    </div>
-                  )}
-                </div>
-              )}
-              <div >
+                        </form>
+                      </div>
+                    )}
+                  </div>
+                )}
+                <div></div>
               </div>
-            </div>
-          )).reverse()}
+            ))
+            .reverse()}
           {user && showPostCommentBtn && (
             <div className="post-comment">
-              <button
-                id="leave-comment-btn"
-                onClick={postComment}
-              >
+              <button id="leave-comment-btn" onClick={postComment}>
                 Post Comment
               </button>
             </div>
@@ -357,11 +408,15 @@ const ProjectDetails = () => {
             <div className="not-logged-in">
               <div className="login-sign-up">
                 <p>Want to leave a comment?</p>
-                <button onClick={handleLogin} className="projectDetailsLogin">Login Here!</button>
+                <button onClick={handleLogin} className="projectDetailsLogin">
+                  Login Here!
+                </button>
               </div>
               <div className="login-sign-up">
                 <p>Haven't signed up?</p>
-                <button onClick={handleSignUp} className="projectDetailsLogin">Sign Up Here!</button>
+                <button onClick={handleSignUp} className="projectDetailsLogin">
+                  Sign Up Here!
+                </button>
               </div>
             </div>
           )}
@@ -370,7 +425,11 @@ const ProjectDetails = () => {
               <form className="comment-form" onSubmit={handleComment}>
                 <div className="edit-container">
                   <div className="prf-image">
-                    <img id="createCommnetUserPhoto" src={`data:image/jpeg;base64,${user.userPhoto}`} alt={""}></img>
+                    <img
+                      id="createCommnetUserPhoto"
+                      src={`data:image/jpeg;base64,${user.userPhoto}`}
+                      alt={""}
+                    ></img>
                   </div>
                   <div className="edit-comment">
                     <textarea
@@ -378,13 +437,19 @@ const ProjectDetails = () => {
                       className="edit-input"
                       type="text"
                       value={body}
-                      onChange={e =>
-                        setBody(e?.target?.value)
-                      }
-                      required />
+                      onChange={(e) => setBody(e?.target?.value)}
+                      required
+                    />
                     <div className="btn-container">
-                      <button onClick={cancelNewComment} className="cancel-edit">Cancel</button>
-                      <button className="submit-comment" type="submit">Save</button>
+                      <button
+                        onClick={cancelNewComment}
+                        className="cancel-edit"
+                      >
+                        Cancel
+                      </button>
+                      <button className="submit-comment" type="submit">
+                        Save
+                      </button>
                     </div>
                   </div>
                 </div>
